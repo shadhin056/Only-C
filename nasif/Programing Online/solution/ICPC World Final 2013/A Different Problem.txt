@@ -1,0 +1,23 @@
+//icpc world final 2013
+//A Different Problem
+//working
+
+#include<cstdio>
+#include<iostream>
+using namespace std;
+
+int main()
+{
+    unsigned long long int a,b,d;
+
+    while(scanf("%llu %llu",&a,&b)==2)
+    {
+        if(a>=b)
+            d=a-b;
+        else
+            d=b-a;
+        cout << d << endl;
+    }
+
+	return 0;
+}

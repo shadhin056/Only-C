@@ -1,0 +1,49 @@
+//uva set - 01
+//575 - Skew Binary
+//Xplosive
+//accepted
+
+#include <iostream>
+#include <string>
+#include <cstdlib>
+#include <cmath>
+
+using namespace std;
+
+int main()
+{
+    
+    //freopen("uvainput.txt", "r", stdin);
+    //freopen("uvaoutput.txt", "w", stdout);
+
+    unsigned long long int r;
+    int i,j,l,n;
+    string s,s2;
+    char c;
+
+    while(true)
+    {
+        getline(cin,s);
+        if(s=="0")
+            break;
+
+        l=s.size();
+        r=0;
+        for(j=l,i=0; i<l; i++,j--)
+        {
+            c=s[i];
+            s2=c;
+            n = atoi(s2.c_str());
+
+            r+= n*(pow(2,j)-1);
+
+        }
+        cout << r << endl;
+
+    }
+
+
+    return 0;
+
+}
+

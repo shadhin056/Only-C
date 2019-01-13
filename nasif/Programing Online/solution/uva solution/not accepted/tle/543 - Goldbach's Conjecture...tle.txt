@@ -1,0 +1,120 @@
+//uva set - 01
+//543 - Goldbach's Conjecture
+//Xplosive
+//tle
+
+//precalcualtion
+
+#include <iostream>
+#include <cstdio>
+
+using namespace std;
+
+int a[100000];
+int is_prime(int n);
+void fill_prime_array(int e_li);
+
+//6<=n<=10000000
+//total prime this range 78498
+
+
+
+int main()
+{
+
+    freopen("input.txt", "r", stdin);
+    //freopen("uvaoutput.txt", "w", stdout);
+
+    int n;
+
+    fill_prime_array(1000000);
+
+    while(scanf("%d",&n)==1)
+    {
+        if(n==0)
+            break;
+        bool flag=false;
+
+        for(int i=0; i<n; i++)
+        {
+            for(int j=i+1; j<n; j++)
+            {
+                if(a[i]+a[j]==n)
+                {
+                    printf("%d = %d + %d\n",n,a[i],a[j]);
+                    flag=true;
+                    break;
+                }
+
+            }
+            if(flag)
+                break;
+        }
+
+        if(!flag)
+        {
+            printf("Goldbach's conjecture is wrong.\n");
+        }
+
+    }
+
+    return 0;
+}
+
+
+//-------------------------------------
+
+int is_prime(int n)
+{
+    int d;
+    if(n<=1)
+        return 0;
+    if(n==1)
+        return 1;
+    if(n%2==0)
+        return 0;
+
+    for (d=3;d*d<=n; d+=2)
+    {
+        if(n%d==0)
+            return 0;
+    }
+
+    return 1;
+
+}
+//-------------------------------------
+
+void fill_prime_array(int e_li)
+{
+    int i,j=0;
+
+    for(i=3; i<e_li; i+=2)
+    {
+        if(is_prime(i))
+        {
+            a[j++]=i;
+        }
+    }
+    //cout << j;
+}
+
+
+/*
+
+Sample Input
+
+8
+20
+42
+0
+
+Sample Output
+
+8 = 3 + 5
+20 = 3 + 17
+42 = 5 + 37
+
+
+
+*/

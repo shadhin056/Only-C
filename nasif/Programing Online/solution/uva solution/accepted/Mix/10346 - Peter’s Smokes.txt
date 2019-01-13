@@ -1,0 +1,48 @@
+//10346 - Peter’s Smokes
+//xplosive
+//accepted
+
+//#include <iostream>
+#include <cstdio>
+
+//using namespace std;
+
+int main()
+{
+    //freopen("uvainput.txt", "r", stdin);
+    //freopen("uvaoutput.txt", "w", stdout);
+
+    int n,k,e,m;
+
+    while(scanf("%d %d",&n,&k)==2)
+    {
+        e=n;
+        while(n>=k)
+        {
+            m=n%k;
+            n=n/k;
+            e+=n;
+            n+=m;
+        }
+
+        printf("%d\n",e);
+    }
+
+    return 0;
+
+}
+
+/*
+
+Sample Input
+
+4 3
+10 3
+100 5
+
+Sample Output
+5
+14
+124
+
+*/

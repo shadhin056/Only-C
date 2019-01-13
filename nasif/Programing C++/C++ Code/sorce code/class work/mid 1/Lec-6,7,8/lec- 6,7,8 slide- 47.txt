@@ -1,0 +1,28 @@
+//lec- 6,7,8 slide- 47
+//Loop Solution
+//Nasif Ahmed
+
+#include<stdio.h>
+#include<math.h>
+#define PI 3.141593
+
+int main (void)
+
+{
+    int degrees=0;
+    float radians;
+    printf("\nDegrees to Radians \n\n");
+
+    while(degrees<=360)
+    {
+        radians=degrees*PI/180;
+        printf("%d %f\n",degrees,radians);
+        degrees += 10;
+
+    }
+
+    printf("\n\n\n");
+    return 0;
+}
+
+//working perfectly,but what about void,PI,why de PI in heder,i

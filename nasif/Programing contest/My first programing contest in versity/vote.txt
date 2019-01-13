@@ -1,0 +1,38 @@
+//Problem B: Vote
+//accepted
+
+#include <cstdio>
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    long long int f,s,v,t,i;
+
+    //f=5,s=1;
+    while (1)
+    {
+
+        cin >> f;
+        cin >> s;
+
+        if(s==0&&f==0)
+            break;
+
+        if(s>f)
+        {
+            v=0;
+        }
+        else
+        {
+            v=(f-s)/2+1;
+        }
+
+        cout << v << endl;
+
+    }
+
+
+    return 0;
+}

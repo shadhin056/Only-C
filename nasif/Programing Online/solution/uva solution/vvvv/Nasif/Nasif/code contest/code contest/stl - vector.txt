@@ -1,0 +1,197 @@
+//STL
+//stl - vector
+//Xplosive
+//++,
+
+#include <iostream>
+#include <string>
+#include <sstream>
+#include <algorithm>
+#include <vector>
+#include <set>
+#include <queue>
+#include <stack>
+#include <list>
+#include <map>
+#include <fstream>
+#include <numeric>
+#include <iterator>
+#include <bitset>
+#include <utility>
+#include <cstdio>
+#include <cstdlib>
+#include <cctype>
+#include <cmath>
+#include <cstring>
+#include <ctime>
+
+#define READ(file) freopen(file, "r", stdin);
+#define WRITE(file) freopen(file, "w", stdout);
+#define PI acos(-1.0)
+
+
+#define MAX 1100000
+
+using namespace std;
+
+void print_vector(vector<int> v);
+void print_vector(vector<char> v);
+void print_array(int* a, int l);
+
+
+void testConstAndAssign()
+{
+    vector<int> first;                                // empty vector of ints
+    vector<int> second (4,100);                       // four ints with value 100
+    vector<int> third (second.begin(),second.end());  // iterating through second
+    vector<int> fourth (third);                       // a copy of third
+
+    int a[4] = {16,2,77,29};
+    vector<int> fifth (a,a+4);
+    print_vector(fifth);
+
+    vector < int > v;
+    vector < int > ::iterator it;
+
+    for(int i=0; i<10; i++)
+        v.push_back(i);
+
+
+//    for(it=v.begin(); it!=v.end(); it++)
+//        cout << *it << " ";
+//    cout << endl;
+
+    v.assign(12,3); //assign 12 int as 3
+    print_vector(v);
+
+}
+
+void testInsert()
+{
+    vector < int > v,v2,v3,v4;
+    vector < int > ::iterator it;
+
+    for(int i=0; i<10; i++)
+        v.push_back(i);
+
+    //insert elements
+    v2=v;
+    v2.insert(v2.begin(),33);       //insert 33 in begining
+    v2.insert(v2.begin(),3,6);      //insert 3 elements in beg as 6
+    v2.insert(v2.end(),3,6);        //insert 3 elements at last as 6
+    //print_vector(v2);
+
+    //insert vector
+    v3=v;
+    vector<int> vTemp(10,5);     //construct vec 10 ele as 5
+    v3.insert(v3.begin(),vTemp.begin(),vTemp.end());    //insert vTemp at beg v3
+    v3.insert(v3.begin()+2,vTemp.begin(),vTemp.end());    //insert vTemp at beg+2 v3
+    v3.insert(v3.end(),vTemp.begin(),vTemp.begin()+2);    //insert vTemp-vTemp+2 at end v3
+    //print_vector(v3);
+
+    //insert array
+    v4=v;
+    int a[5]= {6,6,6,6,6};
+    v4.insert(v4.begin(),a,a+3);  //insert array in beg
+    v4.insert(v4.end(),a,a+3);  //insert array at end
+    print_vector(v4);
+
+}
+
+void testDelete()
+{
+
+    vector < int > v;
+    vector < int > ::iterator it;
+
+    for(int i=0; i<10; i++)
+        v.push_back(i);
+
+    v.erase(v.begin());               //remove first elements
+//    v.erase(v.end());               //not working, use pop back
+    v.pop_back();               //remove last element
+    v.erase(v.begin(),v.begin()+3);   //remove first 3 elements
+    v.erase(v.begin()+1,v.begin()+3); //remove 1,2,3 elements
+    //v.clear();                        //remove all elements
+    print_vector(v);
+
+}
+
+void testExtra()
+{
+
+    vector < int > v;
+    vector < int > ::iterator it;
+
+    for(int i=0; i<10; i++)
+        v.push_back(i);
+
+    cout << v.front() << endl;   //return front element
+    cout << v.back() << endl;   //return back element
+
+
+    vector<int>a(3,300);
+    vector<int>b(5,500);
+    //swap(a,b);      //swap two vector
+    a.swap(b);      //swap two vector
+    print_vector(a);
+
+    v.clear();
+    cout << "Size     : " << v.size() << endl;
+    cout << "Is Empty : " << v.empty() << endl;
+
+}
+
+void testVector2D()
+{
+    cout << "do it 2d vector" << endl;
+
+}
+
+
+int main()
+{
+    //READ("input.txt");
+    //WRITE("output.txt");
+
+    //testConstAndAssign();
+    //testInsert();
+    //testDelete();
+    //testExtra();
+    testVector2D();
+
+    return 0;
+}
+
+void print_array(int* a, int l)
+{
+    for(int i= 0; i<l; i++)
+        cout << a[i] << " ";
+
+    cout << endl;
+}
+
+void print_vector(vector<int> v)
+{
+    for(int i=0; i<v.size(); i++)
+        cout << v[i] << " ";
+
+    cout << endl;
+}
+
+void print_vector(vector<char> v)
+{
+    for(int i=0; i<v.size(); i++)
+        cout << v[i] << " ";
+
+    cout << endl;
+}
+
+
+
+
+/*
+
+
+
+*/

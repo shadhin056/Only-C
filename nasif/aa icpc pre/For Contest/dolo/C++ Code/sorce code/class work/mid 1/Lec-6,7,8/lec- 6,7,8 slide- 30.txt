@@ -1,0 +1,29 @@
+//lec- 6,7,8 slide- 30
+//which tasks take more time
+//Nasif Ahmed
+
+#include<stdio.h>
+#include<math.h>
+
+main ()
+
+{
+
+    int A,B;
+    printf("\nEnter the value of A: ");
+    scanf("%d",&A);
+    printf("\nEnter the value of B: ");
+    scanf("%d",&B);
+
+    if (A>B)
+        printf("\n\n\nA Task takes more time");
+    else
+        printf("\n\n\nB Task takes more time");
+
+        printf("\n\n\n\n");
+
+
+
+
+}
+

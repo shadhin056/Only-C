@@ -1,0 +1,64 @@
+#include<stdio.h>
+struct profile
+{
+    char name[100];
+    int age,hight,weight;
+};
+main(void)
+{
+    int n,i,n1=0,m,c=0;
+    char test[10];
+    struct profile x[30];
+    printf("How many student's profile you want to update?\n=");
+    scanf("%d",&n);
+    gets(test);
+    for(i=0;i<n;i++)
+    {
+        printf("Input student's name = ");
+        gets(x[i].name);
+        printf("\n\nInput %s's age = ",x[i].name);
+        scanf("%d",&x[i].age);
+        printf("\n\nInput %s's hight(in cm) = ",x[i].name);
+        scanf("%d",&x[i].hight);
+        printf("\n\nInput %s's weight(in kg) = ",x[i].name);
+        scanf("%d",&x[i].weight);
+        gets(test);
+    }
+    for(i=1,m=x[0].age;i<n;i++)
+    {
+        if(x[i].age>m)
+        {
+            m=x[i].age;
+            c=i;
+        }
+    }
+    if(n==2)
+        printf("%s is older.\n\n",x[c].name);
+    else
+        printf("%s is oldest.\n\n",x[c].name);
+    for(i=1,m=x[0].hight,c=0;i<n;i++)
+    {
+        if(x[i].hight>m)
+        {
+            m=x[i].hight;
+            c=i;
+        }
+    }
+    if(n==2)
+        printf("%s is taller.\n\n",x[c].name);
+    else
+        printf("%s is tallest.\n\n",x[c].name);
+    for(i=1,m=x[0].weight,c=0;i<n;i++)
+    {
+        if(x[i].weight>m)
+        {
+            m=x[i].weight;
+            c=i;
+        }
+    }
+    if(n==2)
+        printf("%s is heavier.\n\n",x[c].name);
+    else
+        printf("%s is heaviest.\n\n",x[c].name);
+	getch();
+}

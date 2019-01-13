@@ -1,0 +1,156 @@
+//ds
+//12015 - Google is Feeling Lucky
+//Xplosive
+//ac
+
+//operator overload, data structure
+
+#include <iostream>
+#include <string>
+#include <sstream>
+#include <algorithm>
+#include <vector>
+#include <set>
+#include <queue>
+#include <stack>
+#include <list>
+#include <map>
+#include <fstream>
+#include <numeric>
+#include <iterator>
+#include <bitset>
+#include <utility>
+#include <cstdio>
+#include <cstdlib>
+#include <cctype>
+#include <cmath>
+#include <cstring>
+#include <ctime>
+#include <iomanip>
+//#include <conio.h>    //this will give u compile error in contest
+
+#define READ(file) freopen(file, "r", stdin);
+#define WRITE(file) freopen(file, "w", stdout);
+#define PI acos(-1.0)
+
+
+#define MAX 1100000
+
+using namespace std;
+
+struct Data
+{
+    int p;
+    int r;
+    string l;
+
+    bool operator < (const Data& b) const
+    {
+        if(r==b.r)
+        {
+            return p>b.p;
+        }
+        else
+        {
+            return r<b.r;
+        }
+    }
+};
+
+
+
+int main()
+{
+    //READ("input.txt");
+    //WRITE("output.txt");
+
+    int t, tt;
+    cin >> tt;
+
+
+    for(t=1; t<=tt; t++)
+    {
+//        if(t!=1)
+//            printf("\n");
+
+        printf("Case #%d:\n",t);
+
+        priority_queue<Data> q;
+
+        string s;
+        int n;
+        Data mData;
+        for(int i=0; i<10; i++)
+        {
+            cin >> s>> n;
+
+            mData.p=i;
+            mData.r=n;
+            mData.l=s;
+
+            q.push(mData);
+
+        }
+
+        mData = q.top();
+        int maxx=mData.r;
+
+       while(1)
+       {
+            mData = q.top();
+
+            if(mData.r!=maxx)
+                break;
+
+            cout << mData.l << endl;
+            q.pop();
+
+       }
+
+
+    }
+
+
+    return 0;
+}
+
+
+
+/*
+
+
+Sample Input
+
+2
+www.youtube.com 1
+www.google.com 2
+www.google.com.hk 3
+www.alibaba.com 10
+www.taobao.com 5
+www.bad.com 10
+www.good.com 7
+www.fudan.edu.cn 8
+www.university.edu.cn 9
+acm.university.edu.cn 10
+www.youtube.com 1
+www.google.com 2
+www.google.com.hk 3
+www.alibaba.com 11
+www.taobao.com 5
+www.bad.com 10
+www.good.com 7
+www.fudan.edu.cn 8
+acm.university.edu.cn 9
+acm.university.edu.cn 10
+
+Sample Output
+
+Case #1:
+www.alibaba.com
+www.bad.com
+acm.university.edu.cn
+Case #2:
+www.alibaba.com
+
+
+*/

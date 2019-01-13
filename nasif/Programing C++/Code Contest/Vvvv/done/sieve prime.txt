@@ -1,0 +1,110 @@
+//prime
+//sieve prime
+//Xplosive
+//ns
+
+
+#include <iostream>
+#include <cstdio>
+#include <algorithm>
+
+
+using namespace std;
+
+const int l=1000001;
+bool p[l];
+
+void sieve_prime(long l)
+{
+
+    //prime sive calculation
+    //0 and 1 is not prime
+
+
+    //at first all index are 0 as unprime
+    //index 0 is prime and 1 is unprime
+    //then unprime index will be marked as 0;
+
+    int i,j;
+
+    cout << p[2] << endl;
+
+    p[0]=1;
+    p[1]=1;
+    p[2]=0;
+
+    for(i=4; i<l; i+=2)        //all even number are unprime except 2
+        p[i]=1;
+
+    for(i=3; i*i<l ; i+=2)
+    {
+        for(j=i+1; j<l; j++)
+        {
+            if(j%i==0)
+                p[j]=1;
+        }
+
+    }
+
+}
+
+
+
+
+int main()
+{
+
+    freopen("input.txt", "r", stdin);
+    //freopen("output.txt", "w", stdout);
+
+    sieve_prime(l);
+
+    cout << "all prime number" << endl;
+    //cout << p[2] << endl;
+
+    for(int i=0; i<100; i++)
+    {
+        if(p[i]==0)
+        {
+            cout << i << " " << p[i]<< " prime" << endl;
+        }
+        if(p[i]==1)
+        {
+            cout << i << " " << p[i]<< " not prime" << endl;
+        }
+
+
+    }
+
+
+
+
+
+    return 0;
+}
+
+void print_array(int* a, int l)
+{
+    for(int i= 0; i<l; i++)
+    {
+        printf("%d ",a[i]);
+        cout << endl;
+    }
+}
+
+void print_vector(vector<int> v)
+{
+    for(int i=0; i<v.size(); i++)
+    {
+        cout << v[i] << endl;
+    }
+
+}
+
+
+
+/*
+
+
+
+*/

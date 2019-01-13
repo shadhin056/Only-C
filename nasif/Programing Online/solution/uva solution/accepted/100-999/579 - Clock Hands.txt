@@ -1,0 +1,152 @@
+//uva set - 01
+//579 - Clock Hands
+//Xplosive
+//accepted
+
+//new: %d:%d
+
+//#include <iostream>
+#include <cstdio>
+
+using namespace std;
+
+int main()
+{
+    //freopen("uvainput.txt", "r", stdin);
+    //freopen("uvaoutput.txt", "w", stdout);
+
+    double an;
+    int h,m;
+
+    while(scanf("%d:%d",&h, &m))
+    {
+        if(h==0 && m==0)
+            break;
+
+        //an= 0.5 * (60*h - 11*m);
+        an= 30.0*h - 5.5*m;
+
+        if(an < -180.0)
+            printf("%0.3lf\n",360.0+an);
+        else if(an < 0.0)
+            printf("%0.3lf\n",-an);
+        else if(an > 180.0)
+            printf("%0.3lf\n",360.0-an);
+        else
+            printf("%0.3lf\n",an);
+
+    }
+
+
+    return 0;
+
+}
+
+
+
+/*
+
+Sample Input
+12:00
+9:00
+8:10
+0:00
+
+Sample Output
+0.000
+90.000
+175.000
+
+
+*/
+
+
+
+        /*
+
+//if i calculate h m by this code code will also accept
+
+#include <iostream>
+#include <string>
+#include <cstdio>
+#include <cstdlib>
+
+using namespace std;
+
+int main()
+{
+    //freopen("uvainput.txt", "r", stdin);
+    //freopen("uvaoutput.txt", "w", stdout);
+
+    string s,s2,ts1,ts2;
+    float an;
+    char ch1,ch2;
+    int h,m,l;
+
+    while(true)
+    {
+
+        cin >> s;
+
+        if(s== "0:00")
+            break;
+
+        l=s.size();
+
+        if(l==5)
+        {
+            ch1=s[0];
+            ch2=s[1];
+            ts1=ch1;
+            ts2=ch2;
+            s2=ts1+ts2;
+
+            h = atoi(s2.c_str());
+
+            ch1=s[3];
+            ch2=s[4];
+            ts1=ch1;
+            ts2=ch2;
+            s2=ts1+ts2;
+
+            m = atoi(s2.c_str());
+
+        }
+        else
+        {
+            ch1=s[0];
+            s2=ch1;
+
+            h = atoi(s2.c_str());
+
+            ch1=s[2];
+            ch2=s[3];
+            ts1=ch1;
+            ts2=ch2;
+            s2=ts1+ts2;
+
+            m = atoi(s2.c_str());
+
+        }
+
+        an= 0.5 * (60*h - 11*m);
+        //an= 30*h - 5.5*m;
+
+        if(an < -180)
+            printf("%0.3lf\n",360+an);
+        else if(an < 0)
+            printf("%0.3lf\n",-an);
+        else if(an > 180)
+            printf("%0.3lf\n",360-an);
+        else
+            printf("%0.3lf\n",an);
+
+    }
+
+
+    return 0;
+
+}
+
+
+//        */

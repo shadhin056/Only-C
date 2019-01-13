@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1370867811 source:d:\dropbox\xplo graduation\cse department\programing lab\project\buckyc++\main.cpp
+	<iostream>
+	<iomanip>
+	<cstdlib>
+	<ctime>
+	"xplohead.h"
+
+1370867796 source:d:\dropbox\xplo graduation\cse department\programing lab\project\buckyc++\function.cpp
+	<iostream>
+
+1370867744 d:\dropbox\xplo graduation\cse department\programing lab\project\buckyc++\xplohead.h
+

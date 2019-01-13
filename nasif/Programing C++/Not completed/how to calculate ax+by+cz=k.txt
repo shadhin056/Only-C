@@ -1,0 +1,64 @@
+//equation problem
+//how to calculate ax+by+cz=k
+//xplosive
+//not complete
+
+#include<iostream>
+#include <cmath>
+
+using namespace std;
+
+int main()
+{
+    double a1,b1,c1, a2,b2,c2, a3,b3,c3 ;
+    double k1,k2,k3;
+    double x,y,z, px,py,pz;
+    double r=0.00001;
+
+    a1=1.0, b1=2.0, c1=1.0, k1=8.0;
+    a2=2.0, b2=3.0, c2=1.0, k2=11.0;
+    a3=2.0, b3=3.0, c3=4.0, k3=20.0;
+
+
+//    a1=-1.0, b1=1.0, c1=1.0, k1=0.0;
+//    a2=8.0, b2=3.0, c2=0.0, k2=30.0;
+//    a3=0.0, b3=-3.0, c3=6.0, k3=0.0;
+
+    x=y=z=px=py=pz=0.0;
+
+
+
+    int k=0;
+
+    while(true)
+    {
+        x=(k1-b1*y-c1*z)/a1;
+        y=(k2-a2*x-c2*z)/b2;
+        z=(k3-a3*x-b3*y)/c3;
+
+//        //this is for debuging
+//        cout << "\n\n..................." << k++ << endl;
+//        cout << "x= " << x << " y= " << y << " z= "<< z << endl;
+//        cout << "px= " << abs(px-x) << " py= " << abs(py-y) << " pz= "<< abs(pz-z) << endl;
+//        if(k>550)           //550 for inf
+//            break;
+
+
+        if(abs(px-x)<r && abs(py-y)<r && abs(pz-z)<r)
+        {
+            cout << "x= " << x << " y= " << y << " z= "<< z << endl;
+            cout << "result found" << endl;
+            break;
+        }
+        else
+        {
+            px=x;
+            py=y;
+            pz=z;
+        }
+    }
+
+
+
+    return 0;
+}

@@ -1,0 +1,60 @@
+//uva set-mix
+//12578 - 10:6:2
+//Xplosive
+//accepted
+
+//here is a floating problem
+//#define PI acos(-1)
+
+#include <iostream>
+#include <cstdio>
+#include <cmath>
+
+using namespace std;
+
+#define PI acos(-1)
+
+int main()
+{
+
+    freopen("uvainput.txt", "r", stdin);
+    //freopen("uvaoutput.txt", "w", stdout);
+
+    int t,tt;
+    scanf("%d",&tt);
+
+    for(t=0; t<tt; t++)
+    {
+        double l,w,r,rect,red,green;
+
+        scanf("%lf",&l);
+
+        //w=6/10*l;     //try to solve this problem for life
+        w=l*6/10;
+        rect=w*l;
+
+        r=l/5;
+        red=PI*r*r;
+        green=rect-red;
+
+        printf("%0.2lf %0.2lf\n",red,green);
+
+
+    }
+
+
+    return 0;
+}
+
+
+
+/*
+
+Sample Input
+
+1
+10
+Sample Output
+
+12.57 47.43
+*/

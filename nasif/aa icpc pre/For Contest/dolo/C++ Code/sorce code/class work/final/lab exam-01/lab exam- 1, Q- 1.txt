@@ -1,0 +1,133 @@
+//lab exam- 1, Q- 1
+//fac,fib,OddSum calculatin by func
+//Nasif Ahmed
+
+#include<stdio.h>
+
+
+int fac (int n);
+int fib (int n);
+int OddSum (int n);
+
+
+                            //main function
+
+int main()
+
+{
+    int n,fa,fi,os,a;
+    printf("ACTION LIST MENU\n");
+    printf("----------\n");
+    printf("1.Compute Factorial of n\n");
+    printf("2.Compute Fibonacci of n\n");
+    printf("3.Compute Sum_Odd of n\n");
+    printf("4.Exit\n");
+
+    while(1)
+    {
+        printf("\n\nPlease select one action from the above list?");
+        scanf("%d", &a);
+
+
+        while(a<1||a>4)
+        {
+            printf("\n\nYour entry was invalid\n");
+            printf("\n\nPlease select one action from the above list?");
+            scanf("%d",&a);
+        }
+
+
+
+
+        if(a==1)
+        {
+            scanf("%d",&n);
+            fa=fac(n);
+            printf("\n\nThe factorial of %d(%d)=%d",n,n,fa);
+        }
+
+        if(a==2)
+        {
+            scanf("%d",&n);
+            fi=fib(n);
+            printf("\n\nThe Fibonacchi of %d= %d",n,fi);
+        }
+
+
+        if(a==3)
+        {
+             scanf("%d",&n);
+             os=OddSum(n);
+             printf("\n\nThe total of odd numbers between 1 and %d=%d",n,os);
+        }
+
+        if(a==4)
+            break;
+
+    }
+
+
+    return 0;
+}
+
+
+
+                        //factorial func
+
+int fac (int n)
+{
+    int i,f;
+
+    for(f=1,i=n;i>=1;i--)
+    {
+        f=f*i;
+    }
+
+    return f;
+}
+
+                        //oddsum func
+
+int OddSum (int n)
+{
+    int i,s;
+    for(s=0,i=1;i<=n;i++)
+    {
+        if(i%2!=0)
+        {
+            s+=i;
+        }
+    }
+
+    return s;
+}
+
+                        //fibonacci func
+
+int fib (int n)
+{
+    int a[100];
+    a[0]=0,a[1]=1;
+
+    int i,sum=0;
+
+    if(n==0) return 0;
+    if(n==1) return 1;
+
+    for(i=2;i<=n;i++)
+    {
+
+        sum= a[i-1]+a[i-2];
+
+        a[i]=sum;
+
+    }
+
+    return sum;
+}
+
+
+
+
+//working nice....
+

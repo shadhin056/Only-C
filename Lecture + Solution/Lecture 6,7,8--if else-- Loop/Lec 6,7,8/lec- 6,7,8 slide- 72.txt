@@ -1,0 +1,35 @@
+//lec- 6,7,8 slide- 72
+//Nested Loops
+//Nasif Ahmed
+
+#include<stdio.h>
+#include<math.h>
+
+int main ()
+
+{
+
+    int i, j;
+
+    for(i=1; i <= 5; i++)
+    {
+        printf("i=%d ", i);
+
+        for(j=1; j <= i; j++)
+        {
+            if (i % 2 == 0)
+            printf("+ ");
+        else
+            printf("* ");
+        }
+        printf("\n");
+    }
+
+
+
+
+    //printf("\n\n\n");
+    return 0;
+}
+
+// working perfectly,got it

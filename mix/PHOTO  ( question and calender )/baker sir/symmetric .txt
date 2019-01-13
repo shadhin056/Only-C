@@ -1,0 +1,31 @@
+#include<stdio.h>
+int main()
+{
+int n,a,x=0,y=0;
+printf("enter the number= ");
+scanf("%d",&n);
+while(n>0)
+{
+a=n%10;
+if(a%2==0)
+{
+x=x+a;
+}
+else
+{
+y=y+a;
+}
+n=n/10;
+
+}
+
+if(x==y)
+{
+printf("\nthis is a symmetric number\n\n");
+}
+else
+{
+printf("\nthis is not a symmetric number\n\n");
+}
+return 0;
+}

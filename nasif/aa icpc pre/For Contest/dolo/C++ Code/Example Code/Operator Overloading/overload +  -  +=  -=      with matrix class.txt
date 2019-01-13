@@ -1,0 +1,129 @@
+//operator overloading lab
+//overload:| + | - | += | -= | << | >> | with matrix class
+//xplosive
+
+
+#include <iostream>
+#include <cstdio>
+#include <string>
+
+using namespace std;
+
+class matrix
+{
+private:
+    int a,b;     // elemet of 2*2 matrix
+    int c,d;
+public:
+    matrix();
+    matrix(int i, int j, int k, int l);
+    matrix sum(matrix ob);
+    void show() const;
+
+    friend ostream& operator << (ostream& os, const matrix& ob);
+    friend istream& operator >> (istream& in, matrix& ob);
+
+    matrix operator + (matrix) const;
+    matrix operator - (matrix) const;
+
+    matrix operator += (matrix);
+    matrix operator -= (matrix);
+
+};
+
+matrix::matrix()
+{
+    a=b=c=d=0;
+}
+matrix::matrix(int i, int j, int k, int l)
+{
+    a=i;
+    b=j;
+    c=k;
+    d=l;
+}
+
+void matrix::show() const
+{
+    cout << a << "  " << b << endl;
+    cout << c << "  " << d << endl;
+
+
+}
+ostream& operator << (ostream& os, const matrix& ob)
+{
+    os << ob.a << "  " << ob.b << endl;
+    os << ob.c << "  " << ob.d << endl;
+
+    return os;
+}
+
+istream& operator >> (istream& is, matrix& ob)
+{
+    is >> ob.a >> ob.b;
+    is >> ob.c >> ob.d;
+
+    return is;
+}
+
+
+
+matrix matrix::operator + (matrix ob) const
+{
+    int i,j,k,l;
+
+    i= a+ ob.a;
+    j= b+ ob.b;
+    k= c+ ob.c;
+    l= d+ ob.d;
+
+    return(matrix(i,j,k,l));
+
+}
+
+matrix matrix::operator - (matrix ob) const
+{
+    int i,j,k,l;
+
+    i= a- ob.a;
+    j= b- ob.b;
+    k= c- ob.c;
+    l= d- ob.d;
+
+    return(matrix(i,j,k,l));
+
+}
+matrix matrix::operator += (matrix ob)
+{
+    a+= ob.a;
+    b+= ob.b;
+    c+= ob.c;
+    d+= ob.d;
+
+}
+
+
+
+int main()
+{
+    matrix ob1(1,2,3,4),ob2(4,3,2,1),ob3,ob4,ob5;
+
+    ob3= ob1+ob2;
+    //cout << ob3;
+
+    ob4= ob1-ob2;
+    //cout << ob4;
+
+    ob5+=ob1;
+    //cout << ob5;
+
+    cin >> ob1;
+    cout << ob1;
+
+
+
+
+    return 0;
+
+}
+

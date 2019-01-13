@@ -1,0 +1,105 @@
+//nt
+//729 - The Hamming Distance Problem
+//Xplosive
+//ac
+
+//rank 42
+
+#include <iostream>
+#include <string>
+#include <sstream>
+#include <algorithm>
+#include <vector>
+#include <set>
+#include <queue>
+#include <stack>
+#include <list>
+#include <map>
+#include <fstream>
+#include <numeric>
+#include <iterator>
+#include <bitset>
+#include <utility>
+#include <cstdio>
+#include <cstdlib>
+#include <cctype>
+#include <cmath>
+#include <cstring>
+#include <ctime>
+#include <iomanip>
+//#include <conio.h>    //this will give u compile error in contest
+
+#define READ(file) freopen(file, "r", stdin);
+#define WRITE(file) freopen(file, "w", stdout);
+#define PI acos(-1.0)
+
+
+#define MAX 1100000
+
+using namespace std;
+
+int main()
+{
+    //READ("input.txt");
+    //WRITE("output.txt");
+
+    int t, tt;
+    cin >> tt;
+
+    for(t=1; t<=tt; t++)
+    {
+        if(t!=1)
+            printf("\n");
+        int l,o;
+
+        //cin>>l>>o;
+        scanf("%d%d",&l,&o);
+
+        char ch[20];
+
+        int i;
+        for( i=0; i<l-o; i++)
+        {
+            ch[i]='0';
+        }
+        for( ; i<l; i++)
+        {
+            ch[i]='1';
+        }
+        ch[i]='\0';
+
+        do
+        {
+            //cout << ch << endl;
+            printf("%s\n",ch);
+        }
+        while(next_permutation(ch,ch+l));
+        //cout << endl;
+
+    }
+
+
+    return 0;
+}
+
+
+
+/*
+
+
+Sample Input
+
+1
+
+4 2
+Sample Output
+
+0011
+0101
+0110
+1001
+1010
+1100
+
+
+*/

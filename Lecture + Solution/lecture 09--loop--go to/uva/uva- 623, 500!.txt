@@ -1,0 +1,33 @@
+//opro-1,q-35
+//uva- 623, 500!
+//Nasif Ahmed
+
+#include<stdio.h>
+
+int main()
+{
+
+    unsigned long long int n,f,i;
+
+
+    while(1)
+    {
+        scanf("%llu",&n);
+
+        for(f=1,i=n;i>=1;i--)
+        {
+            f=f*i;
+        }
+
+        printf("%llu!\n",n);
+        printf("%llu\n",f);
+
+    }
+
+
+    return 0;
+
+}
+
+//not working in big range
+//how can terminate input

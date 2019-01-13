@@ -1,0 +1,38 @@
+//lec-10, hw
+//find ascii value of charecter
+//Nasif Ahmed
+
+#include<stdio.h>
+
+int main ()
+
+{
+    char c;
+
+    printf("\n\tEnter The Character: ");
+
+    while(1)
+    {
+
+        scanf("%c",&c);
+
+        if(c=='\n')
+        {
+            break;
+        }
+
+        printf("\n\tASCII Value of %c= %d\n",c,c);
+
+    }
+
+
+
+
+    printf("\n\n\n\tPress Any Key To EXIT!!");
+    getch();
+    return 0;
+
+
+}
+
+//Working perfectly

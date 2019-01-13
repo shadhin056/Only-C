@@ -1,0 +1,39 @@
+//lec-10, hw
+//print A to Z
+//Nasif Ahmed
+
+#include<stdio.h>
+
+
+int main ()
+
+{
+    char c;
+
+    
+    printf("\n\n\t");
+
+    for(c='A';c<='Z';c++)
+    {
+        printf("%c ",c);
+    }
+
+    printf("\n\n\t");
+
+    for(c='a';c<='z';c++)
+    {
+        printf("%c ",c);
+    }
+
+
+
+
+
+    printf("\n\n\n\tPress Any Key To EXIT!!");
+    getch();
+    return 0;
+
+
+}
+
+//Working perfectly

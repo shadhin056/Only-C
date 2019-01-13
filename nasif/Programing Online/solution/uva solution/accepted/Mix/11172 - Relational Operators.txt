@@ -1,0 +1,55 @@
+//uva set - mix
+//11172 - Relational Operators
+//xplosive
+//accepted
+
+//#include <iostream>
+#include <cstdio>
+
+//using namespace std;
+
+int main()
+{
+    //freopen("uvainput.txt", "r", stdin);
+    //freopen("uvaoutput.txt", "w", stdout);
+
+    int a,b,t,tt;
+
+    scanf("%d",&tt);
+
+    for(t=0; t<tt; t++)
+    {
+        scanf("%d %d",&a,&b);
+        if(a==b)
+            printf("=\n");
+        else if(a<b)
+            printf("<\n");
+        else
+            printf(">\n");
+    }
+
+
+    return 0;
+}
+
+
+
+
+/*
+
+Sample Input
+
+3
+10 20
+20 10
+10 10
+
+Sample Output
+
+<
+>
+=
+
+*/
+
+

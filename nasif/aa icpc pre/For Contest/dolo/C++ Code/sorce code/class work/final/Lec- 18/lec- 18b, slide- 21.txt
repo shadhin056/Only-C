@@ -1,0 +1,35 @@
+//lec- 18b, slide- 21
+//Trace a program
+//Nasif Ahmed
+
+#include<stdio.h>
+void max_min(int a, int b, int c,int *max, int *min);
+
+int main()
+{
+    int x, y;
+
+    max_min(4, 3, 5, &x, &y);
+    printf(" First: %d %d\n", x, y);
+    max_min(x, y, 2, &x, &y);
+    printf("Second: %d %d\n", x, y);
+
+    return 0;
+}
+
+
+
+void max_min(int a, int b, int c,int *max, int *min)
+{
+    *max = a;
+    *min = a;
+
+    if (b > *max) *max = b;
+    if (c > *max) *max = c;
+    if (b < *min) *min = b;
+    if (c < *min) *min = c;
+
+    printf("F: %d %d\n", max, *max);
+}
+
+//i think i get it...

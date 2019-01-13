@@ -1,0 +1,16 @@
+//mid-1,que-3-2
+//find the output
+//Nasif Ahmed
+
+#include<stdio.h>
+
+main ()
+
+{
+
+    int not;
+    not=!2;
+    printf("%d",not);
+}
+
+//i didn't get it

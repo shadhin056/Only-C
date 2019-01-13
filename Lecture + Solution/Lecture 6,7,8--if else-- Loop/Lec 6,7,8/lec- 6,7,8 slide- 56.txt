@@ -1,0 +1,29 @@
+//lec- 6,7,8 slide- 56
+//for example
+//Nasif Ahmed
+
+#include<stdio.h>
+#include<math.h>
+#define PI 3.141593
+
+int main (void)
+
+{
+    int degrees;
+    float radians;
+    printf("\nDegrees to Radians \n\n");
+
+    for (degrees=0;degrees<=360;degrees +=10)
+    {
+        radians=degrees*PI/180;
+        printf("%d %f\n",degrees,radians);
+
+    }
+
+
+    printf("\n\n\n");
+    return 0;
+}
+
+//working perfectly
+

@@ -1,0 +1,157 @@
+//string
+//11233 - Deli Deli
+//Xplosive
+//ac
+#include <iostream>
+#include <string>
+#include <sstream>
+#include <algorithm>
+#include <vector>
+#include <set>
+#include <queue>
+#include <stack>
+#include <list>
+#include <map>
+#include <fstream>
+#include <numeric>
+#include <iterator>
+#include <bitset>
+#include <utility>
+#include <cstdio>
+#include <cstdlib>
+#include <cctype>
+#include <cmath>
+#include <cstring>
+#include <ctime>
+#include <iomanip>
+//#include <conio.h>    //this will give u compile error in contest
+
+#define READ(file) freopen(file, "r", stdin);
+#define WRITE(file) freopen(file, "w", stdout);
+#define PI acos(-1.0)
+
+
+#define MAX 1100000
+
+using namespace std;
+
+bool isVowel(char ch)
+{
+    switch(ch)
+    {
+    case 'a':
+    case 'e':
+    case 'i':
+    case 'o':
+    case 'u':
+    case 'A':
+    case 'E':
+    case 'I':
+    case '0':
+    case 'U':
+        return true;
+    default:
+        return false;
+
+    }
+}
+
+map<string,string>m;
+map<string,string>::iterator it;
+
+string getValue(string s)
+{
+
+    it=m.find(s);
+    if(it!=m.end())
+        return it->second;
+
+    int l = s.size();
+
+    if(s[l-1]=='y' && (!isVowel(s[l-2])))
+    {
+        s[l-1]='i';
+        s.append("es");
+        return s;
+    }
+    if(s[l-1]=='o' || s[l-1]=='s' ||s[l-1]=='x')
+    {
+
+        return s.append("es");
+    }
+
+    if(s[l-1]=='h' && (s[l-2]=='c' || s[l-2]=='s'))
+    {
+        return s.append("es");
+    }
+
+    return s.append("s");
+
+}
+
+
+
+int main()
+{
+    //READ("input.txt");
+    //WRITE("output.txt");
+
+//    int t, tt;
+//    cin >> tt;
+//
+//    for(t=1; t<=tt; t++)
+//    {
+//
+//    }
+
+
+
+    int a, b;
+
+    cin >> a >> b;
+
+    string s1,s2;
+    for(int i=0; i<a; i++)
+    {
+        cin >> s1>> s2;
+        m[s1] = s2;
+    }
+
+    for(int i=0; i<b; i++)
+    {
+        cin >> s1;
+        cout << getValue(s1) << endl;
+    }
+
+
+    return 0;
+}
+
+
+/*
+
+Sample Input
+
+3 7
+rice rice
+spaghetti spaghetti
+octopus octopi
+rice
+lobster
+spaghetti
+strawberry
+octopus
+peach
+turkey
+
+Sample Output
+
+rice
+lobsters
+spaghetti
+strawberries
+octopi
+peaches
+turkeys
+
+*/

@@ -1,0 +1,103 @@
+//uva
+//10424 - Love Calculator
+//Xplosive
+//wa
+
+
+#include <iostream>
+#include <cstdio>
+#include <algorithm>
+#include <set>
+#include <map>
+
+using namespace std;
+
+int get_digit(int n)
+{
+    int sum=0;
+    while(n)
+    {
+        sum += n%10;
+        n /=10;
+    }
+
+    if(sum<10)
+        return sum;
+    else
+        get_digit(sum);
+}
+
+
+
+int get_value(string s)
+{
+    int l= s.size();
+    int sum=0,i;
+    for(i=0; i<l; i++)
+    {
+        if(isalpha(s[i]))
+        {
+            if(isupper(s[i]))
+                sum += (s[i]-64);
+            else
+                sum += (s[i]-96);
+
+        }
+    }
+
+    return get_digit(sum);
+
+}
+
+
+
+int main()
+{
+
+    //freopen("input.txt", "r", stdin);
+    //freopen("output.txt", "w", stdout);
+
+    string a,b;
+
+    while(cin >> a >> b)
+    {
+        int m,n;
+        m=get_value(a);
+        n=get_value(b);
+
+        if(n>m)
+            swap(n,m);
+
+        //cout << m << " " << n << endl;
+
+        double r= 100.0*n/m*1.0;
+
+        printf("%0.2lf ",r);
+        cout << "%\n";
+
+    }
+
+
+    return 0;
+}
+
+
+
+/*
+
+Sample input
+
+saima
+shanto
+Pakistan
+India
+USA
+USSR
+
+Sample output
+
+71.43 %
+100.00 %
+100.00 %
+
+*/

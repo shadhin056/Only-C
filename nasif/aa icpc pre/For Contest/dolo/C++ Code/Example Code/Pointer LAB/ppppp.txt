@@ -1,0 +1,44 @@
+//Lec-1,ex-1
+//name
+//Xplosive
+
+#include <iostream>
+
+using namespace std;
+
+const int max1=3;
+
+int main()
+{
+
+    //int var[max]={10,100,20};
+    //int *pt;
+
+    char var[]={'a','b','c'};
+    //char var[]="abc";
+    char *ptr;
+
+    ptr= var;
+
+    int i=0;
+
+    cout << "Address of var [" << i << "]=" << (int)ptr << endl;
+    cout << "Value of var [" << i << "]=" << *ptr << endl;
+
+
+//    /*
+    for(i=0;i<max1;i++)
+    {
+        //cout << "Address of var [" << i << "]=" << ptr << endl;
+        //cout << "Value of var [" << i << "]=" << *ptr << endl;
+
+    }
+//    */
+
+
+
+    return 0;
+}
+
+
+//

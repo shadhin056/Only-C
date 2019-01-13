@@ -1,0 +1,42 @@
+//ajke ami dekhabo bangaly programing kora
+//to nicher source code ti copy kore .cpp file e save koro & compile koro
+
+
+
+//funny code
+//working
+//xplosive
+
+#include<cstdio>
+
+using namespace std;
+
+
+#define purno_sonkha int
+#define prodhan main
+#define firaia_de return
+#define prokash_koro printf
+#define de_mama_de scanf
+
+purno_sonkha prodhan()
+{
+    purno_sonkha ka;
+    prokash_koro("De.. Ekta Purno Sonkha De : ");
+    de_mama_de("%d",&ka);
+    prokash_koro("Tumi Jogan Diaso %d\n",ka);
+    prokash_koro("Ohe Prithibi.....Ami Banglay Programing Kori\n");
+
+    firaia_de 0;
+}
+
+//so funny
+
+
+
+
+
+
+
+
+
+

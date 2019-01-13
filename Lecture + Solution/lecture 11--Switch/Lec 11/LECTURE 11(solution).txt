@@ -1,0 +1,303 @@
+//**************************************
+//LECTURE 11
+****************************************
+//page 36(main)
+#include<stdio.h>
+main()
+{
+    int grade;
+    printf("enter number=");
+    scanf("%d",&grade);
+
+    if (grade == 4)
+        printf("Excellent");
+    else if (grade == 3)
+        printf("Good");
+    else if (grade == 2)
+        printf("Average");
+    else if (grade == 1)
+        printf("Poor");
+    else if (grade == 0)
+        printf("Failing");
+    else
+        printf("Illegal grade");
+}
+****************************************
+//PAGE 36(scanf)
+#include<stdio.h>
+main()
+{
+    int grade;
+    printf("enter grade= ");
+    scanf("%d",&grade);
+
+    switch (grade)
+    {
+	  case 4:  printf("Excellent");
+	           break;
+	  case 3:  printf("Good");
+	           break;
+	  case 2:  printf("Average");
+	           break;
+	  case 1:  printf("Poor");
+	           break;
+	  case 0:  printf("Failing");
+	           break;
+	  default: printf("Illegal grade");
+	           break;
+    }
+}
+****************************************
+//page 36(while)
+
+#include<stdio.h>
+main()
+{
+    int grade,i=1,n;
+    printf("enter number=");
+    scanf("%d",&n);
+    while(n>i)
+        {
+    scanf("%d",&grade);
+
+    if (grade == 4)
+        printf("Excellent\n");
+    else if (grade == 3)
+        printf("Good\n");
+    else if (grade == 2)
+        printf("Average\n");
+    else if (grade == 1)
+        printf("Poor\n");
+    else if (grade == 0)
+        printf("Failing\n");
+    else
+        printf("Illegal grade\n");
+        i++;
+     }
+}
+
+****************************************
+//page 37
+#include<stdio.h>
+main()
+{
+    int grade;
+    scanf("%d",&grade);
+
+    switch (grade)
+    {
+	  case 4:  printf("Excellent");
+	           break;
+	  case 3:  printf("Good");
+	           break;
+	  case 2:  printf("Average");
+	           break;
+	  case 1:  printf("Poor");
+	           break;
+	  case 0:  printf("Failing");
+	           break;
+	  default: printf("Illegal grade");
+	           break;
+    }
+}
+********************************************
+//page 42
+
+#include<stdio.h>
+main()
+{
+    int grade;
+    scanf("%d",&grade);
+    switch (grade)
+    {
+	  case 4:
+	  case 3:
+	  case 2:
+	  case 1:  printf("\npassing\n");
+	           break;
+	  case 0:  printf("\nFailing\n");
+	           break;
+	  default: printf("\nIllegal grade\n");
+	           break;
+    }
+}
+*****************************************
+//page 43
+
+#include<stdio.h>
+main()
+{
+    int grade;
+    scanf("%d",&grade);
+        switch (grade)
+      {
+          case 4:case 3:case 2:case 1:
+          printf("\nPoor\n");
+          case 0:  printf("\nFailing\n");
+          break;
+          default: printf("\nIllegal grade\n");
+          break;
+      }
+}
+*****************************************
+//PAGE 45 (without break)
+
+#include<stdio.h>
+main()
+{
+    int grade;
+    printf("enter grade= ");
+    scanf("%d",&grade);
+
+    switch (grade)
+    {
+	  case 4:  printf("Excellent\n");
+	  case 3:  printf("Good\n");
+	  case 2:  printf("Average\n");
+	  case 1:  printf("Poor\n");
+	  case 0:  printf("Failing\n");
+	  default: printf("Illegal grade\n");
+    }
+}
+*****************************************
+//PAGE 46(problem)
+
+#include<stdio.h>
+main()
+{
+    int grade,total_grades;
+    printf("enter grade= ");
+    scanf("%d",&grade);
+
+    switch (grade)
+    {
+	  case 4:case 3:case 2:case 1:
+        num_passing++;
+        /* FALL THROUGH*/
+	  case 0: total_grades++;
+      break;
+    }
+}
+******************************************
+//pagec48
+#include<stdio.h>
+int main()
+{
+    int month,day,year;
+    printf("Enter date (mm dd yy):");
+    scanf("%d %d %d",&month,&day,&year);
+    printf("Dated this %d",day);
+    switch(day)
+    {
+    case 1:
+    case 21:
+    case 31:
+        printf("st");
+        break;
+    case 2:
+    case 22:
+        printf("nd");
+        break;
+    case 3:
+    case 23:
+        printf("rd");
+        break;
+    default:
+        printf("th");
+        break;
+    }
+    printf(" day of ");
+    switch (month)
+    {
+    case 1:
+        printf("January");
+        break;
+    case 2:
+        printf("February");
+        break;
+    case 3:
+        printf("March");
+        break;
+    case 4:
+        printf("April");
+        break;
+    case 5:
+        printf("May");
+        break;
+    case 6:
+        printf("June");
+        break;
+    case 7:
+        printf("July");
+        break;
+    case 8:
+        printf("August");
+        break;
+    case 9:
+        printf("September");
+        break;
+    case 10:
+        printf("October");
+        break;
+    case 11:
+        printf("November");
+        break;
+    case 12:
+        printf("December");
+        break;
+    }
+    printf(" 20%d\n",year);
+    return 0;
+}
+
+*****************************************
+//pge 49
+#include<stdio.h>
+main()
+{
+    int month;
+    scanf("%d",&month);
+    switch (month)
+    {
+    case 1:
+        printf("January");
+        break;
+    case 2:
+        printf("February");
+        break;
+    case 3:
+        printf("March");
+        break;
+    case 4:
+        printf("April");
+        break;
+    case 5:
+        printf("May");
+        break;
+    case 6:
+        printf("June");
+        break;
+    case 7:
+        printf("July");
+        break;
+    case 8:
+        printf("August");
+        break;
+    case 9:
+        printf("September");
+        break;
+    case 10:
+        printf("October");
+        break;
+    case 11:
+        printf("November");
+        break;
+    case 12:
+        printf("December");
+        break;
+    default:
+        printf("illegal");
+        break;
+    }
+}
+*************************************************

@@ -1,0 +1,46 @@
+//uva set - mix
+//10970 - Big Chocolate
+//Xplosive
+//accepted
+
+#include <iostream>
+#include <cstdio>
+
+using namespace std;
+
+int main()
+{
+
+    //freopen("uvainput.txt", "r", stdin);
+    //freopen("uvaoutput.txt", "w", stdout);
+
+
+    int m,n,c;
+
+    while(scanf("%d%d",&m,&n)!=EOF)
+    {
+        c= m*n-1;
+        printf("%d\n",c);
+    }
+
+
+    return 0;
+}
+
+
+/*
+
+Sample Input
+
+2 2
+1 1
+1 5
+
+Sample Output
+
+3
+0
+4
+
+
+*/

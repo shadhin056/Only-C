@@ -1,0 +1,28 @@
+//opro-1,q-12
+//uva- 10055,Hashmat the brave warrior
+//Nasif Ahmed
+
+#include<stdio.h>
+
+int main()
+{
+    long long int a,b,c,ans;
+
+    while(1)
+    {
+        c=scanf("%lld %lld",&a,&b);
+        if(c==EOF)
+            break;
+        if(a>b)
+            ans= a-b;
+        else
+            ans= b-a;
+        printf("%lld\n",ans);
+    }
+
+
+    return 0;
+
+}
+
+//working,accepted by uva

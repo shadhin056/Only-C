@@ -1,0 +1,27 @@
+//le-4,if else progam
+
+#include<stdio.h>
+
+main()
+
+{
+    int a,b;
+
+    printf("Enter a = ");
+    scanf("%d",&a);
+    printf("Enter b = ");
+    scanf("%d",&b);
+
+
+
+    {if (a > b)
+
+        printf("Big number is a");
+        else
+        printf("Big number is b");
+
+    }
+}
+
+
+//last two 2nd bracket is really needed

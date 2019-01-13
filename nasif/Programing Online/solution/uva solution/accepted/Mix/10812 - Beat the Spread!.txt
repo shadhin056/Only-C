@@ -1,0 +1,90 @@
+//uva set - mix
+//10812 - Beat the Spread!
+//xplosive
+//accepted
+
+//#include <iostream>
+#include <cstdio>
+
+//using namespace std;
+
+int main()
+{
+    freopen("uvainput.txt", "r", stdin);
+    //freopen("uvaoutput.txt", "w", stdout);
+
+    unsigned long long int w,l,t,tt,d,s;
+
+    scanf("%llu",&tt);
+
+    for(t=0; t<tt; t++)
+    {
+        scanf("%llu %llu",&s,&d);
+        if(s<d || (s+d)%2==1 || (s+d)%2==1)
+            printf("impossible\n");
+        else
+        {
+            w=(s+d)/2;
+            l=s-w;
+
+            printf("%llu %llu\n",w,l);
+        }
+    }
+
+
+    return 0;
+}
+
+
+
+
+/*
+
+Sample Input
+
+2
+40 20
+20 40
+
+Sample Output
+
+30 10
+impossible
+
+
+critical input:
+
+12
+15 10
+88 9
+155 22
+20 10
+40 12
+75 25
+13 7
+888 222
+9999 1111
+12365 123
+99 11
+13 19
+
+
+Output:
+
+impossible
+impossible
+impossible
+15 5
+26 14
+50 25
+10 3
+555 333
+5555 4444
+6244 6121
+55 44
+impossible
+
+
+*/
+
+

@@ -1,0 +1,66 @@
+//uva set - 00
+//465 - Overflow
+//Xplosive
+//accepted
+
+
+#include <iostream>
+#include <cstdio>
+#include <cstdlib>
+
+using namespace std;
+
+int main()
+{
+    freopen("uvainput.txt", "r", stdin);
+    //freopen("uvaoutput.txt", "w", stdout);
+
+    char a[10000],b[10000],c;
+    double x, y;
+
+
+    while(scanf ("%s %c %s", a, &c, b) == 3)
+    {
+        int m=2147483647;
+        printf("%s %c %s\n",a,c,b);
+
+        x=atof(a);
+        y=atof(b);
+
+        if(x>m)
+            printf("first number too big\n");
+        if(y>m)
+            printf("second number too big\n");
+        if(c== '+')
+        {
+            x+=y;
+            if(x>m)
+                printf("result too big\n");
+        }
+        if(c== '*')
+        {
+            x*=y;
+            if(x>m)
+                printf("result too big\n");
+        }
+    }
+    return 0;
+
+}
+
+/*
+
+Sample Input
+
+300 + 3
+9999999999999999999999 + 11
+
+Sample Output
+
+300 + 3
+9999999999999999999999 + 11
+first number too big
+result too big
+
+
+*/

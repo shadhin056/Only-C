@@ -1,0 +1,105 @@
+#include<iostream>
+#include<cstring>
+#include<cstdlib>
+
+using namespace std;
+
+class User
+{
+private:
+    char *name;
+    char userName[10];
+    char password[10];
+    bool logStatus;
+public:
+    User();
+    ~User();
+    bool Login(char s[], char p[]);
+    bool Logout();
+    bool ProfileUpdate(char s[]);
+    bool LoggingInfoUpdate(char s[],char p[]);
+    bool GetStatus(){return logStatus;};
+};
+
+User::User()
+{
+    name=(char *)calloc(8,sizeof(char));
+    strcpy(name,"newUser");
+    strcpy(userName,"guest");
+    strcpy(password,"1234");
+    logStatus=false;
+}
+
+User::~User()
+{
+    free(name);
+}
+
+bool User::Login(char s[], char p[])
+{
+    if(strcmp(name,s)==0 && strcmp(password,p)==0)
+    {
+        logStatus=true;
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
+bool User::Logout()
+{
+    if(logStatus)
+    {
+        logStatus=false;
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
+bool User::ProfileUpdate(char s[])
+{
+    if(logStatus)
+    {
+        int n;
+        n=strlen(s);
+        free(name);
+        name=(char *)calloc(n,sizeof(char));
+        strcpy(name,s);
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
+bool User::LoggingInfoUpdate(char s[],char p[])
+{
+    if(logStatus)
+    {
+        strcpy(userName,s);
+        strcpy(password,p);
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+int main()
+{
+    User *userList;
+        cout << "type according to the menu " << endl;
+        cout << "1: register" << endl;
+        cout << "2: log in " << endl;
+        cout << "3: log out" << endl;
+        cout << "press 0 for exit" << endl;
+        int n;
+        cin>> n;
+return 0;
+}

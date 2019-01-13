@@ -1,0 +1,82 @@
+//uva set - mix
+//11388 - GCD LCM
+//Xplosive
+//accepted
+
+//i done it wrong (reverse) way undaji... but it accepted
+
+#include <iostream>
+#include <cstdio>
+
+using namespace std;
+
+long long int gcd(long long a, long long b)
+{
+    if(b>0)
+        return gcd(b, a%b);
+    else
+        return a;
+
+}
+long long int lcm(long long a, long long b, long long g)
+{
+    return (a*b)/g;
+}
+
+
+
+int main()
+{
+
+    //freopen("uvainput.txt", "r", stdin);
+    //freopen("uvaoutput.txt", "w", stdout);
+
+    int t,tt;
+    scanf("%d",&tt);
+
+    long long int a,b,g,l;
+
+    for(t=1; t<=tt; t++)
+    {
+        scanf("%lld%lld",&a,&b);
+
+        //this is real calculation
+
+//        if(b%a == 0)
+//            printf("%lld %lld\n", a,b);
+//        else
+//            printf("-1\n");
+
+        g=gcd(a,b);
+        l=lcm(a,b,g);
+        //l=(a*b)/g;
+
+        if(a==g && b==l)
+            printf("%lld %lld\n",g,l);
+        else
+            printf("-1\n");
+
+    }
+
+
+    return 0;
+}
+
+
+
+/*
+
+Sample Input
+
+2
+1 2
+3 4
+
+Sample Output
+
+1 2
+-1
+
+
+
+*/

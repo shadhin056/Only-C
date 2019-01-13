@@ -1,0 +1,58 @@
+//uva set - mix
+//12577 - Hajj-e-Akbar
+//Xplosive
+//accepted
+
+
+#include <iostream>
+#include <cstdio>
+#include <cstring>
+
+using namespace std;
+
+
+int main()
+{
+
+    //freopen("uvainput.txt", "r", stdin);
+    //freopen("uvaoutput.txt", "w", stdout);
+
+
+    char s[6];
+    int c=0;
+
+    while(scanf("%s",s)==1)
+    {
+        c++;
+        if(strcmp(s,"*")==0)
+            break;
+        else if(strcmp(s,"Hajj")==0)
+            printf("Case %d: Hajj-e-Akbar\n",c);
+        else
+            printf("Case %d: Hajj-e-Asghar\n",c);
+
+    }
+
+    return 0;
+}
+
+
+/*
+
+Sample Input
+
+Hajj
+Umrah
+Hajj
+Umrah
+*
+
+Sample Output
+
+Case 1: Hajj-e-Akbar
+Case 2: Hajj-e-Asghar
+Case 3: Hajj-e-Akbar
+Case 4: Hajj-e-Asghar
+
+
+*/

@@ -1,0 +1,362 @@
+//prefix postfix
+//infix-pre-post-value (single digit)(stack-int)
+//working fine
+//see sample input output
+//Nasif Ahmed
+
+#include<cstdio>
+#include<iostream>
+#include <cstdlib>
+#include <cmath>
+#include <cstring>
+#define MAX 100
+
+using namespace std;
+
+struct Node
+{
+    int data;
+    //char data;
+    struct Node* next;
+
+};
+
+struct Node* head;
+
+void push(int n)
+//void push(char ch)
+{
+    struct Node* temp = (struct Node*)malloc(sizeof(struct Node));
+    temp->data = n;
+    temp->next = head;
+
+    head = temp;
+
+}
+
+void pop()
+//char pop()
+{
+    if(head!=NULL)
+    {
+        //char data = head->data;
+        struct Node* it = head;
+        head = it->next;
+        free(it);
+        it = NULL;
+
+        //return data;
+
+    }
+    else
+    {
+        cout << "head null" << endl;
+    }
+
+
+
+}
+
+int top()
+{
+    if(head!=NULL)
+    {
+        return head->data;
+    }
+    else
+    {
+        cout << "head null" << endl;
+    }
+
+}
+
+bool isOperator(char ch)
+{
+    if(ch=='+' || ch=='-' || ch=='*' || ch=='/' || ch=='^' || ch=='%')
+        return true;
+    else
+        return false;
+}
+
+int calData(char ch, int a, int b)
+{
+    int r;
+    switch(ch)
+    {
+    case '+':
+        r=a+b;
+        break;
+    case '-':
+        r=a-b;
+        break;
+    case '*':
+        r=a*b;
+        break;
+    case '/':
+        r=a/b;
+        break;
+    case '^':
+        r=pow(a,b);
+        break;
+    case '%':
+        r=a%b;
+        break;
+
+    }
+
+    return r;
+}
+
+
+
+void infixToPostfix(char* st2, char* st)
+{
+    int l=strlen(st);
+    int j=0;
+    for(int i=0; i<l; i++)
+    {
+        char ch = st[i];
+        //cout << ch << " ";
+        if(ch==')')
+        {
+            //cout << "Operator" << endl;
+
+            char a = top();
+            //cout << a << " ";
+            st2[j++]=a;
+            pop();
+            pop();
+
+
+        }
+        else if(ch=='(' || isOperator(ch))
+        {
+            //cout << "Operand" << endl;
+
+            push(ch);
+        }
+        else
+        {
+            //cout << ch << " ";
+            st2[j++]=ch;
+        }
+
+    }
+
+    st2[j]='\0';
+
+}
+
+int evaluatePostfixExp(char* st)
+{
+    int l=strlen(st);
+    for(int i=0; i<l; i++)
+    {
+        char ch = st[i];
+        //cout << ch << " ";
+        if(isOperator(ch))
+        {
+            //cout << "Operator" << endl;
+
+            int a = top();
+            pop();
+            int b = top();
+            pop();
+
+            int r = calData(ch,b,a);
+            push(r);
+
+
+
+        }
+        else
+        {
+            //cout << "Operand" << endl;
+            int k = ch - '0';
+            push(k);
+
+
+        }
+
+    }
+
+    //cout << "result: " << top() << endl;
+    return top();
+
+}
+
+void infixToPrefix(char* st2, char* st)
+{
+
+    int l=strlen(st);
+    int j=0;
+    char s[100];
+
+    strcpy(s,st);
+    strrev(s);
+    for(int i=0; i<l; i++)
+    {
+        char ch = s[i];
+        //cout << ch << " ";
+        if(ch=='(')
+        {
+            //cout << "Operator" << endl;
+
+            char a = top();
+            //cout << a << " ";
+            st2[j++]=a;
+            pop();
+            pop();
+
+
+        }
+        else if(ch==')' || isOperator(ch))
+        {
+            //cout << "Operand" << endl;
+
+            push(ch);
+        }
+        else
+        {
+            //cout << ch << " ";
+            st2[j++]=ch;
+        }
+
+    }
+
+    st2[j]='\0';
+    strrev(st2);
+
+}
+int evaluatePrefixExp(char* st)
+{
+    int l=strlen(st);
+    char s[100];
+    strcpy(s,st);
+    strrev(s);
+
+    for(int i=0; i<l; i++)
+    {
+        char ch = s[i];
+        //cout << ch << " ";
+        if(isOperator(ch))
+        {
+            //cout << "Operator" << endl;
+
+            int a = top();
+            pop();
+            int b = top();
+            pop();
+
+            int r = calData(ch,a,b);
+            push(r);
+
+        }
+        else
+        {
+            //cout << "Operand" << endl;
+            int k = ch - '0';
+            push(k);
+
+
+        }
+
+    }
+
+    //cout << "result: " << top() << endl;
+    return top();
+
+}
+
+
+void pArray(char* a,int l)
+{
+    for(int i=0; i<l; i++)
+        cout << a[i] << " ";
+    cout << endl;
+}
+
+void pArray(int* a,int l)
+{
+    for(int i=0; i<l; i++)
+        cout << a[i] << " ";
+    cout << endl;
+}
+
+
+
+
+int main()
+{
+    freopen("input.txt","r",stdin);
+
+
+
+    head=NULL;
+
+    char ch;
+    int n;
+    int res = 0;
+
+    char st[100];
+    char st2[100];
+
+    int i=0;
+    while(1)
+    {
+        //cin >> ch;
+        //cin >> s;
+        scanf(" %c",&ch);
+
+        if(ch=='#')
+            break;
+
+        st[i++]=ch;
+
+        //cout << ch;
+    }
+    st[i]='\0';
+    int l=strlen(st);
+
+    cout << "Infix\t: " << st << endl;
+
+    infixToPostfix(st2,st);
+    cout << "Postfix\t: ";
+    //cout << st2 << endl;
+    l=strlen(st2);
+    pArray(st2,l);
+    cout << "result\t: " << evaluatePostfixExp(st2) << endl;
+
+
+
+    //head=NULL;
+    infixToPrefix(st2,st);
+    cout << "Prefix\t: ";
+    //cout << st2 << endl;
+    l=strlen(st2);
+    pArray(st2,l);
+    cout << "result\t: " << evaluatePrefixExp(st2) << endl;
+
+
+    return 0;
+}
+
+
+/*
+
+Sample Input
+
+((8+2)*(8-4))#
+( ( 8 + 2 ) * ( 8 - 4 ) ) #
+
+
+Sample Output
+
+Infix   : ((8+2)*(8-4))
+Postfix : 8 2 + 8 4 - *
+result  : 40
+Prefix  : * + 8 2 - 8 4
+result  : 40
+
+*/
+

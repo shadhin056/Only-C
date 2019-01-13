@@ -1,0 +1,24 @@
+//function 
+
+
+#include<stdio.h>
+
+int shadhin(int x, int y)
+{
+    int k;
+    k=(x+y)/2;
+
+    return k;
+
+}
+
+void main()
+{
+int n,m,o;
+printf("enter n");
+scanf("%d%d",&n,&m);
+
+o=shadhin(n,m);
+
+printf("%d",o);
+}

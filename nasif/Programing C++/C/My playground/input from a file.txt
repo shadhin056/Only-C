@@ -1,0 +1,29 @@
+//my playground
+//input from a file
+//Nasif Ahmed
+
+#include<stdio.h>
+
+
+
+int main()
+{
+    char c;
+    FILE *file = fopen("c:\\users\\lapii\\Desktop\\example.txt","r");
+
+    do
+    {
+        c=fgetc(file);
+
+        //printf("%c",c);
+
+        putchar(c);
+    } while (c!=EOF);
+    fclose(file);
+
+
+    return 0;
+}
+
+//working nicely...
+

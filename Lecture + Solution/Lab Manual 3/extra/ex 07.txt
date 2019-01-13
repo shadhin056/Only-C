@@ -1,0 +1,20 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+    int n,p;
+    printf("enter your number: \n\n");
+    scanf("%d",&n);
+    p=n%2;
+    if (p==0)
+    {
+        printf("the number u entered is EVEN");
+    }
+
+    else
+
+    {
+        printf("the number u entered is ODD");
+    }
+    return 0;
+}

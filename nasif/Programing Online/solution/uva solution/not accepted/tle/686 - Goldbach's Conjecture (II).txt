@@ -1,0 +1,163 @@
+//nt
+//686 - Goldbach's Conjecture (II)
+//Xplosive
+//ac
+
+//using sieve
+//recearch on it, sieve ,, write better sieve code
+
+#include <iostream>
+#include <string>
+#include <sstream>
+#include <algorithm>
+#include <vector>
+#include <set>
+#include <queue>
+#include <stack>
+#include <list>
+#include <map>
+#include <fstream>
+#include <numeric>
+#include <iterator>
+#include <bitset>
+#include <utility>
+#include <cstdio>
+#include <cstdlib>
+#include <cctype>
+#include <cmath>
+#include <cstring>
+#include <ctime>
+
+#define READ(file) freopen(file, "r", stdin);
+#define WRITE(file) freopen(file, "w", stdout);
+#define PI acos(-1.0)
+
+
+#define MAX 33000
+
+using namespace std;
+
+void print_vector(vector<int> v);
+void print_vector(vector<char> v);
+void print_array(int* a, int l);
+
+bool status[MAX];
+void sieve_prime(long l)
+{
+    //index 0 is prime and 1 is unprime
+    //at first all index are 0
+
+    //0 and 1 is not prime
+    status[0]=1;
+    status[1]=1;
+    status[2]=0;
+
+    int sq = sqrt(l);
+    int i,j;
+    for(i=4; i<l; i+=2)      //all even number are unprime except 2
+        status[i]=1;
+
+
+    for(i=3; i*i<l ; i+=2)
+    {
+        if(status[i]==0)
+        {
+            for(j=i*2; j<l; j+=i)
+            {
+                if(j%i==0)
+                {
+                    status[j]=1;
+                }
+            }
+        }
+    }
+}
+
+
+int main()
+{
+    //READ("input.txt");
+    //WRITE("output.txt");
+
+    int n,r;
+
+    int l=MAX;
+    sieve_prime(l);
+
+    while(scanf("%d",&n)==1)
+    {
+        if(n==0)
+            break;
+
+        r=0;
+
+        for(int i=2; i<n; i++)
+        {
+            if(status[i]==1)
+                continue;
+
+            for(int j=i; j<n; j++)
+            {
+                if(status[j]==1)
+                    continue;
+
+                if(i+j==n)
+                {
+                    //cout << i << " " << j << endl;
+                    r++;
+                    break;
+                }
+
+            }
+        }
+
+        printf("%d\n",r);
+
+    }
+
+
+    return 0;
+}
+
+void print_array(int* a, int l)
+{
+    for(int i= 0; i<l; i++)
+        cout << a[i] << " ";
+
+    cout << endl;
+}
+
+void print_vector(vector<int> v)
+{
+    for(int i=0; i<v.size(); i++)
+        cout << v[i] << " ";
+
+    cout << endl;
+}
+
+void print_vector(vector<char> v)
+{
+    for(int i=0; i<v.size(); i++)
+        cout << v[i] << " ";
+
+    cout << endl;
+}
+
+
+
+/*
+
+Sample Input
+
+6
+10
+12
+0
+Sample Output
+
+1
+2
+1
+
+
+*/

@@ -1,0 +1,52 @@
+//lab exam- 1, Q- 2, s- 3
+//check prime
+//Nasif Ahmed
+
+#include<stdio.h>
+
+int is_prime(int n);
+
+int main(void)
+
+{
+    int n;
+    //printf("Enter a number: ");
+    //scanf("%d", &n);
+
+    for(n=2;n<=20;n++)
+    {
+        if (is_prime(n)==1)
+        {
+            printf("%d ",n);
+        }
+    }
+
+
+
+    return 0;
+}
+
+int is_prime(int n)
+{
+    int d;
+
+    if(n<=1)
+    {
+        return 0;
+    }
+
+    for (d=2;d*d<=n;d++)
+    {
+        if(n%d==0)
+        {
+            return 0;
+        }
+    }
+    return 1;
+
+}
+
+
+
+//working nicely
+

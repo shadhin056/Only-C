@@ -1,0 +1,9 @@
+/* BR 1.5 */
+
+/* printf */
+
+#include <stdio.h>
+main ()
+{
+    printf("I see, I remember");
+}

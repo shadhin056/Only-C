@@ -1,0 +1,104 @@
+//uva set - adhoc
+//10093 - An Easy Problem!
+//Xplosive
+//w algo dont get it
+
+//http://www.algorithmist.com/index.php/UVa_10093
+
+#include <iostream>
+#include <string>
+#include <sstream>
+#include <algorithm>
+#include <vector>
+#include <set>
+#include <queue>
+#include <stack>
+#include <list>
+#include <map>
+#include <fstream>
+#include <numeric>
+#include <iterator>
+#include <bitset>
+#include <utility>
+#include <cstdio>
+#include <cstdlib>
+#include <cctype>
+#include <cmath>
+#include <cstring>
+#include <ctime>
+#include <iomanip>
+//#include <conio.h>    //this will give u compile error in contest
+
+#define READ(file) freopen(file, "r", stdin);
+#define WRITE(file) freopen(file, "w", stdout);
+#define PI acos(-1.0)
+
+
+#define MAX 6500
+
+using namespace std;
+
+
+int main()
+{
+    READ("input.txt");
+    //WRITE("output.txt");
+
+//    int t, tt;
+//    cin >> tt;
+
+
+//    while(1)
+//    {
+//        int n;
+//        cin >> n;
+//        if(n==0)break;
+//
+//    }
+
+
+    char ch;
+    while(scanf("%c",&ch)!=EOF)
+    {
+        if(ch>='0'&&ch<='9')
+        {
+            ch+=1;
+            cout << ch << endl;
+        }
+        else if (ch>='A'&&ch<='Z')
+        {
+            cout << ch-54 << endl;
+        }
+        else if (ch>='a'&&ch<='z')
+        {
+
+            cout << ch-60 << endl;
+        }
+
+    }
+
+
+    return 0;
+}
+
+
+
+/*
+
+Sample input
+
+3
+5
+A
+
+
+Sample output
+
+4
+6
+11
+
+*/
+
+
+

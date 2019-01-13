@@ -1,0 +1,110 @@
+//adhoq
+//11764 - Jumping mario
+//Xplosive
+//ac
+
+
+
+#include <iostream>
+#include <string>
+#include <sstream>
+#include <algorithm>
+#include <vector>
+#include <set>
+#include <queue>
+#include <stack>
+#include <list>
+#include <map>
+#include <fstream>
+#include <numeric>
+#include <iterator>
+#include <bitset>
+#include <utility>
+#include <cstdio>
+#include <cstdlib>
+#include <cctype>
+#include <cmath>
+#include <cstring>
+#include <ctime>
+#include <iomanip>
+//#include <conio.h>    //this will give u compile error in contest
+
+#define READ(file) freopen(file, "r", stdin);
+#define WRITE(file) freopen(file, "w", stdout);
+#define PI acos(-1.0)
+
+
+#define MAX 1100000
+
+using namespace std;
+
+int main()
+{
+    //READ("input.txt");
+    //WRITE("output.txt");
+
+    int t, tt;
+    cin >> tt;
+
+    for(t=1; t<=tt; t++)
+    {
+//        if(t!=1)
+//            printf("\n");
+
+        printf("Case %d: ",t);
+
+        int n;
+        cin >> n;
+
+        int a[55];
+        for(int i=0; i<n; i++)
+        {
+            cin >> a[i];
+        }
+
+        int low = 0, high=0;
+        for(int i=1; i<n; i++)
+        {
+            if(a[i-1]>a[i])
+            {
+                low++;
+            }
+            else if(a[i-1]<a[i])
+            {
+                high++;
+            }
+        }
+
+        printf("%d %d\n",high,low);
+
+
+
+    }
+
+
+    return 0;
+}
+
+
+
+/*
+
+
+SAMPLE INPUT:
+
+3
+8
+1 4 2 2 3 5 3 4
+1
+9
+5
+1 2 3 4 5
+
+SAMPLE OUTPUT:
+
+Case 1: 4 2
+Case 2: 0 0
+Case 3: 4 0
+
+
+*/

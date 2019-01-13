@@ -1,0 +1,72 @@
+//lab-4,5 ex-5
+//series while loop
+//Nasif Ahmed
+
+#include<stdio.h>
+#include<math.h>
+
+int main ()
+
+{
+
+    float x,y,z,n,t;
+
+    printf("\n\tEnter n: ");
+    scanf("%f",&n);
+
+    t=0,x=1;
+    while(x<=n)
+    {
+        t=t+x;
+        x++;
+    }
+    printf("\n\ta) %0.0f",t);
+
+
+
+    t=0,x=1;
+    while(x<=n)
+    {
+        t=t+1/x;
+        x++;
+    }
+    printf("\n\tb) %0.2f",t);
+
+
+    t=0,x=1,y=2;
+    while(x<=n+2,y<=2*n)
+    {
+        t=t+x*y;
+        x=x+2,y=y+2;
+    }
+    printf("\n\tc) %0.0f",t);
+
+
+    t=0,x=1,y=2,z=3;
+    while(x<=n,y<=n+1,z<=n+2)
+    {
+        t=t+x*y*z;
+        x=x+1,y=y+1,z=z+1;
+    }
+    printf("\n\td) %0.0f",t);
+
+
+    t=0,x=1,y=1;
+    while(x<=n)
+    {
+        t=t+y;
+        y=x+y;
+        x++;
+    }
+    printf("\n\te) %0.0f",t);
+
+
+
+
+
+    printf("\n\n\n");
+    return 0;
+
+}
+
+//working perfectly, have to modify

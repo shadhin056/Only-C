@@ -1,0 +1,156 @@
+//uva set - 01
+//10282 - Babelfish
+//xplosive
+//nc
+
+
+#include <iostream>
+#include <cstdio>
+#include <cstring>
+#include <cstdlib>
+#include <string>
+#include <set>
+
+using namespace std;
+
+string a[100005],b[100005],c[100005];
+string t;
+
+int x=0,y=0;
+
+int check_space(string s)
+{
+    int l= s.size();
+    for(int i=0; i<l; i++)
+    {
+        if(s[i]== ' ')
+            return i;
+    }
+    return 0;
+
+
+}
+
+void get_break(string s,int d)
+{
+    cout << "d=" << d << endl;
+    int l= s.size();
+    string p,q;
+    int i,j;
+    for(j=0,i=d+1; i<l ; i++,j++)
+    {
+        q[j]=s[i];
+    }
+    q[j]='\0';
+    s[d]='\0';
+    p=s;
+
+    cout << "p= " << p << "  q= " << q << endl;
+
+    a[x]=p;
+    b[x]=q;
+    x++;
+
+}
+
+
+
+
+int main()
+{
+    freopen("input.txt", "r", stdin);
+    //freopen("output.txt", "w", stdout);
+
+
+
+    int i=0,j,k;
+    while(getline(cin,t))
+    {
+        k=check_space(t);
+        if(k)
+        {
+            get_break(t,k);
+
+            //cout << a[x-1] << " " << b[x-1] << endl;
+        }
+        else
+        {
+            c[y++]=t;
+            //cout << c[y-1] << endl;
+//
+//            bool flag=true;
+//
+//            for(i=0; i<x; i++)
+//            {
+//                if(t==b[i])
+//                {
+//                    cout << a[i] << endl;
+//                    flag=false;
+//                    break;
+//                }
+//                if(flag)
+//                    cout << "eh" << endl;
+//
+//            }
+//
+//
+        }
+
+    }
+
+
+
+    for(j=0; j<x; j++)
+    {
+        //cout << a[j] << endl;
+        //cout << b[j] << endl;
+
+    }
+
+
+    for(i=0; i<y; i++)
+    {
+        for(j=0; j<x; j++)
+        {
+            if(c[i]==b[j])
+            {
+                //cout << a[j] << endl;
+                //cout << b[j] << endl;
+            }
+        }
+    }
+
+
+
+
+
+
+    return 0;
+}
+
+
+
+
+
+
+/*
+
+Sample Input
+
+dog ogday
+cat atcay
+pig igpay
+froot ootfray
+loops oopslay
+
+atcay
+ittenkay
+oopslay
+
+Output for Sample Input
+
+cat
+eh
+loops
+
+*/

@@ -1,0 +1,66 @@
+//uva
+//10420 - List of Conquests
+//Xplosive
+//ac
+
+
+//using map, cin.ignore
+
+#include <iostream>
+#include <cstdio>
+#include <algorithm>
+#include <set>
+#include <map>
+
+using namespace std;
+
+
+
+int main()
+{
+
+    //freopen("input.txt", "r", stdin);
+    //freopen("output.txt", "w", stdout);
+
+    int tt;
+    cin >> tt;
+
+    string s;
+    int i;
+    map <string,int> m;
+    map <string,int> ::iterator it;
+
+    for(i=0; i<tt; i++)
+    {
+        cin>> s;
+        cin.ignore(75,'\n');
+        //cout << a[i] << endl;
+        m[s]++;
+    }
+
+    for(it=m.begin(); it!=m.end(); it++)
+    {
+        cout << (*it).first << " " << (*it).second << endl;
+    }
+
+    return 0;
+}
+
+
+
+/*
+
+Sample Input
+
+3
+Spain Donna Elvira
+England Jane Doe
+Spain Donna Anna
+
+Sample Output
+
+England 1
+Spain 2
+
+
+*/

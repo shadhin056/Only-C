@@ -1,0 +1,102 @@
+//uva set - adhoc
+//278 - Funny Encryption Method
+//Xplosive
+//nc
+
+#include<cstdio>
+#include<iostream>
+#include<string>
+#include<cstring>
+#include<sstream>
+#include<cstdlib>
+#include<cctype>
+#include<cmath>
+#include<algorithm>
+#include<vector>
+#include<set>
+#include<queue>
+#include<stack>
+#include<list>
+#include<map>
+#include<fstream>
+#include<numeric>
+#include<iterator>
+using namespace std;
+
+#define mx 35
+
+
+
+
+int main()
+{
+
+    freopen("input.txt", "r", stdin);
+    //freopen("output.txt", "w", stdout);
+
+    int getValue(char ch, int x, int y)
+    {
+        int n;
+        switch(ch)
+        {
+        case 'r':
+        case 'Q':
+            if(x<y)
+                n=x;
+            else
+                n=y;
+            break;
+
+        case 'k':
+            n= (x*y/2)+(x*y)%2;
+            break;
+
+        case 'K':
+
+            x = x + x%2;
+            y = y + y%2;
+            n = x*y/4;
+            break;
+        }
+        return n;
+    }
+
+    int tt;
+
+    cin >> tt;
+
+    char ch;
+    int x,y;
+
+    while(tt--)
+    {
+        cin >> ch;
+        cin >> x >> y;
+
+        cout << getValue(ch,x,y) << endl;
+
+    }
+
+
+
+    return 0;
+}
+
+
+/*
+
+Sample input
+
+3
+265
+111
+1234
+
+
+Sample output
+
+3 5
+6 3
+5 5
+
+*/

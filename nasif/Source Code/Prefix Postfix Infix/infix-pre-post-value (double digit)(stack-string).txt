@@ -1,0 +1,449 @@
+//prefix postfix
+//infix-pre-post-value (double digit)(stack-string)
+//working fine
+//see sample input output
+//Nasif Ahmed
+
+#include <cstdio>
+#include <iostream>
+#include <cstdlib>
+#include <cmath>
+#include <cstring>
+#include <algorithm>
+#include <sstream>
+
+#define MAX 100
+
+using namespace std;
+
+struct Node
+{
+    string data;
+    struct Node* next;
+
+};
+
+struct Node* head;
+
+
+void push(string arg)
+{
+//     old style
+//    Node* temp = (Node*)malloc(sizeof(Node));
+//    (*temp).a = 2;
+//    (*temp).next = NULL;
+
+    Node* temp = new Node();
+    temp->data = arg;
+    temp->next = head;
+
+    head = temp;
+//    return temp;
+
+}
+
+void pop()
+{
+    if(head!=NULL)
+    {
+        struct Node* it = head;
+        head = it->next;
+        free(it);
+        it = NULL;
+        //return data;
+
+    }
+    else
+    {
+        cout << "head null" << endl;
+    }
+
+}
+
+string top()
+{
+    if(head!=NULL)
+    {
+        return head->data;
+    }
+    else
+    {
+        cout << "head null" << endl;
+    }
+
+}
+
+bool isEmpty()
+{
+    if(head==NULL)
+        return true;
+
+    return false;
+}
+
+void clear()
+{
+    Node* it=head;
+    Node* temp;
+
+    while(it!=NULL)
+    {
+        temp=it;
+        it = it->next;
+        free(temp);
+        //cout << temp << " " << head << endl;
+        temp=NULL;
+    }
+    head=NULL;
+}
+
+
+void print()
+{
+    Node* it=head;
+    while(it!=NULL)
+    {
+        cout << it->data << " ";
+        it = it->next;
+    }
+    cout << endl;
+}
+
+
+
+string toString(int n)
+{
+    stringstream ss;
+    string s;
+    ss<<n;
+    ss>>s;
+    ss.clear();
+    return s;
+}
+
+int toInt(string s)
+{
+    stringstream ss;
+    int n;
+    ss<<s;
+    ss>>n;
+    ss.clear();
+    return n;
+}
+char toChar(string s)
+{
+    stringstream ss;
+    char ch;
+    ss<<s;
+    ss>>ch;
+    ss.clear();
+    return ch;
+}
+
+bool isOperator(char ch)
+{
+    if(ch=='+' || ch=='-' || ch=='*' || ch=='/' || ch=='^' || ch=='%')
+        return true;
+    else
+        return false;
+}
+bool isOperator(string s)
+{
+    if(s=="+" || s=="-" || s=="*" || s=="/" || s=="^" || s=="%")
+        return true;
+    else
+        return false;
+}
+
+int calData(char ch, int a, int b)
+{
+    int r;
+    switch(ch)
+    {
+    case '+':
+        r=a+b;
+        break;
+    case '-':
+        r=a-b;
+        break;
+    case '*':
+        r=a*b;
+        break;
+    case '/':
+        r=a/b;
+        break;
+    case '^':
+        r=pow(a,b);
+        break;
+    case '%':
+        r=a%b;
+        break;
+
+    }
+
+    return r;
+}
+
+void infixToPostfix(string* sa2, string* sa, int l)
+{
+    int j=0;
+    for(int i=0; i<l; i++)
+    {
+        string s = sa[i];
+        //cout << s << " ";
+        if(s==")")
+        {
+            //cout << "Operator" << endl;
+
+
+
+            string a = top();
+            //cout << a << " ";
+            sa2[j++]=a;
+            pop();
+            pop();
+
+
+        }
+        else if(s=="(" || isOperator(s))
+        {
+            //cout << "Operand" << endl;
+
+            push(s);
+        }
+        else
+        {
+            //cout << s << " ";
+            sa2[j++]=s;
+        }
+
+    }
+
+    clear();
+
+}
+
+int evaluatePostfixExp(string* sa, int l)
+{
+
+    for(int i=0; i<l; i++)
+    {
+        string s = sa[i];
+        //cout << s << " ";
+        if(isOperator(s))
+        {
+            //cout << "Operator" << endl;
+
+            string a = top();
+            pop();
+            string b = top();
+            pop();
+
+
+            int r = calData(toChar(s),toInt(b),toInt(a));
+            push(toString(r));
+
+
+
+        }
+        else
+        {
+            //cout << "Operand" << endl;
+            //int k = s - '0';
+            push(s);
+
+
+        }
+
+    }
+
+    //cout << "result: " << top() << endl;
+    return toInt(top());
+
+    clear();
+
+}
+
+
+
+void infixToPrefix(string* sa2, string* sa, int l)
+{
+
+    int totalOperator=0;
+    int j=0;
+    string sa3[100];
+
+    copy(sa,sa+l,sa3);
+    reverse(sa3,sa3+l);
+
+    for(int i=0; i<l; i++)
+    {
+        string s = sa3[i];
+        //cout << s << " ";
+        if(s=="(")
+        {
+            //cout << "Operator" << endl;
+
+            string a = top();
+            //cout << a << " ";
+            sa2[j++]=a;
+            pop();
+            pop();
+
+
+        }
+        else if(s==")" || isOperator(s))
+        {
+            //cout << "Operand" << endl;
+            if(isOperator(s)) totalOperator++;   //for length
+
+            push(s);
+        }
+        else
+        {
+            //cout << s << " ";
+            sa2[j++]=s;
+        }
+
+    }
+
+    reverse(sa2,sa2+(l-totalOperator*2));
+    clear();
+
+}
+int evaluatePrefixExp(string* sa,int l)
+{
+    string sa2[100];
+    copy(sa,sa+l,sa2);
+    reverse(sa2,sa2+l);
+
+    for(int i=0; i<l; i++)
+    {
+        string s = sa2[i];
+        //cout << s << " ";
+        if(isOperator(s))
+        {
+            //cout << "Operator" << endl;
+
+            string a = top();
+            pop();
+            string b = top();
+            pop();
+
+            int r = calData(toChar(s),toInt(a),toInt(b));
+            push(toString(r));
+
+        }
+        else
+        {
+            //cout << "Operand" << endl;
+            //int k = s - "0";
+            push(s);
+
+
+        }
+
+    }
+
+    //cout << "result: " << top() << endl;
+    return toInt(top());
+    clear();
+
+}
+
+
+void pArray(char* a,int l)
+{
+    for(int i=0; i<l; i++)
+        cout << a[i] << " ";
+    cout << endl;
+}
+
+void pArray(int* a,int l)
+{
+    for(int i=0; i<l; i++)
+        cout << a[i] << " ";
+    cout << endl;
+}
+
+void pArray(string* a,int l)
+{
+    for(int i=0; i<l; i++)
+        cout << a[i] << " ";
+    cout << endl;
+}
+
+
+
+
+
+int main()
+{
+    freopen("input.txt","r",stdin);
+
+    head=NULL;
+
+    int totalOperator=0;
+    char ch;
+    int n;
+    int res = 0;
+
+    string s;
+    string sa[100];
+
+    int i=0;
+    while(1)
+    {
+        //cin >> ch;
+        cin >> s;
+        //scanf(" %s",s);
+
+        if(s=="#")
+            break;
+
+        if(isOperator(s))
+            totalOperator++;
+
+        sa[i++]=s;
+    }
+
+    int iLen=i;
+    int pLen=iLen-totalOperator*2;
+    cout << "Infix\t: ";
+    pArray(sa,iLen);
+
+    string sa2[100];
+
+    infixToPostfix(sa2,sa,iLen);
+    cout << "Postfix\t: ";
+    pArray(sa2,pLen);
+    cout << "result\t: " << evaluatePostfixExp(sa2,pLen) << endl;
+
+
+    infixToPrefix(sa2,sa,iLen);
+    cout << "Prefix\t: ";
+    pArray(sa2,pLen);
+    cout << "result\t: " << evaluatePrefixExp(sa2,pLen) << endl;
+
+
+    return 0;
+}
+
+
+/*
+
+Sample Input
+
+( ( 18 + 2 ) * ( 18 - 4 ) ) #
+
+
+Sample Output
+
+Infix   : ( ( 18 + 2 ) * ( 18 - 4 ) )
+Postfix : 18 2 + 18 4 - *
+result  : 280
+Prefix  : * + 18 2 - 18 4
+result  : 280
+
+*/
+

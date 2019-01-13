@@ -1,0 +1,17 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+    int grade_number;
+    printf("enter grade number=");
+    scanf("%d",&grade_number);
+
+    if(grade_number>=60)
+    printf("passed");
+
+    else
+        printf("faild\n\n\n\n\n\n");
+
+    return 0;
+
+}

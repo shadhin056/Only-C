@@ -1,0 +1,81 @@
+//lab-3, ex-9
+//which task takes more time
+//Nasif Ahmed
+
+#include<stdio.h>
+#include<math.h>
+
+main ()
+
+{
+    int ah,am,as,bh,bm,bs;
+    char T;
+
+    printf("Please Enter Ah= ");
+    scanf("%d",&ah);
+    printf("Please Enter Am= ");
+    scanf("%d",&am);
+    printf("Please Enter As= ");
+    scanf("%d",&as);
+    printf("Please Enter Bh= ");
+    scanf("%d",&bh);
+    printf("Please Enter Bm= ");
+    scanf("%d",&bm);
+    printf("Please Enter Bs= ");
+    scanf("%d",&bs);
+
+    if(ah>bh)
+    {
+        T='A';
+    }
+    else
+    {
+        if(ah==bh)
+        {
+             if(am>bm)
+             {
+                 T='A';
+             }
+             else
+             {
+                 if(am==bm)
+                 {
+                     if(as>bs)
+                     {
+                         T='A';
+                     }
+                     else
+                     {
+                         if(as==bs)
+                         {
+                             //printf("A and B takes same time");
+                         }
+                         else
+                         {
+                             T='B';
+                         }
+                     }
+                 }
+                 else
+                 {
+                     T='B';
+                 }
+             }
+        }
+        else
+        {
+            T='B';
+        }
+
+
+    }
+
+
+    printf("\n\n%c Takes more time",T);
+
+
+    printf("\n\n\n");
+    return 0;
+}
+
+//perfectly working

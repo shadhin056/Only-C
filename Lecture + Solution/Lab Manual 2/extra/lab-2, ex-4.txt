@@ -1,0 +1,37 @@
+//lab-2, ex-4
+// math function
+
+#include<stdio.h>
+#include<math.h>
+
+main()
+
+{
+    int x, y;
+
+    printf("x = ");
+    scanf("%d",&x);
+
+    printf("y = ");
+    scanf("%d", &y);
+
+    int a,b,c,d,e;
+
+    a = x+y;
+    printf("\n\nx+y = %d",a);
+
+    b = x*y;
+    printf("\n\nx*y = %d",b);
+    c = x/y;
+    printf("\n\nx/y = %d",c);
+
+    d = x%y;
+    printf("\n\nx%y = %d",d);
+
+    e = x-y;
+    printf("\n\nx-y = %d",e);
+
+
+}
+
+//jotil function

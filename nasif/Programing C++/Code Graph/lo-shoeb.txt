@@ -1,0 +1,161 @@
+//uva set - adhoc
+//lo-shoeb
+//Xplosive
+//nc
+
+#include<cstdio>
+#include<iostream>
+#include<string>
+#include<cstring>
+#include<sstream>
+#include<cstdlib>
+#include<cctype>
+#include<cmath>
+#include<algorithm>
+#include<vector>
+#include<set>
+#include<queue>
+#include<stack>
+#include<list>
+#include<map>
+#include<fstream>
+#include<numeric>
+#include<iterator>
+using namespace std;
+
+#define MAX 25
+
+int graph[MAX][MAX];
+
+bool isConnected(char ch)
+{
+    if(ch=='.')
+    {
+        return true;
+    }
+    return false;
+}
+
+struct Loc
+{
+    int i;
+    int j;
+};
+
+
+
+
+int main()
+{
+
+    freopen("input.txt", "r", stdin);
+    //freopen("output.txt", "w", stdout);
+
+
+
+    int t,tt;
+    cin >> tt;
+
+    for(t=1; t<=tt; t++)
+    {
+
+        int r,col;
+        cin >> r>>col;
+        char gr = getchar();
+        char ch;
+
+        struct Loc a,b,c,h;
+
+        for(int i=0; i<r; i++)
+        {
+            for(int j=0; j<col; j++)
+            {
+                cin >> ch;
+
+                if(ch=='a')
+                {
+                    a.i=i;
+                    a.j=j;
+                }
+                else if(ch=='b')
+                {
+                    b.i=i;
+                    b.j=j;
+                }
+                else if(ch=='c')
+                {
+                    c.i=i;
+                    c.j=j;
+                }
+                else if(ch=='h')
+                {
+                    h.i=i;
+                    h.j=j;
+                }
+
+
+                if(isConnected(ch))
+                {
+                    graph[i][j]=1;
+                }
+                else
+                {
+                    graph[i][j]=0;
+                }
+            }
+        }
+
+        for(int i=0; i<r; i++)
+        {
+            for(int j=0; j<col; j++)
+            {
+                cout << graph[i][j] << " ";
+            }
+            cout << endl;
+        }
+        cout << endl;
+
+
+//        cout << "a" << a.i << "," << a.j << endl;
+//        cout << "b" << b.i << "," << b.j << endl;
+//        cout << "c" << c.i << "," << c.j << endl;
+//        cout << "h" << h.i << "," << h.j << endl;
+
+
+
+
+
+
+    }
+
+
+    return 0;
+}
+
+
+/*
+
+Sample input
+
+2
+6 8
+########
+#...c..#
+#......#
+#.a.h.b#
+#......#
+########
+5 9
+#########
+#mmm...c#
+#ma.h####
+#m....b.#
+#########
+
+
+Sample output
+
+Case 1: 2
+Case 2: 4
+
+*/

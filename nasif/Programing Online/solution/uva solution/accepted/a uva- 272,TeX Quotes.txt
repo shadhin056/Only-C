@@ -1,0 +1,36 @@
+//opro-1,q-1,
+//uva- 272,TeX Quotes
+//Nasif Ahmed
+
+#include<stdio.h>
+
+int main()
+{
+    char c;
+    int x=0;
+
+    while(scanf("%c",&c)!=EOF)
+    {
+        if(c=='"')
+        {
+            x++;
+
+            if(x%2==0)
+                printf("''");
+            else
+                printf("``");
+        }
+        else
+            printf("%c",c);
+
+    }
+
+
+    return 0;
+
+}
+
+//accepeted by first time
+
+
+

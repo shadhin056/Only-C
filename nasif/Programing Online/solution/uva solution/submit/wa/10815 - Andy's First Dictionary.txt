@@ -1,0 +1,113 @@
+//uva
+//10815 - Andy's First Dictionary
+//xplosive
+//wa
+
+/*
+//using set
+here i faced a problem to build a string with
+char but string set is working with char array
+*/
+
+
+#include <iostream>
+#include <cstdio>
+#include <cstring>
+#include <vector>
+#include <algorithm>
+#include <set>
+
+using namespace std;
+
+
+int main()
+{
+    //freopen("input.txt", "r", stdin);
+    //freopen("output.txt", "w", stdout);
+
+    char s[2005];
+    char ns[2005];
+    //string s;
+    //string ns;
+    int i,j;
+    char ch;
+
+    set <string> ss;
+    set <string>::iterator it;
+
+    while(cin >> s)
+    {
+        j=0;
+        //int l=s.size();
+        int l=strlen(s);
+
+        for(i=0; i<l; i++)
+        {
+            ch=s[i];
+            if(isalpha(ch))
+            {
+                if(isupper(ch))
+                {
+                    ns[j++]=ch+32;
+
+                }
+                else
+                    ns[j++]=ch;
+
+                //cout << ns[j-1] << endl;
+            }
+        }
+        ns[j]='\0';
+        //cout << ns << endl;
+
+        ss.insert(ns);
+    }
+
+    for(it=ss.begin(); it!=ss.end(); it++)
+    {
+        cout << *it << endl;
+    }
+
+
+    return 0;
+
+}
+
+
+
+/*
+
+Sample Input
+
+Adventures in Disneyland
+Two blondes were going to Disneyland when they came to a fork in the
+road. The sign read: "Disneyland Left."
+So they went home.
+
+Sample Output
+
+a
+adventures
+blondes
+came
+disneyland
+fork
+going
+home
+in
+left
+read
+road
+sign
+so
+the
+they
+to
+two
+went
+were
+when
+
+
+
+*/

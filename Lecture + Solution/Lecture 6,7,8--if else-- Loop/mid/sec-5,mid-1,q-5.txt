@@ -1,0 +1,53 @@
+//sec-5,mid-1,q-5
+//Strong Number
+//Nasif Ahmed
+
+#include<stdio.h>
+#include<math.h>
+
+int main ()
+
+{
+
+    int d,n,ton,f,tof=0;
+
+    printf("\n\tEnter The Number: ");
+    scanf("%d",&n);
+
+    ton=n;
+
+    for(;n!=0;n=n/10)
+    {
+        d=n%10;
+
+        for(f=1;d>=1;d--)
+        {
+            f=f*d;
+        }
+
+        tof = tof + f;
+
+    }
+
+
+    if(tof==ton)
+    {
+        printf("\n\tThis is Strong Number");
+    }
+
+    else
+    {
+        printf("\n\tThis is Not Strong Number");
+    }
+
+
+
+
+    printf("\n\n\n\tPress Any Key To EXIT!!");
+    getch();
+    return 0;
+
+
+}
+
+//working perfectly

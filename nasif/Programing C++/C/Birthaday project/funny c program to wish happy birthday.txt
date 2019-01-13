@@ -1,0 +1,25 @@
+//Don't try this in codeblock or visual studio
+//Because they haven't power to compile it
+//Only you have the power to compile it
+
+#include<birthday.h>
+#include<friends.h>
+#include<disco.h>
+
+day main()
+{
+    int today,birthday, cake, music,parties,masti, happiness;
+
+    While(today==birthday)
+    {
+        cake++;
+        parties++;
+        music++;
+        masti++;
+        happines++;
+    }
+    printf("\nHAPPY BIRTHDAY TO YOU!");
+
+    return SweetHome;
+
+}

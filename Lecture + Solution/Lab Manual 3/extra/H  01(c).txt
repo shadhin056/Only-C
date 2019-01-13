@@ -1,0 +1,42 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+
+{
+    int A,b,c,B;
+
+    printf("enter A,b,c=");
+    scanf("%d%d%d",&A,&c,&b);
+
+
+    if(A>8)
+    {
+        A=b+c;
+
+        if(A<4)
+            {
+            B=b*c;
+            }
+        if(A>8)
+            {
+            B=b/c;
+            }
+    }
+
+else
+    {
+        A=b-c;
+
+        if(A<5)
+           {
+            B=b+c;
+           }
+        else
+            {
+            B=b%c;
+            }
+    A=B;
+
+    }
+
+}

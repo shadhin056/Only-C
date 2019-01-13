@@ -1,0 +1,46 @@
+//lab-2, hw-3
+//rational numbers
+//Nasif Ahmed
+
+
+
+#include<stdio.h>
+#include<math.h>
+
+main ()
+
+{
+    int a,b,c,d,add1,add2,sub1,sub2,mul1,mul2,div1,div2;
+
+    printf("Enter a,b,c,d: ");
+    scanf("%d %d %d %d",&a,&b,&c,&d);
+
+    add1 = a*d + b*c;
+    add2 = b*d;
+
+    printf("\n\nAddition: %d",add1);
+    printf("/%d",add2);
+
+    sub1 = a*d - b*c;
+    sub2 = b*d;
+
+    printf("\n\nSubtraction: %d",sub1);
+    printf("/%d",sub2);
+
+    mul1 = a*c;
+    mul2 = b*d;
+
+    printf("\n\nMultiplication: %d",mul1);
+    printf("/%d",mul2);
+
+    div1 = a*d;
+    div2 = b*c;
+
+    printf("\n\nDivision: %d",mul1);
+    printf("/%d\n\n",mul2);
+
+
+
+
+
+}

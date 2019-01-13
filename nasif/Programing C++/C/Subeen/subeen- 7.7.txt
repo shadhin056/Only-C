@@ -1,0 +1,33 @@
+//subeen- 7.7
+//fmax function
+//Nasif Ahmed
+
+#include <stdio.h>
+
+int maxf(int ara[], int n);
+int main()
+{
+    int ara[] = {-100, 0, 53, 22, 83, 23, 89, -132, 201, 3, 85};
+    int n = 11;
+    int max = maxf(ara, n);
+    printf("%d\n", max);
+    return 0;
+}
+
+
+int maxf(int ara[], int n)
+{
+    int max = ara[0];
+    int i;
+    for(i = 1; i < n; i++)
+    {
+        if (ara[i] > max)
+        {
+            max = ara[i];
+        }
+    }
+    return max;
+}
+
+
+//i didn't fully get it

@@ -1,0 +1,27 @@
+//opro-1,q-10
+//uva- 10079, Pizza Cutting
+//Nasif Ahmed
+
+#include<stdio.h>
+
+int main()
+{
+    long long int n,p,i;
+
+    while(1)
+    {
+        scanf("%lld",&n);
+        if(n<0) break;
+
+        for(p=1,i=1;i<=n;i++)
+        {
+            p=p+i;
+        }
+
+        printf("%lld\n",p);
+    }
+
+    return 0;
+}
+
+//accepeted

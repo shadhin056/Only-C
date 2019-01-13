@@ -1,0 +1,45 @@
+//lec- 6,7,8 slide- 40
+//if else flow chart
+//Nasif Ahmed
+
+#include<stdio.h>
+#include<math.h>
+
+main ()
+
+{
+
+    int A,B,b,c;
+    printf("\nEnter A,b,c: ");
+    scanf("%d%d%d",&A,&b,&c);
+
+    if(A>8)
+    {
+        A=b+c;
+        if(A<4)
+        {
+            B=b*c;
+        }
+        if(A>8)
+        {
+            B=b/c;
+        }
+    }
+    else
+    {
+        A=b-c;
+        if(A<5)
+            B=b+c;
+        else
+            B=b%c;
+        A=B;
+
+    }
+
+    printf("Value of A=%d B=%d b=%d c=%d",A,B,b,c);
+
+
+    printf("\n\n\n");
+}
+
+//working perfectly

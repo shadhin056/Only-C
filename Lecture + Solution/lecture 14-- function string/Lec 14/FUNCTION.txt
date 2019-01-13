@@ -1,0 +1,95 @@
+#include<stdio.h>
+int main(){
+  int pow,num;
+  long int res;
+  long int power(int,int);
+  printf("\nEnter a number: ");
+  scanf("%d",&num);
+  printf("\nEnter power: ");
+  scanf("%d",&pow);
+  res=power(num,pow);
+  printf("\n%d to the power %d is: %ld",num,pow,res);
+  return 0;
+}
+  int i=1;
+  long int sum=1;
+  long int power(int num,int pow){
+      if(i<=pow){
+           sum=sum*num;
+          power(num,pow-1);
+      }
+      else
+      return sum;
+}
+
+*****************************************
+
+#include<stdio.h>
+
+int isPrime(int,int);
+
+int main(){
+
+    int num,prime;
+
+    printf("Enter a positive number: ");
+    scanf("%d",&num);
+
+    prime = isPrime(num,num/2);
+
+   if(prime==1)
+        printf("%d is a prime number",num);
+   else
+      printf("%d is not a prime number",num);
+
+   return 0;
+}
+
+int isPrime(int num,int i){
+
+    if(i==1){
+        return 1;
+    }else{
+       if(num%i==0)
+         return 0;
+       else
+         isPrime(num,i-1);
+    }
+}
+*********************************************
+
+#include<stdio.h>
+
+int isPrime(int);
+
+int main(){
+
+    int num,prime;
+
+    printf("Enter a positive number: ");
+    scanf("%d",&num);
+
+    prime = isPrime(num);
+
+   if(prime==1)
+        printf("%d is a prime number",num);
+   else
+      printf("%d is not a prime number",num);
+
+   return 0;
+}
+
+int isPrime(int num){
+
+    int i=2;
+
+    while(i<=num/2){
+         if(num%i==0)
+             return 0;
+         else
+             i++;
+    }
+
+    return 1;
+}
+

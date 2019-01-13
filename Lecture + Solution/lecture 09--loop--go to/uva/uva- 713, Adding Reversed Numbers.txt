@@ -1,0 +1,154 @@
+//opro-1,q-37
+//uva- 713, Adding Reversed Numbers
+//Nasif Ahmed
+
+#include<stdio.h>
+
+int main()
+{
+
+    long long int i,n1,n2,x,y1,y2,n,y,tc,t;
+
+
+    scanf("%lld",&tc);
+
+    for(t=1;t<=tc;t++)
+    {
+
+        scanf("%lld %lld",&n1,&n2);
+
+        for(y1=0,i=n1;i!=0;i=i/10)
+        {
+            x=i%10;
+            y1=y1*10+x;
+
+        }
+
+        for(y2=0,i=n2;i!=0;i=i/10)
+        {
+            x=i%10;
+            y2=y2*10+x;
+
+        }
+
+        y=y1+y2;
+
+        for(n=0,i=y;i!=0;i=i/10)
+        {
+            x=i%10;
+            n=n*10+x;
+
+        }
+        printf("%lld\n",n);
+    }
+
+
+    return 0;
+
+}
+
+//
+
+
+
+//opro-1,q-37
+//uva- 713, Adding Reversed Numbers
+//Nasif Ahmed
+
+#include<stdio.h>
+
+int main()
+{
+
+    long long int i,n1,n2,x,y1,y2,n,y,tc,t,n1c,n2c,zc;
+
+
+    //scanf("%lld",&tc);
+
+
+    while(1)
+    //for(t=1;t<=tc;t++)
+    {
+
+        scanf("%lld %lld",&n1,&n2);
+
+
+
+
+        for(i=n1,n1c=0;i%10==0;n1c++)
+        {
+            i=i/10;
+        }
+
+        //printf("n1c=%lld\n",n1c);
+
+
+        for(i=n2,n2c=0;i%10==0;n2c++)
+        {
+            i=i/10;
+        }
+
+        //printf("n2c=%lld\n",n2c);
+
+        if(n1c<=n2c)
+        {
+            zc=n1c;
+        }
+        else
+        {
+            zc=n2c;
+        }
+
+        //printf("zc=%lld\n",zc);
+
+
+
+
+
+
+
+        for(y1=0,i=n1;i!=0;i=i/10)
+        {
+            x=i%10;
+            y1=y1*10+x;
+
+        }
+
+        for(y2=0,i=n2;i!=0;i=i/10)
+        {
+            x=i%10;
+            y2=y2*10+x;
+
+        }
+
+        y=y1+y2;
+
+        for(n=0,i=y;i!=0;i=i/10)
+        {
+            x=i%10;
+            n=n*10+x;
+
+        }
+
+
+
+        for(i=1;i<=zc;i++)
+        {
+            n*=10;
+        }
+
+
+
+
+
+
+
+        printf("%lld\n",n);
+    }
+
+
+    return 0;
+
+}
+
+//I found the bug

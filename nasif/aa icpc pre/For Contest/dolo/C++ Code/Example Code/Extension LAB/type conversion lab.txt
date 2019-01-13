@@ -1,0 +1,77 @@
+//Extension Lab
+//type conversion lab
+//xplosive
+
+#include <iostream>
+#include <cstdio>
+#include <cstdlib>
+
+using namespace std;
+void c_int_to_str();        //c style int to string
+void str_to_ifd();          //string to int fload double
+void char_to_ifd();         //char array to int fload double
+
+int main()
+{
+    //c_int_to_str();
+    str_to_ifd();
+    //char_to_ifd();
+
+    return 0;
+}
+void char_to_ifd()
+{
+    char ch[100];
+    string s;
+    int i;
+    float f;
+    double d;
+
+    cin >> ch;
+
+    i= atoi(ch);
+    f= atof(ch);
+    d= atof(ch);
+
+    cout << i << ' ' << f << ' ' << d << ' ' << ch;
+}
+
+void str_to_ifd()
+{
+    char ch[100];
+    string s;
+    int i;
+    float f;
+    double d;
+
+    cin >> s;
+    //cin >> ch;
+
+    //i= atoi(ch);              //this work with char array but not with string
+    //i= atoi(ch.c_str());        //this isn't working with char array
+    i= atoi(s.c_str());
+    f= atof(s.c_str());
+    d= atof(s.c_str());
+
+    cout << i << ' ' << f << ' ' << d << ' ' << s;
+
+
+}
+
+void c_int_to_str()
+{
+    int i = 1010;
+    char ch[100];
+    string s;
+
+    sprintf(ch,"%d",i);
+    printf("%s\n",ch);
+    cout << ch << endl;
+    cout << ch[0] << endl;
+
+
+    //sprintf(s, "%d", i);            //can't convert
+    //cout << s << endl;
+    //cout << s[0] << endl;
+
+}

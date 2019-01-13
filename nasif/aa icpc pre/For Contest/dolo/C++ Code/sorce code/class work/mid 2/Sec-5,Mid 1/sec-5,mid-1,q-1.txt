@@ -1,0 +1,60 @@
+//sec-5,mid-1,q-1
+//Symmetric Number
+//Nasif Ahmed
+
+#include<stdio.h>
+#include<math.h>
+
+int main ()
+
+{
+
+    int d,n,et=0,ot=0;
+
+    printf("\n\tEnter The Number: ");
+    scanf("%d",&n);
+
+
+    for(;n!=0;n=n/10)
+    {
+        d=n%10;
+        //printf("%d ",d);
+        
+        if(d%2==0)
+        {
+            et=et+d;
+        }
+        else
+        {
+            ot=ot+d;
+        }
+
+    }
+
+
+
+
+    if(et==ot)
+    {
+        printf("\n\tThis is Symmetric Number");
+    }
+
+    else
+    {
+        printf("\n\tThis is Not Symmetric Number");
+    }
+
+
+
+
+
+
+
+    printf("\n\n\n\tPress Any Key To EXIT!!");
+    getch();
+    return 0;
+
+
+}
+
+//working perfectly

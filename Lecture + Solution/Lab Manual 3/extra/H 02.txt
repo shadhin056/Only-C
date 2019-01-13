@@ -1,0 +1,25 @@
+#include<stdio.h>
+#include<math.h>
+
+main()
+
+{
+    int a,b,c,area;
+
+    printf("enter a,b,c\n");
+    scanf("%d%d%d",&a,&b,&c);
+
+    if  (a+b>c||b+c>a||c+a>b)
+
+  {
+        area=0.5*b*sqrt(a*a-b*b);
+        printf("area of the triangle is %d",area);
+   }
+    else
+  {
+        printf("no triangle is possible");
+  }
+
+
+
+}

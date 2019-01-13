@@ -1,0 +1,104 @@
+//fibonacci
+//nt - fibonacci
+//Xplosive
+//++,
+
+#include <iostream>
+#include <string>
+#include <sstream>
+#include <algorithm>
+#include <vector>
+#include <set>
+#include <queue>
+#include <stack>
+#include <list>
+#include <map>
+#include <fstream>
+#include <numeric>
+#include <iterator>
+#include <bitset>
+#include <utility>
+#include <set>
+#include <numeric>
+#include <cstdio>
+#include <cstdlib>
+#include <cctype>
+#include <cmath>
+#include <cstring>
+#include <ctime>
+
+#define READ(file) freopen(file, "r", stdin);
+#define WRITE(file) freopen(file, "w", stdout);
+#define PI acos(-1.0)
+
+
+#define MAX 1100002
+
+using namespace std;
+
+void print_vector(vector<int> v);
+void print_vector(vector<char> v);
+void print_array(int* a, int l);
+
+int dp[40];
+
+int fibo( int n )
+{
+    if( n == 0 ) return 0;
+    if( n == 1 ) return 1;
+
+    if(dp[n]!=-1) return dp[n];
+    else
+    {
+        dp[n] = fibo( n-1 ) + fibo( n-2 );
+        return dp[n];
+    }
+
+}
+
+int main()
+{
+    //READ("input.txt");
+    //WRITE("output.txt");
+
+    memset(dp,-1,sizeof(dp));
+
+    cout << fibo(10) << endl;
+
+
+
+    return 0;
+}
+
+void print_array(int* a, int l)
+{
+    for(int i= 0; i<l; i++)
+        cout << a[i] << " ";
+
+    cout << endl;
+}
+
+void print_vector(vector<int> v)
+{
+    for(int i=0; i<v.size(); i++)
+        cout << v[i] << " ";
+
+    cout << endl;
+}
+
+void print_vector(vector<char> v)
+{
+    for(int i=0; i<v.size(); i++)
+        cout << v[i] << " ";
+
+    cout << endl;
+}
+
+
+
+
+/*
+
+
+
+*/

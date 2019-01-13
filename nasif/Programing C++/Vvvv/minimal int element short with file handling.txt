@@ -1,0 +1,51 @@
+//my need
+//minimal int element short with file handling
+
+#include <iostream>
+#include <string>
+#include <fstream>
+
+using namespace std;
+
+ofstream outfile ("outdata.txt");
+ifstream infile ("indata.txt");
+
+int main()
+{
+    int a[10000];
+    int min,i=0,j,k,temp,n=0;
+
+    while(!infile.eof())
+    {
+        infile >> a[i];
+        i++;
+    }
+    n=i;
+    cout << n << endl;
+
+
+    for(i=0;i<n-1;i++)
+    {
+        min=a[i];
+
+        for(j=i+1;j<n;j++)
+        {
+            if(a[j]<min)
+            {
+                min=a[j];
+                temp=a[i];
+                a[i]=a[j];
+                a[j]=temp;
+            }
+        }
+    }
+
+
+    for(i=0; i<n; i++)
+    {
+        cout << a[i] << endl;
+        outfile << a[i] << endl;
+    }
+
+    return 0;
+}

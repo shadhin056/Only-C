@@ -1,0 +1,82 @@
+//uva set - 00
+//369 - Combinations
+//Xplosive
+//accepted
+
+#include <iostream>
+#include <cstdio>
+
+using namespace std;
+
+double fac(double n);
+
+int main()
+{
+    //freopen("uvainput.txt", "r", stdin);
+    //freopen("uvaoutput.txt", "w", stdout);
+
+    double n,m,nm,b,s,sf,nc,r,i;
+
+    while(scanf("%lf %lf",&n,&m)==2)
+    {
+        if(n==0.0 && m==0.0)
+            break;
+
+        nm=n-m;
+
+        if(m<=nm)
+        {
+            s=m;
+            b=nm;
+        }
+        else
+        {
+            s=nm;
+            b=m;
+        }
+
+        sf= fac(s);
+
+        nc=1;
+        for(i=n; i>b; i--)
+        {
+            nc*=i;
+        }
+
+        r=nc/sf;
+
+        //cout << n << " things taken " << m << " at a time is " << r << " exactly.\n";
+        printf("%0.0lf things taken %0.0lf at a time is %0.0lf exactly.\n",n,m,r);
+    }
+
+    return 0;
+
+}
+
+double fac(double n)
+{
+    double f,i;
+
+    for(f=1.0,i=n; i>=1; i--)
+    {
+        f=f*i;
+    }
+
+    return f;
+}
+
+/*
+Sample Input
+100 6
+20 5
+18 6
+0 0
+
+
+Sample Output
+100 things taken 6 at a time is 1192052400 exactly.
+20 things taken 5 at a time is 15504 exactly.
+18 things taken 6 at a time is 18564 exactly.
+
+
+*/

@@ -1,0 +1,256 @@
+//Number Theorem
+//nt - base conversation
+//Xplosive
+//++,
+
+#include <iostream>
+#include <string>
+#include <sstream>
+#include <algorithm>
+#include <vector>
+#include <set>
+#include <queue>
+#include <stack>
+#include <list>
+#include <map>
+#include <fstream>
+#include <numeric>
+#include <iterator>
+#include <bitset>
+#include <utility>
+#include <cstdio>
+#include <cstdlib>
+#include <cctype>
+#include <cmath>
+#include <cstring>
+#include <ctime>
+
+#define READ(file) freopen(file, "r", stdin);
+#define WRITE(file) freopen(file, "w", stdout);
+#define PI acos(-1.0)
+
+
+#define MAX 1100000
+
+using namespace std;
+
+void print_vector(vector<int> v);
+void print_vector(vector<char> v);
+void print_array(int* a, int l);
+
+char getCharDigitForHexa(int n)
+{
+    char ch;
+    switch(n)
+    {
+    case 10:
+        ch= 'A';
+        break;
+    case 11:
+        ch= 'B';
+        break;
+    case 12:
+        ch= 'C';
+        break;
+    case 13:
+        ch= 'D';
+        break;
+    case 14:
+        ch= 'E';
+        break;
+    case 15:
+        ch= 'F';
+        break;
+    default:
+        ch= n + '0';
+        break;
+
+    }
+
+    return ch;
+}
+
+int getIntDigitFromHexa(char ch)
+{
+    int n;
+    //cout << ch << endl;
+    if(ch>'A' && ch<'F')
+    {
+        n = ch-55;
+    }
+    else if(ch>'a' && ch<'f')
+    {
+        n = ch-87;
+    }
+    else
+    {
+        n = ch-'0';
+    }
+    //cout << "getInt" << n << endl;
+    return n;
+
+}
+
+vector <int> getBreak(long n,int b=2)
+{
+    vector <int> v;
+
+    while(n)
+    {
+        v.push_back(n%b);
+        n/=b;
+    }
+    reverse(v.begin(),v.end());
+    return v;
+}
+vector <int> decToBinary(long n)
+{
+    vector <int> v;
+
+    while(n)
+    {
+        v.push_back(n%2);
+        n/=2;
+    }
+    reverse(v.begin(),v.end());
+    return v;
+}
+vector <int> decToOctal(long n)
+{
+    vector <int> v;
+
+    while(n)
+    {
+        v.push_back(n%8);
+        n/=8;
+    }
+    reverse(v.begin(),v.end());
+    return v;
+}
+
+vector <char> decToHex(long n)
+{
+    vector <char> v;
+    char ch;
+
+    int r;
+    while(n)
+    {
+        r= n%16;
+
+        ch = getCharDigitForHexa(r);
+        v.push_back(ch);
+        n/=16;
+    }
+    reverse(v.begin(),v.end());
+    return v;
+
+
+}
+
+long binaryToDec(long n)
+{
+    int r,i=0;
+    long d=0;
+    while(n)
+    {
+        r = n%10;
+        d+=(pow(2,i)*r);
+        n/=10;
+        i++;
+    }
+    return d;
+
+}
+long octalToDec(long n)
+{
+    int r,i=0;
+    long d=0;
+    while(n)
+    {
+        r = n%10;
+        d+=(pow(8,i)*r);
+        n/=10;
+        i++;
+    }
+    return d;
+
+}
+long hexToDec(string s)
+{
+    int r,i=0;
+    long d=0;
+
+    for(i=s.size()-1; i>=0; i--)
+    {
+        r=getIntDigitFromHexa(s[i]);
+        //cout << pow(16,i-1)*r;
+        d+=(pow(16,i-1)*r);
+
+    }
+    return d;
+
+}
+
+
+
+int main()
+{
+    //READ("input.txt");
+    //WRITE("output.txt");
+
+    vector <int> v;
+    vector <char> vch;
+    int n=156;
+
+    //v=getBreak(156,8);
+
+//    v=decToBinary(n);
+//    printVector(v);
+//
+//    v=decToOctal(n);
+//    printVector(v);
+//
+//    vch=decToHex(n);
+//    printVector(vch);
+
+    cout << binaryToDec(10011100) << endl;
+    cout << octalToDec(234) << endl;
+    cout << hexToDec("9C") << endl;
+
+
+    return 0;
+}
+
+void print_array(int* a, int l)
+{
+    for(int i= 0; i<l; i++)
+        cout << a[i] << " ";
+
+    cout << endl;
+}
+
+void print_vector(vector<int> v)
+{
+    for(int i=0; i<v.size(); i++)
+        cout << v[i] << " ";
+
+    cout << endl;
+}
+
+void print_vector(vector<char> v)
+{
+    for(int i=0; i<v.size(); i++)
+        cout << v[i] << " ";
+
+    cout << endl;
+}
+
+
+
+
+/*
+
+
+
+*/

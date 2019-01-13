@@ -1,0 +1,56 @@
+//uva set - mix
+//11547 - Automatic Answer
+//Xplosive
+//accepted
+
+#include <iostream>
+#include <cstdio>
+
+using namespace std;
+
+int main()
+{
+
+    freopen("uvainput.txt", "r", stdin);
+    //freopen("uvaoutput.txt", "w", stdout);
+
+    int t,tt;
+    scanf("%d",&tt);
+
+    long long int n,r;
+
+    for(t=1; t<=tt; t++)
+    {
+        scanf("%lld",&n);
+
+        r=((((n*567)/9)+7492)*235)/47-498;
+
+        if(r<0)
+            r*=-1;
+        //cout << r << endl;
+        r/=10;
+        r=r%10;
+
+        printf("%lld\n",r);
+    }
+
+
+    return 0;
+}
+
+
+
+/*
+
+Sample Input
+
+2
+637
+-120
+
+Sample Output
+
+1
+3
+
+*/

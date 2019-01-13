@@ -1,0 +1,110 @@
+//uva problem
+//10573 - Geometry Paradox
+//Xplosive
+//wa
+
+
+#include <iostream>
+#include <string>
+#include <sstream>
+#include <algorithm>
+#include <vector>
+#include <set>
+#include <queue>
+#include <stack>
+#include <list>
+#include <map>
+#include <fstream>
+#include <numeric>
+#include <iterator>
+#include <bitset>
+#include <utility>
+#include <cstdio>
+#include <cstdlib>
+#include <cctype>
+#include <cmath>
+#include <cstring>
+#include <ctime>
+#include <iomanip>
+//#include <conio.h>    //this will give u compile error in contest
+
+#define READ(file) freopen(file, "r", stdin);
+#define WRITE(file) freopen(file, "w", stdout);
+#define PI acos(-1.0)
+
+
+#define MAX 1000005
+
+using namespace std;
+
+
+
+int main()
+{
+    READ("input.txt");
+    //WRITE("output.txt");
+
+    int t, tt;
+    cin >> tt;
+    char gr=getchar();
+
+    for(t=1; t<=tt; t++)
+    {
+//        if(t!=1)
+//            printf("\n");
+
+       // printf("Case %d: ",t);
+
+        double r,r1,r2,A,a,t;
+        string s;
+        getline(cin,s);
+
+        stringstream ss;
+        ss<<s;
+
+        ss>>r1;
+        if(!ss.eof())
+        {
+            ss>>r2;
+        }
+        else
+        {
+            cout << "impossible" << endl;
+        }
+
+        //cout << r1 << " " << r2 << endl;
+
+        a= PI*r1*r1+PI*r2*r2;
+        A= PI*(r1+r2)*(r1+r2);
+
+        //cout << A-a << endl;
+        printf("%.4lf\n",A-a);
+
+
+    }
+
+
+
+    return 0;
+}
+
+
+
+/*
+
+Sample Input
+
+2
+10 10
+15 20
+
+
+Sample Output
+
+628.3185
+1884.9556
+
+*/
+
+
+

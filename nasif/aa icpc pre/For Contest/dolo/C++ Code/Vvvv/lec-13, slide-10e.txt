@@ -1,0 +1,112 @@
+//lec-13, slide-10e
+//Matriix Multiplication
+//Nasif Ahmed
+
+#include<stdio.h>
+
+int main ()
+
+{
+
+    int i,j,r,c,p,q,n;
+    int a[100][100],b[100][100];
+    int m[100][100]={0};
+
+
+
+    printf("\n\t\tThis program is valid for (nxn) matrix\n");
+
+
+    //printf("\n\tEnter dimension of matrix (r,c): ");
+    //scanf("%d %d",&r,&c);
+
+    printf("\n\tEnter n: ");
+    scanf("%d",&n);
+
+    r=c=n;
+
+    printf("\n\tEnter two Matrix\n\n");
+
+    for(i=0;i<r;i++)
+    {
+        for(j=0;j<c;j++)
+        {
+
+            printf("Enter a(%d,%d): ",i+1,j+1);
+            scanf("%d",&a[i][j]);
+        }
+
+    }
+
+    for(i=0;i<r;i++)
+    {
+        for(j=0;j<c;j++)
+        {
+
+            printf("Enter b(%d,%d): ",i+1,j+1);
+            scanf("%d",&b[i][j]);
+        }
+
+    }
+
+    for(i=0;i<r;i++)
+    {
+        for(j=0;j<c;j++)
+        {
+            printf("%d ",a[i][j]);
+        }
+        printf("\n");
+
+    }
+
+    printf("\n");
+
+    for(i=0;i<r;i++)
+    {
+        for(j=0;j<c;j++)
+        {
+            printf("%d ",b[i][j]);
+        }
+        printf("\n");
+
+    }
+
+    printf("\n");
+
+    for(i=0;i<r;i++)
+    {
+        for(j=0;j<c;j++)
+        {
+            //for(p=0,x=0;p<r;p++,x++)
+            //{
+                for(q=0;q<c;q++)
+                {
+                    m[i][j]+=a[i][q]*b[q][j];		//memorise it
+                }
+            //}
+
+
+        }
+
+    }
+
+    for(i=0;i<r;i++)
+    {
+        for(j=0;j<c;j++)
+        {
+            printf("%d ",m[i][j]);
+        }
+        printf("\n");
+
+    }
+
+
+
+
+    return 0;
+
+
+}
+
+//working nice
+//This program is valid for (nxn) matrix\n

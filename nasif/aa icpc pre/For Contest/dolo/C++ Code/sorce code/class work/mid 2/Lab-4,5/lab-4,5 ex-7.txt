@@ -1,0 +1,80 @@
+//lab-4,5 ex-7
+//result
+//Nasif Ahmed
+
+#include<stdio.h>
+
+
+int main ()
+
+{
+    int t1,t2,f,at,q1,q2,q3,q,t,a,b,c,max,med,x,n;
+
+    scanf("%d",&n);
+
+    for(x=1;x<=n;x++)
+    {
+
+        scanf("%d %d %d %d %d %d %d",&t1,&t2,&f,&at,&a,&b,&c);
+
+    	if(a>=b&&b>=c)
+        {
+            max=a;
+            med=b;
+        }
+        if(b>=c&&c>=a)
+        {
+            max=b;
+            med=c;
+        }
+        if(c>=a&&a>=b)
+        {
+            max=c;
+            med=a;
+        }
+        if(b>=a&&a>=c)
+        {
+            max=b;
+            med=a;
+        }
+        if(a>=c&&c>=b)
+        {
+            max=a;
+            med=c;
+        }
+        if(c>=b&&b>=a)
+        {
+            max=c;
+            med=b;
+        }
+
+
+    q=(max+med)/2;
+
+    t=t1+t2+f+at+q;
+
+
+    char grade;
+
+    if (t>=90)
+    printf("Case %d: A\n",x);
+
+    else if (t>=80)
+    printf("Case %d: B\n",x);
+
+    else if (t>=70)
+    printf("Case %d: C\n",x);
+
+    else if (t>=60)
+    printf("Case %d: D\n",x);
+
+    else
+    printf("Case %d: F\n",x);
+
+    }
+
+
+    return 0;
+}
+
+//working perfectly,accepted 11777

@@ -1,0 +1,80 @@
+//my function
+//is_leap_year
+//leap year checking function
+//Xplosive
+
+#include <iostream>
+#include <cstdio>
+
+using namespace std;
+
+
+//---------------------------------------------------
+
+bool is_leap_year (int y)
+{
+    if(y%100!=0 && y%4==0)
+    {
+        return true;
+    }
+    else if(y%400==0)
+    {
+        return true;
+    }
+
+    return false;
+}
+
+//---------------------------------------------------
+
+
+int main ()
+{
+
+    //freopen("input.txt", "r", stdin);
+    //freopen("output.txt", "w", stdout);
+
+    int y,z;
+    bool b;
+
+    while(1)
+    {
+        cin >> y;
+        b= is_leap_year(y);
+//        z=is_leap_year(y);
+//        cout << z;
+
+        if(b==true)
+        {
+            cout << "Leap Year" << endl;
+        }
+        else
+        {
+            cout << "Not Leap Year" << endl;
+        }
+
+    }
+
+    return 0;
+}
+
+
+
+
+
+//---------------------------------------------------
+
+
+/*
+
+Sample Input
+
+
+
+Sample Output
+
+
+
+
+*/
+//---------------------------------------------------

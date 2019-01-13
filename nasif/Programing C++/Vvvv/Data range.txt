@@ -1,0 +1,23 @@
+//my
+//Data range
+//Nasif Ahmed
+
+#include<stdio.h>
+#include<limits.h>
+
+int main ()
+
+{
+    printf("%hd\n",SHRT_MAX);
+    printf("%hd\n",SHRT_MIN);
+    printf("%d\n",INT_MAX);
+    printf("%d\n",INT_MIN);
+    printf("%l\n",LONG_MAX);
+    printf("%l\n",LONG_MIN);
+    //printf("%ul\n",);
+
+
+
+}
+
+//not completed

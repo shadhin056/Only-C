@@ -1,0 +1,168 @@
+//nt
+//11219 - How old are you?
+//Xplosive
+//ac
+
+//age calculation func
+//1y=365d, 1m=30d
+
+#include <iostream>
+#include <string>
+#include <sstream>
+#include <algorithm>
+#include <vector>
+#include <set>
+#include <queue>
+#include <stack>
+#include <list>
+#include <map>
+#include <fstream>
+#include <numeric>
+#include <iterator>
+#include <bitset>
+#include <utility>
+#include <cstdio>
+#include <cstdlib>
+#include <cctype>
+#include <cmath>
+#include <cstring>
+#include <ctime>
+#include <iomanip>
+//#include <conio.h>    //this will give u compile error in contest
+
+#define READ(file) freopen(file, "r", stdin);
+#define WRITE(file) freopen(file, "w", stdout);
+#define PI acos(-1.0)
+
+
+#define MAX 1100000
+
+using namespace std;
+
+void print_vector(vector<int> v);
+void print_vector(vector<char> v);
+void print_array(int* a, int l);
+
+struct Date
+{
+    int d;
+    int m;
+    int y;
+};
+
+long getAge(Date bDate, Date cDate)
+{
+    if(bDate.y>cDate.y)
+    {
+        return -1;
+    }
+
+    long bDays = bDate.y*365 + bDate.m*30 + bDate.d;
+    long cDays = cDate.y*365 + cDate.m*30 + cDate.d;
+
+    return cDays - bDays;
+
+}
+
+
+int main()
+{
+    //READ("input.txt");
+    //WRITE("output.txt");
+
+    int t, tt;
+
+    cin >> tt;
+
+    Date bDate, cDate;
+
+    for(t=1; t<=tt; t++)
+    {
+        int d,m,y;
+        scanf("%d/%d/%d",&d,&m,&y);
+        cDate.d = d;
+        cDate.m = m;
+        cDate.y = y;
+
+        scanf("%d/%d/%d",&d,&m,&y);
+        bDate.d = d;
+        bDate.m = m;
+        bDate.y = y;
+
+        long days = getAge(bDate,cDate);
+
+        cout << "Case #" << t << ": ";
+        if(days<0)
+        {
+            cout << "Invalid birth date" << endl;
+        }
+        else if((days/365)>130)
+        {
+            cout << "Check birth date" << endl;
+        }
+        else
+        {
+            //cout << days << " ";
+            cout << days/365 << endl;
+        }
+
+    }
+
+
+    return 0;
+}
+
+void print_array(int* a, int l)
+{
+    for(int i= 0; i<l; i++)
+        cout << a[i] << " ";
+
+    cout << endl;
+}
+
+void print_vector(vector<int> v)
+{
+    for(int i=0; i<v.size(); i++)
+        cout << v[i] << "";
+
+    cout << endl;
+}
+
+void print_vector(vector<char> v)
+{
+    for(int i=0; i<v.size(); i++)
+        cout << v[i] << " ";
+
+    cout << endl;
+}
+
+
+
+
+/*
+
+
+Sample input
+
+4
+
+01/01/2007
+10/02/2007
+
+09/06/2007
+28/02/1871
+
+12/11/2007
+01/01/1984
+
+28/02/2005
+29/02/2004
+Sample output
+
+Case #1: Invalid birth date
+Case #2: Check birth date
+Case #3: 23
+Case #4: 0
+
+
+*/

@@ -1,0 +1,48 @@
+  /*
+                        if(b<=c && c<=d)
+                        {
+                            max=d;
+                            mid=c;
+                            min=b;
+                        }
+                        else if(b<=d && d<=c)
+                        {
+                            max=c;
+                            mid=d;
+                            min=b;
+                        }
+                        else if(c<=b && b<=d)
+                        {
+                            max=d;
+                            mid=b;
+                            min=c;
+                        }
+                        else if(c<=d && d<=b)
+                        {
+                            max=b;
+                            mid=d;
+                            min=c;
+                        }
+                        else if(d<=b && b<=c)
+                        {
+                            max=c;
+                            mid=b;
+                            min=d;
+                        }
+                        else if(d<=c && c<=b)
+                        {
+                            max=b;
+                            mid=c;
+                            min=d;
+                        }
+
+
+                        if(max!=x && mid!=y != min!=z)
+                        {
+                            printf("Cube = %lld, Triple = (%lld,%lld,%lld)\n",a,min,mid,max);
+                            x=max;
+                            y=mid;
+                            z=min;
+                        }
+
+                    */

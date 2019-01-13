@@ -1,0 +1,21 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+int Ah,Am,As,Bh,Bm,Bs,p,q;
+printf("please enter Ah,Am,As:\n");
+scanf("%d %d %d",&Ah,&Am,&As);
+printf("please enter Bh,Bm,Bs:\n");
+scanf("%d %d %d",&Bh,&Bm,&Bs);
+p=Ah*3600+Am*60+As*60;
+q=Bh*3600+Bm*60+Bs*60;
+if (p<q)
+   {
+    printf("\nB takes more time");
+   }
+else
+   {
+    printf("\nA takes more time");
+   }
+return 0;
+}

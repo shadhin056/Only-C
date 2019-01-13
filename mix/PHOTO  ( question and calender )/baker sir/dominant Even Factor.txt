@@ -1,0 +1,33 @@
+
+#include <stdio.h>
+int main()
+{
+int n,e=0,o=0,b=2;
+printf("please enter your number= ");
+scanf("%d",&n);
+while(b<n)
+{
+if(n%b==0)
+{
+if(b%2==0)
+{
+e=e+b;
+}
+
+else
+{
+o=o+b;
+}
+}
+b++;
+}
+if(e>o)
+{
+printf("\nIt's a Dominant Even Factor\n\n");
+}
+else
+{
+printf("\nIt's not a Dominant Even Factor\n\n");
+}
+return 0;
+}

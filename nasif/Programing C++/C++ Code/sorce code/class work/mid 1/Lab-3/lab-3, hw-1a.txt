@@ -1,0 +1,43 @@
+//lab-3, hw-1a
+//pass fail with age
+//Nasif Ahmed
+
+#include<stdio.h>
+
+main ()
+
+{
+
+    int score,age;
+
+    printf("Enter score= ");
+    scanf("%d",&score);
+
+    printf("Enter age= ");
+    scanf("%d",&age);
+
+    if (score>60)
+    {
+        printf("\nYou Pass\n");
+        if (age>18)
+            printf("Good Job\n");
+            else
+            printf("Excelent Job\n");
+    }
+
+    else
+        {
+            printf("\nYou failed\n");
+            if (age>18)
+                printf("Very Bad. ");
+                else
+                printf("Don't Worry. ");
+
+            printf("Good Luck Next Time\n");
+        }
+
+    printf("\n\n\n");
+    return 0;
+}
+
+//working perfectly

@@ -1,0 +1,57 @@
+//my function
+//get_rand_num
+//random number genarator
+//Xplosive
+
+#include <iostream>
+#include <cstdio>
+#include <ctime>
+#include <windows.h>
+
+using namespace std;
+
+
+//---------------------------------------------------
+
+int get_rand_num(int r)
+{
+    srand(time(0));
+    //Sleep(1000);
+    return (rand()%r);
+
+}
+
+//---------------------------------------------------
+
+
+int main ()
+{
+
+    //freopen("input.txt", "r", stdin);
+    //freopen("output.txt", "w", stdout);
+
+    cout << get_rand_num(50);
+
+    return 0;
+}
+
+
+
+
+
+//---------------------------------------------------
+
+
+/*
+
+Sample Input
+
+
+
+Sample Output
+
+
+
+
+*/
+//---------------------------------------------------

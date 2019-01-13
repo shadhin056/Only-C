@@ -1,0 +1,117 @@
+//uva set - mix
+//10394 - Twin Primes
+//Xplosive
+//not completed
+
+//need more faster way and precalculation
+
+#include <iostream>
+#include <cstdio>
+#include <cmath>
+using namespace std;
+
+const int l=1300000;    //total number of prime
+
+int p[l];
+int is_prime(int n);
+void fill_prime_array(int e_li);
+
+int main()
+{
+
+    //freopen("uvainput.txt", "r", stdin);
+    //freopen("uvaoutput.txt", "w", stdout);
+
+
+    //20000000 prime number to this range
+
+    int n,a,b,c=0,i;
+
+    fill_prime_array(l);
+
+    //for(i=1; i<3000000; i++)
+    for(i=1; c<100000; i++)
+    {
+        if(p[i]-p[i-1]==2)
+        {
+            c++;
+            //printf("(%d, %d)\n",p[i-1],p[i]);
+        }
+    }
+    printf("(%d, %d)\n",p[i-1],p[i]);
+    //cout << c << endl;
+
+
+//    while(scanf("%d",&n)!=EOF)
+//    {
+//
+//
+//
+//        //printf("(%d, %d)\n",a,b);
+//    }
+
+
+    return 0;
+}
+
+//-------------------------------------
+
+int is_prime(int n)
+{
+    int d;
+    if(n<=1)
+        return 0;
+    if(n==2)
+        return 1;
+    if(n%2==0)
+        return 0;
+
+    int r=sqrt(n);
+    for (d=3; d<=r; d+=2)
+    //for (d=3; d*d<=n; d+=2)
+    {
+        if(n%d==0)
+            return 0;
+    }
+
+    return 1;
+
+}
+//-------------------------------------
+
+void fill_prime_array(int l)     //fill l number of prime in p[l];
+{
+    int i,j=0;
+    p[j++]=2;
+
+    for(i=3; j<l; i+=2)
+    {
+        if(is_prime(i))
+        {
+            p[j++]=i;
+        }
+    }
+    //cout << j;
+}
+//-------------------------------------
+
+
+/*
+
+Sample Input
+
+1
+2
+3
+4
+
+Sample Output
+
+(3, 5)
+(5, 7)
+(11, 13)
+(17, 19)
+
+
+
+*/

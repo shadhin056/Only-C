@@ -1,0 +1,38 @@
+//lab-4,5 ex-6
+//leap year
+//Nasif Ahmed
+
+#include<stdio.h>
+
+
+int main ()
+
+{
+
+    int x,y,c;
+    scanf("%d %d",&x,&y);
+
+    for(;x<=y;x++)
+    {
+        if(x%100==0)
+        {
+            if(x%400==0)
+            {
+                printf("%d,",x);
+            }
+        }
+        else
+        {
+            if(x%4==0)
+            {
+                printf("%d,",x);
+            }
+        }
+    }
+
+
+    printf("\n\n\n");
+    return 0;
+}
+
+//something problem in coma

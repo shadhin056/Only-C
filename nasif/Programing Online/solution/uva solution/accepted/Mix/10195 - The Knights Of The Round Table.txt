@@ -1,0 +1,53 @@
+//uva
+//10195 - The Knights Of The Round Table
+//Xplosive
+//accepted
+
+//if a||b||c==0 then triangle is impossible so radious is 0
+
+#include <iostream>
+#include <cstdio>
+#include <cmath>
+
+using namespace std;
+
+int main()
+{
+
+    //freopen("input.txt", "r", stdin);
+    //freopen("output.txt", "w", stdout);
+
+    double r,s,a,b,c;
+
+    while(scanf("%lf %lf %lf",&a,&b,&c)!=EOF)
+    {
+        if(a==0||b==0||c==0)
+        {
+            printf("The radius of the round table is: 0.000\n");
+
+        }
+        else
+        {
+            s=(a+b+c)/2;
+            r=sqrt(s*(s-a)*(s-b)*(s-c))/s;  //this from uva forum
+
+            printf("The radius of the round table is: %0.3lf\n",r);
+        }
+
+    }
+
+    return 0;
+}
+
+
+
+/*
+
+Sample Input
+
+12.0 12.0 8.0
+Sample Output
+
+The radius of the round table is: 2.828
+
+*/

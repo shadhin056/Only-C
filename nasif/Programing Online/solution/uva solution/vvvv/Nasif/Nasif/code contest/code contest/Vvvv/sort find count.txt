@@ -1,0 +1,75 @@
+//Algorithm Lab
+//sort find count
+//Xplosive
+//ns
+
+#include <iostream>
+#include <cstdio>
+#include <cmath>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+void print_array(int a[], int l)
+{
+    //cout << l << endl;
+    for(int i= 0; i<l; i++)
+    {
+        printf("%d ",a[i]);
+        cout << endl;
+    }
+}
+
+void print_vector(vector<int> v)
+{
+    for(int i=0; i<v.size(); i++)
+    {
+        cout << v[i] << endl;
+    }
+
+}
+
+int main()
+{
+
+    //freopen("input.txt", "r", stdin);
+    //freopen("output.txt", "w", stdout);
+
+    int a[]= {1,0,6,33,4,2,4,7,9,5};
+
+    int a4[]= {1,0,6,33,4,2,4,7,9,5};
+    int a5[]= {1,0,6,33,4,2,4,7,9,5};
+    int i,j,k,l;
+
+    //array sorting
+    l = sizeof(a)/sizeof(int);
+    sort(a,a+l);
+    //print_array(a,l );
+
+    int a3[]= {1,0,6,33,4,2,4,7,9,5};
+    int c=count(a3,a3+l,4);
+    cout << "total elements: " << c << endl;
+
+    int *ptr=find(a3,a3+l,4);
+    cout << "Position: " <<ptr-a3 << endl;
+
+
+    //vector sorting
+    int a2[]= {1,0,6,33,4,2,4,7,9,5};
+    l= sizeof(a2)/sizeof(int);
+    vector < int > v(a2,a2+l);       //array to vector
+    //cout << v.size() << endl;
+    sort(v.begin(),v.end());
+    //print_vector(v);
+
+
+    return 0;
+}
+
+
+/*
+
+
+
+*/

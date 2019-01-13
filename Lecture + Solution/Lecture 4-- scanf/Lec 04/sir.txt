@@ -1,0 +1,23 @@
+//My working
+//sir
+//Nasif Ahmed
+
+#include<stdio.h>
+#include<math.h>
+
+int main ()
+
+{
+    float a,b;
+    int x;
+    scanf("%f%f",&a,&b);
+
+    x=a/b;
+    printf("%d",x);
+
+
+    printf("\n\n\n");
+    return 0;
+}
+
+// where  is problem

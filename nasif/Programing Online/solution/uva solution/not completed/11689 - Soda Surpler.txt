@@ -1,0 +1,72 @@
+//uva set - mix
+//11689 - Soda Surpler
+//Xplosive
+//not completed
+
+#include <iostream>
+#include <cstdio>
+
+using namespace std;
+
+int main()
+{
+
+    freopen("uvainput.txt", "r", stdin);
+    //freopen("uvaoutput.txt", "w", stdout);
+
+    int t,tt;
+    scanf("%d",&tt);
+
+    int e,f,c,r;
+
+    for(t=1; t<=tt; t++)
+    {
+        scanf("%d%d%d",&e,&f,&c);
+        //c=3;
+
+        r=(e+f)/c+1;
+
+        printf("%d\n",r);
+    }
+
+
+    return 0;
+}
+
+
+
+/*
+
+Sample Input
+
+2
+9 0 3
+5 5 2
+
+Sample Output
+
+4
+9
+
+--------------------------
+
+6
+8 0 3
+9 0 3
+10 0 3
+11 0 3
+12 0 3
+13 0 3
+....................
+3
+4
+4
+5
+5
+6
+
+
+--------------------------------
+
+
+*/

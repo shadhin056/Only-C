@@ -1,0 +1,100 @@
+//uva set - 01
+//406 - Prime Cuts
+//xplosive
+//wa.......debug this in visual studio
+
+#include <iostream>
+#include <cstdio>
+using namespace std;
+
+int is_prime(int n);
+
+int main()
+{
+    freopen("uvainput.txt", "r", stdin);
+    //freopen("uvaoutput.txt", "w", stdout);
+
+    int i,j,n,c,l,show,start,k=0;
+    int a[10000];
+
+    while(scanf("%d %d",&n,&c)==2)
+    {
+        if(k)
+            printf("\n");
+
+        j=0;
+        for(i=1; i<=n; i++)
+        {
+            if(is_prime(i))
+            {
+                a[j]=i;
+                j++;
+            }
+        }
+        l=j;
+
+        if(l%2==0)
+            show=c*2;
+        else
+            show=(c*2)-1;
+
+        start=(l-show)/2;
+
+        printf("%d %d: ",n,c);
+
+        if(show>l)
+        {
+            for(i=0; i<l; i++)
+            {
+                printf("%d ",a[i]);
+            }
+        }
+        else
+        {
+            for(i=start,j=0; j<show; i++,j++)
+            {
+                printf("%d ",a[i]);
+            }
+
+        }
+        printf("\n");
+        k++;
+    }
+
+    return 0;
+}
+
+int is_prime(int n)
+{
+    int d;
+    if(n<1)
+        return 0;
+    if(n==1)            //1 considerd as prime as question
+        return 1;
+
+    for (d=2; d*d<=n; d++)
+    {
+        if(n%d==0)
+            return 0;
+    }
+    return 1;
+
+}
+
+/*
+
+Sample Input
+
+21 2
+18 2
+18 18
+100 7
+
+Sample Output
+
+21 2: 5 7 11
+18 2: 3 5 7 11
+18 18: 1 2 3 5 7 11 13 17
+100 7: 13 17 19 23 29 31 37 41 43 47 53 59 61 67
+
+*/

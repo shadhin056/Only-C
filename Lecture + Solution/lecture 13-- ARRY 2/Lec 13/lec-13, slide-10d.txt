@@ -1,0 +1,79 @@
+//lec-13, slide-10d
+//Matriix Addition
+//Nasif Ahmed
+
+#include<stdio.h>
+
+int main ()
+
+{
+
+    int i,j,sum,max,min,r,c;
+    int a[100][100],b[100][100];
+    r=5,c=5;
+
+
+
+    for(i=0;i<r;i++)
+    {
+        for(j=0;j<c;j++)
+        {
+            scanf("%d",&a[i][j]);
+        }
+
+    }
+
+    for(i=0;i<r;i++)
+    {
+        for(j=0;j<c;j++)
+        {
+            scanf("%d",&b[i][j]);
+        }
+
+    }
+
+    for(i=0;i<r;i++)
+    {
+        for(j=0;j<c;j++)
+        {
+            printf("%d ",a[i][j]);
+        }
+        printf("\n");
+
+    }
+
+    printf("\n");
+
+    for(i=0;i<r;i++)
+    {
+        for(j=0;j<c;j++)
+        {
+            printf("%d ",b[i][j]);
+        }
+        printf("\n");
+
+    }
+
+    printf("\n");
+
+    for(i=0;i<r;i++)
+    {
+        for(j=0;j<c;j++)
+        {
+            printf("%d ",a[i][j]+b[i][j]);
+        }
+        printf("\n");
+
+    }
+
+
+
+
+
+
+    return 0;
+
+
+}
+
+//working nice

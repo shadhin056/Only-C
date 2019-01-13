@@ -1,0 +1,31 @@
+//opro-1,q-20
+//uva- 900, Brick Wall Patterns
+//Nasif Ahmed
+
+#include<stdio.h>
+
+int main()
+{
+    long long int l,i,p,a,b;
+
+    while(1)
+    {
+        scanf("%lld",&l);
+        if(l==0) return 0;
+
+        a=0,b=1,p=0;
+        for(i=1; i<=l; i++)
+        {
+            p=a+b;
+            a=b;
+            b=p;
+        }
+
+        printf("%d\n",p);
+    }
+
+
+    return 0;
+}
+
+//accepeted

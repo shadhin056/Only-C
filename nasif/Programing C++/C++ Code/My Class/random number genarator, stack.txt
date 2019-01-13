@@ -1,0 +1,167 @@
+//my class
+//random number genarator, stack
+//Xplosive
+//working perfectly
+
+#include<iostream>
+#include<fstream>
+#include <windows.h>
+#include <ctime>
+
+using namespace std;
+
+
+
+//--------------------------------------------------------------
+//----------------------Rand_num class
+
+class Rand_num
+{
+private:
+
+public:
+    Rand_num();
+    int get_rand_num(int r);         //return 0 to r
+};
+Rand_num::Rand_num()
+{
+    srand(time(0));
+}
+int Rand_num::get_rand_num(int r)         //return 0 to r
+{
+    return (rand()%(r+1));
+}
+
+
+//---------------------------------------------------
+//-------------------stack class
+
+class Stack
+{
+protected:
+    static const int l=20;      //stack length
+    int st[l];
+    int top;
+public:
+    Stack();
+    void push(int n);
+    int pop();
+};
+
+Stack::Stack()
+{
+    top = 0;
+}
+void Stack::push(int n)
+{
+    st[++top] = n;
+}
+int Stack::pop()
+{
+    return st[top--];
+}
+
+//---------------------------------------------------------
+
+
+
+//---------------------------------------------------------
+//----------------------Rand_num_stack class
+
+class Rand_num_stack: public Stack
+{
+private:
+    Rand_num ran_n;
+public:
+    Rand_num_stack();
+    bool check_array(int n);
+    void fill_stack(int r);
+    void show_stack();
+};
+
+Rand_num_stack::Rand_num_stack(): Stack()
+{
+
+}
+
+bool Rand_num_stack::check_array(int n)
+{
+    int i;
+    for(i=1; i<top; i++)
+    {
+        if(st[i]==n)
+        {
+            return false;
+        }
+
+    }
+
+    return true;
+}
+
+void Rand_num_stack::fill_stack(int r)
+{
+    int n,i=top;
+    for(i=1; i<l; i++)      //here i=1 bcoz stack starts from 1
+    {
+        n=ran_n.get_rand_num(r);
+        while(!check_array(n))
+        {
+            n=ran_n.get_rand_num(r);
+        }
+        Stack::push(n);
+
+    }
+
+}
+
+void Rand_num_stack::show_stack()
+{
+    int i;
+    for(i=1; i<l; i++)      //mind it i=1;
+    {
+        cout << st[i] << endl;
+    }
+
+}
+
+
+//---------------------------------------------------------
+
+
+
+
+int main()
+{
+    int r=100;
+    int i,j;
+
+    int a[50];
+    Stack stob;
+    Rand_num rnob;
+
+    Rand_num_stack rnstob;
+    rnstob.fill_stack(100);
+
+    //stob.push(55);
+    //cout << stob.pop();
+
+    //cout << rnob.get_rand_num(r);
+
+    for(j=1; j<20; j++)
+    {
+        cout << rnstob.pop() << endl;
+
+
+    }
+    cout << "hello\n";
+
+    //cout << rnstob.pop() << endl;
+    //cout << rnstob.pop() << endl;
+
+    rnstob.show_stack();
+
+
+
+    return 0;
+}

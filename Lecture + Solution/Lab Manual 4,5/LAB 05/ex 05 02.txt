@@ -1,0 +1,54 @@
+#include<stdio.h>
+int main()
+{
+    int n,b,x;
+    printf("ENTER NUMBER=");
+    scanf("%d",&n);
+        for(b=2;b<n;b++)
+        {
+
+            if(n%b==0)
+            {
+            x=b;
+            }
+        }
+    if(x%2!=0)
+
+    {
+	   printf("The Big Odd number:%d\n",x);
+     }
+	else
+    {
+		printf("not any Big Odd number\n");
+    }
+}
+
+
+
+
+
+
+
+********************************************
+#include <stdio.h>
+int main()
+{
+int n,a,b=2,x;
+printf("Please enter your number= ");
+scanf("%d",&n);
+while(b<n)
+{
+a=n%b;
+if(a==0)
+{
+x=b;
+}
+b++;
+
+}
+if(x%2!=0)
+printf("it's a big odd\n\n");
+else
+printf("it's not a big odd\n\n");
+return 0;
+}

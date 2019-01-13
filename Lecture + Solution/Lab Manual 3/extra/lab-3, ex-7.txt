@@ -1,0 +1,25 @@
+//lab-3, ex-7
+//checking even odd
+//Nasif Ahmed
+
+#include<stdio.h>
+#include<math.h>
+
+main()
+
+{
+    int num,r;
+    printf("\nEnter Number: ");
+    scanf("%d",&num);
+    r=num%2;
+
+    if(r==0)
+        printf("The number you entered is Even");
+    else
+        printf("The number you entered is ODD");
+
+    printf("\n\n\n");
+    return 0;
+}
+
+//working perfectly

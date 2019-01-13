@@ -1,0 +1,32 @@
+//lab-3, ex-6
+//Area of circle from two points with checking
+//Nasif Ahmed
+
+#include<stdio.h>
+#include<math.h>
+
+main()
+
+{
+    float rad,area,quad;
+
+    printf("\nEnter radius= ");
+    scanf("%f",&rad);
+
+    area = 3.1416*rad*rad;
+
+    if (area<100)
+        printf("\nYour Circle Is To Small To Hold A Quadrate");
+    else
+    {
+        quad= .5*4*rad*rad;
+        printf("\nYour Circle Is Big Enough To Hold A Quadrate & The Area of The Quadrate is %f",quad);
+
+    }
+
+
+    printf("\n\n\n");
+    return 0;
+}
+
+//working perfectly

@@ -1,0 +1,72 @@
+//Vector Lab
+//Vector lab 1d
+//Xplosive
+//ns
+
+#include <iostream>
+#include <cstdio>
+#include <cmath>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+int main()
+{
+
+    //freopen("input.txt", "r", stdin);
+    //freopen("output.txt", "w", stdout);
+
+
+    //int a[10000][10000];
+
+    vector < int > v,v1,v2,v3;
+    vector < int > ::iterator it;
+
+    int i,j,k;
+
+
+
+    for(i=0; i<50; i++)
+        v.push_back(i);
+
+    v1=v;
+
+    for(i=0; i<50; i++)
+        v2.push_back(i+50);
+
+
+    for(it=v.begin(); it!=v.end();it++)
+        cout << *it << " ";
+    cout << endl;
+
+
+
+//    v.assign(123);
+//    v.erase(2,3);
+//    v.insert(3);
+
+    cout << v.at(0) << endl;
+
+//    v.clear();
+//    cout << v.size() << endl;
+
+    if(v.empty())
+        cout << "vector is empty" << endl;
+    else
+        cout << "vector is not empty" << endl;
+
+
+
+    cout << v[0] << endl;
+
+
+    return 0;
+}
+
+
+/*
+
+
+
+*/

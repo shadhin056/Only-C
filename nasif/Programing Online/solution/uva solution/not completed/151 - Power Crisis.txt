@@ -1,0 +1,96 @@
+//uva set - 01
+//151 - Power Crisis
+//xplosive
+//not completed
+
+#include <iostream>
+#include <cstdio>
+using namespace std;
+int main()
+{
+    freopen("uvainput.txt", "r", stdin);
+    //freopen("uvaoutput.txt", "w", stdout);
+
+    int n,i,j,m=7,c,C,flag=0;
+    int a[150]= {0};
+
+
+
+    while(true)
+    {
+        scanf("%d",&n);
+        if(!n)
+            break;
+
+
+        for(m=6; m<100; m++)
+        {
+            c=0,C=1;
+            //a[0]=a[1]=0;
+            for(i=2; i<150; i++)
+                a[i]=i;
+
+            for(i=1; C<=n; i++)
+            {
+                //cout << a[i] << " ";
+                if(i>n)
+                    i=2;
+
+                if(a[i])
+                {
+                    c++;
+                    if(c==m)
+                    {
+                        cout << a[i] << " ";
+                        if(a[i]==13)
+                        {
+                            if(C==n)
+                            {
+                                flag=1;
+                                break;
+                            }
+                            else
+                                break;
+                        }
+
+                        a[i]=0;
+                        c=0;
+
+                        C++;
+                    }
+
+                }
+
+            }
+            if(!flag)
+            {
+                printf("%d\n",m);
+                break;
+            }
+
+
+        }
+
+
+    }
+
+
+
+
+
+
+    return 0;
+
+}
+
+/*
+
+Sample Input
+
+17
+0
+
+Sample output
+7
+
+*/

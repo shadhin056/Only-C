@@ -1,0 +1,33 @@
+//subeen- 3.9
+//uppercase lowercase
+//Nasif Ahmed
+
+#include<stdio.h>
+#include<math.h>
+
+int main ()
+
+{
+
+    char ch;
+
+    ch = getchar();
+
+    if(ch >= 'a' && ch <= 'z')
+    {
+        printf("%c is lower case\n", ch);
+    }
+
+    if(ch >= 'A' && ch <= 'Z')
+    {
+        printf("%c is upper case\n", ch);
+    }
+
+
+
+
+    printf("\n\n\n");
+    return 0;
+}
+
+//working perfectly

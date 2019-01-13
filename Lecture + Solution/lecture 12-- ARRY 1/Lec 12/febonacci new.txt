@@ -1,0 +1,18 @@
+//febonacci SERIES
+
+
+#include<stdio.h>
+int main()
+{
+    int a[100],i;
+    a[0]=0;
+    a[1]=1;
+
+printf("THE 15th SERIES IS= %d %d ",a[0],a[1]);
+for(i=2;i<15;i++)
+{
+    a[i]=a[i-1]+a[i-2];
+printf("%d ",a[i]);
+}
+printf("\n\n");
+}

@@ -1,0 +1,141 @@
+//string lab
+//necessary string command
+//xplosive
+
+#include <iostream>
+#include <cstdio>
+#include <cstring>
+#include <string>
+#include <algorithm>
+
+using namespace std;
+
+
+int main()
+{
+    //freopen("input.txt", "r", stdin);
+    //freopen("output.txt", "w", stdout);
+
+    string s1,s2,s3,s4,s5,s6,s7;
+    int n,i,j,k,l;
+
+    cout << "---------------------------------------------------" << endl;
+    cout << "\t\tassigning section" << endl;
+
+    s1 = "Quick I love my country";
+    s2 = ("this is constructor");
+    s3.assign("aaaabbbb");      // = operator
+
+
+
+
+    cout << "---------------------------------------------------" << endl;
+    cout << "\t\tsearching section" << endl;
+
+    s1= "I love my country";
+
+    cout << "love found at " << s1.find("love") << endl;
+    cout << "First of abc at " << s1.find_first_of("abc") << endl;
+    cout << "Last of abc at " << s1.find_last_of("abc") << endl;
+    cout << "First consonant at " << s1.find_first_not_of("aeiouAEIOU") << endl;
+    cout << "Last consonant at " << s1.find_last_not_of("aeiouAEIOU") << endl;
+
+
+
+
+
+    cout << "---------------------------------------------------" << endl;
+    cout << "\t\tadding and deleting section" << endl;
+
+    s1 = "Quick I love my country";
+
+    s1.push_back('.');
+    cout << s1 << endl;
+
+    s1 += "...";
+    cout << s1 << endl;
+
+
+    s1.erase(0, 6); //remove "Quick "
+    cout << s1 << endl;
+
+
+    s1.replace(0, 1, "we"); //replace "I" with "we"
+    cout << s1 << endl;
+
+    s4="my",s5="our";
+
+    i=s1.find(s4);
+    l=s4.size();
+
+    s1.replace(i, l, s5); //replace "my" with "our"
+    cout << s1 << endl;
+
+    s1.insert(0, "Really "); //insert "Really " at beginning
+    cout << s1 << endl;
+
+    s1.erase(s1.size()-1, 1); //remove '.'
+    cout << s1 << endl;
+
+    s1.append(3, '!'); //append "!!!"
+    cout << s1 << endl;
+
+
+    int x = s1.find(' '); //find a space
+
+    while(x!=-1)    //loop while spaces remain
+        //while( x < s1.size() )        //why this loop will break
+    {
+        s1.replace(x, 1, "/"); //replace with slash
+        x = s1.find(' '); //find next space
+        //cout << x << "  " << s1.size() << endl;
+
+    }
+    cout << s1 << endl;
+
+    s1.clear();         //this will clear the string
+    cout << s1 << endl;
+
+
+
+
+    cout << "---------------------------------------------------" << endl;
+    cout << "\t\tReverse and compare section" << endl;
+
+    s1="cba";
+    cout << s1 << endl;
+
+    reverse(s1.begin(),s1.end());
+    cout << s1 << endl;
+
+    cout << s1.at(1) << endl;
+
+    cout << s1.compare("cba") << endl;      // == operator
+    cout << s1.compare("abc") << endl;
+    cout << s1.compare("abb") << endl;
+
+
+    //swap,......
+
+    cout << "---------------------------------------------------" << endl;
+    cout << "\t\tinput and output" << endl;
+
+    cin >> s1 ;
+    cout << s1 << endl;
+
+    char gr=getchar();
+    getline(cin,s1);
+    cout << s1 << endl;
+
+    getline(cin,s1,'$');
+    cout << s1 << endl;
+
+
+
+    cout << "---------------------------------------------------" << endl;
+
+
+
+    return 0;
+}
+

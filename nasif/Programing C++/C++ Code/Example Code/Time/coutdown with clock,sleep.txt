@@ -1,0 +1,71 @@
+//timer lab
+//coutdown with clock,sleep
+//xplosive
+
+#include<stdio.h>
+#include<time.h>
+#include<windows.h>
+#include<iostream>
+
+using namespace std;
+
+void count_clock(int count_no);
+void count_sleep(int count_no);
+
+int main()
+{
+    //count_clock(4);
+    count_sleep(3);
+
+
+    return 0;
+}
+void count_sleep(int count_no)
+{
+    int i;
+    clock_t end_wait;
+
+    printf("\n\n\n\n\n\n\t\t\tCountdown is Starting now \n\n\n");
+
+    Sleep(1000);
+    system("CLS");
+
+    for(i=count_no; i>=0 ; i--)
+    {
+        Sleep(1000);
+        cout << "\n\n\n\n\n\n\t\t\t\t" << i << endl;
+
+        Sleep(1000);
+        system("CLS");
+
+    }
+    printf("\n\n\n\n\n\n\t\t\t\t Test is Starting \n\n\n");
+}
+
+void count_clock(int count_no)
+{
+    int i;
+    clock_t end_wait;
+
+    printf("\n\n\n\n\n\n\t\t\tCountdown is Starting now \n\n\n");
+
+    end_wait = clock () + 1*CLK_TCK ;
+    while(clock()<end_wait)
+    {}
+    system("CLS");
+
+    for(i=count_no; i>=0 ; i--)
+    {
+        end_wait = clock () + 1 * CLK_TCK ;
+        while(clock()<end_wait)
+        {}
+        cout << "\n\n\n\n\n\n\t\t\t\t" << i << endl;
+
+        end_wait = clock () + 1*CLK_TCK ;
+        while(clock()<end_wait)
+        {}
+        system("CLS");
+
+    }
+    printf("\n\n\n\n\n\n\t\t\t\t Started \n\n\n");
+}

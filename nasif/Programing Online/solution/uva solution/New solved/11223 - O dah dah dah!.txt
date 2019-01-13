@@ -1,0 +1,211 @@
+//nt
+//11223 - O: dah dah dah!
+//Xplosive
+//NC
+#include <iostream>
+#include <string>
+#include <sstream>
+#include <algorithm>
+#include <vector>
+#include <set>
+#include <queue>
+#include <stack>
+#include <list>
+#include <map>
+#include <fstream>
+#include <numeric>
+#include <iterator>
+#include <bitset>
+#include <utility>
+#include <cstdio>
+#include <cstdlib>
+#include <cctype>
+#include <cmath>
+#include <cstring>
+#include <ctime>
+#include <iomanip>
+//#include <conio.h>    //this will give u compile error in contest
+
+#define READ(file) freopen(file, "r", stdin);
+#define WRITE(file) freopen(file, "w", stdout);
+#define PI acos(-1.0)
+
+
+#define MAX 1100000
+
+using namespace std;
+
+string charToString(char ch)
+{
+    stringstream ss;
+    ss<< ch;
+    string s;
+    ss>> s;
+    return s;
+}
+
+//A	.-	J	.- - -	S	...	1	.- - - -	.	.-.-.-	:	- - -...
+//B	-...	K	-.-	T	-	2	..- - -	,	- -..- -	;	-.-.-.
+//C	-.-.	L	.-..	U	..-	3	...- -	?	..- -..	=	-...-
+//D	-..	M	- -	V	...-	4	....-	'	.- - - -.	+	.-.-.
+//E	.	N	-.	W	.- -	5	.....	!	-.-.- -	-	-....-
+//F	..-.	O	- - -	X	-..-	6	-....	/	-..-.	_	..- -.-
+//G	- -.	P	.- -.	Y	-.- -	7	- -...	(	-.- -.	"	.-..-.
+//H	....	Q	- -.-	Z	- -..	8	- - -..	)	-.- -.-	@	.- -.-.
+//I	..	R	.-.	0	- - - - -	9	- - - -.	&	.-...
+
+char getValue(string s)
+{
+    if(s==".-")
+        return 'A';
+    if(s=="-...")
+        return 'B';
+    if(s=="-.-.")
+        return 'C';
+    if(s=="-..")
+        return 'D';
+    if(s==".")
+        return 'E';
+    if(s=="..-.")
+        return 'F';
+    if(s=="--.")
+        return 'G';
+    if(s=="")
+        return 'H';
+    if(s=="")
+        return 'I';
+    if(s=="")
+        return 'J';
+    if(s=="")
+        return 'K';
+    if(s=="")
+        return 'L';
+    if(s=="")
+        return 'M';
+    if(s=="")
+        return 'N';
+    if(s=="")
+        return 'O';
+    if(s=="")
+        return 'P';
+    if(s=="")
+        return 'Q';
+    if(s=="")
+        return 'R';
+    if(s=="")
+        return 'S';
+    if(s=="")
+        return 'T';
+    if(s=="")
+        return 'U';
+    if(s=="")
+        return 'V';
+    if(s=="")
+        return 'W';
+    if(s=="")
+        return 'X';
+    if(s=="")
+        return 'Y';
+    if(s=="")
+        return 'Z';
+    if(s=="")
+        return '0';
+    if(s=="")
+        return '1';
+    if(s=="")
+        return '2';
+    if(s=="")
+        return '3';
+    if(s=="")
+        return '4';
+    if(s=="")
+        return '5';
+    if(s=="")
+        return '6';
+    if(s=="")
+        return '7';
+    if(s=="")
+        return '8';
+    if(s=="")
+        return '9';
+    if(s=="")
+        return '.';
+    if(s=="")
+        return ',';
+    if(s=="")
+        return '?';
+    if(s=="")
+        return '\'';
+    if(s=="")
+        return '!';
+    if(s=="")
+        return '/';
+    if(s=="")
+        return '(';
+    if(s=="")
+        return ')';
+    if(s=="")
+        return '&';
+    if(s=="")
+        return ':';
+    if(s=="")
+        return ';';
+    if(s=="")
+        return '=';
+    if(s=="")
+        return '+';
+    if(s=="")
+        return '-';
+    if(s=="")
+        return '_';
+    if(s=="")
+        return '"';
+    if(s=="")
+        return '@';
+    if(s=="")
+        return '';
+
+
+}
+
+int main()
+{
+    //READ("input.txt");
+    //WRITE("output.txt");
+
+    int t, tt;
+
+    cin >> tt;
+
+    char gr;
+    gr = getchar();     //for \n
+    gr = getchar();     //for blank line
+
+    for(t=1; t<=tt; t++)
+    {
+
+
+    }
+
+
+    return 0;
+}
+
+
+/*
+
+Sample input
+
+2
+... --- ...
+.--- --- -...  -.. --- -. .  ..--..  ..-. .. -. . -.-.--
+Sample output
+
+Message #1
+SOS
+
+Message #2
+JOB DONE ? FINE!
+
+
+*/

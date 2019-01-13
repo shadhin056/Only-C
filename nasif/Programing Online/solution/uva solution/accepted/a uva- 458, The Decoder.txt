@@ -1,0 +1,24 @@
+//opro-1,q-6
+//uva- 458, The Decoder
+//Nasif Ahmed
+
+#include<stdio.h>
+
+int main()
+{
+    char c;
+
+    while(scanf("%c",&c)!=EOF)
+    {
+        if(c=='\n')
+            printf("\n");
+        else
+            printf("%c",c-7);
+
+    }
+
+
+    return 0;
+}
+
+//accepeted

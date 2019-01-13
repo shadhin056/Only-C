@@ -1,0 +1,106 @@
+//uva
+//10680 - LCM
+//Xplosive
+//wa
+
+//this solution isn't working on big input
+//because we can't store lcm of some big number in int
+//need advanced algo
+
+#include <iostream>
+#include <cstdio>
+#include <algorithm>
+
+using namespace std;
+
+//---------------------------------------------------
+
+long long int gcd(long long a, long long b)
+{
+    if(b>0)
+        return gcd(b, a%b);
+    else
+        return a;
+}
+
+//---------------------------------------------------
+
+long long int lcm(long long a, long long b)
+{
+    long long g=gcd(a,b);
+    return (a*b)/g;
+}
+
+//---------------------------------------------------
+
+long long int get_last_digit(long long int n)
+{
+    int r= n%10;
+
+    if(r)
+        return r;
+    else
+        return get_last_digit(n/10);
+
+}
+
+
+
+//---------------------------------------------------
+
+
+const int l= 1000001;
+
+long int a[l];
+
+
+int main()
+{
+
+    //freopen("input.txt", "r", stdin);
+    //freopen("output.txt", "w", stdout);
+
+    //cout << lcm(4,3) << endl;
+
+    int i;
+    a[1]=1;
+    for(i=2; i<l; i++)
+    {
+        a[i]=lcm(a[i-1],i);
+    }
+
+    int n,r;
+    while(cin>>n)
+    {
+        if(!n)
+            break;
+
+        //cout << a[n] << endl;
+
+        r=get_last_digit(a[n]);
+        cout << r << endl;
+
+    }
+
+
+    return 0;
+}
+
+
+
+/*
+
+Sample input
+
+3
+5
+10
+0
+
+Sample output
+
+6
+6
+2
+
+*/

@@ -1,0 +1,35 @@
+#include<stdio.h>
+#include<math.h>
+
+int main()
+
+{
+    float a,b,x,y;
+		double dist,rad,area;
+	
+    printf("Enter first point a,b = ");
+    scanf("%f%f",&a,&b);
+	
+    printf("Enter another point x,y = ");
+    scanf("%f%f",&x,&y);
+	
+    dist = sqrt((a-x)*(a-x)+(b-y)*(b-y));
+	
+    rad = dist/2;
+	
+    area = 3.1416*rad*rad;
+	
+    if (area>0)
+	
+		printf("area=%f",area);
+	
+	
+    else
+	
+		
+		printf("\n no circle!!! How I can calculate the area");
+	
+	
+    return 0;
+	
+}

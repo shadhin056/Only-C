@@ -1,0 +1,17 @@
+#include<stdio.h>
+main()
+{
+    int i=1,sum=0,sum1=0;
+    while(i<10)
+    {
+        if(i%2==0)
+              sum=sum+i;
+        else
+             sum1=sum1+i;
+        i++;
+    }
+        printf("sum=%d",sum);
+        printf("sum1=%d",sum1);
+
+
+}

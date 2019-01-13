@@ -1,0 +1,63 @@
+//My working
+//My routine
+//Nasif Ahmed
+
+#include<stdio.h>
+
+int main ()
+
+{
+
+    int t;
+    char d;
+    printf("\n      Enter 1st Letter of The Day: ");
+    scanf("%c",&d);
+
+    if (d=='s'||d=='m'||d=='t'||d=='w')
+    {
+        printf("\n      Enter Starting Time: ");
+        scanf("%d",&t);
+
+        if ((d=='s'&&t==830)||(d=='t'&&t==830))
+
+        {
+            printf("\n      CSE Class in 403");
+        }
+
+        else if ((d=='m'&&t==130)||(d=='w'&&t==130))
+        {
+            printf("\n      Math Class in 504");
+        }
+
+        else if ((d=='m'&&t==310)||(d=='w'&&t==310))
+        {
+            printf("\n      English Class in 202");
+        }
+
+        else if (d=='m'&&t==450)
+        {
+            printf("\n      CSE Lab in 604");
+        }
+        else
+        {
+            printf("\n      You have class in another time.");
+        }
+
+
+    }
+    else
+    {
+        printf("\n      No Class.Do Programing.");
+    }
+
+
+
+
+    printf("\n\n\n\tPress Any Key To EXIT!!");
+    getch();
+    return 0;
+
+
+}
+
+//Working perfectly

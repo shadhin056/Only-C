@@ -1,0 +1,13 @@
+/* BR 1.8 */
+/* finding errors*/
+
+
+#include <stdio.h>
+
+/* A simple program
+int main ()
+{
+    /* Does nothing */
+}
+
+/* ans. missing (star and back slash) after A simple program */

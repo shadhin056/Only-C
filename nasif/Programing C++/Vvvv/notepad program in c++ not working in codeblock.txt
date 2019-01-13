@@ -1,0 +1,65 @@
+//notepad program in c++ not working in codeblock
+
+
+#include<conio.h>
+#include<cstdio>
+#include<string>
+#include<iostream>
+using namespace std;
+class NotePad
+{
+	private:
+		int x;
+		int y;
+		int key;
+		int total_chars;
+		int total_words;
+		int total_sentance;
+		int line[100];
+	public:
+		void clipboard()
+		{
+			x=1,y=1,total_words=0,total_chars=0;
+			int line_index=0;
+
+			while(key!=27)
+			{
+				gotoxy(1,50);cout<<"Col: "<<x<<" ";
+				gotoxy(11,50);cout<<"Rows: "<<y;
+				gotoxy(21,50);cout<<"Total Chars: "<<total_chars;
+				gotoxy(40,50);cout<<"Total Words: "<<total_words;
+				total_chars++;
+				gotoxy(x,y);
+				key=getch();
+				gotoxy(x,y);printf("%c",key);
+				if(key==13)
+				{
+					y++;
+					line[y]=x;
+					x=1;
+				}
+				else if(key==32)
+				{
+					total_words++;
+				}
+				else if(key==8)
+				{
+					x=line[y]-1;
+					gotoxy(x,y);cout<<" ";
+				}
+				else
+				{
+				 x++;
+				}
+			}
+		}
+};
+
+
+int main()
+{
+	clrscr();
+	NotePad np;
+	np.clipboard();
+	getch();
+}

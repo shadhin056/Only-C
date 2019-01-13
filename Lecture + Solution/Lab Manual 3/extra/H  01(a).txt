@@ -1,0 +1,37 @@
+#include<stdio.h>
+#include<math.h>
+
+main()
+{
+    int score,age;
+    printf("score=");
+    scanf("%d",&score);
+
+    printf("age=");
+    scanf("%d",&age);
+
+
+    if (score>60)
+    {
+    printf("you pass\n");
+
+
+    if (age>18)
+    printf("xcellent job\n");
+    else
+    printf("good job\n");
+    }
+
+
+ else{
+    printf("you fail\n");
+
+    if (age>18)
+    printf("very bad\n");
+    else
+    printf("don't worry\n");
+    }
+
+    printf("good luck next time");
+
+}

@@ -1,0 +1,47 @@
+//joha sir
+//sqrt function by div
+//Nasif Ahmed
+
+#include<stdio.h>
+#include<math.h>
+
+int main ()
+
+{
+    int n,x,y=0,i,j,b,bs;
+    n=531441;
+
+
+    for(;n!=0;n=n/100)
+    {
+        x=n%100;
+        y=y*100+x;
+
+
+    }
+    n=y;
+
+    for(;n!=0;n=n/100)
+    {
+        x=n%100;
+
+        //printf("%d ",x);
+
+        for(b=1,bs=1;bs<x;b++)
+        {
+            bs=b*b;
+        }
+        b=b-2;
+        bs=b*b;
+
+        //printf("%d ",bs);
+
+        r=x-bs;
+
+    }
+
+
+
+}
+
+//not completed

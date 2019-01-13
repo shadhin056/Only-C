@@ -1,0 +1,29 @@
+//lec- 6,7,8 slide- 54
+//do while example
+//Nasif Ahmed
+
+#include<stdio.h>
+#include<math.h>
+#define PI 3.141593
+
+int main (void)
+
+{
+    int degrees=0;
+    float radians;
+    printf("\nDegrees to Radians \n\n");
+
+    do
+    {
+        radians=degrees*PI/180;
+        printf("%d %f\n",degrees,radians);
+        degrees += 10;
+
+    }
+    while(degrees<=360);
+
+    printf("\n\n\n");
+    return 0;
+}
+
+//working perfectly

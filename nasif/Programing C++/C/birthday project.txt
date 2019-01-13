@@ -1,0 +1,36 @@
+//mine
+//birthday project
+//xplosive
+#include <stdio.h>
+#include <Windows.h>
+#include <conio.h>
+
+int main()
+{
+
+	SYSTEMTIME time;
+	//GetSystemTime(&time);
+	GetLocalTime(&time);
+
+
+    //time.wHour+=7;
+
+	printf("Year:%d\nMonth:%d\nDate:%d\nHour:%d\nMin:%d\nSecond:% d\n"
+	,time.wYear,time.wMonth,time.wDay
+	,time.wHour,time.wMinute,time.wSecond);
+
+
+	if(time.wDay == 30 && time.wMonth == 5)
+    {
+		MessageBox(NULL, "Happy Birthday......Birali!\n", "Suprise", MB_OK | MB_ICONINFORMATION |
+			MB_SYSTEMMODAL | MB_SETFOREGROUND);
+	}
+	else
+    {
+        printf("\n\n\tTry this in your birthday only.\n\n\n");
+    }
+    system ("pause");
+
+	return 0;
+
+}

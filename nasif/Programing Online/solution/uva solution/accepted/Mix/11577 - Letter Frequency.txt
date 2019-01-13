@@ -1,0 +1,131 @@
+//uva set - 02
+//11577 - Letter Frequency
+//Xplosive
+//accepted
+
+//using const
+
+
+#include <iostream>
+#include <cstdio>
+#include <cstring>
+
+using namespace std;
+
+int main()
+{
+     freopen("uvainput.txt", "r", stdin);
+    //freopen("uvaoutput.txt", "w", stdout);
+
+    char s[10000],rs[30],tch;
+    int t,tt,i,j,l,max,min,c;
+
+    const int r=123;
+    scanf("%d",&tt);
+    char gr=getchar();
+
+    for(t=1; t<=tt; t++)
+    {
+        max=0,c=0;
+        int a[r]={0};
+        gets(s);
+        l=strlen(s);
+
+        for(i=0;i<l;i++)
+        {
+            if(isalpha(s[i]))
+            {
+                if(isupper(s[i]))
+                {
+                    j=s[i]+32;
+                }
+                else
+                    j=s[i];
+                a[j]++;
+            }
+        }
+        //65 to 122
+
+        for(i=65;i<r;i++)
+        {
+            if(a[i]>max)
+                max=a[i];
+        }
+
+        for(i=65;i<r;i++)
+        {
+            if(a[i]==max)
+            {
+                rs[c]=i;
+                c++;
+            }
+        }
+
+        for(i=0; i<c-1; i++)
+        {
+            min=rs[i];
+            for(j=i+1; j<c; j++)
+            {
+                if(rs[j]<min)
+                {
+                    min= rs[j];
+                    tch=rs[i];
+                    rs[i]=rs[j];
+                    rs[j]=tch;
+                }
+            }
+        }
+
+        for(i=0; i<c; i++)
+        {
+            printf("%c",rs[i]);
+        }
+        printf("\n");
+
+
+    }
+
+    return 0;
+}
+
+
+
+/*
+Sample input
+1
+Computers account for only 5% of the country's commercial electricity
+
+consumption.
+
+Sample output
+co
+
+Critical input:
+1
+aaAAbbBB ppaBAbP ..p. %Perekowpq
+
+Critical output:
+abp
+
+
+//--------------------------------
+
+input:
+5
+safdsad
+afafafafsdaf
+dsgsdagsdag
+ssfde
+nnaaaann
+
+Output will be:
+ads
+af
+dgs
+s
+an
+
+//-------------------------------
+
+
+*/

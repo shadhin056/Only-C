@@ -1,0 +1,41 @@
+#include<stdio.h>
+main()
+{
+    int n,sum=1;
+    printf("enter n=");
+    scanf("%d",&n);
+    for(;n>0;n--)
+    {
+        sum=sum*3;
+    }
+    printf("total=%d",sum);
+}
+
+
+************************
+#include<stdio.h>
+main()
+{
+    int sum=0,n,i=3;
+    printf("enter number=");
+    scanf("%d",&n);
+    {
+    sum=sum+pow(i,n);
+    }
+    printf("%d",sum);
+}
+************************
+
+#include<stdio.h>
+main()
+{
+    int n,sum=1,i;
+    printf("enter N");
+    scanf("%d",&n);
+
+    for(i=0;i<n;i++)
+    {
+        sum=sum*3;
+    }
+    printf("ANS=%d",sum);
+}

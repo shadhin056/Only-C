@@ -1,0 +1,165 @@
+//uva
+//424 - Integer Inquiry
+//xplosive
+//accepted
+
+#include <iostream>
+#include <cstdio>
+#include <cstring>
+#include <cstdlib>
+#include <string>
+
+using namespace std;
+
+
+
+int r[105];
+
+void add_to_result(string s,int l)
+{
+    int i,j;
+    for(j=104,i=l-1; i>=0; i--,j--)
+    {
+        int n=s[i]-48;
+
+        int sum= n+r[j];
+        if(sum<10)
+        {
+            r[j]=sum;
+        }
+        else
+        {
+            r[j] = sum%10;
+            r[j-1] += sum/10;
+
+        }
+
+    }
+
+}
+
+
+int main()
+{
+
+    freopen("input.txt", "r", stdin);
+    //freopen("output.txt", "w", stdout);
+
+    for(int ii= 0; ii<105; ii++)
+    {
+        r[ii]=0;
+    }
+
+    string s;
+    int l,m=0;
+    while(cin >> s)
+    {
+        if(s=="0")
+            break;
+        l=s.size();
+        if(l>m)
+            m=l;
+
+        //cout << s[i-1] << endl;
+        add_to_result(s,l);
+    }
+
+    int temp= 105-(m+2);
+
+    if(r[temp])
+    {
+        cout << r[temp];
+        cout << r[temp+1];
+
+    }
+    else if(r[temp+1])
+    {
+        cout << r[temp+1];
+    }
+
+
+    int i;
+    for(i=105-m; i<105; i++)
+    {
+        cout << r[i];
+    }
+    cout << endl;
+
+    return 0;
+}
+
+
+
+
+
+
+/*
+
+Sample Input
+
+123456789012345678901234567890
+123456789012345678901234567890
+123456789012345678901234567890
+0
+
+Sample Output
+370370367037037036703703703670
+
+
+*/
+
+
+/*
+
+//this also accepted
+
+int main()
+{
+    //freopen("input.txt", "r", stdin);
+    //freopen("output.txt", "w", stdout);
+
+    for(int ii= 0; ii<105; ii++)
+    {
+        r[ii]=0;
+    }
+
+    string s;
+    int l,m=0;
+    while(cin >> s)
+    {
+        if(s=="0")
+            break;
+        l=s.size();
+        if(l>m)
+            m=l;
+
+        //cout << s[i-1] << endl;
+        add_to_result(s,l);
+    }
+
+    int temp= 105-(m+2);
+
+    if(r[temp])
+    {
+        cout << r[temp];
+    }
+    temp++;
+    if(r[temp])
+    {
+        cout << r[temp];
+    }
+
+
+    int i;
+    for(i=105-m; i<105; i++)
+    {
+        cout << r[i];
+    }
+    cout << endl;
+
+    return 0;
+}
+
+*/
+
+

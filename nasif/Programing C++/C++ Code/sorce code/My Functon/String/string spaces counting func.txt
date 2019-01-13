@@ -1,0 +1,43 @@
+//My function: count_spaces()
+//Count spaces in string function
+//Xplosive
+
+#include<stdio.h>
+
+int count_spaces();
+
+int main()
+
+{
+    int z=0;
+
+    char s[1000];
+
+    gets(s);
+
+    z=count_spaces();
+
+    printf("%d",z);
+
+
+
+
+    return 0;
+}
+
+int count_spaces(char s[])
+{
+    int count = 0, i;
+
+    for (i = 0; s[i] != '\0'; i++)
+    {
+        if (s[i] == ' ') count++;
+    }
+
+
+    return count;
+}
+
+
+//working nicely
+

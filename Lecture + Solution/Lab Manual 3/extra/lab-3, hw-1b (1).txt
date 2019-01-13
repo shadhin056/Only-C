@@ -1,0 +1,55 @@
+//lab-3, hw-1b
+//find final abc
+//Nasif Ahmed
+
+#include<stdio.h>
+#include<math.h>
+
+main ()
+
+{
+
+    int a,b,c;
+    printf("\nEnter b,c: ");
+    scanf("%d%d",&b,&c);
+    a=b+c;
+
+    if(a<=10&&b-c>6)
+    {
+       {
+           printf("\n\nRight a=%d b=%d c=%d",a,b,c);
+           b=5+c*2;
+       }
+
+       if(a*b<=12)
+       { }
+           else
+           {
+             printf("\n\nRight-Left a=%d b=%d c=%d",a,b,c);
+             a=10-c*c;
+           }
+
+    }
+    else
+    {
+        if(c!=b)
+        {
+            printf("\n\nLeft-Right a=%d b=%d c=%d",a,b,c);
+            c=5+c*2;
+        }
+        {
+            printf("\n\nLeft-Left a=%d b=%d c=%d",a,b,c);
+            b=a*-c;
+        }
+    }
+
+    {
+        c=a+b;
+        printf("\n\nFinal a=%d b=%d c=%d",a,b,c);
+    }
+
+    printf("\n\n\n");
+    return 0;
+}
+
+//working perfectly

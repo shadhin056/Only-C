@@ -1,0 +1,89 @@
+//uva set - 01
+//490 - Rotating Sentences
+//xplosive
+//accepted......try it by using string array(it will be fun)
+
+//#include <iostream>
+#include <cstdio>
+#include <cstring>
+
+//using namespace std;
+
+
+int main()
+{
+    freopen("uvainput.txt", "r", stdin);
+    //freopen("uvaoutput.txt", "w", stdout);
+
+    int i,in,l,max=0,j,flag=0;
+    char s[101][101];
+
+    for(i=0; i<101; i++)
+    {
+        for(j=0; j<101; j++)
+            s[i][j]=' ';        //fill up all char by space
+    }
+    i=0;
+
+    while(gets(s[i]))
+    {
+        l=strlen(s[i]);
+        if(l>max)
+            max=l;
+        s[i][l]= ' ';       //adding last char as a space
+        i++;
+
+    }
+    in=i;
+
+    for(i=0; i<max; i++)
+    {
+        for(j=in-1; j>=0; j--)
+        {
+            //cout << s[j][i];
+            printf("%c",s[j][i]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+
+
+
+/*
+
+Sample Input
+
+Rene Decartes once said,
+"I think, therefore I am."
+
+Sample Output
+
+"R
+Ie
+n
+te
+h
+iD
+ne
+kc
+,a
+r
+tt
+he
+es
+r
+eo
+fn
+oc
+re
+e
+s
+Ia
+i
+ad
+m,
+.
+
+*/

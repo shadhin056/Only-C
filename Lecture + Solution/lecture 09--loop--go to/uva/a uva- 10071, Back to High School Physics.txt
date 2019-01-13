@@ -1,0 +1,21 @@
+//opro-1,q-13
+//uva- 10071, Back to High School Physics
+//Nasif Ahmed
+
+#include<stdio.h>
+
+int main()
+{
+    int v,t,s;
+
+    while(scanf("%d %d",&v,&t)==2)
+    {
+        s=v*2*t;
+        printf("%d\n",s);
+    }
+
+    return 0;
+
+}
+
+//accepted

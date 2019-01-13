@@ -1,0 +1,38 @@
+//lec-10, hw
+//character conversion
+//Nasif Ahmed
+
+#include<stdio.h>
+#include<math.h>
+
+int main ()
+
+{
+    char c;
+
+    printf("\n\tEnter The Character: ");
+    scanf("%c",&c);
+
+    if (c >= 'a' && c<= 'z')
+    {
+        c=c - ('a'- 'A');
+        printf("\n\tBig Character = %c",c);
+    }
+
+    else if (c >= 'A' && c <= 'Z')
+    {
+        c=c + ('a'- 'A');
+        printf("\n\tSmall Character = %c",c);
+    }
+
+
+
+
+    printf("\n\n\n\tPress Any Key To EXIT!!");
+    getch();
+    return 0;
+
+
+}
+
+//Working perfectly

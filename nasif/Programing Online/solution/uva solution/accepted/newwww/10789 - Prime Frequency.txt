@@ -1,0 +1,113 @@
+//uva
+//10789 - Prime Frequency
+//xplosive
+//ac
+
+#include <iostream>
+#include <cstdio>
+#include <cstring>
+#include <vector>
+#include <algorithm>
+#include <set>
+
+using namespace std;
+
+
+
+//-------------------------------------
+
+bool is_prime(int n)
+{
+    if(n<=1)
+        return false;
+    if(n==2)
+        return true;
+    if(n%2==0)
+        return false;
+
+    int d;
+
+    //int l=sqrt(n);
+    //for (d=3;d<=l; d+=2)
+    for (d=3;d*d<=n; d+=2)      //this is faster
+    {
+        if(n%d==0)
+            return false;
+    }
+
+    return true;
+
+}
+//-------------------------------------
+
+
+
+
+int main()
+{
+
+    //freopen("input.txt", "r", stdin);
+    //freopen("output.txt", "w", stdout);
+
+    int t,tt;
+    cin >> tt;
+
+    for(t=1; t<=tt; t++)
+    {
+        char s[2005];
+        //string s;
+        cin >> s;
+
+        int i,c;
+
+        //int l=s.size();
+        int l=strlen(s);
+
+        set<char> ss;
+        set<char>::iterator it;
+
+        for(i=0; i<l; i++)
+            ss.insert(s[i]);
+
+        char r[2001];
+        i=0;
+        for(it=ss.begin(); it!=ss.end(); it++)
+        {
+            c= count(s,s+l,*it);
+            if(is_prime(c))
+                r[i++]=(*it);
+        }
+        r[i]='\0';
+
+        if(i)
+            printf("Case %d: %s\n",t,r);
+        else
+            printf("Case %d: empty\n",t,r);
+    }
+
+
+
+    return 0;
+
+}
+
+
+
+/*
+
+Sample Input
+
+3
+ABCC
+AABBBBDDDDD
+ABCDFFFF
+
+Sample Output
+
+Case 1: C
+Case 2: AD
+Case 3: empty
+
+
+
+*/

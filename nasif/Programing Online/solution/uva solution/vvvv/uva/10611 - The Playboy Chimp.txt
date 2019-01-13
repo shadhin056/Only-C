@@ -1,0 +1,112 @@
+//uva set - adhoc
+//10611 - The Playboy Chimp
+//Xplosive
+//ac
+
+//upperbound lowerbound
+
+#include<cstdio>
+#include<iostream>
+#include<string>
+#include<cstring>
+#include<sstream>
+#include<cstdlib>
+#include<cctype>
+#include<cmath>
+#include<algorithm>
+#include<vector>
+#include<set>
+#include<queue>
+#include<stack>
+#include<list>
+#include<map>
+#include<fstream>
+#include<numeric>
+#include<iterator>
+#define ull unsigned long long
+using namespace std;
+
+#define mx 35
+
+
+
+int main()
+{
+
+    //freopen("input.txt", "r", stdin);
+    //freopen("output.txt", "w", stdout);
+
+
+//    int tt;
+//    cin >> tt;
+
+
+    int n;
+    vector<int>v;
+    vector<int>::iterator it;
+
+    scanf("%d",&n);
+
+    int x;
+
+    while(n--)
+    {
+        scanf("%d",&x);
+        v.push_back(x);
+    }
+
+    int tt;
+    scanf("%d",&tt);
+
+    int m;
+
+    while(tt--)
+    {
+        scanf("%d",&m);
+
+        it= lower_bound(v.begin(),v.end(),m);
+
+        if(it!=v.begin())
+        {
+            it--;
+            cout << *it << " ";
+        }
+        else
+        {
+            printf("X ");
+        }
+
+        it= upper_bound(v.begin(),v.end(),m);
+        if(it!=v.end())
+        {
+            cout << *it << endl;
+        }
+        else
+        {
+            printf("X\n");
+        }
+
+    }
+
+    return 0;
+}
+
+
+/*
+
+Sample Input
+
+4
+1 4 5 7
+4
+4 6 8 10
+
+Sample Output
+
+1 5
+5 7
+7 X
+7 X
+
+
+*/

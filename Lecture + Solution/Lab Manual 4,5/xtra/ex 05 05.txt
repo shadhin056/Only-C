@@ -1,0 +1,91 @@
+#include<stdio.h>
+int main(){
+	int a,b,c,d,x,sum=0;
+	printf("Enter number:");
+	scanf("%d",&a);
+	x=a;
+
+	while(a!=0)
+    {
+		b=1,c=1;
+		d=a%10;
+    while(b<=d)
+        {
+			c=c*b;
+			b++;
+		}
+		sum=sum+c;
+		a=a/10;
+	}
+if(sum==x)
+    printf("\n%d is a strong number\n",sum);
+else
+    printf("\n%d is not a strong number\n",sum);
+
+return 0;
+}
+
+
+
+***********************************
+
+
+#include<stdio.h>
+int main(){
+	int a,b,c,d,x,sum=0;
+	printf("Enter number:");
+	scanf("%d",&a);
+	x=a;
+
+	while(a!=0)
+    {
+		c=1;
+		d=a%10;
+    for(b=1;b<=d;b++)
+        {
+			c=c*b;
+		}
+		sum=sum+c;
+		a=a/10;
+	}
+if(sum==x)
+    printf("\n%d is a strong number\n",sum);
+else
+    printf("\n%d is not a strong number\n",sum);
+
+return 0;
+}
+
+
+
+*************************************
+
+
+
+#include<stdio.h>
+ main()
+{
+  int n,sum=1,x,j,c,sum1=0;
+    printf("ENTER NUMBER=");
+    scanf("%d",&n);
+    x=n;
+    while(n!=0)
+    {
+        for(;0<n;n=n/10)
+        {
+            sum=1;
+            c=n%10;
+            for(j=1;j<=c;j++)
+            {
+                sum=sum*j;
+            }
+            sum1=sum1+sum;
+        }
+    }
+    if(sum1==x)
+
+		printf("\n%d is a strong number\n",sum1);
+	else
+		printf("\n%d is not a strong number\n",sum1);
+	return 0;
+}

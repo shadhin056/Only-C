@@ -1,0 +1,23 @@
+//lec-4, page-36
+//calculation
+//Nasif Ahmed
+
+#include<stdio.h>
+#include<math.h>
+
+main()
+
+{
+    int a, b, c=5;
+  double x, y;
+  a = c * 2.5;
+  b = a % c * 2 - 1;
+  x = (5 + c) * 2.5;
+  y = x -(-3 * a) / 2;
+
+printf("%d %d %lf %lf",a,b,x,y);
+
+}
+
+// working perfectly
+

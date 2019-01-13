@@ -1,0 +1,37 @@
+//lec- 18a, slide- 5
+//Beware
+//Nasif Ahmed
+
+
+//funny problem with pointer
+
+#include <stdio.h>
+#include <iostream>
+
+using namespace std;
+
+
+int *value ()
+{   int i = 3;
+    return &i;
+}
+
+void callme ()
+{
+    //int x = 35;
+    //int y=66;
+
+}
+int main ()
+{
+    int *ip;
+    ip = value ();
+    printf ("*ip == %d\n", *ip);
+    printf ("*ip == %d\n", *ip);
+
+    //callme ();
+    printf ("*ip == %d\n", *ip);
+
+}
+
+//i didn't get it .....sobkisu aulajhaula.....

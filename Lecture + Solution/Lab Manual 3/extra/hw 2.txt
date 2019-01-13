@@ -1,0 +1,14 @@
+#include<stdio.h>
+int main()
+{
+float a,b,c,d,area;
+printf("enter the the hands of the triangle:\n");
+scanf("%f %f %f",&a,&b,&c);
+d=sqrt((a*a)-(0.25*b*b));
+area=0.5*b*d;
+if((a+b)<c)
+    printf("no triangle is possible");
+else
+    printf("the area is %f",area);
+    return 0;
+}

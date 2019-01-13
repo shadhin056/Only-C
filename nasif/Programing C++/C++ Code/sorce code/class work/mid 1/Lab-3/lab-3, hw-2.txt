@@ -1,0 +1,37 @@
+//lab-3, hw-2
+//Area of Triangle
+//Nasif Ahmed
+
+#include<stdio.h>
+
+int main ()
+{
+    int a,b,c,s,area;
+    printf("   *\n");
+    printf("a *** c\n");
+    printf(" *****\n");
+    printf("*******\n");
+    printf("   b\n");
+
+
+    printf("\nEnter a,b,c:");
+    scanf("%d%d%d",&a,&b,&c);
+
+    if(a+b>c && b+c>a && c+a>b)
+    {
+        s=(a+b+c)/2;
+        area=sqrt(s*(s-a)*(s-b)*(s-c));
+        printf("\nArea of the Triangle is %d",area);
+    }
+
+    else
+    {
+        printf("\nNo Triangle is possible");
+
+    }
+
+    return 0;
+}
+
+
+//working perfectly

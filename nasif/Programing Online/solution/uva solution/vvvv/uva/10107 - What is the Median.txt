@@ -1,0 +1,89 @@
+//uva set - adhoc
+//10107 - What is the Median?
+//Xplosive
+//nc
+
+#include<cstdio>
+#include<iostream>
+#include<string>
+#include<cstring>
+#include<sstream>
+#include<cstdlib>
+#include<cctype>
+#include<cmath>
+#include<algorithm>
+#include<vector>
+#include<set>
+#include<queue>
+#include<stack>
+#include<list>
+#include<map>
+#include<fstream>
+#include<numeric>
+#include<iterator>
+using namespace std;
+
+#define mx 35
+
+int main()
+{
+
+    //freopen("input.txt", "r", stdin);
+    //freopen("output.txt", "w", stdout);
+
+
+    //int tt;
+    unsigned long long int n;
+    vector<unsigned long long>v;
+
+
+    while(scanf("%llu",&n)!=EOF)
+    {
+        v.push_back(n);
+        sort(v.begin(),v.end());
+
+        int l = v.size();
+
+        unsigned long long int r;
+        int j=l/2;
+        if(l%2==0)
+        {
+
+            r = (v[j-1] + v[j])/2;
+        }
+        else
+        {
+            r = v[j];
+        }
+
+
+        cout << r << endl;
+    }
+
+
+
+    return 0;
+}
+
+
+/*
+
+Sample Input
+
+1
+3
+4
+60
+70
+50
+2
+
+Sample Output
+
+1
+2
+3
+3
+4
+
+*/

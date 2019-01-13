@@ -1,0 +1,59 @@
+#include<stdio.h>
+main()
+{
+    int b,c,a;
+
+         printf("enter b,c\n");
+         scanf("%d%d",&b,&c);
+
+            a=b+c;
+
+
+      if(a<=10&&b-c>6)
+
+   {
+
+
+         {
+             printf("RIGHT,%d=a,%d=b,%d=c,a,b,c");
+             b=5+c*2;
+         }
+
+        if(a*b<=12)
+        {}
+    else
+
+    {
+
+        printf("right-left,%d=a,%d=b,%d=c");
+        a=10-c*c;
+    }
+    }
+
+        else
+
+            {
+               if(c!=b)
+              {
+               printf("LEFT-RIGHT %d=a,%d=b,%d=c");
+               c=5+c*2;
+
+               }
+
+                {
+                    printf("LEFT-LEFT,%d=a,%d=b,%d=c");
+                    b=a*-c;
+                }
+            }
+            {
+                c=a+b;
+                printf("FINAL %d=a,%d=b,%d=c");
+
+            }
+
+
+
+            }
+
+
+

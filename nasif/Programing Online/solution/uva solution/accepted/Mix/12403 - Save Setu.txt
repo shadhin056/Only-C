@@ -1,0 +1,64 @@
+//uva set - mix
+//12403 - Save Setu
+//Xplosive
+//accepted
+
+#include <iostream>
+#include <cstdio>
+#include <cstring>
+
+
+using namespace std;
+
+int main()
+{
+
+    //freopen("uvainput.txt", "r", stdin);
+    //freopen("uvaoutput.txt", "w", stdout);
+
+    int t,tt;
+    scanf("%d",&tt);
+
+    //string s;
+    char s[7];
+    unsigned long long int m,total=0;
+
+    for(t=0; t<tt; t++)
+    {
+        //cin>> s;
+        scanf("%s",s);
+        if(strcmp(s,"donate")==0)
+        //if(s=="donate")
+        {
+            scanf("%llu",&m);
+            total+=m;
+        }
+        else
+        {
+            printf("%llu\n",total);
+        }
+
+    }
+
+
+    return 0;
+}
+
+
+
+/*
+
+Sample Input
+
+4
+donate 1000
+report
+donate 500
+report
+
+Sample Output
+
+1000
+1500
+
+*/

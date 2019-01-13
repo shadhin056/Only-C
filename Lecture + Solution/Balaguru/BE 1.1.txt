@@ -1,0 +1,11 @@
+/* BE 1.1*/
+/* Print out mailing address */
+
+#include <stdio.h>
+
+main ()
+{
+    printf("First line     :    Name\n");
+    printf("Second line    :    Door No, Street\n");
+    printf("Third line     :    City, Pin code\n");
+}

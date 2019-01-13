@@ -1,0 +1,126 @@
+//lec- 6,7,8 slide- 43
+//Spell out a number
+//Nasif Ahmed
+
+#include<stdio.h>
+#include<math.h>
+
+int main ()
+
+{
+
+    int num,x,y,z;
+
+    printf("Enter Number: ");
+    scanf("%d",&num);
+    printf("\n\n");
+
+    if(num<=999&&num>0)
+    {
+        z=num%10;
+        y=num/10%10;
+        x=num/100%10;
+
+        //printf("\n%d %d %d",x,y,z);
+
+        if(x==0)
+            printf("");
+        if(x==1)
+            printf("One Hundred");
+        if(x==2)
+            printf("Two Hundred");
+        if(x==3)
+            printf("Three Hundred");
+        if(x==4)
+            printf("Four Hundred");
+        if(x==5)
+            printf("Five Hundred");
+        if(x==6)
+            printf("Six Hundred");
+        if(x==7)
+            printf("Seven Hundred");
+        if(x==8)
+            printf("Eight Hundred");
+        if(x==9)
+            printf("Nine Hundred");
+
+
+
+        if (y!=1)
+        {
+        if(y==0)
+            printf("");
+        if(y==2)
+            printf(" Twenty");
+        if(y==3)
+            printf(" Thirty");
+        if(y==4)
+            printf(" Fourty");
+        if(y==5)
+            printf(" Fifty");
+        if(y==6)
+            printf(" Sixty");
+        if(y==7)
+            printf(" Seventy");
+        if(y==8)
+            printf(" Eighty");
+        if(y==9)
+            printf(" Ninety");
+
+
+        if(z==0)
+            printf("");
+        if(z==1)
+            printf(" One");
+        if(z==2)
+            printf(" Two");
+        if(z==3)
+            printf(" Three");
+        if(z==4)
+            printf(" Four");
+        if(z==5)
+            printf(" Five");
+        if(z==6)
+            printf(" Six");
+        if(z==7)
+            printf(" Seven");
+        if(z==8)
+            printf(" Eight");
+        if(z==9)
+            printf(" Nine");
+        }
+
+        if(y==1)
+        {
+            if(z==0)
+            printf(" Ten");
+        if(z==1)
+            printf(" Eleven");
+        if(z==2)
+            printf(" Twelve");
+        if(z==3)
+            printf(" Thirteen");
+        if(z==4)
+            printf(" Fourteen");
+        if(z==5)
+            printf(" Fifteen");
+        if(z==6)
+            printf(" Sixteen");
+        if(z==7)
+            printf(" Seventeen");
+        if(z==8)
+            printf(" Eightteen");
+        if(z==9)
+            printf(" Nineteen");
+        }
+
+    }
+    else
+        printf("\ninvalid input");
+
+
+    printf("\n\n\n");
+    return 0;
+}
+
+//Working perfectly

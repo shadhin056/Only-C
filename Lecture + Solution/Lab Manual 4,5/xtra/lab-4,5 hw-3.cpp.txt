@@ -1,0 +1,33 @@
+//lab-4,5 hw-3
+//value of 3^n
+//Nasif Ahmed
+
+#include<stdio.h>
+#include<math.h>
+
+int main ()
+
+{
+    int i,v=1,n;
+
+    scanf("%d",&n);
+
+    for(i=1;i<=n;i++)
+    {
+        v=v*3;
+
+    }
+
+    printf("%d",v);
+
+
+
+
+    printf("\n\n\n\tPress Any Key To EXIT!!");
+    getch();
+    return 0;
+
+
+}
+
+//working perfectly

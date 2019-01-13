@@ -1,0 +1,38 @@
+//my programme
+//assci value
+//Nasif Ahmed
+
+#include <stdio.h>
+
+
+int main()
+{
+    char c,sc;
+
+    printf("\n\tEnter Character: ");
+
+    while(1)
+    {
+        sc=scanf("%c",&c);
+
+        if(sc==EOF)
+        {
+            break;
+        }
+
+        if(c!='\n')
+        {
+            printf("\n\tASCII Value of %c=%d",c,c);
+        }
+        if(c=='\n')
+        {
+            printf("\n\n\tEnter Character: ");
+        }
+
+    }
+
+
+    return 0;
+}
+
+//

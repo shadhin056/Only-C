@@ -1,0 +1,29 @@
+//lab-3, ex-2
+//if else pass failed
+//Nasif Ahmed
+
+#include <stdio.h>
+#include <math.h>
+main()
+{
+    int grade;
+    printf("Enter The Number\n");
+    scanf("%D",&grade);
+
+    if(grade>=60)
+    {
+        printf("\n\nCongratulation");
+        printf("\n\nPassed");
+    }
+    else
+    {
+        printf("\n\nSorry");
+        printf("\n\nFailed");
+    }
+
+    printf("\n\n\n");
+
+    return 0;
+}
+
+//working perfectly

@@ -1,0 +1,343 @@
+//linked list
+//ll - local head (need passing)
+//working fine
+//xplo
+
+#include<cstdio>
+#include<iostream>
+#include<cstdlib>
+#include <cstring>
+#include <cstdlib>
+#include <conio.h>
+
+#define max 100
+
+using namespace std;
+
+
+struct Node
+{
+    int data;
+    Node* next;
+
+};
+
+
+/*--------------- Prototype -----------------*/
+
+void print_menu();
+int input_int();
+Node* insert_to_begining(int n, Node* head);
+void insert_to_end(int n, Node* head);
+Node* insert_to_a_position(int n,int pos, Node* head);
+Node* delete_from_begining(Node* head);
+void delete_from_end(Node* head);
+Node* delete_from_a_position(int pos, Node* head);
+Node* reverse_iterate(Node* head);
+void reverse_print(Node* head);
+void print(Node* it);
+
+/*------------------------------------------*/
+
+
+int main()
+{
+    //freopen("input.txt", "r", stdin);
+    //freopen("output.txt", "w", stdout);
+
+
+    Node* head;
+    head=NULL;
+
+    int n,pos;
+
+    head = insert_to_begining(1,head);
+    print(head);
+
+    insert_to_end(2,head);
+    insert_to_end(3,head);
+    insert_to_end(4,head);
+    print(head);
+
+//    head = delete_from_begining(head);
+//    print(head);
+//
+//    delete_from_end(head);
+//    print(head);
+//
+//    head = delete_from_a_position(2,head);
+//    print(head);
+
+    head = reverse_iterate(head);
+    print(head);
+
+    //reverse_print(head);
+
+
+
+
+
+//    while(true)
+//    {
+//        int m;
+//        print_menu();
+//
+//        cin >> m;
+//        cin.ignore(10,'\n');
+//
+//        system("cls");
+//        switch(m)
+//        {
+//        case 1:
+//            n = input_int();
+//            //cout << n << endl;
+//            head = insert_to_begining(n,head);
+//            print(head);
+//            break;
+//
+//        case 2:
+//            n = input_int();
+//            insert_to_end(n,head);
+//            print(head);
+//            break;
+//
+//        case 3:
+//            cout << "Enter (integer:position) : ";
+//            cin >> n >> pos;
+//
+//            head = insert_to_a_position(n,pos,head);
+//            print(head);
+//            break;
+//
+//        case 4:
+//
+//            head = delete_from_begining(head);
+//            print(head);
+//            break;
+//        case 5:
+//
+//            delete_from_end(head);
+//            print(head);
+//            break;
+//        case 6:
+//            cout << "Enter position: ";
+//            cin >> pos;
+//            delete_from_a_position(pos,head);
+//            print(head);
+//            break;
+//        case 7:
+//            print(head);
+//            break;
+//
+//        }
+//
+//        if(m==0)
+//            break;
+//
+////        cout << "\n\tPress any key to continue... ";
+////        getch();
+////
+////        system("cls");
+//
+//
+//    }
+
+
+
+    return 0;
+}
+
+void reverse_print(Node* head)
+{
+    if(head==NULL)
+    {
+        cout << endl;
+        return;
+    }
+    reverse_print(head->next);
+    cout << head->data << " ";
+
+
+}
+
+Node* reverse_iterate(Node* head)
+{
+    Node* it = head;
+    Node* temp;
+    Node* pastAddress = NULL;
+
+    while(it!=NULL)
+    {
+
+//        cout << "before" << endl;
+//        cout << it << " " << it->data << " " << it->next << endl;
+
+        temp = it;
+        it = it->next;
+
+        temp->next = pastAddress;
+        pastAddress = temp;
+
+        //cout << "after" << endl;
+        //cout << it << " " << it->data << " " << it->next << endl;
+
+    }
+
+    return temp;
+}
+
+
+void print_menu()
+{
+    cout << "\a\n";
+    cout << "\n\t   | MENU";
+    cout << "\n\t---|-----------";
+    cout << "\n\t   |";
+
+    cout << "\n\t\t1. Insert to Begining";
+    cout << "\n\t\t2. Insert to End";
+    cout << "\n\t\t3. Insert to a position";
+    cout << "\n\t\t4. Delete from Begining";
+    cout << "\n\t\t5. Delete from End";
+    cout << "\n\t\t6. Delete from a position";
+    cout << "\n\t\t7. Print the list";
+    cout << "\n\t\t0. EXIT!!";
+
+    cout << "\n\t\t\t       |";
+    cout << "\n\t\t\t-------|---";
+    cout << "\n\t\t\t       | ";
+}
+
+
+int input_int()
+{
+    int n;
+    cout << "input an integer: ";
+    cin >> n;
+    return n;
+}
+
+Node* insert_to_begining(int n, Node* head)
+{
+//     old style
+//    Node* temp = (Node*)malloc(sizeof(Node));
+//    (*temp).a = 2;
+//    (*temp).next = NULL;
+
+    Node* temp = new Node();
+    temp->data = n;
+    temp->next = head;
+
+    return temp;
+
+}
+
+void insert_to_end(int n, Node* head)
+{
+    Node* temp = new Node();
+    temp->data = n;
+    temp->next = NULL;
+
+    Node* it = head;
+    while(it->next!=NULL)
+    {
+        it = it->next;
+    }
+    it->next = (Node*)temp;
+
+}
+
+Node* insert_to_a_position(int n,int pos, Node* head)
+{
+    if(pos==0)
+    {
+        return insert_to_begining(n,head);
+    }
+
+    Node* temp = new Node();    // temp will be inserted
+    temp->data = n;
+
+    Node* it = head;
+    for(int i=0; i<pos-1; i++)
+    {
+        it = it->next;  //iterate and search just back address
+    }
+    temp->next = it->next;
+    it->next = temp;
+
+    return head;
+
+}
+
+Node* delete_from_begining(Node* head)
+{
+    Node* it = head;
+    head = it->next;
+    free(it);
+    return head;
+
+}
+void delete_from_end(Node* head)
+{
+    Node* it = head;
+    Node* temp;
+
+    while(it->next!=NULL)
+    {
+        temp = it;
+        it = it->next;
+    }
+
+    temp->next = NULL;
+    //cout << it << " " <<  it->data << endl;
+
+    free(it);
+//    it = NULL;
+//    it->data = 44;
+    //return head;
+}
+Node* delete_from_a_position(int pos, Node* head)
+{
+    if(pos==0)
+    {
+        return delete_from_begining(head);
+    }
+
+    Node* it = head;
+    for(int i=0; i<pos-1; i++)
+    {
+        it = it->next; //iterate and search just back address
+    }
+
+    Node* temp = it->next;
+    it->next = temp->next;
+    free(temp);
+
+    return head;
+
+}
+
+void print(Node* it)
+{
+//    for(Node* it=head; it!=NULL; it=it->next)
+//    {
+//        cout << it->data << " ";
+//    }
+
+    while(it!=NULL)
+    {
+        cout << it->data << " ";
+        it = it->next;
+    }
+    cout << endl;
+}
+
+
+/*
+
+Sample Input
+
+Sample Output
+
+
+*/

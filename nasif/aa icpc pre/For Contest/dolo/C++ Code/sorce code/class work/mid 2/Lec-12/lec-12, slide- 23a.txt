@@ -1,0 +1,74 @@
+//lec-12, slide-23a
+//ascendig & descindig
+//Nasif Ahmed
+
+#include<stdio.h>
+
+int main ()
+
+{
+
+    int i,n,qa,qd,s,min,max,k;
+    int a[20];
+
+    while(1)
+    {
+        printf("Please enter the value of n: ");
+        scanf("%d",&n);
+        qa=qd=0;
+
+
+        for (i=0;i<n;i++)
+        {
+            scanf("%d",&a[i]);
+        }
+
+
+
+        for(i=0,k=1;k<n;i++,k++)
+        {
+            if(a[i]<a[k])
+            {
+                qa=1;
+            }
+            else
+            {
+                qa=0;
+                break;
+            }
+
+        }
+
+        for(i=0,k=1;k<n;i++,k++)
+        {
+            if(a[i]>a[k])
+            {
+                qd=1;
+            }
+            else
+            {
+                qd=0;
+                break;
+            }
+
+        }
+
+
+        if(qa==0 && qd==0)
+        {
+            printf("The number isn't in any order\n\n");
+        }
+        else if(qa==1)
+        {
+            printf("The number is in Asecendig order\n\n");
+        }
+        else if(qd==1)
+        {
+            printf("The number is in Descending order\n\n");
+        }
+
+    }
+
+
+    return 0;
+}

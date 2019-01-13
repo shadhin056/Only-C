@@ -1,0 +1,56 @@
+//lec-13, slide-10c
+//Find the class highest marks of each course(column max)
+//Nasif Ahmed
+
+#include<stdio.h>
+
+int main ()
+
+{
+
+    int i,j,sum,max,min,r,c;
+    int a[100][100];
+    r=5,c=7;
+
+
+
+    for(i=0;i<r;i++)
+    {
+        for(j=0;j<c;j++)
+        {
+            scanf("%d",&a[i][j]);
+        }
+
+    }
+
+
+
+    for(j=0;j<r;j++)
+    {
+
+        max=a[0][j];
+
+        for(i=0;i<c;i++)
+        {
+            printf("%d ",a[j][i]);
+
+            if(a[i][j]>max)
+            {
+               max=a[i][j];
+            }
+
+        }
+
+        printf("Max= %d\n",max);
+
+    }
+
+
+
+
+    return 0;
+
+
+}
+
+//working nice, have to improve

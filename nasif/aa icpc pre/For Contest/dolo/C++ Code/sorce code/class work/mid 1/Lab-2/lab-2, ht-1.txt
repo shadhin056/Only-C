@@ -1,0 +1,30 @@
+//lab-2, ht-1
+//time calculation
+//Nasif Ahmed
+
+#include<stdio.h>
+
+main()
+
+{
+    int R,Q,sec,min,hour,tsec;
+
+
+    printf("\nTotal second = ");
+    scanf("%d",&tsec);
+
+    hour = tsec/3600;
+    printf("\n\n%d Hour ,",hour);
+
+    R = tsec%3600;
+
+    min = R/60;
+
+    printf("%d Minute ,",min);
+
+    Q = tsec/60;
+
+    sec = tsec - 60*Q;
+    printf("%d Second\n\n",sec);
+
+}

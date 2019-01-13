@@ -1,0 +1,34 @@
+//opro-1,q-36
+//uva- 706, LC-display
+//Nasif Ahmed
+
+#include<stdio.h>
+
+int main()
+{
+
+    printf(" -- \n");
+    printf("   |\n");
+    printf("   |\n");
+    printf(" -- \n");
+    printf("|   \n");
+    printf("|   \n");
+    printf(" -- \n");
+
+    printf(" -- \n");
+    printf("   |\n");
+    printf("   |\n");
+    printf(" -- \n");
+    printf("   |\n");
+    printf("   |\n");
+    printf(" -- \n");
+
+
+
+
+
+    return 0;
+
+}
+
+//not completed

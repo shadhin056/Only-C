@@ -1,0 +1,133 @@
+//uva set - mix
+//10222 - Decode the Mad man
+//xplosive
+//accepted
+
+//#include <iostream>
+#include <cstdio>
+
+//using namespace std;
+
+int main()
+{
+    //freopen("uvainput.txt", "r", stdin);
+    //freopen("uvaoutput.txt", "w", stdout);
+
+    int n,i,in,b;
+    char ch;
+
+    while(scanf("%c",&ch)!=EOF)
+    {
+        if(ch== '\n')
+            printf("\n");
+        else if(ch== ' ')
+            printf(" ");
+//-----------------------------------------
+
+        else if(ch== '\\')
+            printf("[");
+
+        else if(ch== ']')
+            printf("p");
+
+        else if(ch== '[')
+            printf("o");
+
+        else if(ch== 'p' || ch== 'P' )
+            printf("i");
+
+        else if(ch== 'o' || ch== 'O' )
+            printf("u");
+
+        else if(ch== 'i' || ch== 'I' )
+            printf("y");
+
+        else if(ch== 'u' || ch== 'U' )
+            printf("t");
+
+        else if(ch== 'y' || ch== 'Y' )
+            printf("r");
+
+        else if(ch== 't' || ch== 'T' )
+            printf("e");
+
+        else if(ch== 'r' || ch== 'R' )
+            printf("w");
+
+        else if(ch== 'e' || ch== 'E' )
+            printf("q");
+
+//-------------------------------------
+
+        else if(ch== '\'')
+            printf("l");
+
+        else if(ch== ';')
+            printf("k");
+
+        else if(ch== 'l' || ch== 'L' )
+            printf("j");
+
+        else if(ch== 'k' || ch== 'K' )
+            printf("h");
+
+        else if(ch== 'j' || ch== 'J' )
+            printf("g");
+
+        else if(ch== 'h' || ch== 'H' )
+            printf("f");
+
+        else if(ch== 'g' || ch== 'G' )
+            printf("d");
+
+        else if(ch== 'f' || ch== 'F' )
+            printf("s");
+
+        else if(ch== 'd' || ch== 'D' )
+            printf("a");
+
+//-------------------------------------------
+        else if(ch== '/')
+            printf(",");
+
+        else if(ch== '.')
+            printf("m");
+
+        else if(ch== ',')
+            printf("n");
+
+        else if(ch== 'm' || ch== 'M' )
+            printf("b");
+
+        else if(ch== 'n' || ch== 'N' )
+            printf("v");
+
+        else if(ch== 'b' || ch== 'B' )
+            printf("c");
+
+        else if(ch== 'v' || ch== 'V' )
+            printf("x");
+
+        else if(ch== 'c' || ch== 'C' )
+            printf("z");
+
+
+//---------------------------------------------
+
+    }
+
+    return 0;
+
+}
+
+/*
+
+Sample Input
+
+k[r dyt I[o
+
+Sample Output
+
+how are you
+
+*/

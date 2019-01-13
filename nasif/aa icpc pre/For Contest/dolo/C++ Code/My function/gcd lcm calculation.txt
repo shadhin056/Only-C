@@ -1,0 +1,78 @@
+//my function
+//gcd lcm
+//gcd lcm calculation
+//Xplosive
+
+
+#include <iostream>
+#include <cstdio>
+
+using namespace std;
+
+//---------------------------------------------------
+
+long long int gcd(long long a, long long b)
+{
+    if(b>0)
+        return gcd(b, a%b);
+    else
+        return a;
+
+//    while (b>0)
+//    {
+//        int m = a % b;
+//        a = b;
+//        b = m;
+//    }
+//    return a;
+
+}
+
+//---------------------------------------------------
+
+long long int lcm(long long a, long long b, long long g)	//here g means gcd
+{
+    return (a*b)/g;
+}
+
+//---------------------------------------------------
+
+int main()
+{
+
+    //freopen("input.txt", "r", stdin);
+    //freopen("output.txt", "w", stdout);
+
+
+
+    long long int a,b,g,l;
+
+    while(scanf("%lld%lld",&a,&b)==2)
+    {
+        g=gcd(a,b);
+        l=lcm(a,b,g);
+        //l=(a*b)/g;
+
+        printf("%lld %lld\n",g,l);
+    }
+
+
+
+    return 0;
+}
+
+//---------------------------------------------------
+
+/*
+
+Sample Input
+
+1 2
+
+Sample Output
+
+1 2
+
+
+*/
+//---------------------------------------------------

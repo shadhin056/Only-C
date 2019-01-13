@@ -1,0 +1,179 @@
+//Time Lab
+//timer lab
+//xplosive
+
+//--------------------------------------------------------------------------------
+
+#include <iostream>
+#include <string>
+#include <cstdio>
+#include <ctime>
+#include <windows.h>
+
+using namespace std;
+
+//--------------------------------------------------------------------------------
+
+void timer1();
+void timer2();
+void timer3();
+void sleepf( clock_t wait );
+void shortcut();
+void vvv();
+
+//--------------------------------------------------------------------------------
+
+int main()
+{
+    //shortcut();
+    //timer1();
+    //timer2();
+    //timer3();
+    //sleepf(5000);           //need 1 argument
+    //vvv();
+
+    return 0;
+}
+
+//--------------------------------------------------------------------------------
+
+void vvv()
+{
+
+
+}
+
+//--------------------------------------------------------------------------------
+
+void shortcut()
+{
+    Sleep(5000);
+    //for (time_t t = clock() + 5; clock() < t; ) {}
+}
+
+//--------------------------------------------------------------------------------
+
+void timer3()
+{
+    //not working or didn't get it
+
+    time_t timer;
+    struct tm y2k;
+    double seconds;
+
+    y2k.tm_hour = 0;
+    y2k.tm_min = 0;
+    y2k.tm_sec = 0;
+    y2k.tm_year = 2000;
+    y2k.tm_mon = 1;
+    y2k.tm_mday = 1;
+
+    time(&timer);           // get current time; same as: timer = time(NULL)
+
+    seconds = difftime(timer,mktime(&y2k));
+
+    cout << seconds;
+    //printf ("%.f seconds since January 1, 2000 in the current timezone", seconds);
+}
+
+//--------------------------------------------------------------------------------
+
+void timer2()
+{
+    //Don't take fractional seconds.
+    //it will do perfectly long term work
+
+    SYSTEMTIME time;            //need windows.h headerfile
+    GetSystemTime(&time);       //get accurate system time (gmt 0)
+    //GetLocalTime(&time);        //get accurate local time (gmt user pc)
+
+    double sec1,sec2,secr;
+
+    sec1=time.wSecond;
+
+    for(int i=0; i<11111111; i++)
+    {
+        for(int j=i; j<11111; j++)
+        {
+            //cout << "hello world\n";
+        }
+    }
+
+    GetSystemTime(&time);
+    sec2=time.wSecond;
+
+    secr=sec1>sec2 ? sec1-sec2 : sec2-sec1;
+
+    cout << secr;
+
+
+
+    //cout <<"\nHour     : " << time.wHour << endl;         //24 hour format
+    //cout <<"\nMin      : " << time.wMinute << endl;
+    //cout <<"\nSecond   : " << time.wSecond << endl;
+
+
+
+    //GetSystemTime(&time);
+    //cout <<"\nSecond   : " << time.wSecond << endl;
+
+
+}
+
+//--------------------------------------------------------------------------------
+
+
+void timer1()
+{
+    time_t start_time, cur_time;
+
+    time(&start_time);
+    do
+    {
+        time(&cur_time);
+    }
+    while((cur_time - start_time) < 5);
+
+}
+
+//--------------------------------------------------------------------------------
+
+void sleepf( clock_t wait )
+{
+    clock_t goal;
+    goal = wait + clock();
+    while( goal > clock() );        //get it
+}
+
+
+//--------------------------------------------------------------------------------
+
+
+
+
+
+/*          my recherch result & comment
+const clock_t begin_time = clock();
+// do something
+std::cout << float( clock () - begin_time ) /  CLOCKS_PER_SEC;
+
+//GetTickCount defintition
+#include <windows.h>
+int main()
+{
+
+    DWORD dw1 = GetTickCount();
+
+    //Do something
+
+    DWORD dw2 = GetTickCount();
+
+    cout<<"Time difference is "<<(dw2-dw1)<<" milliSeconds"<<endl;
+
+}
+
+
+
+# some problem yet
+
+*/

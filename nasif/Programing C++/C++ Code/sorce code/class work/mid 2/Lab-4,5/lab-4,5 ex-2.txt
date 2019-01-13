@@ -1,0 +1,23 @@
+//lab-4,5 ex-2
+//while loop
+//Nasif Ahmed
+
+#include<stdio.h>
+
+int main ()
+{
+
+
+    int nbr=0;
+    while(nbr<=99)
+    {
+        scanf("%d",&nbr);
+        printf("You Enter -> %d\n",nbr);
+    }
+
+    printf("\n\n\n");
+    return 0;
+
+}
+
+//i found, it in variable integer

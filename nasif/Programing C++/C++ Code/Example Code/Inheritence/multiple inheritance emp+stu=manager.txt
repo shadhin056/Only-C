@@ -1,0 +1,82 @@
+//inheritance
+//multiple inheritance emp+stu=manager
+//xplosive
+
+#include <iostream>
+using namespace std;
+const int LEN = 80; //maximum length of names
+
+//---------------------------------------------------------
+
+class student //educational background
+{
+private:
+    char school[LEN]; //name of school or university
+    char degree[LEN]; //highest degree earned
+public:
+    void getdata()
+    {
+        cout << " Enter name of school or university: ";
+        cin >> school;
+    }
+    void putdata() const
+    {
+        cout << "\n School or university: " << school;
+    }
+};
+
+//---------------------------------------------------------
+
+class employee
+{
+private:
+    char name[LEN]; //employee name
+    unsigned long number; //employee number
+public:
+    void getdata()
+    {
+        cout << "\n Enter last name: ";
+        cin >> name;
+    }
+    void putdata() const
+    {
+        cout << "\n Name: " << name;
+    }
+};
+
+//---------------------------------------------------------
+
+class manager : private employee, private student //management
+{
+private:
+    char title[LEN]; //"vice-president" etc.
+    double dues; //golf club dues
+public:
+    void getdata()
+    {
+        employee::getdata();
+        student::getdata();
+    }
+    void putdata() const
+    {
+        employee::putdata();
+        student::putdata();
+    }
+};
+
+
+
+//---------------------------------------------------------
+
+int main()
+{
+    manager m1;
+
+    cout << endl;
+    cout << "\nEnter data for manager 1"; //get data for
+    m1.getdata(); //several employees
+    m1.putdata();
+    cout << endl;
+    return 0;
+}
+

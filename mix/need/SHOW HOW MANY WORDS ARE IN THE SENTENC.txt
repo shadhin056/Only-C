@@ -1,0 +1,22 @@
+SHOW HOW MANY WORDS ARE IN THE SENTENCE
+
+#include<stdio.h>
+int main()
+{  int c=0,b=0,t,i;
+   char a[100];
+   gets (a);
+   printf ("%s please count how many WORDS are there\n",a);
+   for(i=0;a[i]!='\0';i++)
+   {
+     
+       if ((a[i]==' ') || ((a[i]>=32 && a[i]<=64)|| (a[i]>=91 && a[i]<=96) || (a[i]>=123 && a[i]<=126)))
+       {
+           b=b++;
+
+       }
+   }
+
+   t=b+1;
+   printf ("\n %d \n ",t);
+   return 0;
+}

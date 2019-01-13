@@ -1,0 +1,42 @@
+//siam
+//calculator digit
+//Nasif Ahmed
+
+
+#include <stdio.h>
+
+int main()
+{
+    long long int i,n,c=0,d=1;
+
+    printf("This programe is valid for upto 1999999999\n");
+
+    printf("Enter you desired number: ");
+
+    scanf("%lld",&n);
+
+    for(i=0;i<=n;i++)
+    {
+             if(i>=1000000000) d=10;
+        else if(i>=100000000) d=9;
+        else if(i>=10000000) d=8;
+        else if(i>=1000000) d=7;
+        else if(i>=100000) d=6;
+        else if(i>=10000) d=5;
+        else if(i>=1000) d=4;
+        else if(i>=100) d=3;
+        else if(i>=10) d=2;
+
+        c+=d;
+    }
+
+    printf("Total digit= %lld",c);
+
+}
+
+
+
+
+
+
+

@@ -1,0 +1,81 @@
+//(Return)--f--(Argument)
+
+#include<stdio.h>
+float sum(int x,int y)
+{
+    int z;
+    z=x+y;
+    return z;
+}
+    int main()
+    {
+        int x,y;
+        float c;
+
+        printf("Enter Number= ");
+        scanf("%d%d",&x,&y);
+        c=sum(x,y);
+
+        printf("%f",c);
+        return 0;
+    }
+//.....................................................
+
+//(No Return)--f--(Argument)
+
+#include<stdio.h>
+void sum(int x,int y)
+{
+    int z;
+    z=x+y;
+    printf("ANS=%d",z);
+}
+    int main()
+    {   int a,b;
+        printf("enter number")
+        scanf("%d%d",&a,&b);
+        sum(a,b);
+        return 0;
+    }
+
+//....................................................
+
+//(No Return)--f--(No Argument)
+
+#include<stdio.h>
+void sum()
+{
+    int x,y,z;
+    printf("Enter Number= ");
+    scanf("%d%d",&x,&y);
+    z=x+y;
+    printf("ANS=%d",z);
+}
+
+    int main()
+    {
+        sum();
+        return 0;
+    }
+//...................................................
+//(Return)--f--(No Argument)
+
+#include<stdio.h>
+float sum()
+{
+    int x,y,z;
+    printf("Enter Number= ");
+    scanf("%d%d",&x,&y);
+    z=x+y;
+    return z;
+}
+    int main()
+    {
+        float b;
+        b=sum();
+        printf("%f",b);
+        return 0;
+    }
+
+
+

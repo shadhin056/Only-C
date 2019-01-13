@@ -1,0 +1,83 @@
+//uva problem
+//10098 - Generating Fast
+//Xplosive
+//ac
+
+//using next permutiation
+//it is must to sort to use next permutation
+
+#include <iostream>
+#include <string>
+#include <cstdio>
+#include <cstring>
+#include <algorithm>
+
+using namespace std;
+
+int main()
+{
+    //freopen("input.txt", "r", stdin);
+    //freopen("output.txt", "w", stdout);
+
+    int tc;
+    char ch[11];
+
+    cin >> tc;
+
+    while(tc)
+    {
+        cin >> ch;
+        int l= strlen(ch);
+        sort(ch,ch+l);
+
+        do
+        {
+            for(int i=0; i<l; i++)
+            {
+                cout << ch[i];
+            }
+            cout << endl;
+
+
+        }while(next_permutation(ch,ch+l));
+
+        tc--;
+
+        cout << endl;
+    }
+
+
+
+    return 0;
+}
+
+/*
+
+Sample Input
+3
+ab
+abc
+bca
+
+Sample Output
+
+ab
+ba
+
+abc
+acb
+bac
+bca
+cab
+cba
+
+abc
+acb
+bac
+bca
+cab
+cba
+
+*/
+
+

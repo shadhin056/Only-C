@@ -1,0 +1,26 @@
+//opro-1,q-2
+//uva- 494, Kindergarten Counting Game
+//Nasif Ahmed
+
+#include<stdio.h>
+
+int main()
+{
+    int s=1;
+    char c;
+    do
+    {
+        scanf("%c",&c);
+        if(c==' ')
+            s++;
+    }
+    while(c!='\n');
+
+    printf("%d",s);
+
+
+    return 0;
+
+}
+
+//not completed

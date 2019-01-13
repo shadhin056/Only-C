@@ -1,0 +1,131 @@
+//icpc mok
+//f
+//Xplosive
+//
+
+#include<cstdio>
+#include<iostream>
+#include<string>
+#include<cstring>
+#include<sstream>
+#include<cstdlib>
+#include<cctype>
+#include<cmath>
+#include<algorithm>
+#include<vector>
+#include<set>
+#include<queue>
+#include<stack>
+#include<list>
+#include<map>
+#include<fstream>
+#include<numeric>
+#include<iterator>
+using namespace std;
+
+bool is_on(string s)
+{
+    if(s[0]== '*')
+        return true;
+}
+
+
+
+int main()
+{
+
+    //freopen("input.txt", "r", stdin);
+    //freopen("output.txt", "w", stdout);
+
+    int t,tt;
+
+    cin >> tt;
+
+    string s;
+    int n,m,k,i;
+    int online,offline;
+
+    for(t=0; t<tt; t++)
+    {
+//        if(t)
+//            cout << endl;
+
+        online=0;
+        offline=0;
+
+        cin >> n >> m >> k;
+
+        for(i=0; i<n; i++)
+        {
+            cin >>s;
+            if(is_on(s))
+            {
+                online++;
+            }
+
+        }
+        offline= n-online;
+
+        if(k==offline)
+        {
+            online=n;
+        }
+        else if(k>offline)
+        {
+            k-=offline;
+            offline=0;
+
+            if(k%2)
+            {
+                offline=1;
+            }
+
+            online=n-offline;
+        }
+        else
+        {
+            //k<offline
+
+            offline -=k;
+            online=n-offline;
+        }
+
+
+
+        cout << online*m << endl;
+        //cout << online*m;
+
+    }
+
+
+
+
+    return 0;
+}
+
+
+/*
+
+Sample input
+
+3
+2 2 1
+..
+**
+2 2 2
+..
+**
+5 5 3
+.....
+.....
+*****
+.....
+*****
+
+Sample output
+
+4
+2
+25
+
+*/

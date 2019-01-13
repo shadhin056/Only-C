@@ -1,0 +1,20 @@
+//lab-2, ex-5
+// Farenheit to celsius
+
+#include<stdio.h>
+#include<math.h>
+
+main()
+
+{
+    float F,C;
+
+    printf("Enter temperature in farenheit: ");
+    scanf("%f",&F);
+
+    C = (F-32)*5/9;
+
+    printf("Celsius temperature is : %5.2f",C);
+
+
+}

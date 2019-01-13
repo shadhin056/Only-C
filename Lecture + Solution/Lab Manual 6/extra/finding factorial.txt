@@ -1,0 +1,48 @@
+//basic
+//finding factorial
+//Nasif Ahmed
+
+#include<stdio.h>
+#include<math.h>
+
+int main ()
+
+{
+
+    int n,f,i;
+
+    printf("\n\tEnter number: ");
+    scanf("%d",&n);
+
+
+/*      //real method
+
+    for(f=n,i=1;i<n;i++)
+    {
+        f=f*(n-i);
+    }
+
+
+*/      //small method
+
+
+    for(f=1;n>=1;n--)
+    {
+        f=f*n;
+    }
+*/
+
+
+    printf("\n\tfactorial= %d",f);
+
+
+
+
+    printf("\n\n\n\tPress Any Key To EXIT!!");
+    getch();
+    return 0;
+
+
+}
+
+//working perfectly both method

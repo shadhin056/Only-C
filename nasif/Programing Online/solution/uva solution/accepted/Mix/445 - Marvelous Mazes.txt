@@ -1,0 +1,79 @@
+//uva set - mix
+//445 - Marvelous Mazes
+//xplosive
+//accepted
+
+//#include <iostream>
+#include <cstdio>
+#include <cstring>
+
+//using namespace std;
+
+int main()
+{
+    freopen("uvainput.txt", "r", stdin);
+    //freopen("uvaoutput.txt", "w", stdout);
+
+    int n,i,in,b;
+    char ch,ch2;
+
+    while(scanf("%c",&ch)!=EOF)
+    {
+        if(ch>= '0' && ch<= '9')
+        {
+            in= ch-48;
+            scanf("%c",&ch);
+
+            while(ch>= '0' && ch<= '9')
+            {
+                in=in+(ch-48);
+                scanf("%c",&ch);
+            }
+
+            for(i=0; i<in; i++)
+            {
+                if(ch== 'b')
+                {
+                    printf(" ");
+                }
+                else
+                    printf("%c",ch);
+            }
+        }
+        else if(ch== '!')
+        {
+            printf("\n");
+        }
+        else
+        {
+            printf("%c",ch);
+        }
+    }
+
+    return 0;
+
+}
+
+/*
+
+Sample Input
+
+1T1b5T!1T2b1T1b2T!1T1b1T2b2T!1T3b1T1b1T!3T3b1T!1T3b1T1b1T!5T1*1T
+
+11X21b1X
+4X1b1X
+
+Sample Output
+
+T TTTTT
+T  T TT
+T T  TT
+T   T T
+TTT   T
+T   T T
+TTTTT*T
+
+XX   X
+XXXX X
+
+*/

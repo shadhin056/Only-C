@@ -1,0 +1,134 @@
+//ad
+//12602 - Nice Licence Plates
+//Xplosive
+//ac
+
+//use double to get pow value
+
+
+#include <iostream>
+#include <string>
+#include <sstream>
+#include <algorithm>
+#include <vector>
+#include <set>
+#include <queue>
+#include <stack>
+#include <list>
+#include <map>
+#include <fstream>
+#include <numeric>
+#include <iterator>
+#include <bitset>
+#include <utility>
+#include <cstdio>
+#include <cstdlib>
+#include <cctype>
+#include <cmath>
+#include <cstring>
+#include <ctime>
+#include <iomanip>
+//#include <conio.h>    //this will give u compile error in contest
+
+#define READ(file) freopen(file, "r", stdin);
+#define WRITE(file) freopen(file, "w", stdout);
+#define PI acos(-1.0)
+
+
+#define MAX 1100000
+
+using namespace std;
+
+
+int getValue(char* ch)
+{
+    int r=0;
+    int j=2;
+    int n,b;
+    for(int i=0; i<3; i++)
+    {
+        b= (int)ch[i]-65;
+        double p=pow(26,j);
+        n = b*p;
+        r+= n;
+        j--;
+    }
+    return r;
+}
+
+
+int main()
+{
+    //READ("input.txt");
+    //WRITE("output.txt");
+
+    int t, tt;
+    cin >> tt;
+
+
+    for(t=1; t<=tt; t++)
+    {
+//        if(t!=1)
+//            printf("\n");
+
+//        printf("Case #%d:\n",t);
+
+        string s;
+        int a,b;
+        char ch[10];
+
+        cin >> s;
+
+        ch[0]=s[0];
+        ch[1]=s[1];
+        ch[2]=s[2];
+        ch[3]='\0';
+
+        a= getValue(ch);
+
+        ch[0]=s[4];
+        ch[1]=s[5];
+        ch[2]=s[6];
+        ch[3]=s[7];
+        ch[4]='\0';
+
+        stringstream ss;
+        ss<<ch;
+        ss>>b;
+
+
+        //cout<<a<< " " << b << " " << a-b << endl;
+        if(abs(a-b)<=100)
+        {
+            printf("nice\n");
+        }
+        else
+        {
+            printf("not nice\n");
+        }
+
+
+
+    }
+
+
+    return 0;
+}
+
+
+
+/*
+
+Sample Input
+
+2
+ABC-0123
+AAA-9999
+
+Sample Output
+
+nice
+not nice
+
+
+*/

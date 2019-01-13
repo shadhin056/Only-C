@@ -1,0 +1,33 @@
+//uva set - mix
+//623 - 500!
+//xplosive
+//accepted
+
+import java.util.Scanner;
+import java.math.BigInteger;
+
+
+public class Main 
+{
+	public static void main(String[] args)
+	{
+		Scanner in= new Scanner (System.in);
+		BigInteger[] f;
+		f=new BigInteger[1001];
+		f[0]=BigInteger.ONE;
+		
+		for(int i=1; i<1001; i++)
+		{
+			f[i]=f[i-1].multiply(BigInteger.valueOf(i));
+		}
+		
+		while(in.hasNext())
+		{
+			int n=in.nextInt();
+			System.out.println(n+"!");
+			System.out.println(f[n]);
+		}
+		
+	}
+
+}

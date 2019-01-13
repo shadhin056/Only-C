@@ -1,0 +1,30 @@
+//lec- 6,7,8 slide- 78a
+//Compute total of (1+2+..+n)
+//Nasif Ahmed
+
+#include<stdio.h>
+#include<math.h>
+
+int main ()
+
+{
+
+    int i,t=0,n;
+
+    printf("\n      Enter (1+2+..+n) n: ");
+    scanf("%d",&n);
+
+    for(i=1;i<=n;i++)
+    {
+        t=t+i;
+    }
+    printf("\n      Total is = %d",t);
+
+
+
+
+    printf("\n\n\n");
+    return 0;
+}
+
+//working perfectly,i got it

@@ -1,0 +1,131 @@
+//ad
+//10533 - Digit Primes
+//Xplosive
+//nc
+
+//nedd advanced algo... digit utpadok
+
+#include <iostream>
+#include <string>
+#include <sstream>
+#include <algorithm>
+#include <vector>
+#include <set>
+#include <queue>
+#include <stack>
+#include <list>
+#include <map>
+#include <fstream>
+#include <numeric>
+#include <iterator>
+#include <bitset>
+#include <utility>
+#include <cstdio>
+#include <cstdlib>
+#include <cctype>
+#include <cmath>
+#include <cstring>
+#include <ctime>
+#include <iomanip>
+//#include <conio.h>    //this will give u compile error in contest
+
+#define READ(file) freopen(file, "r", stdin);
+#define WRITE(file) freopen(file, "w", stdout);
+#define PI acos(-1.0)
+
+
+#define MAX 1000005
+
+using namespace std;
+
+
+bool status[MAX];
+void sieve_prime(long l)
+{
+    //index 0 is prime and 1 is unprime
+    //at first all index are 0
+
+    //0 and 1 is not prime
+    status[0]=1;
+    status[1]=1;
+    status[2]=0;
+
+    int sq = sqrt(l);
+    int i,j;
+    for(i=4; i<l; i+=2)      //all even number are unprime except 2
+        status[i]=1;
+
+
+    for(i=3; i*i<l ; i+=2)
+    {
+        if(status[i]==0)
+        {
+            for(j=i*2; j<l; j+=i)
+            {
+                if(j%i==0)
+                {
+                    status[j]=1;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+int main()
+{
+    READ("input.txt");
+    //WRITE("output.txt");
+
+    int n,l=MAX;
+    sieve_prime(l);
+
+    int t, tt;
+    cin >> tt;
+
+
+
+    for(t=1; t<=tt; t++)
+    {
+//        if(t!=1)
+//            printf("\n");
+
+       // printf("Case %d: ",t);
+
+       int l1,l2;
+       cin >> l1>>l2;
+
+       for(int i=l1; i<=l2; i++)
+       {
+
+       }
+
+
+    }
+
+
+    return 0;
+}
+
+
+
+/*
+
+Sample input
+
+3
+10 20
+10 100
+100 10000
+
+Sample output
+
+1
+10
+576
+
+*/
+
+

@@ -1,0 +1,5 @@
+http://www.codeproject.com/Articles/186361/Poker-In-Four-Hours
+
+http://wizardofodds.com/games/poker/
+
+http://stackoverflow.com/questions/6877937/c-card-game-exercise-with-classes

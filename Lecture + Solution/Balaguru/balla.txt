@@ -1,0 +1,12 @@
+main()
+{
+
+
+
+        printf(" __________\n");
+        printf("|          |\n");
+        printf("|          |\n");
+        printf("|          |\n");
+        printf("|__________|\n");
+
+}

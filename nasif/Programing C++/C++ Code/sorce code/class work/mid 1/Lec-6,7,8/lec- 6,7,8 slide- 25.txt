@@ -1,0 +1,35 @@
+//lec- 6,7,8 slide- 25
+//if else grading
+//Nasif Ahmed
+
+#include<stdio.h>
+#include<math.h>
+
+main ()
+
+{
+
+    int n;
+
+    printf("Enter Number : ");
+    scanf("%d",&n);
+
+    if (n>100)
+        printf("Invalid Number");
+
+    else if (n>=90)
+        printf("Grade : A");
+
+    else if (n>=80)
+        printf("Grade : B");
+
+    else if (n>=70)
+        printf("Grade : C");
+
+    else if (n>=60)
+        printf("Grade : D");
+
+    else
+        printf("Grade : F");
+
+}

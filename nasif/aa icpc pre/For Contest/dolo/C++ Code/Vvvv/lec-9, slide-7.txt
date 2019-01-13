@@ -1,0 +1,67 @@
+//lec-9, slide-7
+//compute location
+//Nasif Ahmed
+
+#include<stdio.h>
+#include<math.h>
+
+int main ()
+
+{
+
+    float x=0, y=0;
+    char direction;
+    float mile;
+    while (1)
+    {
+        printf("Please input the direction as N,S,E,W (0 to exit): ");
+        scanf("%c", &direction);          fflush(stdin);
+
+        if (direction=='0')             /*stop input, get out of the loop */
+        {
+            break;
+        }
+        if (direction!='N' && direction!='S' && direction!='E' && direction!='W')
+        {
+            printf("Invalid direction, re-enter \n");
+            continue;
+        }
+
+
+
+        printf("Please input the mile in %c direction: ", direction);
+        scanf ("%f",&mile);    fflush(stdin);
+
+
+        if (direction == 'N')           /*in north, compute the y*/
+        {
+            y+=mile;
+        }
+        else if (direction == 'E')      /*in east, compute the x*/
+        {
+             x+=mile;
+        }
+        else if (direction == 'W')      /*in west, compute the x*/
+        {
+             x-=mile;
+        }
+        else if (direction == 'S')      /*in south, compute the y*/
+        {
+             y-=mile;
+        }
+
+
+    }
+    printf("\nCurrent position of A: (%4.2f,%4.2f)\n",x,y); 	/* output A's location */
+
+
+
+
+    printf("\n\n\n\tPress Any Key To EXIT!!");
+    getch();
+    return 0;
+
+
+}
+
+//working perfectly, but i didn't get it fully, what is fflush(stdin);

@@ -1,0 +1,87 @@
+//uva set - 01
+//111 - History Grading
+//xplosive
+//not completed
+
+//#include <iostream>
+#include <cstdio>
+//using namespace std;
+int main()
+{
+    freopen("uvainput.txt", "r", stdin);
+    //freopen("uvaoutput.txt", "w", stdout);
+
+    short int in,c,i,o[20],a[20],r,flag,j;
+
+    scanf("%hd",&in);
+    for(i=0; i<in; i++)
+    {
+        scanf("%hd",&o[i]);
+    }
+
+    while(scanf("%hd",&a[0])!=EOF)
+    {
+        c=0;
+        for(i=1; i<in; i++)
+        {
+            scanf("%hd",&a[i]);
+        }
+
+        flag=-1;
+        for(i=0; i<in; i++)
+        {
+            for(j=flag+1; j<in; j++)
+            {
+                if(a[i]==o[j])
+                {
+                    flag=j;
+                    c++;
+                }
+            }
+        }
+
+        printf("%hd\n",c);
+
+    }
+
+
+
+
+
+    return 0;
+
+}
+
+/*
+
+Sample Input 1
+
+4
+4 2 3 1
+1 3 2 4
+3 2 1 4
+2 3 4 1
+
+Sample Output 1
+
+1
+2
+3
+
+Sample Input 2
+
+10
+3 1 2 4 9 5 10 6 8 7
+1 2 3 4 5 6 7 8 9 10
+4 7 2 3 10 6 9 1 5 8
+3 1 2 4 9 5 10 6 8 7
+2 10 1 3 8 4 9 5 7 6
+
+Sample Output 2
+
+6
+5
+10
+9
+
+*/

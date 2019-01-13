@@ -1,0 +1,39 @@
+//lab-3, ex-5
+//Area of circle from two points with checking
+//Nasif Ahmed
+
+#include<stdio.h>
+#include<math.h>
+
+main()
+
+{
+    float a,b,x,y,dia,rad,area;
+
+    printf("\nEnter first point a,b = ");
+    scanf("%f %f",&a,&b);
+
+    printf("\nEnter another point x,y = ");
+    scanf("%f %f",&x,&y);
+
+    dia = sqrt((a-x)*(a-x)+(b-y)*(b-y));
+
+    if (dia!=0)
+    {
+        rad = dia/2;
+
+        area = 3.1416*rad*rad;
+
+        printf("\n\nArea of the circle is = %f\n",area);
+
+    }
+    else
+        printf("\nNo circle!!! How can I calculate the area.");
+
+
+
+    printf("\n\n\n");
+    return 0;
+}
+
+//working perfectly

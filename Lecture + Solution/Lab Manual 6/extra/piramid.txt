@@ -1,0 +1,92 @@
+//joha sir
+//piramid
+//Nasif Ahmed
+
+#include<stdio.h>
+#include<math.h>
+
+int main ()
+
+{
+
+    int i,j,k;
+
+    for(i=1;i<=11;i++)
+    {
+        for(j=i;j<=10;j++)
+            printf(" ");
+
+        for(k=1;k<=i;k++)
+            printf("* ");
+
+    printf("\n");
+    }
+
+
+
+
+
+    //printf("\n\n\n");
+    return 0;
+}
+
+//working perfectly
+
+
+*******************************
+
+#include<stdio.h>
+int main()
+{
+    float i,j,k;
+
+    for (i=1;i<=9;i++)
+    {
+        for (k=i;k<9;k++)
+        {
+            printf(" ");
+        }
+
+
+        for (j=1;j<=i;j++)
+        {
+            printf(" *");
+        }
+
+        printf("\n");
+    }
+
+    return 0;
+}
+
+**********************************
+#include<stdio.h>
+int main()
+{
+    int i,j,k;
+
+    i=1;
+    while(i<=9)
+    {
+        k=i;
+        while(k<9)
+        {
+            printf(" ");
+            k++;
+        }
+
+        j=1;
+        while(j<=i)
+        {
+            printf(" *");
+            j++;
+        }
+
+        printf("\n");
+        i++;
+    }
+
+    return 0;
+}
+
+

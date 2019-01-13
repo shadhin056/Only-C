@@ -1,0 +1,124 @@
+//file lab
+//file input output
+//xplosive
+
+
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <cstdio>
+
+using namespace std;
+
+ofstream outfile ("outdata.txt");
+ifstream infile ("indata.txt");
+
+void cs_lab();               //char & string lab
+void shortcut_lab();         //shortcut lab
+void gen_if_of_lab();        //mix input output lab
+void vvv();                  //habijabi
+
+
+int main()
+{
+    //cs_lab();
+    //shortcut_lab();
+    gen_if_of_lab();
+    //vvv();
+
+    return 0;
+}
+
+
+void vvv()
+{
+
+}
+
+void gen_if_of_lab()
+{
+    char ch;
+    int j;
+    double d;
+    string str1;
+    string str2;
+    const int l=50;
+    char t_ques[l];
+    char t_ans;
+    int t_time_limit;
+
+
+    //infile >> str1 >> str2;
+    //cout << str1 << " " << str2 << endl;
+
+    infile.getline(t_ques,l);
+    infile >> t_ans >> t_time_limit;
+
+    cout << t_ques << endl;
+    cout << t_ans << endl;
+    cout << t_time_limit << endl;
+
+
+
+//    infile >> ch >> j >> d>> str1 >> str2;
+//    cout << ch << endl << j << endl << d << endl << str1 << endl << str2 << endl;
+//    outfile << ch << endl << j << endl << d << endl << str1 << endl << str2 << endl;
+
+//this is working
+}
+
+void shortcut_lab()
+{
+    cout << infile.rdbuf();         //show whole file in console screen
+
+}
+
+
+void cs_lab()                       //read char & word
+{
+    string str;
+    char ch;
+    const int max = 80;
+    char cstr[max];
+    //string cstr;                  //how can i use this statement
+
+    int c=0;
+
+    //do
+    //while(infile)                 //read one more time
+    while(!infile.eof())
+    {
+        /*
+        infile.get(ch);           //read single char
+        cout << ch;
+        //outfile << ch;            //read one more time
+        */
+
+      /*
+        infile >> str;              //read single word
+        cout << str;
+        outfile << str;
+        */
+
+        /*
+        infile.getline(cstr,max);    //read a full line
+        c++;
+        cout << c << "-" ;
+        outfile << c << "-" ;;
+        cout << cstr << endl;
+        outfile << cstr << endl;
+        */
+    }//while(infile);
+    //cout << cstr << endl;
+
+//working good with char arry , but i want to use string class to read full line
+
+
+}
+
+
+/*          my recherch result & comment
+
+# some problem yet
+
+*/

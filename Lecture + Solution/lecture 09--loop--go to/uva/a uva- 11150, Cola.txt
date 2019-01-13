@@ -1,0 +1,21 @@
+//opro-1,q-11
+//uva- 11150, Cola
+//Nasif Ahmed
+
+#include<stdio.h>
+
+int main()
+{
+    int n,e;
+
+    while(scanf("%d",&n)==1)
+    {
+        e=n+n/2;
+        printf("%d\n",e);
+    }
+
+    return 0;
+
+}
+
+//accepted

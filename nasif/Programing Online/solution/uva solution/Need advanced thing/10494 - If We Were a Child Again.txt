@@ -1,0 +1,68 @@
+//uva set - 01
+//10494 - If We Were a Child Again
+//Xplosive
+//range is so big, need advanced algorithm
+
+//#include <iostream>
+#include <cstdio>
+
+//using namespace std;
+
+
+int main()
+{
+    freopen("uvainput.txt", "r", stdin);
+    //freopen("uvaoutput.txt", "w", stdout);
+
+
+    unsigned long long int n1,n2;
+    char ch;
+
+    while(scanf("%llu %c %llu",&n1,&ch,&n2)==3)
+    {
+        switch(ch)
+        {
+        case '/':
+            printf("%llu\n",n1/n2);
+            break;
+        case '%':
+            printf("%llu\n",n1%n2);
+            break;
+
+        }
+    }
+
+    return 0;
+
+}
+
+
+/*
+
+Sample Input
+
+110 / 100
+99 % 10
+2147483647 / 2147483647
+2147483646 % 2147483647
+
+Sample Output
+
+1
+9
+1
+2147483646
+
+--------------------------------
+
+Input:
+CODE: SELECT ALL
+99999999999999999999999999999999999999999999999999999999999999999999999999999 % 2147483647
+99999999999999999999999999999999999999999999999999999999999999999999999999999 / 2147483647
+Correct output:
+CODE: SELECT ALL
+450864903
+46566128752457969241057508271679984532147638747537340385623900399368
+
+
+*/

@@ -1,0 +1,36 @@
+//My function
+//OddSum function
+//Nasif Ahmed
+
+#include<stdio.h>
+int OddSum (int n);
+
+int main()
+{
+    int n,i,s;
+
+    scanf("%d",&n);
+
+    s=OddSum(n);
+
+    printf("%d\n",s);
+
+    return 0;
+
+}
+
+int OddSum (int n)
+{
+    int i,s;
+    for(s=0,i=1;i<=n;i++)
+    {
+        if(i%2!=0)
+        {
+            s+=i;
+        }
+    }
+
+    return s;
+}
+
+//wn

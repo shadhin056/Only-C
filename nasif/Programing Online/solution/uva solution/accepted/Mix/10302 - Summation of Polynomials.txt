@@ -1,0 +1,47 @@
+//uva
+//10302 - Summation of Polynomials
+//Xplosive
+//accepted
+
+//there is a funny problem
+
+#include <iostream>
+#include <cstdio>
+
+using namespace std;
+
+int main()
+{
+
+    freopen("input.txt", "r", stdin);
+    //freopen("output.txt", "w", stdout);
+
+    unsigned long long int n,r;
+
+    while(scanf("%llu",&n)!=EOF)
+    {
+         r=(n*n*(n+1)*(n+1))/4;     //i got this calculation from net
+         r=(n*n*(n+1)*(n+1))*.25;    //same but wa
+
+
+         printf("%llu\n",r);
+    }
+
+    return 0;
+}
+
+
+
+/*
+
+Sample Input
+1
+2
+3
+
+Sample Output
+1
+9
+36
+
+*/

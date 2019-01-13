@@ -1,0 +1,20 @@
+//lec- 6,7,8 slide- 58
+//count number by for loop
+//Nasif Ahmed
+
+#include<stdio.h>
+#include<math.h>
+
+main()
+{
+    int counter;
+    for(counter=0;counter<=10;counter++)
+        printf("%d\n",counter);
+
+
+    printf("\n\n\n");
+    return 0;
+}
+
+//working perfectly
+

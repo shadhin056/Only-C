@@ -1,0 +1,98 @@
+//uva
+//10922 - 2 the 9s
+//xplosive
+//nc
+
+//i ain't understand about degree
+
+
+#include <iostream>
+#include <cstdio>
+#include <cstring>
+#include <vector>
+#include <algorithm>
+#include <set>
+
+using namespace std;
+
+
+int get_value(char c)
+{
+    switch(c)
+    {
+    case '0':
+        return 0;
+    case '1':
+        return 1;
+    case '2':
+        return 2;
+    case '3':
+        return 3;
+    case '4':
+        return 4;
+    case '5':
+        return 5;
+    case '6':
+        return 6;
+    case '7':
+        return 7;
+    case '8':
+        return 8;
+    case '9':
+        return 9;
+    }
+}
+
+
+
+int main()
+{
+    freopen("input.txt", "r", stdin);
+    //freopen("output.txt", "w", stdout);
+
+    string s;
+    int k;
+
+    while(cin >> s)
+    {
+        if(s=="0")
+            break;
+
+        int l=s.size();
+        int sum=0;
+
+        for(int i=0; i<l; i++)
+        {
+            sum += get_value(s[i]);
+        }
+        if(sum%9==0)
+            cout << s << "is a multiple of 9 and has 9-degree " << "?????" << "." << endl;
+        else
+            cout << s << "is not a multiple of 9" <<endl;
+
+    }
+
+    return 0;
+
+}
+
+
+
+/*
+
+Sample Input
+
+999999999999999999999
+9
+9999999999999999999999999999998
+0
+
+Sample Output
+
+999999999999999999999 is a multiple of 9 and has 9-degree 3.
+9 is a multiple of 9 and has 9-degree 1.
+9999999999999999999999999999998 is not a multiple of 9.
+
+
+
+*/

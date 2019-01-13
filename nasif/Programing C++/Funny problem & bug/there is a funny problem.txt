@@ -1,0 +1,80 @@
+//uva set - mix
+//10931 - Parity
+//xplosive
+//there is a funny problem
+
+#include <iostream>
+#include <cstdio>
+#include <cstring>
+
+using namespace std;
+
+int main()
+{
+    freopen("uvainput.txt", "r", stdin);
+    //freopen("uvaoutput.txt", "w", stdout);
+
+    //char ch[21];          //if i use this statement then working good
+                            //so funny
+
+    long long int i,n,l;
+
+    short a[10000];
+
+    while(true)
+    {
+        scanf("%d",&n);
+        if(n==0)
+            break;
+
+        for(i=0; n!=0; i++)
+        {
+            a[i]=n%2;
+            n/=2;
+
+        }
+        l=i;
+
+        printf("The parity of ");
+
+
+        for(i=l-1; i>=0; i--)
+        {
+            cout << a[i];
+        }
+
+        printf(" is x (mod 2).\n");
+
+        //cout << endl;
+
+
+
+
+
+    }
+
+
+    return 0;
+
+}
+
+
+
+/*
+
+Sample Input
+
+1
+2
+10
+21
+0
+
+Sample Output
+
+The parity of 1 is 1 (mod 2).
+The parity of 10 is 1 (mod 2).
+The parity of 1010 is 2 (mod 2).
+The parity of 10101 is 3 (mod 2).
+
+*/

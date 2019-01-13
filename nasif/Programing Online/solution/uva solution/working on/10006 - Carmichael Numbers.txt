@@ -1,0 +1,222 @@
+//nt
+//10006 - Carmichael Numbers
+//Xplosive
+//tle && wa
+
+//precalculation
+//binary search
+
+#include <iostream>
+#include <string>
+#include <sstream>
+#include <algorithm>
+#include <vector>
+#include <set>
+#include <queue>
+#include <stack>
+#include <list>
+#include <map>
+#include <fstream>
+#include <numeric>
+#include <iterator>
+#include <bitset>
+#include <utility>
+#include <cstdio>
+#include <cstdlib>
+#include <cctype>
+#include <cmath>
+#include <cstring>
+#include <ctime>
+#include <iomanip>
+//#include <conio.h>    //this will give u compile error in contest
+
+#define READ(file) freopen(file, "r", stdin);
+#define WRITE(file) freopen(file, "w", stdout);
+#define PI acos(-1.0)
+
+
+#define MAX 65000
+
+using namespace std;
+
+int arr[13]= {0,1,561,1105,1729,2465,2821,6601,8911,10585,15841,29341,41041};
+
+bool isContain(int n)
+{
+    //int a=find(arr,arr+13,n);
+    if(binary_search(arr,arr+13,n))
+        return true;
+    else
+        return false;
+}
+
+bool status[MAX+1];
+void sieve_prime(long l)
+{
+    //index 0 is prime and 1 is unprime
+    //at first all index are 0
+
+    //0 and 1 is not prime
+    status[0]=1;
+    status[1]=1;
+    status[2]=0;
+
+    int sq = sqrt(l);
+    int i,j;
+    for(i=4; i<l; i+=2)      //all even number are unprime except 2
+        status[i]=1;
+
+
+    for(i=3; i*i<l ; i+=2)
+    {
+        if(status[i]==0)
+        {
+            for(j=i*2; j<l; j+=i)
+            {
+                if(j%i==0)
+                {
+                    status[j]=1;
+                }
+            }
+        }
+    }
+}
+
+int modPower(int b, int p,int m)
+{
+    int r=1;
+    b=b%m;
+    for(int i=1; i<=p; i++)
+    {
+        r=(r*b)%m;
+    }
+
+    return r;
+}
+
+
+int isPassFarmatTest(int n)
+{
+
+    for(int i=2; i<n; i++)
+    {
+        int p;
+        //p=modPower(i,n,n);
+        if(modPower(i,n,n)==i)
+        {
+
+        }
+        else
+        {
+            return false;
+        }
+    }
+    return true;
+}
+
+int isCarmichael(int n)
+{
+    if(status[n]==1)
+    {
+        if(isPassFarmatTest(n))
+            return true;
+    }
+
+    return false;
+}
+
+void makeAnArray(vector<int>v)
+{
+    cout << "int arr[]={";
+    for(int i=0; i<v.size()-1; i++)
+    {
+        cout << v[i]<< ",";
+    }
+    cout << v[v.size()-1] << "};\n\n" << endl;
+
+    cout << "Total: " << v.size() << endl;
+
+}
+
+void genCharmichalNumber()
+{
+    vector<int> v;
+
+    for(int i=0; i<MAX; i++)
+    {
+        if(isCarmichael(i))
+        {
+            v.push_back(i);
+        }
+        cout << i << "\t";
+
+
+    }
+
+    makeAnArray(v);
+
+}
+
+int main()
+{
+    //READ("input.txt");
+    //WRITE("output.txt");
+
+//    int t, tt;
+//    cin >> tt;
+
+    int n;
+    //sieve_prime(MAX);
+
+    //cout << modPower(2,3,10);
+    //genCharmichalNumber();
+
+    while(1)
+    {
+        cin >> n;
+        if(n==0)break;
+
+        if(isCarmichael(n))
+        //if(isContain(n))
+        {
+            printf("The number %d is a Carmichael number.\n",n);
+        }
+        else
+        {
+            printf("%d is normal.\n",n);
+        }
+
+    }
+
+
+
+
+    return 0;
+}
+
+
+
+/*
+
+Sample input
+
+1729
+17
+561
+1109
+431
+0
+
+
+Sample output
+
+The number 1729 is a Carmichael number.
+17 is normal.
+The number 561 is a Carmichael number.
+1109 is normal.
+431 is normal.
+
+*/
+
+
+

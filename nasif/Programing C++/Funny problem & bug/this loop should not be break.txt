@@ -1,0 +1,45 @@
+//string lab
+//this loop should not be break
+//xplosive
+
+
+#include <iostream>
+#include <cstdio>
+#include <cstring>
+#include <string>
+#include <algorithm>
+
+using namespace std;
+
+
+int main()
+{
+    //freopen("input.txt", "r", stdin);
+    //freopen("output.txt", "w", stdout);
+
+    string s1,s2,s3,s4,s5,s6,s7;
+
+    s1 = "Quick I love my country";
+
+    cout << s1 << endl << endl;
+
+    int n,i,j,k,l;
+
+    int x = s1.find(' '); //find a space
+
+    //while(x!=-1)    //loop while spaces remain
+    while( x < s1.size() )        //why this loop will break
+    {
+        s1.replace(x, 1, "/"); //replace with slash
+        x = s1.find(' '); //find next space
+        //cout << x << "  " << s1.size() << endl;
+
+    }
+    cout << s1 << endl;
+
+
+
+
+    return 0;
+}
+

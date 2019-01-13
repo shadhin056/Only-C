@@ -1,0 +1,9 @@
+/* BE 1.4*/
+/* Print out border like squre figure */
+
+#include <stdio.h>
+
+main ()
+{
+    
+}

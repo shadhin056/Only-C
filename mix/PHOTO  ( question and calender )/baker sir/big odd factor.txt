@@ -1,0 +1,26 @@
+#include<stdio.h>
+int main()
+{
+    int n,bf,x;
+    printf("enter number=");
+    scanf("%d",&n);
+
+    for(x=1;x<n;x++)
+    {
+
+        if(n%x==0)
+        {
+            bf=x;
+        }
+    }
+
+            if (bf%2==0)
+            {
+            printf("this is not big odd factor");
+            }
+            else
+            {
+            printf("this is big odd factor");
+            }
+
+}

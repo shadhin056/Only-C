@@ -1,0 +1,43 @@
+//lec- 14s, slide- 27
+//string spaces counting func
+//Nasif Ahmed
+
+#include<stdio.h>
+
+int count_spaces();
+
+int main()
+
+{
+    int z=0;
+
+    z=count_spaces();
+
+    printf("%d",z);
+
+
+
+
+    return 0;
+}
+
+int count_spaces()
+{
+    char s[1000];
+    int count = 0, i;
+
+    gets(s);
+    for (i = 0; s[i] != '\0'; i++)
+    {
+        if (s[i] == ' ') count++;
+        printf("%d",i);
+    }
+
+
+
+    return count;
+}
+
+
+//working nicely
+

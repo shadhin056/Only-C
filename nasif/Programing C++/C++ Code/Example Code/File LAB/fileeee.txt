@@ -1,0 +1,24 @@
+#include<iostream>
+#include<fstream>
+using namespace std;
+
+int main()
+{
+    ifstream infile ("indata.txt");
+    std::string t_ques;
+    char t_ans;
+    int t_time_limit;
+
+    std::getline(infile, t_ques);
+    while (infile >> t_ans >> t_time_limit)
+    {
+        cout << t_ques << endl;
+        cout << t_ans << endl;
+        cout << t_time_limit << endl;
+
+        infile.ignore();
+        std::getline(infile, t_ques);
+    }
+
+    return 0;
+}

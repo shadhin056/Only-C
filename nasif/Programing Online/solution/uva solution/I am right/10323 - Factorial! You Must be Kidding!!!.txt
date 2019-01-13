@@ -1,0 +1,87 @@
+//uva
+//10323 - Factorial! You Must be Kidding!!!
+//Xplosive
+//wa
+
+
+//there must be a wrong with judge input ouput
+//in judge input there is negetinve number
+//how can it possible to calculate neg num fac
+
+
+//i think my code is all right
+
+
+#include <iostream>
+#include <cstdio>
+
+using namespace std;
+
+unsigned long long int fac(int n)
+{
+    unsigned long long int f;
+    int i;
+    f=1;
+    for(i=n; i>=1; i--)
+    {
+        f=f*i;
+    }
+
+    return f;
+}
+
+int main()
+{
+
+    //freopen("input.txt", "r", stdin);
+    //freopen("output.txt", "w", stdout);
+
+    unsigned long long int n,r;
+
+    while(cin >> n)
+    {
+
+//
+//        int i;
+//        for(i=1; i<20; i++)
+//        {
+//            r=fac(i);
+//            if(r<10000)
+//                 cout << "Underflow!";
+//            if(r>6227020800)
+//                cout << "Overflow!" ;
+//
+//            cout << "i=" << i << " fac = " << r << endl;
+//        }
+
+
+        if(n<8)
+            cout << "Underflow!" << endl;
+        else if(n>13)
+            cout << "Overflow!" << endl;
+        else
+            cout << fac(n) << endl;
+
+
+
+    }
+
+    return 0;
+}
+
+
+
+/*
+
+Sample Input
+2
+10
+100
+
+Sample Output
+
+Underflow!
+3628800
+Overflow!
+
+*/

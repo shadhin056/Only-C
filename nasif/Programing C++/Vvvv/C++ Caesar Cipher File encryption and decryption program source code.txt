@@ -1,0 +1,101 @@
+//C++ Caesar Cipher File encryption and decryption program source code
+
+
+
+#include<iostream>
+#include<conio.h>
+#include<fstream>
+
+using namespace std;
+class Caesar
+{
+public:
+    void encrypt(char *inp,char *out,int key);
+    void decrypt(char *inp,char *out,int key);
+    void readText(char *inp);
+};
+void Caesar::encrypt(char *inp,char *out,int key)
+{
+    ifstream input;
+    ofstream output;
+    char buf;
+    input.open(inp);
+    output.open(out);
+    buf=input.get();
+    while(!input.eof())
+    {
+        if(buf>='a'&&buf<='z')
+        {
+            buf-='a';
+            buf+=key;
+            buf%=26;
+            buf+='A';
+        }
+        output.put(buf);
+        buf=input.get();
+    }
+    input.close();
+    output.close();
+    readText(inp);
+    readText(out);
+}
+void Caesar::decrypt(char *inp,char *out,int key)
+{
+    ifstream input;
+    ofstream output;
+    char buf;
+    input.open(inp);
+    output.open(out);
+    buf=input.get();
+    while(!input.eof())
+    {
+        if(buf>='A'&&buf<='Z')
+        {
+            buf-='A';
+            buf+=26-key;
+            buf%=26;
+            buf+='a';
+        }
+        output.put(buf);
+        buf=input.get();
+    }
+    input.close();
+    output.close();
+    readText(inp);
+    readText(out);
+}
+void Caesar::readText(char *inp)
+{
+    ifstream input;
+    char buf;
+    input.open(inp);
+    cout<<"\n\n <--- "<<inp<<" --->\n";
+    buf=input.get();
+    while(!input.eof())
+    {
+        cout<<buf;
+        buf=input.get();
+    }
+    input.close();
+}
+int main()
+{
+    Caesar a;
+    int choice,key;
+    char inp[30],out[30];
+//    clrscr();
+    cout<<"\n Enter input file: ";
+    cin>>inp;
+    cout<<"\n Enter output file: ";
+    cin>>out;
+    cout<<"\n Enter key: ";
+    cin>>key;
+    cout<<"\n\n 1. Encrypt\n 2. Decrypt\n\n Select choice(1 or 2): ";
+    cin>>choice;
+    if(choice==1)
+        a.encrypt(inp,out,key);
+    else if(choice==2)
+        a.decrypt(inp,out,key);
+    else  cout<<"\n\n Unknown choice";
+    getch();
+}

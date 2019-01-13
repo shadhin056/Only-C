@@ -1,0 +1,11 @@
+all string functon like strncpy
+char[] to string class
+all sorting code
+all searching code
+gets to some string break by space and get a vector of string array
+is palindrome
+next permutation, backtracking permutation
+print ascii chart
+uva code from google drive
+facto fibo longest value chart
+

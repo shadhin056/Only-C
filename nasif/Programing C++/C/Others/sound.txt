@@ -1,0 +1,20 @@
+//mine
+//sound
+//Nasif Ahmed
+
+#include<stdio.h>
+
+int main ()
+
+{
+
+    int i;
+    for(i=1;i<11;i++)
+    printf("\a");
+
+
+    //printf("\n\n\n");
+    return 0;
+}
+
+//working perfectly

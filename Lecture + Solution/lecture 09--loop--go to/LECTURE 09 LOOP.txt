@@ -1,0 +1,405 @@
+//WHILE
+
+#include<stdio.h>
+int main()
+{
+    int x=1;
+    int i=1;
+
+    while(i<=9)
+    {
+      x=x*i;
+      i=i+1;
+
+      printf("%d  %d \n",x,i);
+    }
+
+    printf("good bye\n");
+    return 0;
+}
+
+
+****************************************
+//IF GOTO UP
+
+#include<stdio.h>
+int main()
+{
+    int x=1;
+    int i=1;
+z:
+    if(i<=9)
+    {
+      x=x*i;
+      i=i+1;
+      printf("%d  %d \n",x,i);
+      goto z;
+    }
+
+    printf("good bye\n");
+    return 0;
+}
+
+****************************************
+//IF
+
+
+#include<stdio.h>
+int main()
+{
+    int x=1;
+    int i=1;
+    if(i<=9)
+    {
+      x=x*i;
+      i=i+1;
+      printf("%d  %d \n",x,i);
+    }
+
+    printf("good bye\n");
+    return 0;
+}
+
+****************************************
+//IF GOTO DOWN
+
+#include<stdio.h>
+int main()
+{
+    int x=1;
+    int i=1;
+
+    if(i<=9)
+    {
+      x=x*i;
+      i=i+1;
+      printf("%d  %d \n",x,i);
+      goto z;
+    }
+z:
+    printf("good bye\n");
+    return 0;
+}
+
+****************************************
+//FOR BREAK
+
+
+
+#include<stdio.h>
+main()
+{
+    int n,sum=0,i;
+    printf("ENTER NUMBER =");
+
+        for(i=1;i<=5;i++)
+        {
+           scanf("%d",&n);
+
+           if(n>=10)
+            break;
+            sum=sum+n;
+        }
+
+        printf("value=%d",sum);
+
+        return 0;
+}
+***********************************************
+//FOR BUT BREAK NOT
+
+#include<stdio.h>
+main()
+{
+    int n,sum=0,i;
+    printf("ENTER NUMBER =");
+
+        for(i=1;i<=5;i++)
+        {
+           scanf("%d",&n);
+
+           if(n>=10)
+        {
+            break;
+            sum=sum+n;
+        }
+          
+        }
+
+        printf("value=%d",sum);
+
+        return 0;
+}
+********************************************************
+//FOR CONTINUE
+
+
+#include<stdio.h>
+main()
+{
+    int n,sum=0,i;
+    printf("ENTER NUMBER =");
+
+        for(i=1;i<=5;i++)
+        {
+           scanf("%d",&n);
+
+           if(n>=10)
+
+             continue;
+            sum=sum+n;
+        }
+
+        printf("value=%d",sum);
+
+        return 0;
+}
+
+
+**********************************************
+//FOR NOT CONTINUE
+
+#include<stdio.h>
+main()
+{
+    int n,sum=0,i;
+    printf("ENTER NUMBER =");
+    Z:
+        for(i=1;i<=5;i++)
+        {
+           scanf("%d",&n);
+
+           if(n>=10)
+            goto Z;
+            sum=sum+n;
+        }
+
+        printf("value=%d",sum);
+
+        return 0;
+}
+*****************************************
+//FOR GOTO
+
+
+
+#include<stdio.h>
+main()
+{
+    int n,sum=0,i;
+    printf("ENTER NUMBER =");
+
+        for(i=1;i<=5;i++)
+        {
+           scanf("%d",&n);
+
+           if(n>=10)
+            goto Z;
+            sum=sum+n;
+        }
+    Z:
+        printf("value=%d",sum);
+
+        return 0;
+}
+**************************************
+**************************************
+**************************************
+**************************************
+WHILE
+
+#include<stdio.h>
+int main()
+
+{
+    int i=1;
+
+    while (i<=10)
+
+    {
+        i++;
+        printf ("%d\n",i);
+
+
+    }
+
+
+return 0;
+
+**************************************
+FOR
+
+#include<stdio.h>
+int main()
+
+{
+    int i;
+
+   for (i=1;i<=10;i++)
+
+    {
+        printf ("%d\n",i);
+
+
+    }
+
+
+return 0;
+
+}
+*************************************
+DO-WHILE
+
+#include<stdio.h>
+int main()
+
+{
+    int i=1;
+
+  do
+  {
+i++;
+      printf ("%d\n",i);
+
+  }
+    while (i<=10);
+
+return 0;
+
+}
+***************************************
+//DO-WHILE
+#include<stdio.h>
+int main()
+{
+ int i=1;
+  do
+  {
+      printf ("%d\n",i);
+      i++;
+  }
+     while (i<1);
+     return 0;
+
+}
+
+**************************************
+BREAK
+
+
+#include<stdio.h>
+int main()
+
+{
+    int i=1;
+
+
+    while (i<=10)
+    {
+        printf ("%d",i);
+        i++;
+        if (i==5)
+            break;
+    }
+
+    return 0;
+
+}
+*********************************
+#include<stdio.h>		*
+int main()			*
+				*
+{			   	*
+    int i=1;		        *
+				*
+				*
+    while (i<10)		*	
+    {				*
+				*
+        printf ("%d",i);	*
+        i++;			*
+        if (i==5)		*
+          continue;		*
+    }				*
+    return 0;			*
+				*
+}				*
+*********************************
+BREAK
+
+#include<stdio.h>
+main()
+{
+    int n,i,sum=0 ;
+    for(i=1;i<=5;i++)
+   {
+    scanf("%d",&n);
+    if(n<10)
+    break;
+    sum=sum+n;
+    }
+ printf("sum=%d",sum);
+
+
+}
+*************************
+CONTINUE
+
+#include<stdio.h>
+main()
+{
+    int n,i,sum=0 ;
+    for(i=1;i<=5;i++)
+   {
+    scanf("%d",&n);
+    if(n>10)
+    continue;
+    sum=sum+n;
+    }
+ printf("sum=%d",sum);
+
+
+}
+
+
+****************************************
+****************************************
+
+
+BREAK
+
+#include<stdio.h>
+main()
+{
+    int n,i,sum=0 ;
+    for(i=1;i<=5;i++)
+   {
+    scanf("%d",&n);
+    if(n<10)
+    break;
+    sum=sum+n;
+    }
+ printf("sum=%d",sum);
+
+
+}
+*************************
+CONTINUE
+
+#include<stdio.h>
+main()
+{
+    int n,i,sum=0 ;
+    for(i=1;i<=5;i++)
+   {
+    scanf("%d",&n);
+    if(n>10)
+    continue;
+    sum=sum+n;
+    }
+ printf("sum=%d",sum);
+
+
+}
+****************************************
+****************************************

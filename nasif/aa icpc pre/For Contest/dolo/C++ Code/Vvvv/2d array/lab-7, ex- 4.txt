@@ -1,0 +1,41 @@
+//lab-7, ex- 4
+//fibonachiii sequence
+//Nasif Ahmed
+
+#include<stdio.h>
+
+int main ()
+
+{
+
+    int a[100];
+    a[0]=0,a[1]=1;
+
+    int i,j,sum=0,n;
+
+    printf("Enter number: ");
+    scanf("%d",&n);
+
+    printf("The %d th series is: 0 1 ",n);
+
+    for(i=2;i<=n;i++)
+    {
+
+        sum= a[i-1]+a[i-2];
+
+        printf("%d ",sum);
+
+        a[i]=sum;
+
+
+
+    }
+
+
+
+    return 0;
+
+
+}
+
+//working nice

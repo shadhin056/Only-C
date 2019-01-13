@@ -1,0 +1,62 @@
+//niton page 50
+//Nasif Ahmed
+
+
+#include<iostream>
+#include<cstdio>
+#include<string>
+#include<windows.h>
+//#define l 50
+
+using namespace std;
+
+class Employee
+{
+private:
+    char* emp_name;
+    int emp_join_year;
+    float emp_salary;
+
+public:
+    Employee(char* _name,int _year,float _salary);
+
+private:
+    int WorkedYear(void);
+    void Printinfo(void);
+};
+
+Employee::Employee(char* _name,int _year,float _salary)
+{
+    emp_name=_name;
+    emp_join_year=_year;
+    emp_salary=_salary;
+    Printinfo();
+}
+
+int Employee::WorkedYear(void)
+{
+    struct date current_date;
+    int YearDifference;
+    getdate(&current_date);
+    YearDifference=current_date.da_year-emp_join_year;
+    return(YearDifference);
+}
+
+void Employee::Printinfo(void)
+{
+    cout << "Name       : " << emp_name << endl;
+    cout << "Join Date  : " << emp_join_year << endl;
+    cout << "Salary     : " << emp_salary << endl;
+    cout << "Worked     : " << WorkedYear() << "years\n\n";
+}
+
+int main()
+{
+    clrscr();
+    Employee RAM("Ram",1997,12500);
+    Employee SAM("sam",1986,7500);
+    Employee JADU("Jadu",1981,8700);
+    Employee MADHU("Madhu",1974,27500);
+
+    getch();
+}

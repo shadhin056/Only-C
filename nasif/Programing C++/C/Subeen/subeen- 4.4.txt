@@ -1,0 +1,27 @@
+//subeen- 4.4
+//break statement
+//Nasif Ahmed
+
+#include<stdio.h>
+#include<math.h>
+
+main ()
+
+{
+    int n = 1;
+
+    while(n <= 100)
+    {
+        printf("%d\n", n);
+        n++;
+        if(n > 10)
+        {
+            break;
+        }
+    }
+    printf("\n\n\n");
+    return 0;
+
+}
+
+//working perfectly

@@ -1,0 +1,24 @@
+//store number in array
+
+
+#include <iostream>
+#include <cstdio>
+#include <cstdlib>
+using namespace std;
+
+int main()
+{
+    while(1)
+    {
+        unsigned long long int b_num;
+        cin >> b_num;
+        char b_array[10000];
+
+
+        sprintf(b_array,"%llu",b_num);
+        //printf("%s\n",b_array);
+
+        cout << b_array<<endl;
+    }
+    return 0;
+}

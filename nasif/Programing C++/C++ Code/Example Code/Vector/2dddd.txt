@@ -1,0 +1,11 @@
+//2d vector
+
+    vector < vector < int > > vv;
+
+    //vv.push_back(1,1);
+    vv.push_back(vector<int>( 10, 5 ) );
+
+
+    for(int i=0; i<vv.size(); i++);
+    cout << vv[i] << endl;
+

@@ -1,0 +1,176 @@
+//code syntax
+//cs - type conversion
+//Xplosive
+//beware of string to char array, just use s.c_str();
+//++,
+
+#include <iostream>
+#include <string>
+#include <sstream>
+#include <algorithm>
+#include <vector>
+#include <set>
+#include <queue>
+#include <stack>
+#include <list>
+#include <map>
+#include <fstream>
+#include <numeric>
+#include <iterator>
+#include <bitset>
+#include <utility>
+#include <cstdio>
+#include <cstdlib>
+#include <cctype>
+#include <cmath>
+#include <cstring>
+#include <ctime>
+
+#define READ(file) freopen(file, "r", stdin);
+#define WRITE(file) freopen(file, "w", stdout);
+#define PI acos(-1.0)
+
+
+#define MAX 1100000
+
+using namespace std;
+
+void print_vector(vector<int> v);
+void print_vector(vector<char> v);
+void print_array(int* a, int l);
+
+int stringToInt(string s)
+{
+    int n;
+    stringstream ss;
+    ss << s;
+    ss >> n;
+    ss.clear();
+
+    //c style, atof for double
+    //n= atoi(s.c_str());
+
+    return n;
+}
+
+string intToString(int n)
+{
+    string s;
+
+    stringstream ss;
+    ss << n;
+    ss >> s;
+    ss.clear();
+    return s;
+
+//    char ch[100];
+//    sprintf(ch,"%d",n);
+//    return ch;
+
+
+}
+
+char* stringToCharArray(string s)
+{
+    //becarefull this is not working
+    //because its return a address to main function
+    //which is valid here not in main
+    char ch[100];
+    stringstream ss;
+
+    ss << s;
+    ss >> ch;
+    ss.clear();
+
+//    ch = s.c_str();
+
+    cout << ch << endl;
+    return ch;
+
+
+}
+
+string charArrayToString(char* ch)
+{
+    string s;
+    stringstream ss;
+
+    ss << ch;
+    ss >> s;
+    ss.clear();
+
+    return s;
+
+}
+
+
+int main()
+{
+    //READ("input.txt");
+    //WRITE("output.txt");
+
+    while(1)
+    {
+        string s;
+        int n;
+        char ch[100];
+
+//        cin >> s;
+//        cout << stringToInt(s) << endl;
+
+//        cin >> n;
+//        cout << intToString(n) << endl;
+
+//        cin >> ch;
+//        cout << charArrayToString(ch) << endl;
+
+        //cin >> s;
+        //this not working, see in function why
+        //cout << stringToCharArray(s) << endl;
+
+
+
+
+
+
+    }
+
+
+
+
+
+    return 0;
+}
+
+void print_array(int* a, int l)
+{
+    for(int i= 0; i<l; i++)
+        cout << a[i] << " ";
+
+    cout << endl;
+}
+
+void print_vector(vector<int> v)
+{
+    for(int i=0; i<v.size(); i++)
+        cout << v[i] << " ";
+
+    cout << endl;
+}
+
+void print_vector(vector<char> v)
+{
+    for(int i=0; i<v.size(); i++)
+        cout << v[i] << " ";
+
+    cout << endl;
+}
+
+
+
+
+/*
+
+
+
+*/

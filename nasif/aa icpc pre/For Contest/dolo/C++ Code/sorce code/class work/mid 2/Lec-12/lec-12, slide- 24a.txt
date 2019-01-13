@@ -1,0 +1,47 @@
+//lec-12, slide-24a
+//find in array
+//Nasif Ahmed
+
+#include<stdio.h>
+
+int main ()
+
+{
+    int i,n,q=0,s;
+    int a[20];
+
+    printf("Please enter the value of n: ");
+    scanf("%d",&n);
+
+    for (i=0;i<n;i++)
+    {
+        printf("\nPlease enter a[%d]= ",i);
+        scanf("%d",&a[i]);
+    }
+
+    printf("\nPlease enter the value to search: ");
+    scanf("%d",&s);
+
+    for(i=0;i<n;i++)
+    {
+        if(s==a[i])
+        {
+            q++;
+            break;
+        }
+
+    }
+
+    if(q==0)
+    {
+        printf("\nThe value is not found\n\n");
+    }
+    else
+    {
+        printf("\nThe value you entered is found in loc a[%d]\n\n",i);
+
+    }
+
+
+    return 0;
+}

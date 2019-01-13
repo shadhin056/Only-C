@@ -1,0 +1,61 @@
+//uva set - mix
+//12502 - Three Families
+//Xplosive
+//rte
+
+//funny problem, working on my compiler well but 
+//uve give me runetime error
+
+#include <iostream>
+#include <cstdio>
+
+using namespace std;
+
+int main()
+{
+
+    //freopen("uvainput.txt", "r", stdin);
+    //freopen("uvaoutput.txt", "w", stdout);
+
+    int t,tt;
+    int x,y,z,ave,over,r;
+    
+    scanf("%d",&tt);
+
+    for(t=0; t<tt; t++)
+    {
+        scanf("%d%d%d",&x,&y,&z);
+
+        ave=(x+y)/3;
+        over = x-ave;
+        if(over<=0)
+        {
+            printf("0\n");
+        }
+        else
+        {
+            r= z*over/ave;
+            printf("%d\n",r);
+        }
+
+
+    }
+
+
+    return 0;
+}
+
+
+
+/*
+
+Sample Input
+
+2
+5 4 90
+8 4 123
+Sample Output
+
+60
+123
+*/

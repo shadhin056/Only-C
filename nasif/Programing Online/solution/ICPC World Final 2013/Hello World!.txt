@@ -1,0 +1,13 @@
+//icpc world final 2013
+//Hello World!
+//accepted
+
+#include<iostream>
+using namespace std;
+
+int main()
+{
+    cout << "Hello World!" <<endl;
+
+	return 0;
+}

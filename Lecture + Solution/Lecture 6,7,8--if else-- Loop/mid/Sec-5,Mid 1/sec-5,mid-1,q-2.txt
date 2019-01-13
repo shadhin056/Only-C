@@ -1,0 +1,50 @@
+//sec-5,mid-1,q-2
+//Big Odd factor
+//Nasif Ahmed
+
+#include<stdio.h>
+#include<math.h>
+
+int main ()
+
+{
+
+    int n,bf,x;
+
+    printf("\n\tEnter The Number: ");
+    scanf("%d",&n);
+
+
+    for(x=1;x<n;x++)
+    {
+        if(n%x==0)
+        {
+            bf=x;
+        }
+    }
+
+
+
+
+    if(bf%2==0)
+    {
+        printf("\n\tThis is Not Big Odd Factor");
+    }
+
+    else
+    {
+        printf("\n\tThis is Big Odd Factor");
+    }
+
+
+
+
+
+    printf("\n\n\n\tPress Any Key To EXIT!!");
+    getch();
+    return 0;
+
+
+}
+
+//working perfectly

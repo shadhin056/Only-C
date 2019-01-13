@@ -1,0 +1,31 @@
+//Extension Lab
+//formatting lab
+//xplosive
+
+#include <iostream>
+#include <cstdio>
+#include <cstdlib>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+    char ch[100];
+    string s;
+    system("color 9a");
+
+    getline(cin,s);
+    cout << s << endl;
+
+    system("color 1b");
+    cin.get(ch, '\n');
+    cout << s << endl;
+
+    system("color 7b");
+    get(s);
+    cout << s << endl;
+
+
+    return 0;
+}

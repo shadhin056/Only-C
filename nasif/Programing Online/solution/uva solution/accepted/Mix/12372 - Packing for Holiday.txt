@@ -1,0 +1,63 @@
+//uva set - mix
+//12372 - Packing for Holiday
+//Xplosive
+//accepted
+
+#include <iostream>
+#include <cstdio>
+
+
+using namespace std;
+
+int main()
+{
+
+    //freopen("uvainput.txt", "r", stdin);
+    //freopen("uvaoutput.txt", "w", stdout);
+
+    int t,tt;
+    scanf("%d",&tt);
+
+    //string s;
+    char s[7];
+    int l,w,h,flag;
+
+    for(t=1; t<=tt; t++)
+    {
+        flag=0;
+        scanf("%d%d%d",&l,&w,&h);
+
+        if(l>20)
+            flag=1;
+        if(w>20)
+            flag=1;
+        if(h>20)
+            flag=1;
+
+        if(!flag)
+            printf("Case %d: good\n",t);
+        else
+            printf("Case %d: bad\n",t);
+
+    }
+
+
+return 0;
+}
+
+
+
+/*
+
+Sample Input
+
+2
+20 20 20
+1 2 21
+
+Sample Output
+
+Case 1: good
+Case 2: bad
+
+*/

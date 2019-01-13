@@ -1,0 +1,56 @@
+//others
+//point print
+//Nasif Ahmed
+
+#include<stdio.h>
+#include<math.h>
+
+int main ()
+
+{
+    int i,j,n=10;
+
+
+    for(i=1;i<n;i++)
+    {
+        for(j=1;j<n;j++)
+        {
+            printf(" ");
+        }
+
+        printf("|\n");
+    }
+
+    for(i=1;i<n;i++)
+    {
+        printf("-");
+    }
+
+    printf(" ");
+
+    for(i=1;i<n;i++)
+    {
+        printf("-");
+    }
+
+    printf("\n");
+
+    for(i=1;i<n;i++)
+    {
+        for(j=1;j<n;j++)
+        {
+            printf(" ");
+        }
+
+        printf("|\n");
+    }
+
+
+    printf("\n\n\n\tPress Any Key To EXIT!!");
+    getch();
+    return 0;
+
+
+}
+
+//not completed

@@ -1,0 +1,74 @@
+//uva set - 01
+//490 - Rotating Sentences
+//xplosive
+//not started
+
+#include <iostream>
+#include <cstdio>
+#include <string>
+using namespace std;
+
+
+int main()
+{
+    freopen("uvainput.txt", "r", stdin);
+    //freopen("uvaoutput.txt", "w", stdout);
+
+    int i=0,in;
+    string s[101],is;
+
+    while(getline(cin,s[i++]))
+    {
+
+        //l=strlen(s);
+        //cout << s[i-1] << endl;
+
+    }
+    i=in;
+
+    for(i=0; i<in; i++)
+    {
+        cout << s[i] << endl;
+    }
+
+    return 0;
+}
+
+
+
+/*
+
+Sample Input
+
+Rene Decartes once said,
+"I think, therefore I am."
+
+Sample Output
+
+"R
+Ie
+n
+te
+h
+iD
+ne
+kc
+,a
+r
+tt
+he
+es
+r
+eo
+fn
+oc
+re
+e
+s
+Ia
+i
+ad
+m,
+.
+
+*/

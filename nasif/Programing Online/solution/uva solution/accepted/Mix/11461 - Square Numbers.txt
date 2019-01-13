@@ -1,0 +1,57 @@
+//uva set - mix
+//11461 - Square Numbers
+//Xplosive
+//accepted
+
+//#include <iostream>
+#include <cstdio>
+#include <cmath>
+
+using namespace std;
+
+int main()
+{
+
+    //freopen("uvainput.txt", "r", stdin);
+    //freopen("uvaoutput.txt", "w", stdout);
+
+
+    int a,b,r,c,i;
+
+    while(scanf("%d %d",&a,&b)==2)
+    {
+        if(a==0 && b==0)
+            break;
+        c=0;
+
+        for(i=a; i<=b; i++)
+        {
+            r=sqrt(i);
+            if(r*r==i)
+            {
+                c++;
+            }
+        }
+        printf("%d\n",c);
+
+    }
+
+    return 0;
+}
+
+
+/*
+
+Sample Input
+
+1 4
+1 10
+0 0
+
+Sample Output
+
+2
+3
+
+
+*/

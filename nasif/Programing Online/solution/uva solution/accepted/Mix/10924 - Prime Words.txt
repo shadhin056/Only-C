@@ -1,0 +1,91 @@
+//uva set - mix
+//10924 - Prime Words
+//xplosive
+//wa
+
+//for this proble 1 should be considered as prime....
+
+#include <iostream>
+#include <cstdio>
+#include <cstring>
+
+int is_prime(int n);
+
+using namespace std;
+
+int main()
+{
+    //freopen("uvainput.txt", "r", stdin);
+    //freopen("uvaoutput.txt", "w", stdout);
+
+    char ch[21];
+    int i,cv,l;
+
+    while(scanf("%s",ch)!=EOF)
+    {
+        cv=0;
+        l=strlen(ch);
+        for(i=0; i<l; i++)
+        {
+            if(islower(ch[i]))
+                cv+=(ch[i]-96);
+            else
+                cv+= (ch[i]-38);
+
+
+        }
+
+        if(is_prime(cv))
+            printf("It is a prime word.\n");
+        else
+            printf("It is not a prime word.\n");
+
+
+    }
+
+
+    return 0;
+
+}
+
+
+int is_prime(int n)
+{
+    int d;
+
+    if(n<1)             //just for this problem only
+    {
+        return 0;
+    }
+    if(n==1)
+    {
+        return 1;
+    }
+
+    for (d=2;d*d<=n; d++)
+    {
+        if(n%d==0)
+        {
+            return 0;
+        }
+
+    }
+    return 1;
+
+}
+
+/*
+
+Sample Input
+
+UFRN
+contest
+AcM
+
+Sample Output
+
+It is a prime word.
+It is not a prime word.
+It is not a prime word.
+
+*/

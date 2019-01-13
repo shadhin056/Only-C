@@ -1,0 +1,80 @@
+ID  : 6
+Name: Nasif
+CGPA: 3.65 
+
+ID  : 2
+Name: Nasif Ahmed
+CGPA: 3.40 
+
+ID  : 4
+Name: Nasif
+CGPA: 3.40 
+
+ID  : 1
+Name: Nasif
+CGPA: 3.25 
+
+ID  : 7
+Name: Nasif
+CGPA: 3.25 
+
+ID  : 8
+Name: Nasif
+CGPA: 3.25 
+
+ID  : 9
+Name: Nasif
+CGPA: 3.25 
+
+ID  : 10
+Name: Nasif
+CGPA: 3.25 
+
+ID  : 11
+Name: Nasif
+CGPA: 3.25 
+
+ID  : 12
+Name: Nasif
+CGPA: 3.25 
+
+ID  : 13
+Name: Nasif
+CGPA: 3.25 
+
+ID  : 14
+Name: Nasif
+CGPA: 3.25 
+
+ID  : 15
+Name: Nasif
+CGPA: 3.25 
+
+ID  : 16
+Name: Nasif
+CGPA: 3.25 
+
+ID  : 17
+Name: Nasif
+CGPA: 3.25 
+
+ID  : 18
+Name: Nasif
+CGPA: 3.25 
+
+ID  : 19
+Name: Nasif
+CGPA: 3.25 
+
+ID  : 20
+Name: Nasif
+CGPA: 3.25 
+
+ID  : 3
+Name: Ahmed Nasif
+CGPA: 3.15 
+
+ID  : 5
+Name: Avy Dewan
+CGPA: 3.05 
+

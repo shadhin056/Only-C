@@ -1,0 +1,64 @@
+//lab-7, lw-1
+//array to arrray
+//Nasif Ahmed
+
+#include<stdio.h>
+#include<math.h>
+
+int main ()
+
+{
+
+    int a[100],b[100];
+
+    int i,j,k,n=6,sum=0,av;
+
+    //printf("Enter total number of input: ");
+    //scanf("%d",&n);
+
+    for(i=0;i<n;i++)
+    {
+       a[i]= pow(2,i);
+
+    }
+
+    for(i=1;i<n;i++)
+    {
+
+        a[i]= a[i]+a[i-1];
+        sum+=a[i];
+
+    }
+
+    av= sum/n;
+
+    //printf("%d ",av);
+
+
+
+
+    for(i=0;i<n;i++)
+    {
+
+        if(av>a[i])
+        {
+            b[i]=av-a[i];
+        }
+        else
+        {
+            b[i]=a[i]-av;
+        }
+
+        printf("%d ",b[i]);
+
+    }
+
+
+
+
+    return 0;
+
+
+}
+
+//working nice

@@ -1,0 +1,111 @@
+//uva set - adhoc
+//10019 - Funny Encryption Method
+//Xplosive
+//nc
+
+#include<cstdio>
+#include<iostream>
+#include<string>
+#include<cstring>
+#include<sstream>
+#include<cstdlib>
+#include<cctype>
+#include<cmath>
+#include<algorithm>
+#include<vector>
+#include<set>
+#include<queue>
+#include<stack>
+#include<list>
+#include<map>
+#include<fstream>
+#include<numeric>
+#include<iterator>
+using namespace std;
+
+#define mx 35
+
+int hexaToDecimal(int hexa)
+{
+    int dec;
+    stringstream ss;
+
+
+    ss << hexa;
+    ss >> hex >> dec;
+
+    return dec;
+
+}
+
+int getBinary1(int n)
+{
+    int c = 0;
+    while(n)
+    {
+        if(n%2==1) c++;
+        n = n/2;
+    }
+
+    return c;
+}
+
+//int getBinary(int n)
+//{
+//    unsigned long long int b=0;
+//    unsigned long long int k = 1;
+//    while(n)
+//    {
+//
+//        b = b + (n%2)*k;
+//        n = n/2;
+//        k = k*10;
+//    }
+//    return b;
+//}
+
+int main()
+{
+
+    //freopen("input.txt", "r", stdin);
+    //freopen("output.txt", "w", stdout);
+
+
+    int tt;
+    int n;
+
+    cin >> tt;
+
+    int b1, b2;
+    while(tt--)
+    {
+        cin >> n;
+        //cout << hexaToDecimal(n);
+
+        b1 = getBinary1(n);
+        b2 = getBinary1(hexaToDecimal(n));
+        cout << b1 << " " << b2 << endl;
+
+    }
+
+
+
+    return 0;
+}
+
+
+/*
+
+Sample Input
+
+3
+265
+111
+1234
+Sample Output
+
+3 5
+6 3
+5 5
+
+*/

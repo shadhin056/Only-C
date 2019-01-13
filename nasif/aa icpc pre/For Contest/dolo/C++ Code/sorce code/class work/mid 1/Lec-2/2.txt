@@ -1,0 +1,14 @@
+/*l-2, p-2*/
+
+#include<stdio.h>
+
+int radius, area;
+
+main()
+{
+    printf("Enter radius:");
+    scanf("%d",&radius);
+    area = (int) (3.14159*radius*radius);
+    printf("\n\nArea=%d\n",area);
+    return 0;
+}

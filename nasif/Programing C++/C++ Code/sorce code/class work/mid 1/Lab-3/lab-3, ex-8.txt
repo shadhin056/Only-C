@@ -1,0 +1,44 @@
+//lab-3, ex-8
+//grading with proper checking
+//Nasif Ahmed
+
+#include<stdio.h>
+#include<math.h>
+
+main()
+
+{
+    int n;
+    char grade;
+
+    printf("Enter Number : ");
+    scanf("%d",&n);
+
+    if (n>=0&&n<=100)
+    {
+        if (n>=90)
+        grade = 'A';
+
+        else if (n>=80)
+        grade = 'B';
+
+        else if (n>=70)
+        grade = 'C';
+
+        else if (n>=60)
+        grade = 'D';
+
+        else
+        grade = 'F';
+        printf("\nGrade is %c",grade);
+    }
+    else
+        printf("Invalid input");
+
+
+
+    printf("\n\n\n");
+    return 0;
+}
+
+//working perfectly

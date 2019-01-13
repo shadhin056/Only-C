@@ -1,0 +1,33 @@
+//My Function: poo()
+//Power calculation function
+//Xplosive
+
+#include<stdio.h>
+int poo (int b,int p);
+
+int main ()
+{
+    int b,p,z;
+    scanf("%d %d",&b,&p);
+    z=poo(b,p);
+    printf("%d\n",z);
+
+    return 0;
+}
+
+int poo (int b,int p)
+{
+    int r=1,i;
+    for(i=1;i<=p;i++)
+        r=r*b;
+    return r;
+}
+
+//wn
+
+
+
+
+
+
+

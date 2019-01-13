@@ -1,0 +1,49 @@
+//lec-12, slide- 24e
+//Minimal Element Sort
+//Nasif Ahmed
+
+#include<stdio.h>
+
+int main()
+{
+    int a[20];
+    int min,i,j,k,temp,n;
+
+    printf("Enter total number of input: ");
+    scanf("%d",&n);
+
+    for(i=0;i<n;i++)
+    {
+        printf("Enter the value of a[%d]: ",i);
+        scanf("%d",&a[i]);
+
+    }
+
+    for(i=0;i<n-1;i++)
+    {
+        min=a[i];
+
+        for(j=i+1;j<n;j++)
+        {
+            if(a[j]<min)
+            {
+                min=a[j];
+                temp=a[i];
+                a[i]=a[j];
+                a[j]=temp;
+            }
+        }
+    }
+
+
+    for(k=0;k<n;k++)
+    {
+        printf("%d ",a[k]);
+    }
+
+
+    return 0;
+
+}
+
+//working perfectly

@@ -1,0 +1,121 @@
+//joha sir
+//print point by star
+//Nasif Ahmed
+
+#include<stdio.h>
+
+int main ()
+
+{
+    int n=5,i,j,x,y,k1,k2,k3,k4;
+
+    printf("Enter (x,y): ");
+    scanf("%d%d",&x,&y);
+
+    n=n+x;
+    k1=k2=n;
+    k3=k4=1;
+
+
+//upper part, working perfectly
+
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<n;j++)
+        {
+
+            if(j==(n+x) && k1==y)
+            {
+                printf("*");
+            }
+            else
+            {
+                printf(" ");
+            }
+        }
+
+        printf("|");
+        k1--;
+
+        for(j=1;j<=n;j++)
+        {
+
+            if(j==x && k2==y)
+            {
+                printf("*");
+            }
+            else
+            {
+                printf(" ");
+            }
+        }
+
+        printf("\n");
+        k2--;
+
+    }
+
+
+
+//middle bar, working perfectly
+
+    for(i=0;i<n;i++)
+    {
+        printf("-");
+    }
+
+    printf(" ");
+
+    for(i=0;i<n;i++)
+    {
+        printf("-");
+    }
+
+    printf("\n");
+
+
+
+//under part, working perfectly
+
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<n;j++)
+        {
+            if(j==(n+x) && k3==-y)
+            {
+                printf("*");
+            }
+            else
+            {
+                printf(" ");
+            }
+        }
+
+        printf("|");
+        k3++;
+
+        for(j=1;j<=n;j++)
+        {
+            if(j==x && k4==-y)
+            {
+                printf("*");
+            }
+            else
+            {
+                printf(" ");
+            }
+        }
+
+        printf("\n");
+        k4++;
+    }
+
+
+    printf("\n\n\n\tPress Any Key To EXIT!!");
+    getch();
+    return 0;
+
+
+}
+
+//Working Perfectly

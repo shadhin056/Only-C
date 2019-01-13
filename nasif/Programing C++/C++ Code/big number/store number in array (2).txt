@@ -1,0 +1,54 @@
+//store number in array
+
+
+#include <iostream>
+#include <cstdio>
+#include <cstdlib>
+using namespace std;
+void f_fac(int n);
+void s_array(int n);
+void p_array();
+
+int c,f;
+int a[1000];
+
+int main()
+{
+    int i,j,k,n=5,x,y=0;
+    f_fac(n);
+    cout <<f <<endl;
+    s_array(f);
+    p_array();
+
+    //cout << y << endl;
+
+    return 0;
+}
+void f_fac(int n)
+{
+    for(f=1;n>=1;n--)
+        f=f*n;
+}
+
+void s_array(int n)
+{
+    int i,x;
+    for (i=0;n!=0;i++)
+    {
+        x=n%10;
+        a[i]=x;
+        //y=y*10+x;
+        n/=10;
+    }
+    c=i;
+}
+
+void p_array()
+{
+    int i;
+    for(i=c-1;i>=0;i--)
+    {
+        cout <<a[i];
+    }
+}
+

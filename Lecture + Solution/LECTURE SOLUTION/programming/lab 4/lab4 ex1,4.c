@@ -1,0 +1,12 @@
+#include<stdio.h>
+int main()
+{
+    int i=1,x=1;
+    while(i<=9)
+    {
+        x=x*i;
+        i++;
+        printf("\nThe value of x and i is %d, %d, respectively\n",x,i);
+    }
+    return 0;
+}

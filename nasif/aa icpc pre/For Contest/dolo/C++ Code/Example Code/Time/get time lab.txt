@@ -1,0 +1,140 @@
+//Time Lab
+//get time lab
+//xplosive
+
+
+#include <iostream>
+#include <string>
+#include <cstdio>
+#include <ctime>
+#include <windows.h>
+
+using namespace std;
+
+
+void vvv();
+void time1();
+void time2();
+void time3();
+void time4();
+void time5();
+
+int main()
+{
+    //time1();
+    //time2();
+    //time3();
+    //time4();
+    //time5();
+    //t_delay_cal();
+    vvv();
+
+    return 0;
+}
+
+
+void vvv()
+{
+
+}
+
+void time5()
+{
+    //time function with time jone
+    const int BD=6;
+    time_t sys_time;
+    struct tm *ptr_time;
+
+    time ( &sys_time );
+    ptr_time = gmtime ( &sys_time );
+
+    cout << "Time BD: " << ptr_time->tm_hour+BD << ":" << ptr_time->tm_min << endl;
+
+}
+
+void time4()
+{
+    //not working or didn't get it
+
+    time_t timer;
+    struct tm y2k;
+    double seconds;
+
+    y2k.tm_hour = 0;
+    y2k.tm_min = 0;
+    y2k.tm_sec = 0;
+    y2k.tm_year = 2000;
+    y2k.tm_mon = 1;
+    y2k.tm_mday = 1;
+
+    time(&timer);           // get current time; same as: timer = time(NULL)
+
+    seconds = difftime(timer,mktime(&y2k));
+
+    cout << seconds;
+    //printf ("%.f seconds since January 1, 2000 in the current timezone", seconds);
+}
+
+
+void time3()
+{
+    //working perfectly
+    SYSTEMTIME time;            //need windows.h headerfile
+    GetSystemTime(&time);       //get accurate system time (gmt 0)
+    GetLocalTime(&time);        //get accurate local time (gmt user pc)
+
+
+
+    cout <<"\nYear     : " << time.wYear << endl;
+    cout <<"\nMonth    : " << time.wMonth << endl;
+    cout <<"\nDate     : " << time.wDay << endl;
+    //cout <<"\nHour     : " << time.wHour << endl;         //24 hour format
+    cout <<"\nHour     : " << (time.wHour)%12 << endl;      //12 hour format
+    cout <<"\nMin      : " << time.wMinute << endl;
+    cout <<"\nSecond   : " << time.wSecond << endl;
+
+
+}
+
+
+void time2()
+{
+    // current date/time based on current system
+    time_t now = time(0);            //need ctime
+
+    //cout << "Number of sec since January 1,1970:" << now << endl;
+
+    tm *ltm = localtime(&now);
+
+    // print various components of tm structure.
+    cout << "Year: "<< 1900 + ltm->tm_year << endl;
+    cout << "Month: "<< 1 + ltm->tm_mon<< endl;
+    cout << "Day: "<<  ltm->tm_mday << endl;
+    cout << "Time: "<< 12 + ltm->tm_hour << ":";
+    cout << 0 + ltm->tm_min << ":";
+    cout << 0 + ltm->tm_sec << endl;
+}
+
+
+void time1()
+{
+    // current date/time based on current system
+    time_t now = time(0);            //need ctime
+
+    // convert now to string form
+    char* dt = ctime(&now);
+
+    cout << "The local date and time is: " << dt << endl;
+
+    // convert now to tm struct for UTC
+    tm *gmtm = gmtime(&now);
+    dt = asctime(gmtm);
+    cout << "The UTC date and time is:"<< dt << endl;
+}
+
+
+/*          my recherch result & comment
+
+# some problem yet
+
+*/

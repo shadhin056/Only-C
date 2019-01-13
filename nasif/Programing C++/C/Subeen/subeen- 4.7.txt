@@ -1,0 +1,24 @@
+//subeen- 4.7
+//times of five with for loop
+//Nasif Ahmed
+
+#include<stdio.h>
+#include<math.h>
+
+int main ()
+
+{
+    int i,n = 5;
+
+    for(i=1;i<=10;i++)
+    {
+        printf("%d X %d = %d\n", n, i, n*i);
+    }
+
+
+    printf("\n\n\n");
+    return 0;
+
+}
+
+//working perfectly

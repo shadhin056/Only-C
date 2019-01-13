@@ -1,0 +1,31 @@
+//lec- 18a, slide- 8
+//Beware
+//Nasif Ahmed
+
+#include<stdio.h>
+
+
+int match (char *s, char *t)
+{
+    int count = 0;
+    while (*s == *t)
+    {
+        count++;
+        s++;
+        t++;
+    }
+    return count;
+}
+
+int main (void)
+{
+    char s1[6] = "hello";
+    char s2[6] = "hohoh";
+
+    printf ("match: %d\n", match (s1, s2));
+    printf ("match: %d\n", match (s2, s2 + 2));
+    printf ("match: %d\n", match (&s2[1], &s2[3]));
+}
+
+
+//i didn't get it .....

@@ -1,0 +1,14 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+    int n,p;
+    printf("please enter your number: \n\n");
+    scanf("%d",&n);
+    p=n%2;
+    if (p>=1)
+    printf("\n\nthe number u entered is ODD");
+    else
+    printf("\n\nthe number u entered is EVEN");
+    return 0;
+}

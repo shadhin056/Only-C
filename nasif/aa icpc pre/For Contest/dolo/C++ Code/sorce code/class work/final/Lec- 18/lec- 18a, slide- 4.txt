@@ -1,0 +1,22 @@
+//lec- 18a, slide- 4
+//swap func
+//Nasif Ahmed
+
+#include<stdio.h>
+
+
+void swap (int *a, int *b)
+{
+    int tmp = *b;
+    *b = *a;
+    *a = tmp;
+}
+int main (void)
+{
+    int i = 3;
+    int j = 4;
+    swap (&i, &j);
+    printf("%d",i);
+}
+
+//i didn't get it fully...

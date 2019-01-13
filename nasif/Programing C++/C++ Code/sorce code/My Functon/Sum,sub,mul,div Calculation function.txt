@@ -1,0 +1,96 @@
+//My Function: sum(),sub(),mul(),div()
+//Sum,sub,mul,div Calculation function
+//Xplosive
+
+
+#include<stdio.h>
+int sum (int a[],int in);
+int sub (int a[],int in);
+int mul (int a[],int in);
+int div (int a[],int in);
+
+int main ()
+
+{
+
+    int i,in,p,q,r,s;
+    int a[100];
+
+    printf("Enter input number: ");
+    scanf("%d",&in);
+
+    for(i=0; i<in; i++)
+        scanf("%d",&a[i]);
+
+    p=sum(a,in);
+    q=sub(a,in);
+    r=mul(a,in);
+    s=div(a,in);
+
+    printf("sum=%d\tsub=%d\tmul=%d\tdiv=%d\n",p,q,r,s);
+
+    return 0;
+
+}
+
+
+
+//sum function
+
+int sum (int a[],int in)
+{
+    int i;
+    int result = 0;
+    for(i=0; i<in; i++)
+        result+= a[i];
+    return result;
+}
+
+//sub func
+
+int sub (int a[],int in)
+{
+    int i;
+    int result = a[0];
+    for(i=1; i<in; i++)
+        result-= a[i];
+    return result;
+}
+
+
+
+
+//mul func
+
+int mul (int a[],int in)
+{
+    int i;
+    int result = 1;
+    for(i=0; i<in; i++)
+        result*= a[i];
+    return result;
+}
+
+//div func
+
+int div (int a[],int in)
+{
+    int i;
+    int result = a[0];
+    for(i=1; i<in; i++)
+        result/= a[i];
+    return result;
+}
+
+//amarprogram.blogspot.com
+
+
+
+// all are working for int not double..have to develop
+
+
+
+
+
+
+

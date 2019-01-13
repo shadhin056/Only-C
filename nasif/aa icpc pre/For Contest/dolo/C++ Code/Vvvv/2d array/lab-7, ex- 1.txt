@@ -1,0 +1,79 @@
+//lab-7, ex-1
+//2d array
+//Nasif Ahmed
+
+#include<stdio.h>
+
+int main ()
+
+{
+
+    int a[100][100];
+
+    int i,j,sum,r,c,max;
+
+    //r=2;
+    //c=2;
+
+    for(i=0;i<5;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            scanf("%d",&a[i][j]);
+        }
+    }
+/*
+    for(i=0;i<r;i++)
+    {
+        for(j=0;j<c;j++)
+        {
+            printf("a[%d][%d]=%d ",i,j,a[i][j]);
+        }
+    }
+*/
+
+    for(i=0;i<5;i++)
+    {
+
+        a[i][3]=a[i][0]+a[i][1]+a[i][2];
+
+    }
+
+    for(max=a[0][0],i=0;i<5;i++)
+    {
+        for(j=0;j<4;j++)
+        {
+            if(j<3)
+            {
+                printf("a[%d][%d]=%d ",i,j,a[i][j]);
+            }
+
+            else
+            {
+                printf("Score of student [%d]= %2d ",i, a[i][j]);
+            }
+
+
+        if(a[i][j]>max)
+        {
+            max=a[i][j];
+        }
+
+
+
+        }
+
+        printf("\n");
+
+    }
+
+    printf("\nmax=%d",max);
+
+
+
+
+
+
+
+    return 0;
+}

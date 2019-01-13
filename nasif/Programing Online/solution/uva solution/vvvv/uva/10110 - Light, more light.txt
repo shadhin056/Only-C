@@ -1,0 +1,85 @@
+//uva set - adhoc
+//10110 - Light, more light
+//Xplosive
+//ac
+
+//use printf
+
+//A number have Odd number of factors if and only if
+//it is a Perfect Square.
+
+#include<cstdio>
+#include<iostream>
+#include<string>
+#include<cstring>
+#include<sstream>
+#include<cstdlib>
+#include<cctype>
+#include<cmath>
+#include<algorithm>
+#include<vector>
+#include<set>
+#include<queue>
+#include<stack>
+#include<list>
+#include<map>
+#include<fstream>
+#include<numeric>
+#include<iterator>
+using namespace std;
+
+#define mx 35
+
+int main()
+{
+
+    //freopen("input.txt", "r", stdin);
+    //freopen("output.txt", "w", stdout);
+
+
+    //int tt;
+    long long int n;
+
+    while(1)
+    {
+        //cin >> n;
+        scanf("%lld",&n);
+
+        if(n==0)break;
+
+        long long int r = sqrt(n);
+        if(r*r==n)
+        {
+            //cout << "yes" << endl;
+            printf("yes\n");
+        }
+        else
+        {
+            printf("no\n");
+            //cout << "no" << endl;
+        }
+
+    }
+
+
+
+    return 0;
+}
+
+
+/*
+
+Sample input
+
+3
+6241
+8191
+0
+
+Sample output
+
+no
+yes
+no
+
+*/

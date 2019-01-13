@@ -1,0 +1,93 @@
+//uva
+//11192 - Group Reverse
+//xplosive
+//accepted
+
+//but why another system was not accepted
+
+
+#include <iostream>
+#include <cstdio>
+#include <cstring>
+#include <vector>
+#include <algorithm>
+#include <set>
+
+using namespace std;
+
+int l,start,n,g,c;
+//string s;
+char s[105];
+
+
+
+//void reverse_string()
+//{
+//    vector <char> v;
+//    int i;
+//    for(i=start,c=1; c<=n; i++,c++)
+//        v.push_back(s[i]);
+//
+//    start=i;
+//    reverse(v.begin(),v.end());
+//
+//    for(i=0; i<v.size(); i++)
+//        cout << v[i];
+//
+//}
+
+
+
+int main()
+{
+    //freopen("input.txt", "r", stdin);
+    //freopen("output.txt", "w", stdout);
+
+    while(cin >> g)
+    {
+        if(!g)
+            break;
+
+        cin >> s;
+        //l=s.size();
+        l=strlen(s);
+        n=l/g;
+
+//        start=0;
+//        while(g--)
+//            reverse_string();         //this function not accepted
+//        cout << endl;
+
+        start=0;
+        int i;
+        for(i=0; i<g; i++)
+        {
+            reverse(s+start,s+start+n);
+            start+=n;
+        }
+
+        cout << s << endl;
+
+    }
+
+    return 0;
+
+}
+
+
+
+/*
+
+Sample Input
+
+3 ABCEHSHSH
+5 FA0ETASINAHGRI0NATWON0QA0NARI0
+0
+
+Sample Output
+
+CBASHEHSH
+ATE0AFGHANISTAN0IRAQ0NOW0IRAN0
+
+
+*/

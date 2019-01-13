@@ -1,0 +1,43 @@
+//uva set - mix 2
+//11877 - The Coco-Cola Store
+//xplosive
+//accepted
+
+//#include <iostream>
+#include <cstdio>
+//using namespace std;
+int main()
+{
+    freopen("uvainput.txt", "r", stdin);
+    //freopen("uvaoutput.txt", "w", stdout);
+
+    short int n;
+
+    while(scanf("%hd",&n)==1)
+    {
+        if(!n)
+            break;
+        printf("%hd\n",n/2);
+    }
+
+    return 0;
+
+}
+
+/*
+
+Sample Input
+
+3
+10
+81
+0
+
+
+Sample Output
+
+1
+5
+40
+
+*/

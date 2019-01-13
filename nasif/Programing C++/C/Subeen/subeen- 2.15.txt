@@ -1,0 +1,42 @@
+//subeen- 2.15
+//calculation with char
+//Nasif Ahmed
+
+#include<stdio.h>
+#include<math.h>
+
+int main ()
+
+{
+
+    int num1, num2, value;
+    char sign;
+
+    printf("Please enter a number: ");
+    scanf("%d", &num1);
+    printf("Please enter another number: ");
+    scanf("%d", &num2);
+
+    value = num1 + num2;
+    sign = '+';
+    printf("%d %c %d = %d\n", num1, sign, num2, value);
+
+    value = num1 - num2;
+    sign = '-';
+    printf("%d %c %d = %d\n", num1, sign, num2, value);
+
+    value = num1 * num2;
+    sign = '*';
+    printf("%d %c %d = %d\n", num1, sign, num2, value);
+
+    value = num1 / num2;
+    sign = '/';
+    printf("%d %c %d = %d\n", num1, sign, num2, value);
+
+
+
+    printf("\n\n\n");
+    return 0;
+}
+
+//working perfectly

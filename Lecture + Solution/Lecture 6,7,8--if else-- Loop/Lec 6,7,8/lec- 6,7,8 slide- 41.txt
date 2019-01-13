@@ -1,0 +1,24 @@
+//lec- 6,7,8 slide- 41
+//Triangle inequality
+//Nasif Ahmed
+
+#include<stdio.h>
+#include<math.h>
+
+main ()
+
+{
+    int a,b,c;
+    printf("\nEnter a,b,c:");
+    scanf("%d%d%d",&a,&b,&c);
+
+    if(a+b>c && b+c>a && c+a>b)
+        printf("\n\nTriangle Possible");
+    else
+        printf("\n\nTriangle Not Possible");
+
+
+    printf("\n\n\n");
+}
+
+//working perfectly

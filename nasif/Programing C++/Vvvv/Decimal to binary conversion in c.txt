@@ -1,0 +1,77 @@
+Decimal to binary conversion in c programming language. C source code for decimal to binary conversion:
+
+
+#include<stdio.h>
+
+
+int main(){
+
+    long int decimalNumber,remainder,quotient;
+
+    int binaryNumber[100],i=1,j;
+
+
+    printf("Enter any decimal number: ");
+
+    scanf("%ld",&decimalNumber);
+
+
+    quotient = decimalNumber;
+
+
+    while(quotient!=0){
+
+         binaryNumber[i++]= quotient % 2;
+
+         quotient = quotient / 2;
+
+    }
+
+
+    printf("Equivalent binary value of decimal number %d: ",decimalNumber);
+
+    for(j = i -1 ;j> 0;j--)
+
+         printf("%d",binaryNumber[j]);
+
+
+    return 0;
+
+}
+
+Sample output:
+
+Enter any decimal number: 50
+Equivalent binary value of decimal number 50: 110010
+
+
+Algorithm:
+
+
+Binary number system: It is base 2 number system which uses the digits from 0 and 1.
+
+Decimal number system:
+It is base 10 number system which uses the digits from 0 to 9
+
+Convert from decimal to binary algorithm:
+
+Following steps describe how to convert decimal to binary
+
+Step 1: Divide the original decimal number by 2
+Step 2: Divide the quotient by 2
+Step 3: Repeat the step 2 until we get quotient equal to zero.
+
+Equivalent binary number would be remainders of each step in the reverse order.
+
+Decimal to binary conversion with example:
+
+For example we want to convert decimal number 25 in the binary.
+
+Step 1:  25 / 2  Remainder : 1 , Quotient : 12
+Step 2:  12 / 2  Remainder : 0 , Quotient : 6
+Step 3:   6 / 2  Remainder : 0 , Quotient : 3
+Step 4:   3 / 2  Remainder : 1 , Quotient : 1
+Step 5:   1 / 2  Remainder : 1 , Quotient : 0
+
+So equivalent binary number is: 11001
+That is (25)10 = (11001)2

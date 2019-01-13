@@ -1,0 +1,29 @@
+//lab-2, hw-2, using for loop
+//Reverse number
+//Nasif Ahmed
+
+#include<stdio.h>
+#include<math.h>
+
+main()
+
+{
+    int num,r,rev=0;
+
+    printf("Enter any number: ");
+    scanf("%d",&num);
+
+    for(;num!=0;num = num/10)
+    {
+        r = num % 10;
+        rev = rev*10+r;
+
+    }
+
+    printf("Reversed number is : %d",rev);
+
+    return 0;
+
+}
+
+// it's not working when last digit is 0

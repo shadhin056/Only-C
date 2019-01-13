@@ -1,0 +1,140 @@
+//
+//B Calendar
+//Xplosive
+//
+
+
+
+#include <iostream>
+#include <cstdio>
+#include <cstring>
+
+using namespace std;
+
+
+int get_day(char* s)
+{
+    if(strcmp(s,"-JAN-")==0)
+        return 0;
+    if(strcmp(s,"-FEB-")==0)
+        return 31;
+    if(strcmp(s,"-MAR-")==0)
+        return 59;
+    if(strcmp(s,"-APR-")==0)
+        return 90;
+    if(strcmp(s,"-MAY-")==0)
+        return 120;
+    if(strcmp(s,"-JUN-")==0)
+        return 151;
+    if(strcmp(s,"-JUL-")==0)
+        return 181;
+    if(strcmp(s,"-AUG-")==0)
+        return 212;
+    if(strcmp(s,"-SEP-")==0)
+        return 243;
+    if(strcmp(s,"-OCT-")==0)
+        return 273;
+    if(strcmp(s,"-NOV-")==0)
+        return 304;
+    if(strcmp(s,"-DEC-")==0)
+        return 334;
+    else
+    {
+        cout << "not working\n";
+        return 0;
+    }
+
+
+
+
+
+}
+
+bool is_leap_year (int y)
+{
+    if(y%100!=0 && y%4==0)
+    {
+        return true;
+    }
+    else if(y%400==0)
+    {
+        return true;
+    }
+
+    return false;
+}
+
+
+int main()
+{
+    freopen("input.txt", "r", stdin);
+    //freopen("output.txt", "w", stdout);
+
+    int tt,t;
+
+    cin >> tt;
+
+    int d,y;
+    char m[10];
+
+    int i;
+
+    for(t=1; t<=tt; t++)
+    {
+        //scanf("%d-%s-%d",&d,&m,&y);
+
+        cin >> d;
+
+        for(i=0; i<5; i++)
+        {
+            cin >> m[i];
+        }
+        m[i]='\0';
+
+        cin >> y;
+
+        //cout << d << m <<  "   " << y   << endl;
+
+        int td=d+get_day(m);
+
+        //cout << td << endl;
+
+        if(td>360)
+        {
+
+            printf("Case %d: %d Ones\n",t,td%360);
+
+        }
+        else if(td>300)
+        {
+            printf("Case %d: %d Tens\n",t,td%300);
+        }
+        else
+        {
+            printf("Case %d: %d Hundreds\n",t,td%360);
+        }
+
+
+    }
+
+
+    return 0;
+}
+
+
+
+/*
+
+Sample Input
+3
+01-JAN-1900
+10-JAN-1900
+16-DEC-1900
+
+Sample Output
+
+Case 1: 1 Hundreds
+Case 2: 10 Hundreds
+Case 3: 50 Tens
+
+*/

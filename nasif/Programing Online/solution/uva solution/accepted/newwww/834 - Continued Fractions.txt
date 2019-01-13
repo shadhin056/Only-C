@@ -1,0 +1,61 @@
+//uva problem
+//834 - Continued Fractions
+//Xplosive
+//ac
+
+
+#include <iostream>
+#include <string>
+#include <cstdio>
+#include <cstring>
+#include <algorithm>
+
+using namespace std;
+
+int main()
+{
+    //freopen("input.txt", "r", stdin);
+    //freopen("output.txt", "w", stdout);
+
+    int a,b,r,temp;
+
+    while(cin >> a>> b)
+    {
+        cout << "[";
+        r=a/b;
+        cout << r << ";";
+        temp=b;
+        b=a%b;
+        a=temp;
+        int c=0;
+        while(b)
+        {
+            if(c)
+                cout << ",";
+            r=a/b;
+            cout << r;
+            temp=b;
+            b=a%b;
+            a=temp;
+            c++;
+        }
+
+        cout << "]" << endl;
+    }
+
+    return 0;
+}
+
+/*
+
+Sample Input
+43 19
+1 2
+
+Sample Output
+[2;3,1,4]
+[0;2]
+
+*/
+
+

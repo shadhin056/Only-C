@@ -1,0 +1,68 @@
+//my function
+//fibonachiii function
+//Xplosive
+
+#include<cstdio>
+#include <iostream>
+
+using namespace std;
+
+//----------------------------------------
+//live fibonacci calculation with loops
+
+long long int get_fibo (int n)
+{
+    if(n==0) return 0;
+    if(n==1) return 1;
+
+    long long int a[100];
+    int i;
+    long long sum=0;
+
+    a[0]=0,a[1]=1;
+    for(i=2;i<=n;i++)
+    {
+        sum= a[i-1]+a[i-2];
+        a[i]=sum;
+    }
+
+    return sum;
+}
+//----------------------------------------
+//calculate upto n fibo and store in array
+//then call by a get func
+
+long long int a[100];
+void store_fibo (int n)
+{
+    a[0]=0,a[1]=1;
+    for(int i=2;i<=n;i++)
+        a[i]= a[i-1]+a[i-2];
+}
+
+//get func from store
+long long int get_fibo_store(long long int n)
+{
+    return a[n];
+}
+
+//----------------------------------------
+
+int main ()
+{
+    int n;
+
+    cout << "Enter number: ";
+    cin >> n;
+
+    store_fibo(n);
+
+    cout << "The Fibonacchi of  "<< n << "=" << get_fibo(n) << endl;
+    cout << "The Fibonacchi of  "<< n << "=" << get_fibo_store(n) << endl;
+
+    return 0;
+
+
+}
+//----------------------------------------
+//working nice

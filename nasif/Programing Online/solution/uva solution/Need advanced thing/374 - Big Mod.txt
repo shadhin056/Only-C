@@ -1,0 +1,49 @@
+//uva set - 00
+//374 - Big Mod
+//Xplosive
+//not completed
+
+#include <iostream>
+#include <cstdio>
+#include <cmath>
+
+using namespace std;
+
+int main()
+{
+    freopen("uvainput.txt", "r", stdin);
+    //freopen("uvaoutput.txt", "w", stdout);
+
+    int b,p,m,r;
+
+    while(scanf("%d %d %d",&b,&p,&m)==3)
+    {
+        r=(pow(b,p)%m);
+        printf("%d\n",r);
+    }
+
+
+    return 0;
+}
+
+/*
+
+Sample Input
+3
+18132
+17
+
+17
+1765
+3
+
+2374859
+3029382
+36123
+
+Sample Output
+13
+2
+13195
+
+*/

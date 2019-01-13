@@ -1,0 +1,163 @@
+//STL in c
+//stlc - stack(string) (global head)
+//push,pop,top,is_empty
+//working fine
+//xplo
+
+#include<cstdio>
+#include<iostream>
+#include<cstdlib>
+#include <cstring>
+#include <cstdlib>
+#include <conio.h>
+
+#define MAX 100
+
+using namespace std;
+
+
+struct Node
+{
+    string data;
+    Node* next;
+
+};
+
+Node* head;
+
+/*--------------- Prototype -----------------*/
+
+void push(string arg);
+void pop();
+string top();
+bool isEmpty();
+void print();
+void clear();
+
+
+/*------------------------------------------*/
+
+
+int main()
+{
+    //freopen("input.txt", "r", stdin);
+    //freopen("output.txt", "w", stdout);
+
+    head=NULL;
+
+    int n,pos;
+
+    push("abc");
+    push("def");
+    push("xyz");
+    print();
+
+    cout << top() << endl;
+
+    pop();
+    pop();
+    pop();
+    print();
+
+    cout << isEmpty() << endl;
+
+    push("xxx");
+    cout << isEmpty() << endl;
+
+    return 0;
+}
+
+void push(string arg)
+{
+//     old style
+//    Node* temp = (Node*)malloc(sizeof(Node));
+//    (*temp).a = 2;
+//    (*temp).next = NULL;
+
+    Node* temp = new Node();
+    temp->data = arg;
+    temp->next = head;
+
+    head = temp;
+//    return temp;
+
+}
+
+void pop()
+{
+    if(head!=NULL)
+    {
+        struct Node* it = head;
+        head = it->next;
+        free(it);
+        it = NULL;
+        //return data;
+
+    }
+    else
+    {
+        cout << "head null" << endl;
+    }
+
+}
+
+string top()
+{
+    if(head!=NULL)
+    {
+        return head->data;
+    }
+    else
+    {
+        cout << "head null" << endl;
+    }
+
+}
+
+bool isEmpty()
+{
+    if(head==NULL)
+        return true;
+
+    return false;
+}
+
+void clear()
+{
+    Node* it=head;
+    Node* temp;
+
+    while(it!=NULL)
+    {
+        temp=it;
+        it = it->next;
+        free(temp);
+        //cout << temp << " " << head << endl;
+        temp=NULL;
+    }
+    head=NULL;
+}
+
+
+void print()
+{
+    Node* it=head;
+    while(it!=NULL)
+    {
+        cout << it->data << " ";
+        it = it->next;
+    }
+    cout << endl;
+}
+
+
+
+
+/*
+
+Sample Input
+
+Sample Output
+
+
+*/

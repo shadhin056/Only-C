@@ -1,0 +1,70 @@
+//uva set - mix
+//12250 - Language Detection
+//Xplosive
+//accepted
+
+#include <iostream>
+#include <cstdio>
+#include <cstring>
+
+using namespace std;
+
+int main()
+{
+
+    //freopen("uvainput.txt", "r", stdin);
+    //freopen("uvaoutput.txt", "w", stdout);
+
+
+    char s[15];
+    int c=0;
+
+    while(scanf("%s",&s)==1)
+    {
+        c++;
+        if(strcmp(s,"#")==0)
+            break;
+        else if(strcmp(s,"HELLO")==0)
+            printf("Case %d: ENGLISH\n",c);
+        else if(strcmp(s,"HOLA")==0)
+            printf("Case %d: SPANISH\n",c);
+        else if(strcmp(s,"HALLO")==0)
+            printf("Case %d: GERMAN\n",c);
+        else if(strcmp(s,"BONJOUR")==0)
+            printf("Case %d: FRENCH\n",c);
+        else if(strcmp(s,"CIAO")==0)
+            printf("Case %d: ITALIAN\n",c);
+        else if(strcmp(s,"ZDRAVSTVUJTE")==0)
+            printf("Case %d: RUSSIAN\n",c);
+        else
+            printf("Case %d: UNKNOWN\n",c);
+
+    }
+
+    return 0;
+}
+
+
+/*
+
+Sample Input
+
+HELLO
+HOLA
+HALLO
+BONJOUR
+CIAO
+ZDRAVSTVUJTE
+#
+
+Sample Output
+
+Case 1: ENGLISH
+Case 2: SPANISH
+Case 3: GERMAN
+Case 4: FRENCH
+Case 5: ITALIAN
+Case 6: RUSSIAN
+
+
+*/

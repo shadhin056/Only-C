@@ -1,0 +1,39 @@
+//Problem B: riverse fibonacci
+//accepted
+
+#include <cstdio>
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    long long int t,i,k,a,b,j;
+    int aa[5000];
+
+    //k=5,a=11,b=18;
+    //k=3,a=2,b=3;
+
+    cin >> t;
+
+    for (j=1; j<=t; j++)
+    {
+        cin >> k;
+        cin >> a;
+        cin >> b;
+
+        aa[k]=b;
+        aa[k-1]=a;
+
+        for (i=k; i>0; i--)
+        {
+            aa[i-2]=aa[i]-aa[i-1];
+        }
+        cout << aa[0] << " " << aa[1] <<endl;
+
+    }
+
+    return 0;
+}
+
+

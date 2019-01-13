@@ -1,0 +1,66 @@
+//Algorithm Lab
+//sort algorithm
+//Xplosive
+//ns
+
+#include <iostream>
+#include <cstdio>
+#include <cmath>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+int main()
+{
+
+    //freopen("input.txt", "r", stdin);
+    //freopen("output.txt", "w", stdout);
+
+    cout << "array sorting\n";
+
+    int a[]={1,0,6,33,4,2,4,7,9,5};
+
+    int i,j,k;
+
+    sort(a,a+10);
+
+    for(i=0; i<10; i++)
+    {
+        cout << a[i] << endl;
+    }
+
+
+
+
+    cout << "vector sorting\n";
+
+    int a2[]={1,0,6,33,4,2,4,7,9,5};
+    vector < int > v(a2,a2+10);       //array to vector
+
+
+    //cout << v.size() << endl;
+
+    sort(v.begin(),v.end());
+
+    for(i=0; i<10; i++)
+    {
+        cout << v[i] << endl;
+    }
+
+
+
+
+
+
+
+
+    return 0;
+}
+
+
+/*
+
+
+
+*/

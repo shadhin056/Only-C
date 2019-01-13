@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1370878400 source:d:\dropbox\xplo graduation\cse department\programing lab\project\bucky new\main.cpp
+	<iostream>
+	"yclass.h"
+
+1370878608 source:d:\dropbox\xplo graduation\cse department\programing lab\project\bucky new\yclass.cpp
+	"yclass.h"
+	<iostream>
+
+1370878608 d:\dropbox\xplo graduation\cse department\programing lab\project\bucky new\yclass.h
+	<iostream>
+

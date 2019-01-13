@@ -1,0 +1,32 @@
+//lab-3, ex-11
+//region in a plan
+//Nasif Ahmed
+
+#include<stdio.h>
+#include<math.h>
+
+main()
+
+{
+    int x,y,region;
+
+    printf("   |   \n 2 | 1 \n   |   \n--- ---\n   |   \n 3 | 4 \n   |   \n");
+    printf("\n\nEnter x,y: ");
+    scanf("%d%d",&x,&y);
+
+    if (x>0&&y>0)
+        region= 1;
+    else if (x<0&&y>0)
+        region= 2;
+    else if (x<0&&y<0)
+        region= 3;
+    else
+        region= 4;
+
+    printf("\n\nThis point is in Region %d",region);
+
+    printf("\n\n\n");
+    return 0;
+}
+
+//working perfectly

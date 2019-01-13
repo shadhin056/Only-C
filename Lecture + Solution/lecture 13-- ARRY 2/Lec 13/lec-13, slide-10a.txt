@@ -1,0 +1,76 @@
+//lec-13, slide-10a
+//Result Maximum minimum in 2d array
+//Nasif Ahmed
+
+#include<stdio.h>
+
+int main ()
+
+{
+
+    int i,j,sum,max,min,r,c;
+    int a[100][100];
+    r=7,c=5;
+
+
+
+    for(i=0;i<r;i++)
+    {
+        for(j=0;j<c;j++)
+        {
+
+            scanf("%d",&a[i][j]);
+
+        }
+
+    }
+
+
+
+    for(i=0;i<r;i++)
+    {
+        for(sum=0,j=0;j<c;j++)
+        {
+            printf("%d ",a[i][j]);
+
+            sum+=a[i][j];
+
+
+        }
+
+        a[i][j]= sum;
+        printf("Sum= %d\n",a[i][j]);
+
+
+    }
+
+
+    max=min=a[0][j];
+
+    for(i=1;i<r;i++)
+    {
+       if(a[i][j]>max)
+       {
+           max=a[i][j];
+       }
+
+
+       if(a[i][j]<min)
+       {
+           min=a[i][j];
+       }
+
+    }
+
+    printf("Max= %d Min= %d\n",max,min);
+
+
+
+
+
+    return 0;
+
+
+}
+
+//working nice

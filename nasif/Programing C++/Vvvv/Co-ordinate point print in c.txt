@@ -1,0 +1,124 @@
+//Co-ordinate point print in c
+//Xplosive
+/* this */
+
+#include<stdio.h>
+
+int main ()
+
+{
+    int n,i,j,x,y,k1,k2,k3,k4;
+
+    printf("Enter (x,y): ");
+    scanf("%d%d",&x,&y);
+
+    if(x>y)
+        n=x+5;
+    else
+        n=y+5;
+
+    k1=k2=n;
+    k3=k4=1;
+
+
+//upper part, working perfectly
+
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<n;j++)
+        {
+
+            if(j==(n+x) && k1==y)
+            {
+                printf("*");
+            }
+            else
+            {
+                printf(" ");
+            }
+        }
+
+        printf("|");
+        k1--;
+
+        for(j=1;j<=n;j++)
+        {
+
+            if(j==x && k2==y)
+            {
+                printf("*");
+            }
+            else
+            {
+                printf(" ");
+            }
+        }
+
+        printf("\n");
+        k2--;
+
+    }
+
+
+
+//middle bar, working perfectly
+
+    for(i=0;i<n;i++)
+    {
+        printf("-");
+    }
+
+    printf(" ");
+
+    for(i=0;i<n;i++)
+    {
+        printf("-");
+    }
+
+    printf("\n");
+
+
+
+//under part, working perfectly
+
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<n;j++)
+        {
+            if(j==(n+x) && k3==-y)
+            {
+                printf("*");
+            }
+            else
+            {
+                printf(" ");
+            }
+        }
+
+        printf("|");
+        k3++;
+
+        for(j=1;j<=n;j++)
+        {
+            if(j==x && k4==-y)
+            {
+                printf("*");
+            }
+            else
+            {
+                printf(" ");
+            }
+        }
+
+        printf("\n");
+        k4++;
+    }
+
+
+
+    return 0;
+
+
+}
+
+//amarprogram.blogspot.com

@@ -1,0 +1,52 @@
+//sec-5,mid-1,q-6
+//sumation of some numbers
+//Nasif Ahmed
+
+#include<stdio.h>
+
+int main ()
+
+{
+    int i=5,in;
+    float s=0,n;
+
+    printf("Enter Number of Input: ");
+    scanf("%d",&i);
+
+
+    for(in=1;in<=i;in++)
+    {
+        if(in==1)
+        {
+            printf("\n\tEnter %dst Number of %d: ",in,i);
+        }
+        else if(in==2)
+        {
+            printf("\n\tEnter %dnd Number of %d: ",in,i);
+        }
+        else if(in==3)
+        {
+            printf("\n\tEnter %drd Number of %d: ",in,i);
+        }
+        else
+        {
+            printf("\n\tEnter %dth Number of %d: ",in,i);
+        }
+
+        scanf("%f",&n);
+        s=s+n;
+
+    }
+
+    printf("\n\tSumation= %0.2f",s);
+
+
+
+    printf("\n\n\n\tPress Any Key To EXIT!!");
+    getch();
+    return 0;
+
+
+}
+
+//working perfectly

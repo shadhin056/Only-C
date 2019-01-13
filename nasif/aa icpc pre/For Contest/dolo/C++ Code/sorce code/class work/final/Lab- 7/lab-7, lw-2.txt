@@ -1,0 +1,116 @@
+//lab-7, lw-2
+//Matriix symetric or not
+//Nasif Ahmed
+
+#include<stdio.h>
+
+int main ()
+
+{
+
+    int i,j,r,c,p,q,n,Q;
+    int a[100][100],t[100][100];
+
+
+
+
+    printf("\n\t\tThis program is valid for (nxn) matrix\n");
+
+
+    //printf("\n\tEnter dimension of matrix (r,c): ");
+    //scanf("%d %d",&r,&c);
+
+    printf("\n\tEnter n: ");
+    scanf("%d",&n);
+
+    r=c=n;
+
+    printf("\n\tEnter Matrix\n\n");
+
+    for(i=0;i<r;i++)
+    {
+        for(j=0;j<c;j++)
+        {
+
+            printf("Enter a(%d,%d): ",i+1,j+1);
+            scanf("%d",&a[i][j]);
+        }
+
+    }
+
+
+    for(i=0;i<r;i++)
+    {
+        for(j=0;j<c;j++)
+        {
+            t[i][j]=a[j][i];
+
+        }
+
+    }
+
+    for(i=0;i<r;i++)
+    {
+        for(j=0;j<c;j++)
+        {
+            printf("%d ",a[i][j]);
+        }
+        printf("\n");
+
+    }
+
+    printf("\n");
+
+    for(i=0;i<r;i++)
+    {
+        for(j=0;j<c;j++)
+        {
+            printf("%d ",t[i][j]);
+        }
+        printf("\n");
+
+    }
+
+
+    if(r==c)
+    {
+        for(i=0;i<r;i++)
+        {
+            for(j=0;j<c;j++)
+            {
+                if(t[i][j]==a[i][j])
+                {
+                    Q=1;
+                }
+                else
+                {
+                    Q=0 break;
+                }
+
+            }
+            if(Q==0) break;
+
+        }
+    }
+    else
+    {
+        Q=0;
+    }
+
+
+    if(Q==1)
+    {
+        printf("\nThe matrix is symetric\n");
+    }
+    else
+    {
+        printf("\nThe matrix is not symetric\n");
+    }
+
+    return 0;
+
+
+}
+
+//This program is valid for (nxn) matrix\n
+//wn

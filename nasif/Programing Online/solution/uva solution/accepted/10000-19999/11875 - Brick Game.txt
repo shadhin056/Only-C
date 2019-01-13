@@ -1,0 +1,106 @@
+//uva set - 00
+//11875 - Brick Game
+//Xplosive
+//accepted
+
+
+//#include <iostream>
+#include <cstdio>
+
+using namespace std;
+
+int main()
+{
+    freopen("uvainput.txt", "r", stdin);
+    //freopen("uvaoutput.txt", "w", stdout);
+
+    int t,tt,i,j,r,n,a[11];
+
+    scanf("%d",&tt);
+
+    for(t=1; t<=tt; t++)
+    {
+        scanf("%d",&n);
+        for(i=0; i<n; i++)
+        {
+            scanf("%d",&a[i]);
+        }
+
+        if(n%2!=0)
+        {
+            printf("Case %d: %d\n",t,a[n/2]);
+        }
+        else
+        {
+            if(a[0]>a[1])
+            {
+                printf("Case %d: %d\n",t,a[n/2-1]);
+            }
+            else
+            {
+                printf("Case %d: %d\n",t,a[n/2]);
+            }
+        }
+
+    }
+
+
+
+    return 0;
+}
+
+
+//--------------------------------------------
+/*
+
+#include<stdio.h>
+
+int main()
+{
+    int c,tc,i,in,a[11];
+
+    scanf("%d",&tc);
+
+    for(c=1; c<=tc; c++)
+    {
+
+        scanf("%d",&in);
+
+        for(i=0; i<in; i++)
+        {
+            scanf("%d",&a[i]);
+        }
+
+        printf("Case %d: %d\n",c,a[in/2]);
+
+    }
+
+    return 0;
+
+}
+
+//why this is also accepted
+
+
+
+*/
+//--------------------------------------------
+
+
+
+/*
+
+Sample Input
+
+2
+5 19 17 16 14 12
+5 12 14 16 17 18
+
+Sample Output
+
+Case 1: 16
+Case 2: 16
+
+
+
+*/

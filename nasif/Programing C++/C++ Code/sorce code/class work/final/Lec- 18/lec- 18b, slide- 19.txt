@@ -1,0 +1,33 @@
+//lec- 18b, slide- 19
+//comproot func
+//Nasif Ahmed
+
+#include<stdio.h>
+#include<math.h>
+
+void comproots(int a,int b,int c,double *dptr1, double *dptr2)
+{
+    *dptr1 = (-b - sqrt(b*b-4*a*c))/(2.0*a);
+    *dptr2 = (-b + sqrt(b*b-4*a*c))/(2.0*a);
+
+    return;
+}
+
+int main ()
+{
+    int a,b,c;
+    double root1,root2;
+
+    printf("Enter Coefficients:\n");
+    scanf("%d %d %d",&a,&b,&c);
+
+    comproots(a,b,c,&root1,&root2);
+
+    printf("First Root = %lf\n",root1);
+    printf("Second Root = %lf\n",root2);
+
+
+    return 0;
+}
+
+//i think i get it...

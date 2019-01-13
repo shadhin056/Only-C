@@ -1,0 +1,196 @@
+#include <stdio.h>
+int main()
+{
+	int x,a,e,o;
+	printf("Enter the number:");
+	scanf("%d", &x);
+	e=0;
+	o=0;
+
+	while(x>0)
+	{
+		a=x%10;
+		
+		if(a%2==0)
+		{
+			e=e+a;
+			
+		}
+		else 
+		{
+			o=o+a;
+			
+		}
+		x=x/10;	
+	    
+	}
+	
+	if(e==o)
+	{
+		printf("Symmetric Number\n");
+	}
+	return 0;
+}
+*************************************************
+
+2.
+#include <stdio.h>
+int main()
+{
+	int a,b,o=0,n;
+	printf("Enter the number:");
+	scanf("%d", &n);
+	a=2;
+
+	while(a<n)
+	{
+		b=n%a;
+		if(b==0)
+		{
+		   o=a;
+		}
+		a++;
+	}
+	if(a%2!=0)
+	{
+
+	   printf("The Big Odd number:%d\n", o);
+	}
+	else
+	{
+		printf("not any Big Odd number\n");
+    }
+
+	return 0;
+}
+*******************************************
+3.
+#include <stdio.h>
+int main()
+{
+	int a,b,e=0,o=0,n,x,y;
+	printf("Enter the number:");
+	scanf("%d", &n);
+	a=2;
+
+	while(a<n)
+	{
+		b=n%a;
+		
+		if(b==0)
+		{
+			if(a%2==0)
+			{
+				e=e+a;
+			}
+			else 
+			{
+				o=o+a;
+			}
+		   
+		}
+		a++;
+	}
+	if(e>o)
+	{
+
+	   printf("Dominant Even number\n");
+	}
+	else
+	{
+		printf("not any Dominant number\n");
+    }
+
+	return 0;
+}
+************************************************
+4.
+ #include<stdio.h>
+int main ()
+{
+int a,b=2,c,m=0,n=0;
+printf("enter your number\n");
+scanf("%d", &a);
+while(b<a)
+{
+c=a%b;
+if(c==0)
+{
+if(b%2==0)
+{
+m=m+1;
+}
+else
+{
+n=n+1;
+}
+}
+b++;
+}
+if(n<m)
+{
+printf("this is even major\n");
+}
+else
+{
+printf("this is odd major\n");
+}
+return 0;
+}
+*******************************************
+no5
+#include<stdio.h>
+int main(){
+	int a,b,c,d,x;
+	int sum=0;
+	
+	printf("Enter a number: ");
+	scanf("%d",&a);
+	
+	x=a;
+	while(a!=0){
+		b=1,c=1;
+		d=a%10;
+		
+		while(b<=d){
+			c=c*b;
+			b++;
+		}
+		sum=sum+c;
+		a=a/10;
+	}
+	if(sum==x)
+		printf("%d is a strong number\n",x);
+	else
+		printf("%d is not a strong number\n",x);
+	
+	return 0;
+}
+*******************************************
+no 6.
+
+
+#include<stdio.h>
+int main()
+{
+int a,c,sum=0;
+
+printf("To find sum of digits of a number:\n");
+printf("Enter a number:\n");
+scanf("%d",&a);
+while(a>0)
+{
+c=a%10;
+sum=sum+c;
+a=a/10;
+}
+printf("\nsum of digits of number is %d\n",sum);
+return 0;
+}
+******************************************
+
+
+
+
+
+

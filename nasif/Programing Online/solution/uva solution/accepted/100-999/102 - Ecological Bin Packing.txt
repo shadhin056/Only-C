@@ -1,0 +1,108 @@
+//uva set - 01
+//102 - Ecological Bin Packing
+//Xplosive
+//accepted
+
+#include <iostream>
+#include <cstdio>
+#include <string>
+
+using namespace std;
+
+
+int main()
+{
+    //freopen("uvainput.txt", "r", stdin);
+    //freopen("uvaoutput.txt", "w", stdout);
+
+    int b1,b2,b3,g1,g2,g3,c1,c2,c3;
+    int B1,B2,B3,G1,G2,G3,C1,C2,C3;
+    int bgc,bcg,cbg,cgb,gbc,gcb;
+    int m;
+    string s;
+
+    
+
+    while(scanf("%d %d %d %d %d %d %d %d %d",&b1,&g1,&c1,&b2,&g2,&c2,&b3,&g3,&c3)==9)
+    {
+        B1= b1+b2;
+        B2= b2+b3;
+        B3= b3+b1;
+        C1= c1+c2;
+        C2= c2+c3;
+        C3= c3+c1;
+        G1= g1+g2;
+        G2= g2+g3;
+        G3= g3+g1;
+
+        bcg= B2+C3 +G1 ;
+        bgc= B2+G3 +C1 ;
+        cbg= C2+B3 +G1 ;
+        cgb= C2+G3 +B1 ;
+        gbc= G2+B3 +C1 ;
+        gcb= G2+C3 +B1 ;
+
+        m=gcb;
+        s="GCB";
+
+        if(gbc<=m)
+        {
+            m=gbc;
+            s="GBC";
+        }
+        if(cgb<=m)
+        {
+            m=cgb;
+            s="CGB";
+        }
+        if(cbg<=m)
+        {
+            m=cbg;
+            s="CBG";
+        }
+        if(bgc<=m)
+        {
+            m=bgc;
+            s="BGC";
+        }
+        if(bcg<=m)
+        {
+            m=bcg;
+            s="BCG";
+        }
+
+        cout << s << " " << m << endl;
+
+    }
+
+    return 0;
+}
+
+/*
+
+Sample Input
+1 2 3 4 5 6 7 8 9
+5 10 5 20 10 5 10 20 10
+
+Sample Output
+BCG 30
+CBG 50
+
+
+Critical Input:
+9 8 7 6 5 4 3 2 1
+238609294 238609294 238609294 238609294 238609294 238609294 238609294 238609294 238609294
+85263245 25965748 69854785 15874569 36985745 12365478 36985526 32147859 96587458
+123 654 789 963 258 741 159 963 357
+123 987 12 852 963 987 963 159 753
+
+Critical Output:
+BCG 30
+BCG 1431655764
+BGC 193193965
+CBG 2292
+GCB 2862
+
+
+
+*/

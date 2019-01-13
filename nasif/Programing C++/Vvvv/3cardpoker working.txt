@@ -1,0 +1,580 @@
+#include <iostream>
+#include <string>
+#include <cstdlib>
+#include <ctime>
+#include <windows.h>
+#include <process.h>
+
+using namespace std;
+int ucard[17];
+int u=0;
+
+void array_ini()
+{
+    for(int in=0; in<17; in++)
+    {
+        //cout<<"intial"<<in<<endl;
+        ucard[in]= {54};
+    }
+}
+
+void used_card(int m)
+{
+    //cout<<"use\n";
+    ucard[u++] =m;
+
+}
+
+
+int check_card(int m)
+{
+    //cout<<"check\n";
+    for(int b=0; b<17; b++)
+    {
+        if(m==ucard[b])
+            return 1;
+    }
+    return 0;
+}
+
+/////////////////////////////////////////////////////////////////////////////
+class card
+{
+private:
+    char suits;
+    char num;
+public:
+    int s,n;
+    card();
+    card(char i, char j,int su, int nu);
+
+    void ini(char i, char j, int su, int nu);
+    void show_card();
+
+};
+
+/////////////////////////////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////////////////////////////
+
+card::card()
+{
+
+}
+card::card(char i, char j, int su, int nu)
+{
+    suits=i;
+    num= j;
+    s=su;
+    n=nu;
+}
+void card::ini(char i, char j, int su, int nu)
+{
+    suits=i;
+    num= j;
+    s=su;
+    n=nu;
+
+}
+void card::show_card()
+{
+    cout << suits << " " << num << endl;
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////////////
+class player
+{
+private:
+    string name;
+    card card1;
+    card card2;
+    card card3;
+
+public:
+    char c;
+    int v;
+
+    player()
+    {
+
+    }
+    player(string nam)
+    {
+        name=nam;
+    }
+
+    void get_card1(card ob)
+    {
+        card1=ob;
+    }
+    void get_card2(card ob1)
+    {
+        card2=ob1;
+    }
+    void get_card3(card ob2)
+    {
+        card3=ob2;
+    }
+
+    void show_player()
+    {
+        cout<<name<<endl;
+        card1.show_card();
+        card2.show_card();
+        card3.show_card();
+
+    }
+    int straight(int a,int b,int c)
+    {
+        int x,y,z;
+
+        x=((a>b)&&(a>c))?a:x;
+        x=((b>a)&&(b>c))?b:x;
+        x=((c>b)&&(c>a))?c:x;
+        y=(((a>b)&&(a<c))||((a>c)&&(a<b)))?a:y;
+        y=(((b>c)&&(b<a))||((b>a)&&(b<c)))?b:y;
+        y=(((c>a)&&(c>b))||((c>b)&&(c<a)))?c:y;
+        z=((a<b)&&(a<c))?a:z;
+        z=((b<a)&&(b<c))?b:z;
+        z=((c<a)&&(c<b))?c:z;
+
+        if ((x-y)==1 && (y-z)==1)
+            return 1;
+        else
+            return 0;
+
+    }
+    void find_rank()
+    {
+        if(card1.n==card2.n && card1.n==card3.n && card2.n==card3.n)
+        {
+            c='T';
+            v=card1.n+card2.n+card3.n;
+        }
+        else if((card1.s==card2.s && card1.s==card3.s &&card2.s==card3.s) && straight(card1.n,card2.n,card3.n)==1)
+        {
+            c='F';
+            v=card1.n+card2.n+card3.n;
+        }
+        else if(straight(card1.n,card2.n,card3.n)==1)
+        {
+            c='R';
+            v=card1.n+card2.n+card3.n;
+        }
+        else if(card1.s==card2.s && card1.s==card3.s &&card2.s==card3.s)
+        {
+            c='C';
+            v=card1.n+card2.n+card3.n;
+        }
+        else if(card1.n==card2.n || card1.n==card3.n || card2.n==card3.n)
+        {
+            if(card1.n==card2.n)
+            {
+                c='P';
+                v=card1.n;
+            }
+            else if(card1.n==card3.n)
+            {
+                c='P';
+                v=card1.n;
+            }
+            else
+            {
+                c='P';
+                v=card2.n;
+            }
+        }
+        else
+        {
+            c='H';
+            v=card1.n+card2.n+card3.n;
+        }
+
+    }
+};
+/////////////////////////////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////////////////////////////
+
+class rand_genarator
+{
+private:
+    //int rand_num;
+
+public:
+    rand_genarator()
+    {
+        srand(time(0));
+    }
+    int get_rand_num(int r)         //return 0 to r
+    {
+        //srand(time(0));
+        //Sleep(1000);
+        return (rand()%(r+1));
+
+    }
+};
+/////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////////
+
+
+int main()
+{
+    char temp_num;
+    string name="sam";
+    char temp_suits;
+    int temp_s,temp_n;
+    cout<<"Enter Your Name: ";
+    //cin>>name;
+
+    card cob[52];
+
+    player pl1("Nasif"),pl2("Gullu"),pl3("Tanzir"),pl4("Mou"),pl5(name);
+
+    int i,j,k,m;
+
+    for (k=0,i=0; i<4; i++)
+    {
+        for(j=0; j<13; j++,k++)
+        {
+
+            switch(i)
+            {
+            case 0:
+                temp_suits=03;
+                temp_s=1;
+                break;
+            case 1:
+                temp_suits=04;
+                temp_s=2;
+                break;
+            case 2:
+                temp_suits=05;
+                temp_s=3;
+                break;
+            case 3:
+                temp_suits=06;
+                temp_s=4;
+                break;
+            }
+
+            switch(j)
+            {
+            case 0:
+                temp_num='A';
+                temp_n=13;
+                break;
+            case 1:
+                temp_num='K';
+                temp_n=12;
+                break;
+            case 2:
+                temp_num='Q';
+                temp_n=11;
+                break;
+            case 3:
+                temp_num='J';
+                temp_n=10;
+                break;
+            case 4:
+                temp_num='T';
+                temp_n=9;
+                break;
+            case 5:
+                temp_num='9';
+                temp_n=8;
+                break;
+            case 6:
+                temp_num='8';
+                temp_n=7;
+                break;
+            case 7:
+                temp_num='7';
+                temp_n=6;
+                break;
+            case 8:
+                temp_num='6';
+                temp_n=5;
+                break;
+            case 9:
+                temp_num='5';
+                temp_n=4;
+                break;
+            case 10:
+                temp_num='4';
+                temp_n=3;
+                break;
+            case 11:
+                temp_num='3';
+                temp_n=2;
+                break;
+            case 12:
+                temp_num='2';
+                temp_n=1;
+                break;
+
+            }
+
+
+            cob[k].ini(temp_suits,temp_num,temp_s,temp_n);
+            //cob[k].show_card();
+        }
+
+    }
+
+    rand_genarator rg_ob;
+    int c;
+
+    array_ini();
+
+
+    for(int a=0; a<5; a++)
+    {
+        //cout<<"pl"<<a<<endl;
+        switch(a)
+        {
+        case 0:
+            m=rg_ob.get_rand_num(52);
+
+            pl1.get_card1(cob[m]);
+
+            used_card(m);
+
+            m=rg_ob.get_rand_num(52);
+
+            c=check_card(m);
+            while(c==1)
+            {
+                m=rg_ob.get_rand_num(52);
+                c=check_card(m);
+            }
+
+            pl1.get_card2(cob[m]);
+
+            used_card(m);
+
+            m=rg_ob.get_rand_num(52);
+
+            c=check_card(m);
+            while(c==1)
+            {
+                m=rg_ob.get_rand_num(52);
+                c=check_card(m);
+            }
+
+            pl1.get_card3(cob[m]);
+
+            used_card(m);
+
+            pl1.show_player();
+            break;
+        case 1:
+            m=rg_ob.get_rand_num(52);
+
+            c=check_card(m);
+            while(c==1)
+            {
+                m=rg_ob.get_rand_num(52);
+                c=check_card(m);
+            }
+
+
+            pl2.get_card1(cob[m]);
+
+            used_card(m);
+
+            m=rg_ob.get_rand_num(52);
+
+            c=check_card(m);
+            while(c==1)
+            {
+                m=rg_ob.get_rand_num(52);
+                c=check_card(m);
+            }
+
+            pl2.get_card2(cob[m]);
+
+            used_card(m);
+
+            m=rg_ob.get_rand_num(52);
+
+            c=check_card(m);
+            while(c==1)
+            {
+                m=rg_ob.get_rand_num(52);
+                c=check_card(m);
+            }
+
+            pl2.get_card3(cob[m]);
+
+            used_card(m);
+
+
+            pl2.show_player();
+            break;
+        case 2:
+            m=rg_ob.get_rand_num(52);
+
+            c=check_card(m);
+            while(c==1)
+            {
+                m=rg_ob.get_rand_num(52);
+                c=check_card(m);
+            }
+
+
+            pl3.get_card1(cob[m]);
+
+            used_card(m);
+
+            m=rg_ob.get_rand_num(52);
+
+            c=check_card(m);
+            while(c==1)
+            {
+                m=rg_ob.get_rand_num(52);
+                c=check_card(m);
+            }
+
+            pl3.get_card2(cob[m]);
+
+            used_card(m);
+
+            m=rg_ob.get_rand_num(52);
+
+            c=check_card(m);
+            while(c==1)
+            {
+                m=rg_ob.get_rand_num(52);
+                c=check_card(m);
+            }
+
+            pl3.get_card3(cob[m]);
+
+            used_card(m);
+
+            pl3.show_player();
+            break;
+        case 3:
+            m=rg_ob.get_rand_num(52);
+
+            c=check_card(m);
+            while(c==1)
+            {
+                m=rg_ob.get_rand_num(52);
+                c=check_card(m);
+            }
+
+
+            pl4.get_card1(cob[m]);
+
+            used_card(m);
+
+            m=rg_ob.get_rand_num(52);
+
+            c=check_card(m);
+            while(c==1)
+            {
+                m=rg_ob.get_rand_num(52);
+                c=check_card(m);
+            }
+
+            pl4.get_card2(cob[m]);
+
+            used_card(m);
+
+            m=rg_ob.get_rand_num(52);
+
+            c=check_card(m);
+            while(c==1)
+            {
+                m=rg_ob.get_rand_num(52);
+                c=check_card(m);
+            }
+
+            pl4.get_card3(cob[m]);
+
+            used_card(m);
+
+            pl4.show_player();
+            break;
+        case 4:
+            m=rg_ob.get_rand_num(52);
+
+            c=check_card(m);
+            while(c==1)
+            {
+                m=rg_ob.get_rand_num(52);
+                c=check_card(m);
+            }
+
+
+            pl5.get_card1(cob[m]);
+
+            used_card(m);
+
+            m=rg_ob.get_rand_num(52);
+
+            c=check_card(m);
+            while(c==1)
+            {
+                m=rg_ob.get_rand_num(52);
+                c=check_card(m);
+            }
+
+            pl5.get_card2(cob[m]);
+
+            used_card(m);
+
+            m=rg_ob.get_rand_num(52);
+
+            c=check_card(m);
+            while(c==1)
+            {
+                m=rg_ob.get_rand_num(52);
+                c=check_card(m);
+            }
+
+            pl5.get_card3(cob[m]);
+
+            used_card(m);
+
+            pl5.show_player();
+            break;
+        }
+
+    }
+    pl1.find_rank();
+    cout<<pl1.c<<pl1.v<<endl;
+    pl2.find_rank();
+    cout<<pl2.c<<pl2.v<<endl;
+    pl3.find_rank();
+    cout<<pl3.c<<pl3.v<<endl;
+    pl4.find_rank();
+    cout<<pl4.c<<pl4.v<<endl;
+    pl5.find_rank();
+    cout<<pl5.c<<pl5.v<<endl;
+
+    /*
+    for(int t=0; t<17; t++)
+    {
+        cout<<ucard[t]<<endl;
+    }
+
+
+    */
+    return 0;
+}
+
+

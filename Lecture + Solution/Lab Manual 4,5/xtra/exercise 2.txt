@@ -1,0 +1,246 @@
+s=1+3+5+....up to 9 term
+s=5-10+15-20+......
+s=2+2^2+2^3+.......
+s=80+75+70+........
+
+
+
+
+
+
+MAXIMUM&PRIME:
+
+#include<stdio.h>
+int main()
+{
+   int n=1,j,c,max=-9;
+   printf ("enter:\n");
+  while(n>0)
+    {
+       scanf ("%d",&n);
+       if(n>max)
+         {
+           max=n;
+         }
+
+           {
+               j=2;c=0;
+              while(j<max)
+               {
+                 if(max%j==0)
+                  {
+                     c=c++;
+                  }
+               j++;
+               }
+           }
+  if(n==0)
+
+    {
+      break;
+    }
+
+   }
+if (c==0)
+ {
+    printf ("maxi & prime: %d\n",max);
+ }
+else
+ {
+    printf ("not prime but maxi: %d\n",max);
+ }
+    return 0;
+}
+
+*****************************
+
+GREATEST COMMON DIVISOR:
+
+#include <stdio.h>
+int main()
+{
+   int a,b,c,gcd;
+   printf ("input 2 numbers:\n");
+   scanf ("%d %d",&a,&b);
+   for(a>0;b>0;)
+   {
+       c=a%b;
+       a=b;
+       b=c;
+       gcd=a;
+   }
+   printf ("greatest common divisor:%d\n",gcd);
+return 0;
+}
+
+*****************************
+
+perfect number
+
+#include<stdio.h>
+int main()
+{
+   int i,n,sum=0,a;
+   printf ("enter a number:\n");
+   scanf ("%d",&n);
+   a=n;
+   for (i=1;i<=n;i++)
+   {
+      if (n%i==0)
+      {
+         sum=sum+i;
+      }
+   }
+ if (a*2==sum)
+   {
+      printf (" %d is perfect number.\n",a);
+   }
+
+return 0;
+}
+
+************************************
+consecutive number
+
+#include<stdio.h>
+int main()
+{
+int n=1,e=0;
+printf("enter some numbers:\n");
+while(n>0)
+{
+scanf("%d", &n);
+if(n%2==0)
+{
+e=e+1;
+}
+if(n==0)
+break;
+}
+
+printf("pair of consecutive even numbers:%d\n", e-2);
+return 0;
+}
+************************************
+
+series 1
+
+#include<stdio.h>
+int main()
+{
+  int n,i,sum=0;
+  scanf ("%d",&n);
+  for(i=1;i<=n;i=i+2)
+  {
+    sum=sum+i;
+  }
+  printf ("total:%d\n",sum);
+  return 0;
+  }
+**************************************
+
+relative prime
+
+#include<stdio.h>
+int main()
+{
+int a,b,count=0,i=2,j=2;
+printf("Enter 2 numbers\n");
+scanf("%d %d", &a, &b);
+while(i<a && j<b)
+{
+if(a%i==0 && b%j==0)
+
+
+count++;
+i++;
+j++;
+}
+
+if(count>0 )
+printf("%d %d of 2 numbers are  not relative prime \n",a,b);
+else
+printf("%d %d of 2 numbers are  relative prime",a,b);
+return 0;
+}
+***************************************
+
+my series 2
+
+#include<stdio.h>
+int main()
+{
+   int a=1,n,sum=0,term,d,b;
+   printf ("input a term number:\n");
+   scanf ("%d",&n);
+   for(b=1;b<=3;b=b+2)
+   {    a=1;
+        d=b-a;
+   }
+   term=a+(n-1)*d;
+
+   for(a=1;a<=term;a=a+2)
+    {
+      sum=sum+a;
+    }
+printf ("total:%d\n",sum);
+return 0;
+}
+***************************************
+
+eka's series 2
+
+#include <stdio.h>
+
+
+int main()
+{
+int N = 0,m=0;
+int sum = 0;
+
+scanf("%d",&N);
+m= 2*N-1;
+
+for( int i = 1; i <= m; i = i + 2)
+{
+sum = sum + i;
+}
+printf("The total sum is: %d\n",sum);
+
+return 0;
+}
+*************************************
+series 5
+
+#include<stdio.h>
+int main()
+{
+   int n,a=80,sum=0,term,m= -5;
+   printf ("input term number:\n");
+   scanf ("%d",&n);
+   term=a+(n-1)*m;
+   for(a=80;a>=term;a=a-5)
+    {
+      sum=sum+a;
+    }
+printf ("%d\n",sum);
+return 0;
+}
+************************************
+
+series 4
+
+#include<stdio.h>
+int main()
+{
+   int x,n,i,sum=0,mul=1;
+   scanf ("%d %d",&x,&n);
+   for(i=1;i<=n;i++)
+   {
+      mul=mul*x;
+      sum=sum+mul;
+   }
+printf ("%d",sum);
+return 0;
+}
+

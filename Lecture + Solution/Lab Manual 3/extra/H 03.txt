@@ -1,0 +1,27 @@
+#include<stdio.h>
+main()
+{
+    double N,cost;
+
+    printf("enter N=$");
+    scanf("%f",&N);
+
+    if(N<=50)
+        cost=100;
+
+    else if(50<N&&N<=100)
+
+      cost=10+N*2/100;
+
+    else if(100<N&&N<1000)
+        cost=15+N*0.1/100;
+    else
+        cost=300;
+    printf("charge is =%f$",cost);
+}
+
+
+
+
+
+

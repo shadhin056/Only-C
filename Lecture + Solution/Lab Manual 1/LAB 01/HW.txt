@@ -1,0 +1,77 @@
+********************************************
+#include <stdio.h>
+int main()
+{
+    printf("Hello World");
+    return 0;
+}
+
+********************************************
+#include <stdio.h>
+int main()
+{
+    printf("Hello \nWorld");
+    return 0;
+}
+
+********************************************
+#include <stdio.h>
+int main()
+{
+    printf("H \ne \nl \nl \no");
+    return 0;
+}
+
+********************************************
+#include <stdio.h>
+int main()
+{
+    printf("* \n** \n*** \n****");
+    return 0;
+}
+
+********************************************
+#include <stdio.h>
+int main()
+{
+    printf("**** \n*** \n** \n*");
+    return 0;
+}
+
+********************************************
+#include <stdio.h>
+int main()
+{
+    printf("***** \n*   *\n*   *\n*****");
+    return 0;
+}
+
+********************************************
+#include <stdio.h>
+int main()
+{
+    printf("  *  \n *** \n*****\n  *\n  *\n  *\n  *\n  *\n");
+    return 0;
+}
+
+********************************************
+#include <stdio.h>
+int main()
+{
+    printf("  *  \n *** \n*****\n  *\n  *\n  *\n  *\n  *\n");
+    printf("*****\n *** \n  *  \n");
+    return 0;
+}
+
+********************************************
+#include <stdio.h>
+int main()
+{
+    printf("***   ***   ***\n");
+    printf("*     *     *  \n");
+    printf("*     ***   ***\n");
+    printf("*       *   *  \n");
+    printf("***   ***   ***\n");
+    return 0;
+}
+

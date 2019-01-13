@@ -1,0 +1,59 @@
+//sec-5,mid-1,q-4
+//Even Major or Odd Major
+//Nasif Ahmed
+
+#include<stdio.h>
+#include<math.h>
+
+int main ()
+
+{
+
+    int n,of=0,ef=0,x;
+
+
+    printf("\n\tEnter The Number: ");
+    scanf("%d",&n);
+
+
+    for(x=1;x<n;x++)
+    {
+        if(n%x==0 && n%2==0)
+        {
+            ef++;
+        }
+        else if(n%x==0 && n%2!=0)
+        {
+            of++;
+        }
+    }
+
+
+
+
+    if(ef>of)
+    {
+        printf("\n\tThis is Even Major");
+    }
+
+    else if(of>ef)
+    {
+        printf("\n\tThis is Odd Major");
+    }
+    else
+    {
+        printf("None of them Major");
+    }
+
+
+
+
+
+    printf("\n\n\n\tPress Any Key To EXIT!!");
+    getch();
+    return 0;
+
+
+}
+
+//working perfectly

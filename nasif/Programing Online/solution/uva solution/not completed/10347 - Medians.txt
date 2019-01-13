@@ -1,0 +1,60 @@
+//uva set - mix
+//10347 - Medians
+//Xplosive
+//not completed
+
+//http://jwilson.coe.uga.edu/emt725/Medians.Triangle/Area.Medians.Tri.html
+
+#include <iostream>
+#include <cstdio>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+
+    freopen("uvainput.txt", "r", stdin);
+    //freopen("uvaoutput.txt", "w", stdout);
+
+
+    double a,b,c,r;
+
+    while(scanf("%lf%lf%lf",&a,&b,&c)!=EOF)
+    {
+        r=(sqrt(2*( a*a*b*b + b*b*c*c + c*c*a*a)-(pow(a,4) +pow(b,4)+pow(c,4))))/3;
+
+        printf("%0.3lf\n",r);
+    }
+
+
+    return 0;
+}
+
+
+/*
+
+Sample Input
+
+3 3 3
+3 3 3
+
+Sample Output
+
+5.196
+5.196
+
+----------------------
+
+3 3 3
+3 3 77
+88 22 4
+99 22 0
+
+5.196
+-1.000
+-1.000
+-1.000
+
+---------------------
+
+*/

@@ -1,0 +1,185 @@
+//file lab
+//Binary file input output Lab
+//xplosive
+
+//-----------------------------------------------------------------------
+
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <cstdio>
+
+using namespace std;
+
+//-----------------------------------------------------------------------
+
+ofstream outfile ("outdata.dat", ios::binary);
+ifstream infile ("indata.dat", ios::binary);
+//fstream file;
+fstream file("data.dat", ios::binary | ios::in | ios::out | ios::app);
+
+void array_in_out();
+void obj_in_out();
+void def_obj_out();
+
+//-----------------------------------------------------------------------
+
+class person
+{
+protected:
+    char name[80];
+    short age;
+public:
+    void input()
+    {
+        cout << "Enter name: ";
+        cin >> name;
+        cout << "Enter age : ";
+        cin >> age;
+    }
+    void output()
+    {
+        cout << "\nName: " << name;
+        cout << "\nAge : " << age << endl;
+    }
+
+};
+
+//-----------------------------------------------------------------------
+
+int main()
+{
+    array_in_out();
+    //obj_in_out();
+    //def_obj_out();
+
+
+
+
+    return 0;
+}
+
+//...........................................................................
+
+void def_obj_out()
+{
+    char ch;
+    person pers;
+    ifstream infile ("indata.dat", ios::binary | ios::in);
+
+    infile.seekg(0,ios::end);
+    int endposition = infile.tellg();
+    int n=endposition/sizeof(person);
+
+    do
+    {
+        cout << "\nThere are " << n << " person in file";
+        cout << "\nEnter person number: ";
+        cin >> n;
+
+        int position = (n-1)*sizeof(person);
+        //cout << position;
+        infile.seekg(position);
+
+        infile.read(reinterpret_cast<char*>(&pers),sizeof(pers));
+        //file.read(reinterpret_cast<char*>(&pers),sizeof(pers));
+
+        pers.output();
+
+        cout << "\nDo you want another info(y/n)?";
+        cin>> ch;
+
+    }while(ch== 'y');
+
+}
+
+//-----------------------------------------------------------------------
+
+void obj_in_out()
+{
+    char ch;
+    //file.open("data.dat", ios::binary | ios::in | ios::out | ios::app);
+    person pers;
+/*
+    do
+    {
+        pers.input();
+        //outfile.write(reinterpret_cast<char*>(&pers),sizeof(pers));
+        file.write(reinterpret_cast<char*>(&pers),sizeof(pers));
+        cout << "\nEnter another info(y/n)? ";
+        cin >> ch;
+
+    }
+    while(ch== 'y');
+*/
+
+    file.seekg(0);
+    //infile.read(reinterpret_cast<char*>(&pers),sizeof(pers));
+    file.read(reinterpret_cast<char*>(&pers),sizeof(pers));
+
+    while(!file.eof())
+    {
+        //file.read(reinterpret_cast<char*>(&pers),sizeof(pers));
+        pers.output();
+        file.read(reinterpret_cast<char*>(&pers),sizeof(pers));
+    }
+
+    //pers.output();
+
+}
+
+//------------------------------------------------------------------
+
+
+void array_in_out()
+{
+
+    const int l= 100;
+    int a[l];
+
+    int i;
+    for(i=0; i<l; i++)
+    {
+        a[i]=i;
+    }
+    ofstream outfile ("outdata.dat", ios::binary);
+
+    outfile.write(reinterpret_cast<char*>(a),l*sizeof(int));
+    outfile.close();
+
+    for(i=0; i<l; i++)
+    {
+        a[i]=0;
+    }
+    ifstream infile ("outdata.dat", ios::binary);
+
+    infile.read(reinterpret_cast<char*>(a),l*sizeof(int));
+
+    for(i=0; i<l ; i++)
+    {
+        //cout << a[i];
+ //       /*
+        if(a[i]!=i)
+        {
+            cerr << "Data is incorrect\n";
+            //cout << "Data is incorrect\n";
+            //return 1;
+            break;
+        }
+ //       */
+    }
+    cout << "Data is correct\n";
+
+}
+
+//-----------------------------------------------------------------------
+
+
+
+
+//-----------------------------------------------------------------------
+
+
+
+
+

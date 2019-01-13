@@ -1,0 +1,124 @@
+//inheritance
+//man-student-scientist multiple level inheritance
+//xplosive
+
+#include <iostream>
+
+using namespace std;
+
+
+//---------------------------------------------------
+
+class Man
+{
+//protected:
+private:
+    string name; //Man name
+    unsigned short age; //Man age
+public:
+    void getdata()
+    {
+        cout << "\n Enter last name: ";
+        cin >> name;
+        cout << " Enter age: ";
+        cin >> age;
+    }
+    void putdata() const
+    {
+        cout << "\n Name: " << name;
+        cout << "\n age: " << age;
+    }
+};
+
+//-----------------------------------------------------------------
+
+class Student : public Man //Student class
+{
+private:
+    string institute;
+    string departpment;
+public:
+    void getdata()
+    {
+        Man::getdata();
+        cout << " Enter institute: ";
+        cin >> institute;
+        cout << " Enter depertment: ";
+        cin >> departpment;
+    }
+    void putdata() const
+    {
+        Man::putdata();
+        cout << " \ninstitute: ";
+        cout << institute;
+        cout << " \ndepertment: ";
+        cout << departpment;
+    }
+};
+
+//-----------------------------------------------------------------
+/*
+class Scientist : public Man //Scientist class
+{
+private:
+    int pubs; //age of publications
+public:
+    void getdata()
+    {
+        Man::getdata();
+        cout << " Enter age of pubs: ";
+        cin >> pubs;
+    }
+    void putdata() const
+    {
+        Man::putdata();
+        cout << "\n age of publications: " << pubs;
+    }
+};
+
+    */
+//-----------------------------------------------------------------
+
+
+class Scientist : public Student //Scientist class
+{
+private:
+    int pubs; //age of publications
+public:
+    void getdata()
+    {
+        Student::getdata();
+        cout << " Enter age of pubs: ";
+        cin >> pubs;
+    }
+    void putdata() const
+    {
+        Student::putdata();
+        cout << "\n age of publications: " << pubs;
+
+        //cout << "  " <<name << endl;
+    }
+
+
+};
+
+//-----------------------------------------------------------------
+
+
+int main()
+{
+    //Student student1;
+
+    //student1.getdata();
+    //student1.putdata();
+
+    Scientist scientist1;
+
+    scientist1.getdata();
+    scientist1.putdata();
+
+
+
+    cout << endl;
+    return 0;
+}

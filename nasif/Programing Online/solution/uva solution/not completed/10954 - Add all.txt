@@ -1,0 +1,130 @@
+//ad
+//10954 - Add all
+//Xplosive
+//wrong algo
+
+#include <iostream>
+#include <string>
+#include <sstream>
+#include <algorithm>
+#include <vector>
+#include <set>
+#include <queue>
+#include <stack>
+#include <list>
+#include <map>
+#include <fstream>
+#include <numeric>
+#include <iterator>
+#include <bitset>
+#include <utility>
+#include <cstdio>
+#include <cstdlib>
+#include <cctype>
+#include <cmath>
+#include <cstring>
+#include <ctime>
+#include <iomanip>
+//#include <conio.h>    //this will give u compile error in contest
+
+#define READ(file) freopen(file, "r", stdin);
+#define WRITE(file) freopen(file, "w", stdout);
+#define PI acos(-1.0)
+
+
+#define MAX 1100000
+
+using namespace std;
+
+
+struct compare
+{
+  bool operator()(const int& l, const int& r)
+  {
+      return l > r;
+  }
+};
+
+int main()
+{
+    //READ("input.txt");
+    //WRITE("output.txt");
+
+//    int t, tt;
+//    cin >> tt;
+//
+//    for(t=1; t<=tt; t++)
+//    {
+////        if(t!=1)
+////            printf("\n");
+//
+//       // printf("Case %d: ",t);
+//
+//    }
+
+    while(1)
+    {
+        int n;
+        cin>>n;
+
+        if(n==0) break;
+
+        priority_queue<int,vector<int>, compare > pq;
+
+        int k;
+        for(int i=0; i<n; i++)
+        {
+            cin >> k;
+            pq.push(k);
+        }
+
+        long long a,b,ps,ns,total=0;
+
+        a = pq.top();
+        pq.pop();
+        b = pq.top();
+        pq.pop();
+        ps=a+b;
+
+        total=ps;
+        //cout << r << " " << pq.top() << endl;
+
+        while(!pq.empty())
+        {
+            a = pq.top();
+            pq.pop();
+            ns = ps+a;
+            //cout << total << endl;
+            total+=ns;
+            ps=ns;
+
+        }
+        cout << total << endl;
+
+    }
+
+
+    return 0;
+}
+
+
+
+/*
+
+Sample Input
+
+
+3
+1 2 3
+4
+1 2 3 4
+0
+
+Sample Output
+
+9
+19
+
+
+
+*/

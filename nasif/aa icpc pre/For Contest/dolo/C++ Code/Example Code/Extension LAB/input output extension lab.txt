@@ -1,0 +1,61 @@
+//Extension Lab
+//input output extension lab
+//xplosive
+
+
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <cstdio>
+
+using namespace std;
+
+//ofstream outfile ("outdata.txt");
+//ifstream infile ("indata.txt");
+
+void vvv();                         //vvv
+void input_error_check();
+
+
+int main()
+{
+    //vvv();
+    input_error_check();
+
+    return 0;
+}
+
+void vvv()
+{
+
+}
+
+
+void input_error_check()
+{
+    int i;
+    while(1)
+    {
+        while(1)
+        {
+
+            cout << "\n\tEnter an integer: ";
+            //cin.unsetf(ios::skipws);              //don't skip white spaces
+            cin >> i;
+            if(cin.good())
+            {
+                cin.ignore(10,'\n');                //skip upto 10 ch & newline
+                break;
+            }
+            cin.clear();                            //clear error value
+            cout << "incorrect input";
+            cin.ignore(10,'\n');
+        }
+
+        cout << "integer is " << i;
+    }
+
+
+}
+
+

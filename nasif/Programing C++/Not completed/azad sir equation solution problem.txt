@@ -1,0 +1,52 @@
+//azad sir equation solution problem
+//how to calculate ax+by+cz=k
+//xplosive
+//not complete
+
+#include<iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+    double a,b,c, pa,pb,pc;
+    double r=0.001;
+
+    a=b=c=pa=pb=pc=0.0;
+
+
+    int k=0;
+
+    while(true)
+    {
+        a=b+c;
+        b=10.0-8.0/3.0*a;
+        c=3.0/6.0*b;
+
+        //this is for debuging
+        cout << "\n\n..................." << k++ << endl;
+        cout << "a= " << a << " b= " << b << " c= "<< c << endl;
+        cout << "pa= " << abs(pa-a) << " pb= " << abs(pb-b) << " pc= "<< abs(pc-c) << endl;
+        if(k>550)           //550 for inf
+            break;
+
+
+        //if(abs(pa-a)<r || abs(pb-b)<r || abs(pc-c)<r)
+        if(abs(pa-a)<r && abs(pb-b)<r && abs(pc-c)<r)
+        {
+            //cout << "a= " << a << " b= " << b << " c= "<< c << endl;
+            cout << "result found" << endl;
+            break;
+        }
+        else
+        {
+            pa=a;
+            pb=b;
+            pb=c;
+        }
+    }
+
+
+
+    return 0;
+}

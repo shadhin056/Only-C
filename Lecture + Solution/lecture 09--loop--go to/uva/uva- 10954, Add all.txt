@@ -1,0 +1,39 @@
+//opro-1,q-42
+//uva- 10954, Add all
+//Nasif Ahmed
+
+#include<stdio.h>
+
+int main()
+{
+    int c,tc,d,s,a;
+
+
+    while(1)
+    {
+        scanf("%d",&tc);
+
+        if(tc==0) break;
+
+        for(s=0,a=0,c=1;c<=tc;c++)
+        {
+            scanf("%d",&d);
+
+            a= a+d;
+
+            if(c>1)
+            {
+                s= s+a;
+            }
+
+        }
+
+        printf("%d\n",s);
+    }
+
+
+    return 0;
+
+}
+
+//not completed

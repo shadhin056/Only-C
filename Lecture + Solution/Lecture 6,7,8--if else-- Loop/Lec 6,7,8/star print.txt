@@ -1,0 +1,78 @@
+//others
+//point print 2nd quardant
+//Nasif Ahmed
+
+#include<stdio.h>
+#include<math.h>
+
+int main ()
+
+{
+    int n=10,i,j,x,y,k=n*n;
+
+    printf("Enter (x,y): ");
+    scanf("%d%d",&x,&y);
+
+    x=-x;
+    y=-y;
+
+
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<n;j++,k--)
+        {
+
+            if(j==(n-x))
+            {
+                if(k==(y*n-(n-x)))
+                {
+                   printf("*");
+                }
+
+                else
+                {
+                   printf(" ");
+                }
+            }
+            else
+            {
+                printf(" ");
+            }
+        }
+
+        printf("|\n");
+    }
+
+    for(i=0;i<n;i++)
+    {
+        printf("-");
+    }
+
+    printf(" ");
+
+    for(i=0;i<n;i++)
+    {
+        printf("-");
+    }
+
+    printf("\n");
+
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<n;j++)
+        {
+            printf(" ");
+        }
+
+        printf("|\n");
+    }
+
+
+    printf("\n\n\n\tPress Any Key To EXIT!!");
+    getch();
+    return 0;
+
+
+}
+
+//not completed

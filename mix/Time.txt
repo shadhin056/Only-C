@@ -1,0 +1,15 @@
+#include <stdio.h>
+main()
+{
+    int x,y,hour,min,sec,total;
+    printf("Total= ");
+    scanf("%d",&total);
+    hour=total/3600;
+    printf("%d Hour\n",hour);
+    x=total%3600;
+    min=x/60;
+    printf("%d Minute\n",min);
+    y=total/60;
+    sec=total-60*y;
+    printf("%d Second\n",sec);
+}

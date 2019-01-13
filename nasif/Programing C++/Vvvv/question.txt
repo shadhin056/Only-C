@@ -1,0 +1,14 @@
+constructor overloading int & float
+
+runtime calculation lab
+
+
+//cout.precision(3);
+
+effiecient way of find lcm
+prime numbers
+
+english mail...
+
+
+write some valuable func, print it & memorise it

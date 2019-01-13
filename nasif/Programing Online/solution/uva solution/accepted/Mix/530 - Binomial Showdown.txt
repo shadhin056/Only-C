@@ -1,0 +1,86 @@
+//uva set - 01
+//530 - Binomial Showdown
+//Xplosive
+//accepted
+
+//like combinations, using double, check without double
+
+//#include <iostream>
+#include <cstdio>
+
+//using namespace std;
+
+double fac(double n);
+
+int main()
+{
+    freopen("uvainput.txt", "r", stdin);
+    //freopen("uvaoutput.txt", "w", stdout);
+
+    double n,m,nm,b,s,sf,nc,r,i;
+
+    while(scanf("%lf %lf",&n,&m)==2)
+    {
+        if(n==0.0 && m==0.0)
+            break;
+
+        nm=n-m;
+
+        if(m<=nm)
+        {
+            s=m;
+            b=nm;
+        }
+        else
+        {
+            s=nm;
+            b=m;
+        }
+
+        sf= fac(s);
+
+        nc=1;
+        for(i=n; i>b; i--)
+        {
+            nc*=i;
+        }
+
+        r=nc/sf;
+
+        printf("%0.0lf\n",r);
+    }
+
+    return 0;
+
+}
+
+double fac(double n)
+{
+    double f,i;
+
+    for(f=1.0,i=n; i>=1; i--)
+    {
+        f=f*i;
+    }
+
+    return f;
+}
+
+/*
+
+Sample Input
+
+4 2
+10 5
+49 6
+0 0
+
+
+Sample Output
+
+6
+252
+13983816
+
+
+*/

@@ -1,0 +1,24 @@
+#include <stdio.h>
+int main()
+{
+    int a,b,c,d,Add,Sub,Mult,Div,g,h;
+    printf("Enter a : ");
+    scanf("%d",&a);
+    printf("Enter b : ");
+    scanf("%d",&b);
+    printf("Enter c : ");
+    scanf("%d",&c);
+    printf("Enter d : ");
+    scanf("%d",&d);
+    g=b*d;
+    h=b*c;
+    Add=(g/b)*a+(g/d)*c;
+    Sub=(g/b)*a-(g/d)*c;
+    Mult=a*c;
+    Div=a*d;
+    printf(" ADDITION : %d/%d\n",Add,g);
+    printf(" SUBTRACTION : %d/%d\n",Sub,g);
+    printf(" MULTIPLICATION :%d/%d\n",Mult,g);
+    printf(" DIVISION :%d/%d\n",Div,h);
+
+}

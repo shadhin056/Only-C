@@ -1,0 +1,25 @@
+//nowindows.h v1.0
+//http://stackoverflow.com/questions/933745/what-is-the-windows-equivalent-to-the-capabilities-defined-in-sys-select-h-and-t
+
+/* file nowindows.h v1.0 use at your own risk */
+
+#ifndef DWORD
+#define WINAPI
+typedef unsigned long DWORD;
+typedef short WCHAR;
+typedef void * HANDLE;
+#define MAX_PATH PATH_MAX
+typedef unsigned char BYTE;
+typedef unsigned short WORD;
+typedef unsigned int BOOL;
+#include <sys/types.h>
+#include <sys/stat.h>
+#include "unistd.h"
+#include <fcntl.h>
+
+#define GENERIC_READ                O_RDONLY    //read only mode
+#define GENERIC_WRITE               O_WRONLY    //write only mode
+#define CREATE_ALWAYS               O_CREAT     //create new file
+#define OPEN_EXISTING               0           //fake parameter's value
+#define FILE_ATTRIBUTE_NORMAL       0644        // file attributes
+#endif

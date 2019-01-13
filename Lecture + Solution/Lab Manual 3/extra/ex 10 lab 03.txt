@@ -1,0 +1,43 @@
+#include<stdio.h>
+main()
+{
+    int a,b,c,min,max,mid;
+
+printf("enter number a,b,c=");
+scanf("%d%d%d",&a,&b,&c);
+
+mid=(a+b+c)/3;
+
+if(a<b)
+  {
+   max=b;
+    min=a;}
+else if(c<b)
+   {
+    max=b;
+    min=c;
+   }
+else if(c<a)
+   {
+    max=a;
+    min=c;
+   }
+else if(b<a)
+    {
+    max=a;
+    min=b;
+    }
+else if(a<c)
+   {
+    max=c;
+    min=a;
+   }
+
+else if(b<c)
+    {
+        max=c;
+    min=b;
+    }
+
+printf("Max=%d,Min=%d,Mid=%d",max,min,mid);
+    }

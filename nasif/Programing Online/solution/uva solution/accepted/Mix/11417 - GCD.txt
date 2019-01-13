@@ -1,0 +1,68 @@
+//uva set - mix
+//11417 - GCD
+//Xplosive
+//accepted
+
+#include <iostream>
+#include <cstdio>
+
+using namespace std;
+
+int gcd( int a, int  b)
+{
+    if(b>0)
+        return gcd(b, a%b);
+    else
+        return a;
+
+
+}
+
+int main()
+{
+
+    //freopen("uvainput.txt", "r", stdin);
+    //freopen("uvaoutput.txt", "w", stdout);
+
+
+    int g;
+    int i,j,n;
+
+    while(scanf("%d",&n)==1)
+    {
+        if(!n)
+            break;
+
+        g=0;
+        for(i=1; i<n; i++)
+        {
+            for(j=i+1; j<=n; j++)
+            {
+                g+=gcd(i,j);
+            }
+        }
+        printf("%d\n",g);
+
+    }
+
+    return 0;
+}
+
+
+/*
+
+Sample Input
+
+10
+100
+500
+0
+
+Sample Output
+
+67
+13015
+442011
+
+
+*/

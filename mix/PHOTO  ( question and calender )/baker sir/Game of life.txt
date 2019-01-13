@@ -1,0 +1,94 @@
+//Game of life
+//
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+#define HEIGHT 10
+#define WIDTH 10
+
+int *gb[HEIGHT];
+int *gb2[HEIGHT];
+
+void copy() {
+  int i, j;
+  for (i = j = 0; i < HEIGHT; i++) {
+    for (; j < WIDTH; j++) {
+      gb2[i][j] = gb[i][j];
+    }
+  }
+}
+
+void init() {
+  int i, j;
+  for (i = 0; i < HEIGHT; i++) {
+    gb [i] = malloc(sizeof(int)*WIDTH);
+    gb2[i] = malloc(sizeof(int)*WIDTH);
+  }
+  for (i = j = 0; i < HEIGHT; i++) {
+    for (; j < WIDTH; j++) {
+      gb [i][j] = 0;
+    }
+  }
+  gb[0][0] = 1;
+  gb[0][1] = 1;
+  gb[1][0] = 1;
+  gb[1][1] = 1;
+  copy();
+}
+
+void printg() {
+  int i, j;
+  printf("    ");
+  for (i = 0; i < WIDTH; i++) {
+    printf("%2d  ", i);
+  }
+  printf("\n\n");
+  for (i = 0; i < HEIGHT; i++) {
+    printf("%d   ", i);
+    for (j = 0; j < WIDTH; j++) {
+      printf(" %c  ", gb2[i][j]?'+':'-');
+    }
+    printf("\n");
+  }
+}
+
+void ckill(int i, int j) {
+  gb2[i][j] = 0;
+}
+
+void clive(int i, int j) {
+  gb2[i][j] = 1;
+}
+
+void newgen() {
+  int i, j = i = 1, n = 0;
+  for (; i < HEIGHT-1; i++) {
+    for (j = 0; j < WIDTH-1; j++) {
+      if (gb[i][j+1]) n++;
+      if (gb[i+1][j]) n++;
+      if (gb[i+1][j+1]) n++;
+      if (gb[i-1][j-1]) n++;
+      if (gb[i][j-1]) n++;
+      if (gb[i-1][j]) n++;
+      if (gb[i+1][j-1]) n++;
+      if (gb[i-1][j+1]) n++;
+
+      if (n < 2) ckill(i, j);
+      else if ((n == 2 || n == 3) && gb[i][j]) clive(i, j);
+      else if (n > 3) ckill(i, j);
+      else if (n == 3 && gb[i][j] == 0) clive(i, j);
+    }
+  }
+}
+
+int main() {
+  int i;
+  init();
+  newgen();
+  printg();
+  for (i = 0; i < HEIGHT; i++) {
+    free(gb[i]);
+  }
+}

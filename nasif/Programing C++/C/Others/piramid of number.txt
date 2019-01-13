@@ -1,0 +1,87 @@
+//facebook
+//piramid of number
+//Nasif Ahmed
+
+
+#include <stdio.h>
+
+int main()
+{
+    int i,j,k,l,n=4;
+
+    l=1;
+    for(i=1;i<=n;i++,l++)
+    {
+        for(j=i;j<=n;j++)
+        {
+            printf("  ");
+        }
+
+        for(j=1;j<=l;j++)
+        {
+            printf("%d ",j);
+        }
+
+        k=l-1;
+        while(k)
+        {
+            printf("%d ",k);
+            k--;
+        }
+
+        printf("\n");
+    }
+
+
+
+    return 0;
+}
+
+//logic of problem
+
+/*
+--------1
+------1 2 1
+----1 2 3 2 1
+--1 2 3 4 3 2 1
+
+*/
+
+/*
+--------
+------
+----
+--
+
+*/
+
+
+/*
+1
+1 2
+1 2 3
+1 2 3 4
+
+*/
+
+/*
+
+1
+2 1
+3 2 1
+
+*/
+
+
+/*
+1
+1 2 1
+1 2 3 2 1
+1 2 3 4 3 2 1
+
+*/
+
+
+
+
+

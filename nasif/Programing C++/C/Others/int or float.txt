@@ -1,0 +1,47 @@
+//aninda 23 feb
+//check int or float
+//Nasif Ahmed
+
+#include<stdio.h>
+
+int main ()
+
+{
+    char c;
+    int f=0;
+
+    printf("\n\tEnter Number: ");
+
+
+    do
+    {
+        scanf("%c",&c);
+        if(c=='.')
+        {
+            f++;
+            break;
+        }
+
+
+    }
+    while(c!='\n');
+
+    if(f==0)
+    {
+        printf("\n\n\tThe Number is Integer");
+    }
+    else
+    {
+        printf("\n\n\tThe Number is Floating");
+    }
+
+
+
+
+    printf("\n\n\n\tPress Any Key To EXIT!!");
+    getch();
+    return 0;
+
+}
+
+//working nice but this is not 100% error checked

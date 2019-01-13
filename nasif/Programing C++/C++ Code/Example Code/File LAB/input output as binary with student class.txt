@@ -1,0 +1,106 @@
+//file lab
+//input output as binary with student class
+//xplosive
+
+
+#include<iostream>
+#include<fstream>
+using namespace std;
+
+class student
+{
+private:
+    char name[80];
+    int id;
+
+public:
+    void input_data()
+    {
+        cout << "\n\tinput name:";
+        cin >> name;
+        cout << "\n\tinput id:";
+        cin >> id;
+    }
+    void show_data()
+    {
+        cout << "\n\tname:" << name;
+        cout << "\n\tid:" << id;
+    }
+    int get_id()
+    {
+        return id;
+    }
+};
+int main()
+{
+    fstream file;
+    int i,n,menu,ID,temp_id;
+    student stu_ob;
+
+    file.open("datta.dat",ios::binary| ios::in|ios::out|ios::app);
+
+    while(true)
+    {
+        cout << "\n";
+        cout << "\n\t   |MENU";
+        cout << "\n\t---|---------";
+        cout << "\n\t   |";
+
+        cout << "\n\t\t1. Input";
+        cout << "\n\t\t2. Show whole file";
+        cout << "\n\t\t3. Search if file";
+        cout << "\n\t\t0. EXIT!!";
+
+        cout << "\n\t\t\t       |";
+        cout << "\n\t\t\t-------|---";
+        cout << "\n\t\t\t       |";
+
+        cin >> menu;
+
+        switch(menu)
+        {
+        case 1:
+            stu_ob.input_data();
+            file.write(reinterpret_cast<char*>(&stu_ob),sizeof(stu_ob));
+            break;
+
+        case 2:
+            file.seekg(0);
+            file.read(reinterpret_cast<char*>(&stu_ob),sizeof(stu_ob));
+
+            while(!file.eof())
+            {
+                stu_ob.show_data();
+                file.read(reinterpret_cast<char*>(&stu_ob),sizeof(stu_ob));
+            }
+            break;
+
+        case 3:
+            cout  <<  "\n\tEnter Id: ";
+            cin  >>  ID;
+
+            file.seekg(0);
+
+            while(!file.eof())
+            {
+                file.read(reinterpret_cast<char*>(&stu_ob),sizeof(stu_ob));
+                temp_id=stu_ob.get_id();
+                if(ID == temp_id)
+                {
+                    stu_ob.show_data();
+                    break;
+                }
+            }
+            break;
+        }
+
+        if(menu==0)
+            break;
+
+    }
+
+
+
+
+    return 0;
+}

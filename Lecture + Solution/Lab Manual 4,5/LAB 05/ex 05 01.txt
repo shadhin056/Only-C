@@ -1,0 +1,68 @@
+#include<stdio.h>
+int main()
+{
+        int d,n,sum=0,sum1=0;
+
+        printf("enter number ");
+        scanf("%d",&n);
+
+        while(n!=0)
+
+        {
+            d=n%10;
+            n=n/10;
+            if(d%2==0)
+               {
+                sum=sum+d;
+               }
+            else
+                {
+                sum1=sum1+d;
+                }
+        }
+        printf("\nsum=%d",sum);
+        printf("\nsum1=%d",sum1);
+
+            if(sum==sum1)
+            {
+    printf("\n\nthis is symmetric\n\n");
+            }
+       else
+        {
+    printf("\n\nthis is not symmetric\n3\n");
+        }
+}
+******************************
+
+
+
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+    int n,even=0,odd=0,d;
+    printf("ENTER NUMBER=");
+    scanf("%d",&n);
+
+    for(;n!=0;n=n/10)
+    {
+        d=n%10;
+        if(d%2==0)
+        {
+            even=even+d;
+        }
+        else
+        {
+            odd=odd+d;
+        }
+    }
+        if(even==odd)
+        {
+            printf("this is symmetric number");
+        }
+            else
+        {
+            printf("this is not symmetric number");
+        }
+
+}

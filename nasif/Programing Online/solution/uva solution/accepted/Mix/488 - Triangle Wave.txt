@@ -1,0 +1,79 @@
+//uva set - 01
+//488 - Triangle Wave
+//Xplosive
+//accepted
+
+#include <cstdio>
+//#include <iostream>
+//using namespace std;
+
+int main()
+{
+    freopen("uvainput.txt", "r", stdin);
+    //freopen("uvaoutput.txt", "w", stdout);
+
+    long long int t,tt,a,f,i,j,k,flag;
+
+    scanf("%lld",&tt);
+
+    flag=0;
+    for(t=1; t<=tt; t++)
+    {
+        scanf("%lld%lld",&a,&f);
+
+        for(k=1; k<=f; k++)
+        {
+            if(flag)
+                printf("\n");
+
+            for(i=1; i<=a; i++)
+            {
+                for(j=1; j<=i; j++)
+                {
+                    printf("%lld",i);
+                }
+                printf("\n");
+            }
+
+            for(i=a-1; i>=1; i--)
+            {
+                for(j=1; j<=i; j++)
+                {
+                    printf("%lld",i);
+                }
+                printf("\n");
+            }
+
+            flag++;
+        }
+
+    }
+
+    return 0;
+}
+
+/*
+
+Sample Input
+
+1
+
+3
+2
+
+Sample Output
+
+1
+22
+333
+22
+1
+
+1
+22
+333
+22
+1
+
+*/
+

@@ -1,0 +1,40 @@
+//file handling
+//input from text file untill eof
+//xplosive
+
+// working
+
+#include<iostream>
+#include<fstream>
+using namespace std;
+ifstream infile ("indata.txt",ios::in);
+
+int main()
+{
+    const int l=50;
+    //string t_ques;
+    char t_ques[l];
+    char t_ans;
+    int t_time_limit;
+
+
+    //while(!infile.eof())      //working
+    while(infile)               //working
+    {
+        infile.getline(t_ques,l);
+        infile >> t_ans ;
+        //infile.get(t_ans);
+        infile >> t_time_limit;
+
+        cout << t_ques << endl;
+        cout << t_ans << endl;
+        cout << t_time_limit << endl;
+
+        infile.ignore();
+    }
+
+
+    infile.close();
+
+    return 0;
+}

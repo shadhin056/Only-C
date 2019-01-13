@@ -1,0 +1,258 @@
+//STL
+//stl - stack,queue,pair
+//Xplosive
+//++,
+
+#include <iostream>
+#include <string>
+#include <sstream>
+#include <algorithm>
+#include <vector>
+#include <set>
+#include <queue>
+#include <stack>
+#include <list>
+#include <map>
+#include <fstream>
+#include <numeric>
+#include <iterator>
+#include <bitset>
+#include <utility>
+#include <cstdio>
+#include <cstdlib>
+#include <cctype>
+#include <cmath>
+#include <cstring>
+#include <ctime>
+
+#define READ(file) freopen(file, "r", stdin);
+#define WRITE(file) freopen(file, "w", stdout);
+#define PI acos(-1.0)
+
+
+#define MAX 1100000
+
+using namespace std;
+
+void print_vector(vector<int> v);
+void print_vector(vector<char> v);
+void print_array(int* a, int l);
+
+
+void testStack()
+{
+    stack<int>st;
+
+    for(int i=0; i<10; i++)
+        st.push(i);
+
+    //cout << "size: " << st.size()<< endl;
+    while(!st.empty())
+    {
+        cout << st.top() << endl;
+        st.pop();
+    }
+}
+
+void testQueue()
+{
+    queue<int>q;
+
+    for(int i=0; i<10; i++)
+        q.push(i);
+
+    //cout << "size: " << q.size()<< endl;
+    while(!q.empty())
+    {
+        cout << q.front() << endl;
+        //cout << q.back() << endl;
+        q.pop();
+    }
+
+}
+
+void testPriortyQueue()
+{
+    //decreasing order
+    priority_queue<int>q;
+
+    q.push(5);
+    q.push(8);
+    q.push(1);
+    q.push(6);
+    q.push(2);
+
+
+    //cout << "size: " << q.size()<< endl;
+    while(!q.empty())
+    {
+        cout << q.top() << endl;
+        q.pop();
+    }
+
+
+
+}
+
+void printSet(set<int>st)
+{
+    set<int>::iterator it;
+    for(it=st.begin(); it!=st.end(); it++)
+    {
+        cout << *it << " ";
+    }
+    cout << endl;
+
+}
+
+void testSet()
+{
+    //decreasing order
+    //same data just for one time
+    //for struct overload <
+
+    set<int>st;
+    set<int>::iterator it;
+
+    st.insert(5);
+    st.insert(8);
+    st.insert(8);
+    st.insert(1);
+    st.insert(6);
+    st.insert(2);
+    st.insert(9);
+    st.insert(7);
+    st.insert(2);
+
+    printSet(st);
+
+    cout << "size       : " << st.size()<< endl;
+    cout << "isElement  : " << st.count(88) << endl;    //ret 0/1
+
+//    it = st.find(66);    //return iterator pos if found else end iterator
+//    if(it!=st.end())
+//        st.erase(it);
+    //printSet(st);
+
+    st.erase(2);    //remove this value if exist
+    //printSet(st);
+
+    //st.erase(st.begin(),st.end());
+    //st.erase(st.begin(),st.begin()+2);    //not working
+    st.erase(st.find(8),st.end());    //not working
+    printSet(st);
+//    st.clear();
+//    printSet(st);
+    cout << "isEmpty    : " << st.empty() << endl;
+
+
+}
+
+void printMap(map<string,int>m)
+{
+    map<string,int>::iterator it;
+    for(it=m.begin(); it!=m.end(); it++)
+    {
+        cout << it->first << " " << it->second << endl;
+    }
+    cout << endl;
+
+}
+
+void testMap()
+{
+    //increasing order
+    //overload < oparator to use struct as index
+    //why need insert function, see it
+    map<string,int>m;
+    map<string,int>::iterator it;
+
+    string s;
+
+    m["abc"]=22;
+    m["cde"]=66;
+    m["abc"]=97;
+    m["xyz"]=87;
+    m["pqr"]=7;
+
+    printMap(m);
+
+    cout << m.count("abc") << endl;
+    cout << m.at("abc") << endl;
+
+    cout << m.find("abc")->second << endl;
+    cout << m.find("abc")->first << endl;
+    //cout << m.find(77)->first << endl;    //not working
+    //cout << "Size : " << m.size() << endl;
+    cout << m["abc"] << endl;
+    //cout << "Size : " << m.size() << endl;
+
+    m.erase(m.find("abc"));
+    printMap(m);
+
+//    m.clear();
+//    cout << m.empty() << endl;
+
+}
+
+void testPair()
+{
+    cout << "do it" << endl;
+
+}
+
+void testAlgorithmFunction()
+{
+    //sort,reverse etc
+}
+
+
+
+int main()
+{
+    //READ("input.txt");
+    //WRITE("output.txt");
+
+    //testStack();
+    //testQueue();
+    //testPriortyQueue();
+    //testSet();
+    //testMap();
+    //testPair();
+    testAlgorithmFunction();
+
+    return 0;
+}
+
+void print_array(int* a, int l)
+{
+    for(int i= 0; i<l; i++)
+        cout << a[i] << " ";
+
+    cout << endl;
+}
+
+void print_vector(vector<int> v)
+{
+    for(int i=0; i<v.size(); i++)
+        cout << v[i] << " ";
+
+    cout << endl;
+}
+
+void print_vector(vector<char> v)
+{
+    for(int i=0; i<v.size(); i++)
+        cout << v[i] << " ";
+
+    cout << endl;
+}
+
+
+
+
+/*
+
+
+
+*/

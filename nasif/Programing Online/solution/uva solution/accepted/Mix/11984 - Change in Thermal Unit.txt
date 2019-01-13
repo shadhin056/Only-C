@@ -1,0 +1,53 @@
+//uva set - mix
+//11984 - Change in Thermal Unit
+//Xplosive
+//accepted
+
+#include <iostream>
+#include <cstdio>
+
+using namespace std;
+
+int main()
+{
+
+    //freopen("uvainput.txt", "r", stdin);
+    //freopen("uvaoutput.txt", "w", stdout);
+
+    int t,tt;
+    scanf("%d",&tt);
+
+    double f,c,inf,incrf,incrc;
+
+    for(t=1; t<=tt; t++)
+    {
+        scanf("%lf%lf",&c,&f);
+
+        inf=9*c/5+32;
+        incrf=inf+f;
+        incrc= (5*incrf-160)/9;
+
+        printf("Case %d: %0.2lf\n",t,incrc);
+
+    }
+
+
+return 0;
+}
+
+
+
+/*
+
+Sample Input
+
+2
+100 0
+0 100
+
+Sample Output
+
+Case 1: 100.00
+Case 2: 55.56
+
+*/

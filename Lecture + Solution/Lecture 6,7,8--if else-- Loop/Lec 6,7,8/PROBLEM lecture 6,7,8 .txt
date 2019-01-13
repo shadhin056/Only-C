@@ -1,0 +1,267 @@
+page 72
+
+#include<stdio.h>
+main()
+{   int i,j;
+   for(i=1;i<=5;i++)
+  {
+     printf("i=%d",i);
+   for(j=1;j<=i;j++)
+         {
+    if (i%2==0)
+        printf("+ ");
+    else printf("* ");
+         }
+    printf("\n");
+  }
+}
+
+******************************
+
+//page79
+#include<stdio.h>
+main()
+{
+    int x,m,sum=0,i;
+    printf("enter number x,m=");
+    scanf("%d%d",&x,&m);
+
+    for(i=0;i<m;i++)
+    {
+        sum=sum+pow(x,i);
+    }
+
+
+    printf("\n%d=total",sum);
+}
+
+
+
+*******************************
+page80
+
+#include<stdio.h>
+int main()
+{
+    int i;
+    float n,ln2=0;
+    printf("Enter N=\n");
+    scanf("%f",&n);
+
+    for(i=1;i<=n;i++)
+    {
+        if(i%2==0)
+
+        ln2=ln2-1.0/i;
+    else
+        ln2=ln2+1.0/i;
+    }
+    printf("%f",ln2);
+
+    return 0;
+}
+
+*******************************
+page82
+
+
+part 01
+
+#include<stdio.h>
+main()
+{
+    int i,n;
+    double x,ex,powx,fact;
+
+    printf("Enter the value of x and n :");
+    scanf("%lf %d",&x, &n);
+
+ex=1.0;fact=1.0;powx=1.0;
+    for(i=1; i<=n; i++)
+        {
+        powx = powx * x;
+        fact = fact * i;
+        ex = ex + powx / fact;
+        }
+    printf("Approx value of e^x is %lf when n=%d\n",ex, n);
+
+if(ex<exp(x))
+    printf("ex est is lower than exp(x)=%lf\n",exp(x));
+else if
+    (ex > exp(x))
+    printf("ex est is higher than exp(x)=%lf\n",exp(x));
+else
+    printf("ex est is the same as exp(x)\n");
+
+}
+
+
+part 02
+
+
+
+
+#include<stdio.h>
+main()
+{
+    int i,n;
+    double x,ex,powx,fact;
+
+    printf("Enter the value of x and n\n :");
+    scanf("%lf %d",&x, &n);
+
+ex=1.0;fact=1.0;powx=1.0;
+    for(i=1; i<=n; i++)
+        {
+        powx = powx * x;
+        fact = fact * i;
+        ex = ex + powx / fact;
+        }
+    printf("%f when n=%d\n\n",ex,n);
+
+}
+
+
+
+*******************************
+page68
+
+int main()
+{
+    int a, b, c;
+    a=5;
+    while(a>2)
+    {
+        for (b=a;b<2*a;b++)
+        {
+            c=a+b;
+            if (c<8) continue;
+            if (c>11) break;
+            printf( "a=%d b=%d c=%d\n",a,b,c);
+        }
+        a--;
+    }
+}
+
+
+
+*******************************
+//page77
+#include<stdio.h>
+main()
+{
+    int x,y,i,res=1;
+   printf("Enter x,y");
+   scanf("%d%d",&x,&y);
+  for(i=1;i<=y;i++)
+    {
+  res=res*x;
+    }
+    printf("%d",res);
+}
+
+
+
+
+
+*******************************
+page79
+
+#include<stdio.h>
+main()
+{
+    int x,m,sum=0,i;
+    printf("enter number x,m=");
+    scanf("%d%d",&x,m);
+
+    for(i=0;i<=m;i++)
+    sum=sum+pow(x,i);
+
+    printf("\n%d=total",sum);
+
+
+}
+
+
+*******************************
+page83
+
+#include<stdio.h>
+main()
+{
+    int n,total,powx,x,factx,i,k;
+    printf("ENTER number=");
+    scanf("%d",&n);
+
+    total=0;powx=x;factx=1;
+    for(i=0;i<=n;i++)
+    {
+        k=2*n+1;
+
+    if(i%2==0)
+        total=total-powx/factx;
+            else
+        total=total+powx/factx;
+
+        powx=powx*x*x;
+        factx=factx*k*(k-1);
+    }
+
+    printf("TOTAL=%d",total);
+}
+
+
+
+*******************************
+page84
+
+part01
+#include <stdio.h>
+int main(void)
+{
+      int n;
+      int sum,i;
+    printf("Enter N =");
+    scanf("%d",&n);
+
+    printf("Value Sum\n");
+
+    sum = 0;
+    for(i=1; i <=n; i++)
+    {
+         sum = sum + 2*i;
+         printf("%d %d\n",2*i,sum);
+    }
+return 0;
+       }
+
+
+
+part02
+#include<stdio.h>
+main()
+{
+    int i=1,sum=0,n;
+    printf("enter N=");
+    scanf("%d",&n);
+
+    while(i<=n)
+    {
+        sum=sum+2*i;
+        printf("\n%d %d",i*2,sum);
+
+        i++;
+    }
+}
+
+
+
+*******************************
+
+*******************************
+
+*******************************
+
+*******************************
+
+

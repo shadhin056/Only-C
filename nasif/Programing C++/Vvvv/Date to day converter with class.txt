@@ -1,0 +1,169 @@
+//Date to day converter with class
+//Nasif Ahmed
+
+
+#include <iostream>
+
+using namespace std;
+
+
+
+class date_to_day
+{
+private:
+    int year;
+    int month;
+    int day;
+    int addon;
+    int date_value;
+
+public:
+    void input_date();
+
+    int cen_no (int y);
+    int year_no(int y);
+    int month_no(int m, int y);
+    int leap_year (int y);
+    void calculation();
+
+    void show_date();
+
+}ob_date;
+
+
+
+
+
+int main()
+{
+    //date_to_day ob_date;
+    while(1)
+    {
+        ob_date.input_date();
+        ob_date.calculation();
+        ob_date.show_date();
+    }
+    return 0;
+}
+
+
+//--------my function------------
+void date_to_day::input_date()
+{
+    cout << "Enter Date(dd/mm/yyyy):";
+    cin >> ob_date.day >> ob_date.month >> ob_date.year;
+
+}
+
+void date_to_day::calculation()
+{
+    ob_date.addon=(cen_no(ob_date.year) + year_no(ob_date.year) + month_no(ob_date.month,ob_date.year))%7;
+    ob_date.date_value= (ob_date.addon + ob_date.day)%7;
+}
+
+void date_to_day::show_date()
+{
+    switch(ob_date.date_value)
+    {
+    case 0:
+        cout << "Sunday\n";
+        break;
+    case 1:
+        cout << "Monday\n";
+        break;
+    case 2:
+        cout << "Tuesday\n";
+        break;
+    case 3:
+        cout << "Wednesday\n";
+        break;
+    case 4:
+        cout << "Thursday\n";
+        break;
+    case 5:
+        cout << "Friday\n";
+        break;
+    case 6:
+        cout << "Saturday\n";
+        break;
+    }
+
+}
+
+int date_to_day::cen_no (int y)
+{
+    y=y/100;
+    int r=y%4;
+
+    switch(r)
+    {
+    case 0:
+        return 0;
+    case 1:
+        return 5;
+    case 2:
+        return 3;
+    case 3:
+        return 1;
+    }
+
+}
+
+int date_to_day::year_no (int y)
+{
+    y=y%100;
+    //cout <<y<<endl;
+    return (y/4+y)%7;
+    //cout << (y+(y/4))%4;
+}
+
+int date_to_day::month_no (int m,int y)
+{
+    switch(m)
+    {
+    case 1:
+        if(leap_year(y)==0)
+            return 6;
+        else
+            return 5;
+    case 2:
+        if(leap_year(y)==0)
+            return 2;
+        else
+            return 1;
+    case 3:
+        return 2;
+    case 4:
+        return 5;
+    case 5:
+        return 0;
+    case 6:
+        return 3;
+    case 7:
+        return 5;
+    case 8:
+        return 1;
+    case 9:
+        return 4;
+    case 10:
+        return 6;
+    case 11:
+        return 2;
+    case 12:
+        return 4;
+
+    }
+
+}
+
+int date_to_day::leap_year (int y)
+{
+    if(y%4==0&&y%100!=0)
+        return 1;
+    if(y%400==0)
+        return 1;
+
+    return 0;;
+}
+
+

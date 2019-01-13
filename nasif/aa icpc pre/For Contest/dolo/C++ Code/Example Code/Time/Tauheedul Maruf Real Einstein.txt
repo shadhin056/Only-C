@@ -1,0 +1,30 @@
+//Tauheedul Maruf Real Einstein
+
+#include<stdio.h>
+#include<time.h>
+#include<windows.h>
+#include<iostream>
+
+using namespace std;
+
+int main()
+{
+    int i,t=0,input;
+    for(i=0; i<20; i++)
+    {
+        clock_t end_wait;
+        end_wait = clock () + 1 * CLK_TCK ;
+        while(clock()<end_wait)
+        {}
+        printf("\n\n\t\t\t\t%d second \n",t++);
+        cin >> input;                        //i wan't this statement for 20 secondes
+        end_wait = clock () + 0.4 * CLK_TCK ;
+        while(clock()<end_wait)
+        {}
+        system("CLS");
+
+    }
+    printf("\n\n\n 20 secnd shesh hoise??? eitai time function er use\n\n\n");
+
+    return 0;
+}

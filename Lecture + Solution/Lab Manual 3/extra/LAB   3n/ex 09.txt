@@ -1,0 +1,27 @@
+#include <stdio.h>
+int main()
+ {
+
+  int Ah,Am,As,Bh,Bm,Bs,p,q;
+
+  printf("please entetr Ah,Am,As=");
+  scanf("%d%d%d",&Ah,&Am,&As);
+
+  printf("please entetr Bh,Bm,Bs=");
+  scanf("%d%d%d",&Bh,&Bm,&Bs);
+
+  p=Ah*3600+Am*60+As*60;
+  q=Bh*3600+Bm*60+Bs*60;
+  if (p<q)
+    {
+    printf("B takes more time");
+    }
+
+else
+    {
+    printf("A takes more time");
+    }
+return 0;
+
+ }
+

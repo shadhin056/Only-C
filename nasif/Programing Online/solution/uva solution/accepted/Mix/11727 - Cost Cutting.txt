@@ -1,0 +1,65 @@
+//uva set - mix
+//11727 - Cost Cutting
+//Xplosive
+//accepted
+
+
+#include <iostream>
+#include <cstdio>
+
+using namespace std;
+
+int mid (int a,int b, int c)
+{
+    if(a>=b&&b>=c || c>=b&&b>=a)
+        return b;
+    if(a>=c&&c>=b || b>=c&&c>=a)
+        return c;
+    if(b>=a&&a>=c || c>=a&&a>=b)
+        return a;
+
+}
+
+int main()
+{
+
+    //freopen("uvainput.txt", "r", stdin);
+    //freopen("uvaoutput.txt", "w", stdout);
+
+    int t,tt;
+    scanf("%d",&tt);
+
+    int a,b,c,r;
+
+    for(t=1; t<=tt; t++)
+    {
+        scanf("%d%d%d",&a,&b,&c);
+
+        r= mid(a,b,c);
+
+        printf("Case %d: %d\n",t,r);
+
+    }
+
+
+    return 0;
+}
+
+
+
+/*
+
+Sample Input
+
+3
+1000 2000 3000
+3000 2500 1500
+1500 1200 1800
+
+Sample Output
+
+Case 1: 2000
+Case 2: 2500
+Case 3: 1500
+
+*/

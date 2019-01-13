@@ -1,0 +1,86 @@
+//uva set - mix
+//11530 - SMS Typing
+//Xplosive
+//accepted
+
+
+#include <iostream>
+#include <cstdio>
+#include <cstring>
+
+using namespace std;
+
+
+int val(char c)
+{
+    if(c=='a' || c=='d' || c=='g' || c=='j' || c=='m' || c=='p' || c=='t' || c=='w' || c== ' ' )
+    {
+        return 1;
+    }
+    if(c=='b' || c=='e' || c=='h' || c=='k' || c=='n' || c=='q' || c=='u' || c=='x')
+    {
+        return 2;
+    }
+    if(c=='c' || c=='f' || c=='i' || c=='l' || c=='o' || c=='r' || c=='v' || c=='y')
+    {
+        return 3;
+    }
+    if(c=='s' || c=='z')
+    {
+        return 4;
+    }
+
+}
+
+
+int main()
+{
+
+    //freopen("uvainput.txt", "r", stdin);
+    //freopen("uvaoutput.txt", "w", stdout);
+
+    int t,tt=11;
+    scanf("%d",&tt);
+    char gr=getchar();
+
+    char s[105];
+    int r,i;
+
+    for(t=1; t<=tt; t++)
+    {
+        r=0;
+        gets(s);
+        //puts(s);
+        int l= strlen(s);
+
+        for(i=0; i<l; i++)
+        {
+            r+= val(s[i]);
+        }
+
+        printf("Case #%d: %d\n",t,r);
+
+    }
+
+
+    return 0;
+}
+
+
+
+/*
+
+Sample Input
+
+2
+welcome to ulab
+good luck and have fun
+
+
+Sample Output
+
+Case #1: 29
+Case #2: 41
+
+
+*/

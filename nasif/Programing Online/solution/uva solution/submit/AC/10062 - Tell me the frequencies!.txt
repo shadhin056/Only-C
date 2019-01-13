@@ -1,0 +1,203 @@
+//uva
+//10062 - Tell me the frequencies!
+//xplosive
+//accepted
+
+//something wrong in problel
+//there said first 32 char will not be in consideration
+//but 32 is in consideration
+
+
+//it is one of the best program to use stl
+//http://shipuahamed.blogspot.com/2013/04/10062-tell-me-frequencies.html
+//try this on stl
+
+#include <iostream>
+#include <cstdio>
+#include <cstring>
+
+using namespace std;
+
+int main()
+{
+    //freopen("input.txt", "r", stdin);
+    //freopen("output.txt", "w", stdout);
+
+    char ch;
+    int i,j,k;
+    int a[130];
+    char s[1005];
+
+    int c=0;
+
+    //while(scanf("%s",&s)!=EOF)
+    while(gets(s))
+    {
+        if(c)
+            cout << endl;
+
+        for(i=32; i<128; i++)
+        {
+            a[i]=0;
+        }
+
+        int l=strlen(s);
+        for(i=0; i<l; i++)
+        {
+            j=s[i];
+            a[j]++;
+        }
+
+        int min=1;
+        int max=a[32];
+
+        for(i=32; i<128; i++)
+        {
+            if(a[i]>max)
+                max= a[i];
+
+//        printf("%c  -  ",i);
+//        cout << a[i] << endl;
+        }
+
+        do
+        {
+            for(i=127; i>=32; i--)
+            {
+                if(a[i]== min)
+                {
+                    printf("%d ",i);
+                    cout << a[i] << endl;
+                }
+
+            }
+            min++;
+        }
+        while(min<=max);
+
+        //cout << endl;
+
+        c++;
+
+
+    }
+
+
+    return 0;
+
+}
+
+
+
+/*
+
+Sample Input
+
+AAABBC
+122333
+
+Sample Output
+
+67 1
+66 2
+65 3
+
+49 1
+50 2
+51 3
+
+
+-------------------------
+Sample Input
+
+alim
+shipu alim anjan
+illusion hidden infinity
+bubt cse 19th intake
+programming contest
+jhdf sdk sldfk sdflkh
+kdsjghkgkgsgf
+
+Sample Output
+
+109 1
+108 1
+105 1
+97 1
+
+117 1
+115 1
+112 1
+109 1
+108 1
+106 1
+104 1
+110 2
+105 2
+32 2
+97 3
+
+121 1
+117 1
+116 1
+115 1
+111 1
+104 1
+102 1
+101 1
+108 2
+100 2
+32 2
+110 4
+105 6
+
+117 1
+115 1
+110 1
+107 1
+105 1
+104 1
+99 1
+97 1
+57 1
+49 1
+101 2
+98 2
+116 3
+32 3
+
+115 1
+112 1
+105 1
+101 1
+99 1
+97 1
+32 1
+116 2
+114 2
+111 2
+110 2
+109 2
+103 2
+
+106 1
+108 2
+104 2
+115 3
+107 3
+102 3
+32 3
+100 4
+
+106 1
+104 1
+102 1
+100 1
+115 2
+107 3
+103 4
+
+------------------
+
+
+*/

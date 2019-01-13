@@ -1,0 +1,71 @@
+//My function
+//fac
+//small factorial calculation
+//xplosive
+
+#include <iostream>
+#include <cstdio>
+#include <cmath>
+
+using namespace std;
+
+
+//---------------------------------------
+
+unsigned long long int fac(int n)
+{
+    unsigned long long int f;
+    int i;
+    f=1;
+    for(i=n; i>=1; i--)
+    {
+        f=f*i;
+    }
+
+    return f;
+}
+
+
+//---------------------------------------
+
+
+//---------------------------------------------------
+
+int main()
+{
+
+    //freopen("input.txt", "r", stdin);
+    //freopen("output.txt", "w", stdout);
+
+
+
+    int n=0;
+
+    while(n<10)
+    {
+        int f= fac(n++);
+
+        cout << f << endl;
+
+    }
+
+
+
+    return 0;
+}
+
+//---------------------------------------------------
+
+/*
+
+Sample Input
+
+
+
+Sample Output
+
+
+
+
+*/
+//---------------------------------------------------

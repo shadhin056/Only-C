@@ -1,0 +1,27 @@
+//lec- 18b, slide- 23
+//Trace a program
+//Nasif Ahmed
+
+#include<stdio.h>
+
+
+int main()
+{
+    int num[4] = {1,2,3,4}, *p, q[2];
+    p = num;
+    q = p; // or q = num;
+
+    /* above assignment is the same as p = &num[0]; */
+
+
+    printf("%i ", *p);        // print num[0]
+    p++;
+    printf("%i ", *p);       // print num[1]
+    printf("%i ", *q);       // print num[0]
+    printf("%i ", *(p+2));   // print num[2]
+
+    return 0;
+}
+
+
+//something wrong...

@@ -1,0 +1,86 @@
+//lab-3, carry
+//Count Carry Operation using C
+//Nasif Ahmed
+
+#include <stdio.h>
+
+int main()
+{
+    int num1,num2,a1,b1,c1,a2,b2,c2,d1,d2,e1,e2,a,b,c,d,e,k=0;
+    printf("Enter 2 Number (max5dig) = ");
+    scanf("%d %d",&num1,&num2);
+
+    if (num1>99999||num2>99999)
+    {
+        printf("\n      Invalid Input,Try 5 or less Digit");
+    }
+    else
+    {
+        a1= num1%10;
+        b1= (num1/10)%10;
+        c1= (num1/100)%10;
+        d1= (num1/1000)%10;
+        e1= (num1/10000)%10;
+
+
+        a2= num2%10;
+        b2= (num2/10)%10;
+        c2= (num2/100)%10;
+        d2= (num2/1000)%10;
+        e2= (num2/10000)%10;
+
+
+
+        a=a1+a2;
+        b=b1+b2;
+        c=c1+c2;
+        d=d1+d2;
+        e=e1+e2;
+
+
+        if(a>9)
+        {
+            k++;
+            b++;
+        }
+        if(b>9)
+        {
+            k++;
+            c++;
+        }
+        if(c>9)
+        {
+            k++;
+            d++;
+        }
+        if(d>9)
+        {
+            k++;
+            e++;
+        }
+        if(e>9)
+        {
+            k++;
+
+        }
+
+
+
+        if (k>0)
+        {
+            printf("\n      %d carry operations.",k);
+        }
+        else
+        {
+            printf("\n      No carry operation.");
+        }
+    }
+
+
+
+    printf("\n\n\n");
+
+    return 0;
+}
+
+//working perfectly, maximum 5 digit

@@ -1,0 +1,111 @@
+//permutation
+//nt - permutation
+//Xplosive
+//++,
+
+#include <iostream>
+#include <string>
+#include <sstream>
+#include <algorithm>
+#include <vector>
+#include <set>
+#include <queue>
+#include <stack>
+#include <list>
+#include <map>
+#include <fstream>
+#include <numeric>
+#include <iterator>
+#include <bitset>
+#include <utility>
+#include <set>
+#include <numeric>
+#include <cstdio>
+#include <cstdlib>
+#include <cctype>
+#include <cmath>
+#include <cstring>
+#include <ctime>
+
+#define READ(file) freopen(file, "r", stdin);
+#define WRITE(file) freopen(file, "w", stdout);
+#define PI acos(-1.0)
+
+
+#define MAX 1100002
+
+using namespace std;
+
+void print_vector(vector<int> v);
+void print_vector(vector<char> v);
+void print_array(int* a, int l);
+
+void tNextPermutation()
+{
+    string s = "abc";
+    char ch[6] = "abcd";
+    int l = sizeof(ch)/sizeof(char)-1;  //this for null
+    cout << l << endl;
+
+    int a[]= {1,2,3};
+
+    int d = sizeof(a)/sizeof(int);  //this for null
+    cout << d << endl;
+
+    do
+    {
+        // cout << ch << endl;
+    }
+    while(next_permutation(ch,ch+l));
+}
+
+
+int main()
+{
+    //READ("input.txt");
+    //WRITE("output.txt");
+
+    //tNextPermutation();
+
+    string s = "1234";
+
+    int l = s.size();
+
+    
+
+
+    return 0;
+}
+
+void print_array(int* a, int l)
+{
+    for(int i= 0; i<l; i++)
+        cout << a[i] << " ";
+
+    cout << endl;
+}
+
+void print_vector(vector<int> v)
+{
+    for(int i=0; i<v.size(); i++)
+        cout << v[i] << " ";
+
+    cout << endl;
+}
+
+void print_vector(vector<char> v)
+{
+    for(int i=0; i<v.size(); i++)
+        cout << v[i] << " ";
+
+    cout << endl;
+}
+
+
+
+
+/*
+
+
+
+*/

@@ -1,0 +1,31 @@
+//shikkhok
+//r-w to a file
+//Nasif Ahmin
+
+#include<stdio.h>
+
+int main()
+
+{
+    int n=0,i,j;
+
+    //FILE *fp=fopen("c:/input.txt","r");
+    //fscanf(fp,"%d",&n);
+
+
+    FILE *fp=fopen("d:/output.txt","wt");
+    fprintf(fp,"Hello World!");
+
+    printf("%d",n);
+
+    fclose(fp);
+
+
+
+    return 0;
+}
+
+
+//i can change fp
+//both slash are workiing in input but only / is working in output
+//i didn't get output in exact folder

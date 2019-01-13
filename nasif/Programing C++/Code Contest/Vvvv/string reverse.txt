@@ -1,0 +1,51 @@
+//my function
+//str_rev func
+//string reverse
+//Xplosive
+
+#include <iostream>
+#include <cstdio>
+#include <cstring>
+
+using namespace std;
+//int i;
+
+void str_rev(char* s)
+{
+    //no need to return because it is working with address
+    int z=strlen(s);
+    int i,j;
+    char temp;
+
+    for(i=0,j=z-1; i<z/2; i++,j--)
+    {
+        temp=s[i];
+        s[i]=s[j];
+        s[j]=temp;
+    }
+    s[z]='\0';
+    //cout << s << endl;
+
+}
+
+int main()
+{
+
+    //freopen("input.txt", "r", stdin);
+    //freopen("output.txt", "w", stdout);
+
+    char s[100];
+    char ss[100]="my name";
+    str_rev(ss);
+    cout << ss << endl;
+
+    return 0;
+}
+
+
+
+/*
+
+
+
+*/

@@ -1,0 +1,142 @@
+//uva set - 01
+//401 - Palindromes
+//Xplosive
+//na but why...............may be need algorithom
+//i can do short it and faster
+
+#include <iostream>
+#include <cstring>
+#include <cstdio>
+
+using namespace std;
+
+
+int palindrom();
+int mirror();
+void rep();
+void str_rev();
+
+char ch[10000],tch[10000];
+int i,l;
+
+int main()
+{
+    freopen("uvainput.txt", "r", stdin);
+    //freopen("uvaoutput.txt", "w", stdout);
+
+    int r,p,m,c=0;
+
+    while(scanf("%s",&ch)==1)
+    {
+        l= strlen(ch);
+        p= palindrom();
+        m= mirror();
+        r= p+m;
+
+        if(r==0)
+            cout << ch << " -- is not a palindrome.\n";
+        else if(r==1)
+            cout << ch << " -- is a regular palindrome.\n";
+        else if(r==2)
+            cout << ch << " -- is a mirrored string.\n";
+        else if(r==3)
+            cout << ch << " -- is a mirrored palindrome.\n";
+
+        cout << endl;
+
+        //c++;
+
+    }
+
+
+    return 0;
+}
+
+int palindrom()
+{
+    strcpy(tch,ch);
+    str_rev();
+    i=strcmp(ch,tch);
+
+    if(i==0)
+        return 1;
+    else
+        return 0;
+
+}
+
+int mirror()
+{
+    strcpy(tch,ch);
+    rep();
+    str_rev();
+    i= strcmp(ch,tch);
+
+    if(i==0)
+        return 2;
+    else
+        return 0;
+
+}
+
+void str_rev()
+{
+    int j;
+    char temp;
+    for(i=0,j=l-1; i<l/2; i++,j--)
+    {
+        temp= tch[i];
+        tch[i]=tch[j];
+        tch[j]=temp;
+    }
+}
+
+
+void rep()
+{
+    for(i=0;i<l;i++)
+    {
+        if(tch[i]== 'E')
+            tch[i]= '3';
+        else if(tch[i]== '3')
+            tch[i]= 'E';
+        else if(tch[i]== 'J')
+            tch[i]= 'L';
+        else if(tch[i]== 'L')
+            tch[i]= 'J';
+        else if(tch[i]== 'S')
+            tch[i]= '2';
+        else if(tch[i]== '2')
+            tch[i]= 'S';
+        else if(tch[i]== 'Z')
+            tch[i]= '5';
+        else if(tch[i]== '5')
+            tch[i]= 'Z';
+
+    }
+}
+
+
+
+/*
+
+Sample Input
+
+NOTAPALINDROME
+ISAPALINILAPASI
+2A3MEAS
+ATOYOTA
+
+
+Sample Output
+
+NOTAPALINDROME -- is not a palindrome.
+
+ISAPALINILAPASI -- is a regular palindrome.
+
+2A3MEAS -- is a mirrored string.
+
+ATOYOTA -- is a mirrored palindrome.
+
+
+*/

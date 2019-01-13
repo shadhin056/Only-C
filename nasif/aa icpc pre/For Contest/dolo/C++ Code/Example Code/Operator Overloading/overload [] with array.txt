@@ -1,0 +1,44 @@
+//operator overloading lab
+//overload: [] with array
+//xplosive
+
+#include <iostream>
+#include <process.h>
+
+using namespace std;
+
+const int LIMIT = 10;
+
+
+class safe_array
+{
+private:
+    int arr[LIMIT];
+public:
+    int& operator [] (int n)            // return by reference
+    {
+        if( n< 0 || n>=LIMIT )
+        {
+            cout << "\nIndex out of bounds\n";
+            //exit(1);
+        }
+        return arr[n];
+    }
+};
+
+int main()
+{
+    int j;
+    safe_array sa1;
+
+    for(int j=0; j<LIMIT; j++)  //insert elements
+        sa1[j] = j*10;
+
+    for(j=0; j<LIMIT; j++)      //display elements
+    {
+        int temp = sa1[j];
+        cout << "Element " << j << " is " << temp << endl;
+        //cout << "Element " << j << " is " << sa1.access(j) << endl;
+    }
+    return 0;
+}

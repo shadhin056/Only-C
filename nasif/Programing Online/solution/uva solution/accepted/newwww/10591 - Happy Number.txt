@@ -1,0 +1,70 @@
+//uva
+//10591 - Happy Number
+//Xplosive
+//ac
+
+#include <iostream>
+#include <cstdio>
+#include <algorithm>
+
+using namespace std;
+
+int get_digit(int n)
+{
+    int sum=0;
+    while(n)
+    {
+        sum += (n%10)*(n%10);
+        n /=10;
+    }
+
+    if(sum<10)
+        return sum;
+    else
+        return get_digit(sum);
+}
+
+
+int main()
+{
+
+    //freopen("input.txt", "r", stdin);
+    //freopen("output.txt", "w", stdout);
+
+    int t,tt;
+    cin >> tt;
+
+    for(t=1; t<=tt; t++)
+    {
+        long int n;
+        cin >> n;
+
+        if(get_digit(n)==1)
+            printf("Case #%d: %ld is a Happy number.\n",t,n);
+        else
+            printf("Case #%d: %ld is an Unhappy number.\n",t,n);
+
+    }
+
+
+    return 0;
+}
+
+
+
+/*
+
+Sample input
+
+3
+7
+4
+13
+
+Sample output
+
+Case #1: 7 is a Happy number.
+Case #2: 4 is an Unhappy number.
+Case #3: 13 is a Happy number.
+
+*/

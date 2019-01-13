@@ -1,0 +1,63 @@
+//opro-1,q-8,
+//uva- 100,The 3n+1 problem
+//Nasif Ahmed
+
+#include<stdio.h>
+
+int main()
+{
+    int n1,n2,i,n,c,max,temp;
+
+
+    while(scanf("%d %d",&n1,&n2)==2)
+    {
+
+        int tn1=n1;
+        int tn2=n2;
+
+        if(n1>n2)
+        {
+            temp = n1;
+            n1=n2;
+            n2=temp;
+        }
+
+        max=0;
+        for(i=n1;i<=n2;i++)
+        {
+            n=i;
+            c=1;
+
+            while(n!=1)
+            {
+                if(n%2!=0)
+                {
+                    n=3*n+1;
+                }
+
+                else
+                {
+                    n=n/2;
+                }
+                c++;
+            }
+
+            if(c>max)
+            {
+                max=c;
+            }
+        }
+        printf("%d %d %d\n",tn1,tn2,max);
+    }
+
+
+
+
+return 0;
+
+}
+
+//after all accepeted
+
+
+

@@ -1,0 +1,28 @@
+//lec- 6,7,8 slide- 28
+//find the value of a by if else
+//Nasif Ahmed
+
+#include<stdio.h>
+#include<math.h>
+
+main ()
+
+{
+
+    int a = 750;
+    if (a>0)
+        if (a >= 1000)
+            a = 0;
+        else if (a < 500)
+            a = a*2;
+            else
+            a = a*10;
+
+    else a = a+3;
+
+    printf("%d",a);
+
+
+
+}
+

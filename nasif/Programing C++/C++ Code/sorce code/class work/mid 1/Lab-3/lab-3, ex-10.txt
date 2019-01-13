@@ -1,0 +1,87 @@
+//lab-3, ex-10
+//proper max min med
+//Nasif Ahmed
+
+#include<stdio.h>
+#include<math.h>
+
+main()
+
+{
+    int a,b,c;
+    int max,med,min;
+
+    printf("\nEnter 3 numbers: ");
+    scanf("%d%d%d",&a,&b,&c);
+
+
+
+
+    if (a==b&&b==c)
+    {
+        printf("\nAll are equal");
+    }
+    else
+{
+
+    if(a>=b)
+    {
+        if(a>=c)
+        {
+            max=a;
+        }
+        else
+        {
+            max=c;
+        }
+    }
+    else
+    {
+        if(b>=c)
+        {
+            max=b;
+        }
+        else
+        {
+            max=c;
+        }
+    }
+
+
+            //start finding min
+
+
+    if(a<=b)
+    {
+        if(a<=c)
+        {
+            min=a;
+        }
+        else
+        {
+            max=c;
+        }
+
+    }
+    else
+    {
+        if(b<=c)
+        {
+            min=b;
+        }
+        else
+        {
+            min=c;
+        }
+    }
+
+    med=(a+b+c)/3;
+    printf("\nMinimum=%d Maximum=%d Median=%d",min,max,med);
+}
+
+
+    printf("\n\n\n");
+    return 0;
+}
+
+//working perfectly

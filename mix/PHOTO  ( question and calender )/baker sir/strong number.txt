@@ -1,0 +1,28 @@
+#include <stdio.h>
+int main()
+{
+
+int s=0,f,n,z,i,a;
+printf("Please enter your number= ");
+scanf("%d",&z);
+n=z;
+while(n>0)
+{
+a=n%10;
+f=1;
+for(i=1; i<=a; i++)
+{
+f=f*i;
+}
+s=s+f;
+n=n/10;
+}
+if(s==z)
+{
+printf("\n\nIt's a strong number\n\n");
+}
+else
+printf("\n\nIt's not a strong number\n\n");
+getch();
+return 0;
+}

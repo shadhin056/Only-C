@@ -1,0 +1,205 @@
+//modular arithmetic
+//nt - big mod
+//Xplosive
+//++,
+
+#include <iostream>
+#include <string>
+#include <sstream>
+#include <algorithm>
+#include <vector>
+#include <set>
+#include <queue>
+#include <stack>
+#include <list>
+#include <map>
+#include <fstream>
+#include <numeric>
+#include <iterator>
+#include <bitset>
+#include <utility>
+#include <cstdio>
+#include <cstdlib>
+#include <cctype>
+#include <cmath>
+#include <cstring>
+#include <ctime>
+
+#define READ(file) freopen(file, "r", stdin);
+#define WRITE(file) freopen(file, "w", stdout);
+#define PI acos(-1.0)
+
+
+#define MAX 1100000
+
+using namespace std;
+
+void print_vector(vector<int> v);
+void print_vector(vector<char> v);
+void print_array(int* a, int l);
+
+int dp[MAX];
+
+int facto( int n )
+{
+    if( n == 0 ) return 1;
+
+    if(dp[n]!=-1) return dp[n];
+    else
+    {
+        dp[n] = n * facto( n-1 );
+        return dp[n];
+    }
+
+}
+
+int factoModulo(int n, int m)
+{
+    int f=1;
+    for(int i=1; i<=n; i++)
+    {
+        f = ((f%m)*(i%m))%m;
+    }
+    return f;
+}
+
+int negMod(int n, int m)
+{
+    //mod of positive n
+    if(n>=0)
+        return n%m;
+
+    //mod of neg n
+    int r;
+    int temp = n%m;
+    if(temp!=0)
+        r = m+temp;
+    else
+        r=0;
+
+    return r;
+}
+
+
+int powerRecursion(int b, int p)
+{
+    if(p==0) return 1;
+    //if(p==1) return b;
+
+    if(dp[p]!=-1) return dp[p];
+    else
+    {
+        if(p%2==0)
+        {
+            //return powerRecursion(b,p/2) * powerRecursion(b,p/2);
+            dp[p] = powerRecursion(b,p/2) * powerRecursion(b,p/2);
+            return dp[p];
+        }
+        else
+        {
+            //return powerRecursion(b,p-1) * b;
+            dp[p] = powerRecursion(b,p-1) * b;
+            return dp[p];
+        }
+    }
+}
+
+int powerModulo(long long b, long long p)
+{
+    if(p==0) return 1;
+    //if(p==1) return b;
+
+    int m=100;
+    int r;
+
+    if(p%2==0)
+    {
+        r = powerModulo(b,p/2);
+        return ((r%m)*(r%m))%m;
+    }
+    else
+    {
+        //return powerModulo(b,p-1) * b;
+        return ((powerModulo(b,p-1)%m) * (b%m))%m;
+    }
+
+}
+
+int bigIntModulo(string s,int m)  //big int as string
+{
+    //need testing
+    int n=0;
+    int i;
+    for(i=0; i<s.size(); i++)
+    {
+        n = ((n*10)%m + (s[i]-'0'))%m;
+    }
+
+    return n;
+
+}
+
+int main()
+{
+    //READ("input.txt");
+    //WRITE("output.txt");
+
+    memset(dp,-1,sizeof(dp));
+
+    //cout << -17%5<< endl;
+
+    //cout << negMod(-17,5)<< endl;
+
+    //cout << powerRecursion(2,30) << endl;
+    //cout << powerModulo(2,30) << endl;
+
+    cout << bigIntModulo("1",6) << endl;
+
+    while(1)
+    {
+        int n=4,m=10;
+        cin >> n >> m;
+        cout << negMod(n,m) << endl;
+
+        //cout << factoModulo(n,m) << endl;
+    }
+
+
+
+
+
+    return 0;
+}
+
+void print_array(int* a, int l)
+{
+    for(int i= 0; i<l; i++)
+        cout << a[i] << " ";
+
+    cout << endl;
+}
+
+void print_vector(vector<int> v)
+{
+    for(int i=0; i<v.size(); i++)
+        cout << v[i] << " ";
+
+    cout << endl;
+}
+
+void print_vector(vector<char> v)
+{
+    for(int i=0; i<v.size(); i++)
+        cout << v[i] << " ";
+
+    cout << endl;
+}
+
+
+
+
+/*
+
+
+
+*/

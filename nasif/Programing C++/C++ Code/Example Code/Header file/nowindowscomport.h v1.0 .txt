@@ -1,0 +1,68 @@
+//nowindowscomport.h
+//http://stackoverflow.com/questions/933745/what-is-the-windows-equivalent-to-the-capabilities-defined-in-sys-select-h-and-t
+
+
+/* file nowindowscomport.h v1.0 use at your own risk */
+
+typedef struct _DCB {
+    DWORD DCBlength;
+    DWORD BaudRate;
+    DWORD fBinary  :1;
+    DWORD fParity  :1;
+    DWORD fOutxCtsFlow  :1;
+    DWORD fOutxDsrFlow  :1;
+    DWORD fDtrControl  :2;
+    DWORD fDsrSensitivity  :1;
+    DWORD fTXContinueOnXoff  :1;
+    DWORD fOutX  :1;
+    DWORD fInX  :1;
+    DWORD fErrorChar  :1;
+    DWORD fNull  :1;
+    DWORD fRtsControl  :2;
+    DWORD fAbortOnError  :1;
+    DWORD fDummy2  :17;
+    WORD  wReserved;
+    WORD  XonLim;
+    WORD  XoffLim;
+    BYTE  ByteSize;
+    BYTE  Parity;
+    BYTE  StopBits;
+    char  XonChar;
+    char  XoffChar;
+    char  ErrorChar;
+    char  EofChar;
+    char  EvtChar;
+    WORD  wReserved1;
+} DCB, *LPDCB;
+typedef struct _COMSTAT {
+    DWORD fCtsHold  :1;
+    DWORD fDsrHold  :1;
+    DWORD fRlsdHold  :1;
+    DWORD fXoffHold  :1;
+    DWORD fXoffSent  :1;
+    DWORD fEof  :1;
+    DWORD fTxim  :1;
+    DWORD fReserved  :25;
+    DWORD cbInQue;
+    DWORD cbOutQue;
+} COMSTAT, *LPCOMSTAT;
+typedef struct _COMMTIMEOUTS {
+    DWORD ReadIntervalTimeout;
+    DWORD ReadTotalTimeoutMultiplier;
+    DWORD ReadTotalTimeoutConstant;
+    DWORD WriteTotalTimeoutMultiplier;
+    DWORD WriteTotalTimeoutConstant;
+} COMMTIMEOUTS, *LPCOMMTIMEOUTS;
+#define ERROR_INVALID_HANDLE             6L
+/* Purge functions for Comm Port */
+#define PURGE_TXABORT       0x0001  /* Kill pending/current @@-377,11 +382,4 @@ */
+#define PURGE_RXCLEAR 0x0008
+#define PURGE_TXCLEAR 0x0004
+#define PURGE_RXABORT 0x0002
+// DTR Control Flow Values.
+#define DTR_CONTROL_DISABLE    0x00
+#define DTR_CONTROL_ENABLE     0x01
+#define DTR_CONTROL_HANDSHAKE  0x02
+#define RTS_CONTROL_DISABLE 0x00
+#define NOPARITY 0
+#define ONESTOPBIT 0

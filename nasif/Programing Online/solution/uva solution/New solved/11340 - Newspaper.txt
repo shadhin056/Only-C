@@ -1,0 +1,132 @@
+//string
+//11340 - Newspaper
+//Xplosive
+//ac
+
+
+
+#include <iostream>
+#include <string>
+#include <sstream>
+#include <algorithm>
+#include <vector>
+#include <set>
+#include <queue>
+#include <stack>
+#include <list>
+#include <map>
+#include <fstream>
+#include <numeric>
+#include <iterator>
+#include <bitset>
+#include <utility>
+#include <cstdio>
+#include <cstdlib>
+#include <cctype>
+#include <cmath>
+#include <cstring>
+#include <ctime>
+#include <iomanip>
+//#include <conio.h>    //this will give u compile error in contest
+
+#define READ(file) freopen(file, "r", stdin);
+#define WRITE(file) freopen(file, "w", stdout);
+#define PI acos(-1.0)
+
+
+#define MAX 1100000
+
+using namespace std;
+
+int main()
+{
+    //READ("input.txt");
+    //WRITE("output.txt");
+
+    int t, tt;
+    cin >> tt;
+
+    for(t=1; t<=tt; t++)
+    {
+//        if(t!=1)
+//            printf("\n");
+
+        map<char,int> m;
+        map<char,int>::iterator it;
+
+        int n;
+        cin >> n;
+
+        char ch;
+        int c;
+        for(int i=0; i<n; i++)
+        {
+            cin >> ch >> c;
+            m[ch]=c;
+        }
+
+        cin >> n;
+        char gr=getchar();
+
+        int cost =0;
+        string s;
+        for(int i=0; i<n; i++)
+        {
+            getline(cin,s);
+            //cout << i << " " << s << endl;
+
+            for(int j=0; j<s.size(); j++)
+            {
+                it = m.find(s[j]);
+                if(it!=m.end())
+                {
+                    cost+= it->second;
+                }
+            }
+
+        }
+        //cout << cost << endl;
+        //double f = cost/100;    //dont do it
+        double f = 0.01*cost;
+
+        printf("%.2lf$\n",f);
+
+
+
+    }
+
+
+    return 0;
+}
+
+
+
+/*
+
+
+SAMPLE INPUT:
+
+1
+7
+a 3
+W 10
+A 100
+, 10
+k 7
+. 3
+I 13
+7
+ACM International Collegiate Programming Contest (abbreviated
+as ACM-ICPC or just ICPC) is an annual multi-tiered competition
+among the universities of the world. The ICPC challenges students
+to set ever higher standards of excellence for themselves
+through competition that rewards team work, problem analysis,
+and rapid software development.
+From Wikipedia.
+
+SAMPLE OUTPUT:
+
+3.74$
+
+
+*/

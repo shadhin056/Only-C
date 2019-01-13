@@ -1,0 +1,48 @@
+//subeen- 7.5
+//calculation function
+//Nasif Ahmed
+
+#include <stdio.h>
+
+double addf(double n1, double n2, double n3);
+double minf(double n1, double n2, double n3);
+double prof(double n1, double n2, double n3);
+double divf(double n1, double n2, double n3);
+
+int main()
+{
+    double a = 10, b = 5,c=1, add,min,pro,div;
+    add= addf(a,b,c);
+    min= minf(a,b,c);
+    pro= prof(a,b,c);
+    div= divf(a,b,c);
+    printf("%lf %lf %lf %lf\n", add,min,pro,div);
+    return 0;
+}
+
+
+double addf(double n1, double n2, double n3)
+{
+    double r = n1 + n2+ n3;
+    return r;
+}
+
+double minf(double n1, double n2, double n3)
+{
+    double r = n1 - n2 - n3;
+    return r;
+}
+
+double prof(double n1, double n2, double n3)
+{
+    double r = n1*n2*n3;
+    return r;
+}
+
+double divf(double n1, double n2, double n3)
+{
+    double r = n1/n2/n3;
+    return r;
+}
+
+//working perfectly, i got it

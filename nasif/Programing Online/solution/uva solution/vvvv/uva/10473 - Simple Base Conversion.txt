@@ -1,0 +1,120 @@
+//uva set - adhoc
+//10473 - Simple Base Conversion
+//Xplosive
+//ac
+
+//hex-dec-hex library, %X ,string to char array, atoi
+//do hex-dec-hex manually
+
+#include<cstdio>
+#include<iostream>
+#include<string>
+#include<cstring>
+#include<sstream>
+#include<cstdlib>
+#include<cctype>
+#include<cmath>
+#include<algorithm>
+#include<vector>
+#include<set>
+#include<queue>
+#include<stack>
+#include<list>
+#include<map>
+#include<fstream>
+#include<numeric>
+#include<iterator>
+using namespace std;
+
+#define mx 35
+
+
+unsigned long long int hexaToDecimal(string s)
+{
+    unsigned long long dec;
+    stringstream ss;
+
+    ss << s;
+    ss >> hex >> dec;
+
+    return dec;
+
+}
+
+string decimalToHex(unsigned long long int n)
+{
+    string h;
+    stringstream ss;
+
+    ss << hex << n;
+    ss >> h;
+
+    h = "0x"+h;
+
+    return h;
+}
+
+
+int main()
+{
+
+    //freopen("input.txt", "r", stdin);
+    //freopen("output.txt", "w", stdout);
+
+
+//    int tt;
+//    cin >> tt;
+
+    string s;
+    unsigned long long int n;
+
+    while(1)
+    {
+        cin >> s;
+
+        if(atoi(s.c_str())<0)break;
+
+        if(s[1]=='x')
+        {
+            //s.erase(0,2);
+            cout << hexaToDecimal(s) << endl;
+
+//            n = strtol (s.c_str(), NULL, 16);
+//            printf ("%llu\n",n);
+
+        }
+        else
+        {
+            n=atoi(s.c_str());
+            //cout << decimalToHex(n) << endl;
+            //printf("0x%x\n", n);  //genarate small letter
+            printf("0x%X\n", n);
+
+        }
+
+
+    }
+
+    return 0;
+}
+
+
+/*
+
+Sample Input
+
+4
+7
+44
+0x80685
+-1
+
+Sample Output
+
+0x4
+0x7
+0x2C
+525957
+
+
+*/

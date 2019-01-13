@@ -1,0 +1,97 @@
+//ad
+//11900 - Boiled Eggs
+//Xplosive
+//ac
+
+#include <iostream>
+#include <string>
+#include <sstream>
+#include <algorithm>
+#include <vector>
+#include <set>
+#include <queue>
+#include <stack>
+#include <list>
+#include <map>
+#include <fstream>
+#include <numeric>
+#include <iterator>
+#include <bitset>
+#include <utility>
+#include <cstdio>
+#include <cstdlib>
+#include <cctype>
+#include <cmath>
+#include <cstring>
+#include <ctime>
+#include <iomanip>
+//#include <conio.h>    //this will give u compile error in contest
+
+#define READ(file) freopen(file, "r", stdin);
+#define WRITE(file) freopen(file, "w", stdout);
+#define PI acos(-1.0)
+
+
+#define MAX 1100000
+
+using namespace std;
+
+
+int main()
+{
+    //READ("input.txt");
+    //WRITE("output.txt");
+
+    int t, tt;
+    cin >> tt;
+
+    for(t=1; t<=tt; t++)
+    {
+//        if(t!=1)
+//            printf("\n");
+
+        printf("Case %d: ",t);
+
+        int n,p,q;
+        cin>>n>>p>>q;
+
+        int w=0,egg,r=0;
+        for(int i=1; i<=n;i++)
+        {
+            cin>>egg;
+
+            if(w+egg<=q && i<=p)
+            {
+                w+=egg;
+                r=i;
+            }
+
+        }
+        cout << r << endl;
+
+
+    }
+
+
+    return 0;
+}
+
+
+
+/*
+
+Sample Input
+
+2
+3 2 10
+1 2 3
+4 5 5
+4 4 5 5
+
+Sample Output
+
+Case 1: 2
+Case 2: 1
+
+
+*/
